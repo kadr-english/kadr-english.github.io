@@ -989,6 +989,50 @@
   .lx-status{margin-top:12px;padding:12px 14px;border-radius:10px;font-weight:600}
   .lx-status.pass{background:rgba(88,176,120,.16);color:#8fe0ae} .lx-status.fail{background:rgba(224,120,120,.14);color:#f1a3a3} .lx-status.part{background:rgba(240,201,107,.12);color:#f0c96b}
   .lx-hist{margin-top:14px;font-size:14px} .lx-hist h4{margin:0 0 6px;font-size:14px} .lx-hist ul{margin:0;padding-left:18px} .lx-hist em{opacity:.8}
+
+  .vc-wrap{padding-bottom:56px}
+  .vc-bar{display:flex; flex-wrap:wrap; gap:12px 16px; align-items:center; margin-bottom:14px}
+  .vc-levels{display:flex; flex-wrap:wrap; gap:8px}
+  .vc-select{background:var(--night); color:var(--light); border:1px solid #5c6a61; border-radius:8px; padding:10px 12px; font:inherit; font-size:15px; max-width:100%; min-height:44px}
+  .vc-select:disabled{opacity:.55}
+  .vc-modes{display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px}
+  .vc-wrap .st{display:inline-block; font-weight:600; border-radius:999px; padding:2px 9px; font-size:12.5px; white-space:nowrap}
+  .vc-stats{margin:0 0 22px}
+  .vc-stats-row{display:flex; flex-wrap:wrap; align-items:center; gap:6px 8px; color:#c9cfc9; font-size:14.5px}
+  .vc-stats b{color:#f3efe2; margin-right:8px}
+  .vc-total{margin-left:2px}
+  .vc-bar2{height:6px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden; max-width:560px; margin-top:10px}
+  .vc-wrap button.btn-line, button.lx-vc{background:transparent}
+  .vc-wrap button.btn-line:hover, button.lx-vc:hover{background:rgba(255,255,255,.06)}
+  .vc-bar2 i{display:block; height:100%; background:#58b078; border-radius:99px}
+  .vc-card{background:var(--night); border:1px solid rgba(255,255,255,.1); border-left:3px solid var(--gold); border-radius:14px; padding:28px 24px; max-width:680px; margin:0 auto; text-align:center}
+  .vc-top{font-size:13.5px; color:#b9c2ba; display:flex; gap:8px; justify-content:center; align-items:center; flex-wrap:wrap; margin-bottom:12px}
+  .vc-lvl{font-weight:700; color:var(--gold); font-size:12.5px; letter-spacing:.04em}
+  .vc-word{font-size:34px; font-weight:700; color:#f3efe2; margin:10px 0 14px; overflow-wrap:anywhere; line-height:1.2}
+  .vc-say{font-size:14px; padding:8px 14px; min-height:40px}
+  .vc-def{font-size:19px; color:#f3efe2; margin:18px 0 8px; line-height:1.45}
+  .vc-ex{font-style:italic; color:#c9cfc9; margin:6px 0 10px; line-height:1.5}
+  .vc-src{font-size:13px; color:#9aa39a; margin-top:8px}
+  .vc-actions{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:18px}
+  .vc-q-lbl{font-size:14px; color:#b9c2ba; margin-top:4px}
+  .vc-prompt{font-size:20px; color:#f3efe2; margin:10px 0 16px; line-height:1.45}
+  .vc-opts{display:grid; gap:10px; margin-top:14px; text-align:left}
+  .vc-opts .q-opt{width:100%; margin:0}
+  .vc-quiz .q-explain{text-align:left; margin-top:14px}
+  .vc-wrong{text-align:left; margin:8px auto 0; max-width:520px; color:#c9cfc9; line-height:1.6; padding-left:20px}
+  .vc-search{width:100%; max-width:420px; background:var(--night); color:var(--light); border:1px solid #5c6a61; border-radius:8px; padding:11px 12px; font:inherit; font-size:15px; margin-bottom:14px}
+  .vc-rows{list-style:none; margin:0; padding:0; border-top:1px solid rgba(255,255,255,.08)}
+  .vc-rows li{display:grid; grid-template-columns:minmax(150px,1fr) 2fr auto; gap:6px 16px; align-items:center; padding:12px 4px; border-bottom:1px solid rgba(255,255,255,.08)}
+  .vc-r-w{display:flex; align-items:center; gap:6px; color:#f3efe2}
+  .vc-r-d{color:#c9cfc9; font-size:14.5px}
+  .vc-r-m{display:flex; gap:8px; align-items:center; justify-content:flex-end}
+  .vc-say-sm{background:none; border:0; cursor:pointer; font-size:16px; padding:6px; min-width:36px; min-height:36px; color:inherit}
+  .vc-empty{color:#c9cfc9; text-align:center; padding:24px 0}
+  .vc-note{font-size:13.5px; color:#9aa39a; margin-top:20px}
+  .lx-vc{margin-top:14px}
+  @media (max-width:760px){ .vc-card{padding:22px 16px} .vc-word{font-size:28px} .vc-rows li{grid-template-columns:1fr; gap:4px} .vc-r-m{justify-content:flex-start} .vc-select{width:100%} }
+  @media (min-width:1101px){ nav.links{gap:14px} nav.links button{font-size:14.5px; white-space:nowrap} html[lang="uz"] nav.links{gap:10px} html[lang="uz"] nav.links button{font-size:14px} }
+  @media (max-width:1100px){ nav.links.open{max-height:560px !important} }
 </style>
 </head>
 <body>
@@ -1002,6 +1046,7 @@
     <nav class="links" id="siteNav" aria-label="Main">
       <button data-target="home" class="active">Home</button>
       <button data-target="lessons">Lessons by level</button>
+      <button data-target="vocab">Words</button>
       <button data-target="books">Textbooks</button>
       <button data-target="clubs">Clubs</button>
       <button data-target="test">Level test</button>
@@ -1037,6 +1082,7 @@
       </div>
       <div class="filmstrip">
         <a class="frame" href="#" data-target="lessons"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h5v-5h5v-5h5V5h3"/></svg></span><span class="txt"><b>Lessons by level</b>from A1 to C2, focused on grammar and real-life speech</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="frame" href="#" data-target="vocab"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="13" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v11"/><path d="M7 12h6M7 16h4"/></svg></span><span class="txt"><b>Vocabulary trainer</b>flashcards and a quick quiz with the key words from the lessons</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
         <a class="frame" href="#" data-target="clubs"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></span><span class="txt"><b>Clubs</b>we watch movies, read stories and debate &mdash; in English</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
         <a class="frame" href="#" data-target="books"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg></span><span class="txt"><b>English for IT textbooks</b>Grades 9 and 10: 192 lessons with exercises and teaching methodology</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
         <a class="frame" href="#" data-target="test"><span class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><span class="txt"><b>English level test</b>Up to 12 questions and an approximate result on the CEFR scale</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -1120,6 +1166,16 @@
     <div class="lesson-grid" id="lessonGrid"></div>
   </div>
 </section>
+
+<section id="vocab">
+  <div class="wrap sec-head">
+    <div class="kicker">Vocabulary</div>
+    <h2>Vocabulary trainer</h2>
+    <p>All the key words from the lessons, A1–C2, in one place. Learn them with flashcards, check yourself with a short quiz and follow your progress.</p>
+  </div>
+  <div class="wrap vc-wrap" id="vcRoot"></div>
+</section>
+
 
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal-box">
@@ -1229,6 +1285,7 @@
         <h3>What you will find here</h3>
         <ul>
           <li>Lessons for six CEFR levels, from A1 to C2: explanations, examples, key words, a quiz, reading, listening and speaking practice.</li>
+          <li>A vocabulary trainer with all the key words from the lessons: flashcards, a short quiz and a word list.</li>
           <li>English for IT textbooks for Grades 9 and 10, shown as page images with a table of contents for each unit.</li>
           <li>Clubs: Speaking &amp; Movie Club, Movie Club, Tech Talks &amp; Debate and the Reading Club.</li>
           <li>A level test (12 questions: grammar, vocabulary, reading and listening) and speaking practice (5 questions, by voice or by typing). Both give rough estimates, not official results.</li>
@@ -1317,6 +1374,32 @@ DICT.ru['Up to 12 quick questions show roughly where to start on the CEFR scale.
 DICT.uz['Up to 12 quick questions show roughly where to start on the CEFR scale.'] = '12 tagacha tezkor savol CEFR bo‘yicha qaysi darajadan boshlashni ko‘rsatadi.';
 const RXC = I18N_DATA.rx.map(r=>({re:new RegExp(r[0]), ru:r[1], uz:r[2]}));
 [
+['Words','Словарь','Lug‘at'],
+['Vocabulary trainer','Тренажёр слов','Lug‘at mashqi'],
+['All the key words from the lessons, A1–C2, in one place. Learn them with flashcards, check yourself with a short quiz and follow your progress.','Все ключевые слова из уроков A1–C2 в одном месте. Учите их по карточкам, проверяйте себя коротким тестом и следите за прогрессом.','A1–C2 darslaridagi barcha kalit so‘zlar bir joyda. Ularni kartochkalar orqali o‘rganing, qisqa test bilan o‘zingizni tekshiring va natijangizni kuzating.'],
+['All','Все','Hammasi'],['All lessons','Все уроки','Barcha darslar'],
+['Cards','Карточки','Kartochkalar'],['Word list','Список слов','So‘zlar ro‘yxati'],
+['Known','Знаю','Bilaman'],['Learning','Учу','O‘rganyapman'],['New','Новое','Yangi'],['Total','Всего','Jami'],
+['Card','Карточка','Kartochka'],['Question','Вопрос','Savol'],
+['Show meaning','Показать значение','Ma’nosini ko‘rsatish'],['Still learning','Пока не знаю','Hali bilmayman'],['I know it','Знаю это слово','Bu so‘zni bilaman'],
+['From the lesson','Из урока','Darsdan'],
+['You have gone through all the cards in this set.','Вы прошли все карточки в этом наборе.','Siz bu to‘plamdagi barcha kartochkalarni ko‘rib chiqdingiz.'],
+['Start again','Начать заново','Qaytadan boshlash'],['Take the quiz','Пройти тест','Testni boshlash'],
+['There are no words for this choice.','Для этого выбора нет слов.','Bu tanlov uchun so‘zlar yo‘q.'],
+['The quiz needs at least 4 words. Choose another level or lesson.','Для теста нужно не меньше 4 слов. Выберите другой уровень или урок.','Test uchun kamida 4 ta so‘z kerak. Boshqa daraja yoki darsni tanlang.'],
+['Choose the meaning:','Выберите значение:','Ma’nosini tanlang:'],['Which word has this meaning?','Какое слово имеет это значение?','Qaysi so‘z shu ma’noni bildiradi?'],
+['Quiz result','Результат теста','Test natijasi'],['Words to review','Слова для повторения','Takrorlash uchun so‘zlar'],
+['New quiz','Новый тест','Yangi test'],['Review these words with cards','Повторить эти слова по карточкам','Bu so‘zlarni kartochkalarda takrorlash'],
+['Search for a word','Найти слово','So‘z qidirish'],['Nothing found.','Ничего не найдено.','Hech narsa topilmadi.'],
+['The words and meanings come from the key words of the lessons. Your progress is saved only in this browser.','Слова и значения взяты из ключевых слов уроков. Прогресс сохраняется только в этом браузере.','So‘zlar va ularning ma’nolari darslardagi kalit so‘zlardan olingan. Natijangiz faqat shu brauzerda saqlanadi.'],
+['Audio is not available on this device: no English voice was found in the browser.','Аудио на этом устройстве недоступно: в браузере нет английского голоса.','Bu qurilmada audio mavjud emas: brauzerda inglizcha ovoz topilmadi.'],
+['Practise these words','Потренировать эти слова','Bu so‘zlarni mashq qilish'],
+['A vocabulary trainer with all the key words from the lessons: flashcards, a short quiz and a word list.','Тренажёр слов со всеми ключевыми словами из уроков: карточки, короткий тест и список слов.','Darslardagi barcha kalit so‘zlar bilan lug‘at mashqi: kartochkalar, qisqa test va so‘zlar ro‘yxati.'],
+['Mode','Режим','Rejim'],
+['flashcards and a quick quiz with the key words from the lessons','карточки и короткий тест с ключевыми словами из уроков','darslardagi kalit so‘zlar bo‘yicha kartochkalar va qisqa test']
+].forEach(r=>{ if(DICT.ru[nrm(r[0])] === undefined || r[0]==='Words'){ DICT.ru[nrm(r[0])] = r[1]; DICT.uz[nrm(r[0])] = r[2]; } });
+
+[
 ['Support','Поддержка','Qo‘llab-quvvatlash'],
 ['Write to support','Написать в поддержку','Qo‘llab-quvvatlashga yozish'],
 ['Have a question or found a mistake on the site? Write to support and we will try to help.','Есть вопрос или нашли ошибку на сайте? Напишите в поддержку, и мы постараемся помочь.','Savolingiz bormi yoki saytda xato topdingizmi? Qo‘llab-quvvatlash xizmatiga yozing, yordam berishga harakat qilamiz.'],
@@ -1332,7 +1415,7 @@ const RXC = I18N_DATA.rx.map(r=>({re:new RegExp(r[0]), ru:r[1], uz:r[2]}));
 /* progress-status strings (RU / UZ) */
 [
 ['Not started','Не начат','Boshlanmagan'],['In progress','В процессе','Jarayonda'],['Completed','Пройден','Yakunlangan'],
-['Review','Повторить','Takrorlash'],['Best result','Лучший результат','Eng yaxshi natija'],
+['Repeat lesson','Повторить урок','Darsni takrorlash'],['Review','Повторение','Takrorlash'],['Skills','Навыки','Ko‘nikmalar'],['Writing skills','Навыки письма','Yozish ko‘nikmalari'],['Reading & listening','Чтение и аудирование','O‘qish va tinglab tushunish'],['Vocabulary & style','Лексика и стиль','Lug‘at va uslub'],['Writing & vocabulary','Письмо и лексика','Yozish va lug‘at'],['Best result','Лучший результат','Eng yaxshi natija'],
 ['No completed attempt yet','Завершённой попытки ещё нет','Hali yakunlangan urinish yo‘q'],
 ['Your attempts','Ваши попытки','Urinishlaringiz'],['Last attempt','Последняя попытка','Oxirgi urinish'],['Best attempt','Лучшая попытка','Eng yaxshi urinish'],['Attempts','Всего попыток','Urinishlar soni'],
 ['(incomplete)','(неполная)','(to‘liq emas)'],
@@ -1441,6 +1524,7 @@ function showSection(id){
   try{ const h = document.querySelector('#'+id+' h1, #'+id+' h2'); if(h){ h.setAttribute('tabindex','-1'); setTimeout(()=>h.focus({preventScroll:true}),50); } }catch(e){}
   window.scrollTo({top:0, behavior:'smooth'});
   if(id === 'books' && typeof initBooks === 'function') initBooks();
+  if(id === 'vocab' && window.__vcReady) renderVocab(true);
   if(id !== 'speaking' && typeof spkStop === 'function' && typeof spk !== 'undefined' && spk && spk.items && spk.i < spk.items.length){ spkStop(); if(typeof renderSpeaking==='function') renderSpeaking(); }
 }
 document.querySelectorAll('[data-target]').forEach(el=>{
@@ -1455,11 +1539,11 @@ const PG = (function(){
   const K = 'kadr_progress_v1';
   let d = {};
   try{ d = JSON.parse(localStorage.getItem(K) || '{}') || {}; }catch(e){ d = {}; }
-  ['quiz','units','club','pos','opened'].forEach(k=>{ if(!d[k] || typeof d[k] !== 'object') d[k] = {}; });
+  ['quiz','units','club','pos','opened','vocab'].forEach(k=>{ if(!d[k] || typeof d[k] !== 'object') d[k] = {}; });
   return {
     d,
     save(){ try{ localStorage.setItem(K, JSON.stringify(d)); }catch(e){} },
-    reset(){ ['quiz','units','club','pos','opened'].forEach(k=>d[k]={}); delete d.last; delete d.level; delete d.speaking; delete d.writing; this.save(); }
+    reset(){ ['quiz','units','club','pos','opened','vocab'].forEach(k=>d[k]={}); delete d.last; delete d.level; delete d.speaking; delete d.writing; this.save(); }
   };
 })();
 function fmtDate(t){ try{ return new Date(t).toLocaleDateString(LANG==='ru'?'ru-RU':LANG==='uz'?'uz-UZ':'en-GB',{day:'numeric',month:'short',year:'numeric'}); }catch(e){ return ''; } }
@@ -2106,7 +2190,7 @@ function renderLessons(){
       <div class="lc-skills">${lessonSkills(l).map(s=>`<span class="sk-chip">${s}</span>`).join('')}</div>
       <div class="lc-chips">${dur ? `<span class="lc-chip">${svgIcon('clock',15)}${dur}</span>` : ''}${typ ? `<span class="lc-chip">${svgIcon('tag',15)}${esc(typ)}</span>` : ''}</div>
       ${result}
-      <button class="lc-cta${started ? ' cont' : ''}" type="button" data-cta="1" aria-label="${started ? (ls.st==='done' ? 'Review' : 'Continue') : 'Start lesson'}: ${esc(l.t.replace(/<[^>]+>/g,''))}">${started ? (ls.st==='done' ? 'Review' : 'Continue') : 'Start lesson'}</button>
+      <button class="lc-cta${started ? ' cont' : ''}" type="button" data-cta="1" aria-label="${started ? (ls.st==='done' ? 'Repeat lesson' : 'Continue') : 'Start lesson'}: ${esc(l.t.replace(/<[^>]+>/g,''))}">${started ? (ls.st==='done' ? 'Repeat lesson' : 'Continue') : 'Start lesson'}</button>
     </article>`;
   }).join('');
 
@@ -2489,7 +2573,7 @@ Coach: Yes, you do. Everyone has to wear the green shirts.`,
   `Two actions in progress at the same time: <i>While she was reading, he was watching TV.</i> A narrative often moves from <b>background</b> (Past Continuous) to <b>events</b> (Past Simple).`
  ],
  ex:[[`I was watching TV when the lights went out.`,`longer action + short event`],[`While we were having dinner, the phone rang.`,`while + longer action`],[`What were you doing at nine o'clock?`,`question`],[`It wasn't raining when we left.`,`negative`]],
- vocab:[[`notice`,`to see something for the first time`],[`realise`,`to understand something suddenly`],[`refuse`,`to say no`],[`nearby`,`close to this place`],[`discover`,`to find out`],[`suddenly`,`quickly and unexpectedly`]],
+ vocab:[[`notice`,`to see or become aware of something`],[`realise`,`to understand something suddenly`],[`refuse`,`to say no`],[`nearby`,`close to this place`],[`discover`,`to find out`],[`suddenly`,`quickly and unexpectedly`]],
  quiz:[
   Q(`"I ___ TV when the lights went out."`,[`watched`,`was watching`,`watch`],1,`A longer action in progress interrupted by a short event.`),
   Q(`"While we ___ dinner, the phone rang."`,[`were having`,`had`,`are having`],0,`While + longer action → Past Continuous.`),
@@ -3429,7 +3513,7 @@ ENRICH.C2 = [
   `<b>Skill at C2.</b> Shift register deliberately and consistently within a text. Mixing registers by accident (<i>Dear Sir, I'd like to complain about your rubbish service</i>) weakens the effect; mixing on purpose can create humour or irony.`
  ],
  ex:[[`We regret to inform you that your application has been unsuccessful.`,`formal letter`],[`Sorry, but we can't offer you the job.`,`informal / spoken`],[`I would be most grateful for your prompt reply.`,`very formal`],[`Could you get back to me asap?`,`informal / business casual`],[`Notwithstanding the delay, the project was completed.`,`formal connector`]],
- vocab:[[`commence / begin, start`,`formal / neutral (everyday verbs)`],[`purchase / buy / get`,`formal / neutral / informal`],[`ascertain / find out`,`formal / neutral (find out is a phrasal verb)`],[`notwithstanding`,`in spite of (formal)`],[`colloquial`,`typical of informal speech`]],
+ vocab:[[`register`,`the level of formality that suits a situation`],[`purchase`,`to buy (formal)`],[`ascertain`,`to find out for certain (formal)`],[`convey`,`to pass on a message or feeling (formal)`],[`notwithstanding`,`in spite of (formal)`],[`colloquial`,`typical of informal speech`]],
  reading:{title:`Two notes`, text:`Note A: "Hi Sam, so sorry, I won't be able to make it tonight — something's come up at work. Hope you guys have a great time. Catch you next week!" Note B: "Dear Mr Reynolds, I regret to inform you that I shall be unable to attend this evening's event owing to an unforeseen professional commitment. Please convey my apologies to the other guests. I look forward to seeing you next week."`,
   qs:[Q(`How would you describe Note A?`,[`Informal, to a friend.`,`Formal, to a stranger.`,`Academic.`],0,`Contractions, "Hi", "guys", "Catch you next week".`),
       Q(`Which feature makes Note B formal?`,[`Full forms and complex vocabulary such as "owing to an unforeseen professional commitment".`,`Contractions.`,`Slang.`],0,`"I regret to inform you...", "shall", "owing to".`),
@@ -3641,7 +3725,7 @@ function openLessonDetail(level, i){
       <div class="q-explain" id="exp-${x.qi}"></div>
     </div>`).join('');
   const exHtml = (l.ex && l.ex.length) ? `<div class="lx-sec" id="lx-ex"><h3>Examples</h3><ul class="lx-ex" data-no-i18n>${l.ex.map(e=>`<li><span>${e[0]}</span>${e[1] ? `<em>${e[1]}</em>` : ''}</li>`).join('')}</ul></div>` : '';
-  const vocHtml = (l.vocab && l.vocab.length) ? `<div class="lx-sec" id="lx-voc"><h3>Key words</h3><dl class="lx-voc" data-no-i18n>${l.vocab.map(v=>`<div><dt>${v[0]}</dt><dd>${v[1]}</dd></div>`).join('')}</dl></div>` : '';
+  const vocHtml = (l.vocab && l.vocab.length) ? `<div class="lx-sec" id="lx-voc"><h3>Key words</h3><dl class="lx-voc" data-no-i18n>${l.vocab.map(v=>`<div><dt>${v[0]}</dt><dd>${v[1]}</dd></div>`).join('')}</dl><button class="btn btn-line lx-vc" type="button">Practise these words</button></div>` : '';
   const rdHtml = l.reading ? `<div class="lx-sec" id="lx-rd"><h3>Reading</h3><div data-no-i18n><h4 class="lx-title">${l.reading.title}</h4><div class="lx-text">${l.reading.text.split(/\n+/).map(p=>`<p>${esc(p)}</p>`).join('')}</div></div><div class="lx-qs" data-no-i18n>${qHtml('reading')}</div></div>` : '';
   const lsHtml = l.listening ? `<div class="lx-sec" id="lx-ls"><h3>${audioAvailable ? 'Listening' : 'Transcript (reading practice)'}</h3><h4 class="lx-title" data-no-i18n>${l.listening.title}</h4>${listenWidget(l.listening.script, 'lxl')}<div class="lx-qs" data-no-i18n>${audioAvailable ? qHtml('listening') : ''}</div></div>` : '';
   const spHtml = l.speak ? `<div class="lx-sec" id="lx-sp"><h3>Speaking practice</h3><p class="lx-note">Say these aloud (or write them). This part is not scored by the site: the site does not record or assess your speech here. Ask a teacher or a study partner for feedback.</p><ol class="lx-speak" data-no-i18n>${l.speak.map(s=>`<li><span>${s[0]}</span>${s[1] ? `<em>Useful language: ${s[1]}</em>` : ''}</li>`).join('')}</ol></div>` : '';
@@ -3680,6 +3764,8 @@ function openLessonDetail(level, i){
   `;
   document.getElementById('lessonBack').addEventListener('click', closeLessonDetail);
   bindListen(lessonDetailContent);
+  const vcBtn = lessonDetailContent.querySelector('.lx-vc');
+  if(vcBtn) vcBtn.addEventListener('click', ()=>{ closeLessonDetail(); vc.level = level; vc.lesson = level + ':' + i; vc.mode = 'cards'; vc.quiz = null; vc.q = ''; showSection('vocab'); });
   lessonDetailContent.querySelectorAll('.lx-jump').forEach(a=>a.addEventListener('click', e=>{
     e.preventDefault(); const t = lessonDetailContent.querySelector(a.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
   }));
@@ -3777,6 +3863,176 @@ function openLessonDetail(level, i){
 }
 
 lessonOverlay.addEventListener('click', e=>{ if(e.target===lessonOverlay) closeLessonDetail(); });
+
+
+/* ---------------- VOCABULARY TRAINER: key words from all lessons (progress saved in this browser) ---------------- */
+const VOCAB = (function(){
+  const out = [], byId = {};
+  const strip = s => String(s).replace(/<[^>]+>/g, '');
+  const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // tidy a sentence taken from a lesson so that it can stand alone on a card
+  const tidy = s => { s = s.trim().replace(/^[A-Z][A-Za-z]+:\s+/, ''); if((s.match(/"/g) || []).length % 2) s = s.replace(/"/g, ''); return s.trim(); };
+  Object.keys(LESSONS).forEach(L=>{
+    LESSONS[L].map((l, i)=>[l, i]).sort((a, b)=>a[0].o - b[0].o).forEach(([l, i])=>{
+      (l.vocab || []).forEach(v=>{
+        const w = strip(v[0]).trim(), id = w.toLowerCase();
+        if(!w) return;
+        if(byId[id]){ if(!byId[id].refs.some(r=>r.L === L && r.i === i)) byId[id].refs.push({L, i}); return; } // the same word in a later lesson: one card, several lessons
+        // example: the shortest complete sentence of the lesson (examples, then the reading text) that contains the word
+        let cands = w.toLowerCase().split('/').map(s=>s.replace(/\(.*?\)/g, '').replace(/\.\.\./g, '').replace(/[.!?]+$/, '').trim()).filter(s=>s.length > 2);
+        if(cands.length > 1) cands = cands.filter(s=>s.length > 3);
+        const sents = [...(l.ex || []).map(e=>strip(e[0])), ...((l.reading && l.reading.text.match(/[^.!?]+[.!?]+/g)) || [])]
+          .filter(s=>!/\.\.\.|…/.test(s)).map(tidy).filter(s=>s.split(/\s+/).length >= 3 && s.length <= 200);
+        let ex = '';
+        for(const c of cands){
+          const re = new RegExp('\\b' + reEsc(c) + '(s|es|ed|d|ing|er|est|r|st|ly)?\\b', 'i');
+          const quoted = new RegExp('"\\s*' + reEsc(c) + '\\s*"', 'i');
+          const hits = sents.filter(s=>re.test(s) && !quoted.test(s) && s.toLowerCase().replace(/[.!?]+$/, '') !== c);
+          if(hits.length){ ex = hits.sort((a, b)=>a.length - b.length)[0]; break; }
+        }
+        const item = {id, w, d: strip(v[1]), L, i, ex, refs: [{L, i}]};
+        byId[id] = item; out.push(item);
+      });
+    });
+  });
+  return out;
+})();
+/* words that are too close in meaning to be offered as wrong answers for each other */
+const VC_SYN = [['put off','postpone','delay'],['benefit','advantage / disadvantage'],['convince','persuade'],['discover','ascertain'],['purchase','buy'],['opinion','point of view'],['summary','summarise'],['volunteer','volunteering'],['concede','concession'],['convinced','certainty'],['rebuttal','counter-argument'],['nearby','next to'],['come up with','invent'],['undertake','promise'],['notice','realise','discover'],['irony','understatement'],['skills','achievement'],['experience','achievement']];
+function vcTooClose(a, b){
+  const aw = a.w.toLowerCase(), bw = b.w.toLowerCase(), ad = a.d.toLowerCase(), bd = b.d.toLowerCase();
+  if(aw === bw || ad === bd) return true;
+  if(VC_SYN.some(g=>g.includes(aw) && g.includes(bw))) return true;
+  const toks = s => s.replace(/\(.*?\)/g, ' ').split(/[^a-z'-]+/).filter(t=>t.length >= 4);
+  if(toks(aw).some(t=>new RegExp('\\b' + t).test(bd)) || toks(bw).some(t=>new RegExp('\\b' + t).test(ad))) return true; // one headword is used in the other definition
+  const A = new Set(ad.split(/[^a-z]+/).filter(Boolean)), B = new Set(bd.split(/[^a-z]+/).filter(Boolean));
+  if(ad.includes(bd) || bd.includes(ad)) return true;
+  let inter = 0; A.forEach(t=>{ if(B.has(t)) inter++; });
+  return inter / (A.size + B.size - inter) >= 0.6;
+}
+function vcRef(v){
+  if(vc.lesson !== 'all'){ const r = v.refs.find(r=>r.L + ':' + r.i === vc.lesson); if(r) return r; }
+  if(vc.level !== 'all'){ const r = v.refs.find(r=>r.L === vc.level); if(r) return r; }
+  return v.refs[0];
+}
+function vcLessonTitle(r){ const l = LESSONS[r.L] && LESSONS[r.L][r.i]; return l ? String(l.t).replace(/<[^>]+>/g, '') : ''; }
+const vc = {level:'all', lesson:'all', mode:'cards', deck:[], pos:0, flipped:false, quiz:null, q:''};
+const VC_ST = {known:'Known', learning:'Learning', new:'New'};
+const VC_CLS = {known:'st-done', learning:'st-progress', new:'st-new'};
+function vcStatus(id){ const r = PG.d.vocab && PG.d.vocab[id]; return r && r.s ? r.s : 'new'; }
+function vcMark(id, s){ if(!PG.d.vocab) PG.d.vocab = {}; const r = PG.d.vocab[id] || {n:0}; r.s = s; r.n = (r.n || 0) + 1; r.t = Date.now(); PG.d.vocab[id] = r; PG.save(); }
+function vcPool(){ return VOCAB.filter(v=>(vc.level === 'all' || v.refs.some(r=>r.L === vc.level)) && (vc.lesson === 'all' || v.refs.some(r=>r.L + ':' + r.i === vc.lesson))); }
+function vcShuffle(a){ a = a.slice(); for(let k = a.length - 1; k > 0; k--){ const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+function vcNewDeck(list){
+  if(list){ vc.deck = vcShuffle(list); }
+  else{ const g = {learning:[], new:[], known:[]}; vcPool().forEach(v=>g[vcStatus(v.id)].push(v)); vc.deck = [...vcShuffle(g.learning), ...vcShuffle(g.new), ...vcShuffle(g.known)]; }
+  vc.pos = 0; vc.flipped = false;
+}
+function vcSayBtn(w){ return ttsNoEnglishVoice() ? '' : `<button class="btn btn-line vc-say" type="button" data-say="${esc(w)}">&#128266; <span>Listen</span></button>`; }
+function vcCardsHtml(){
+  if(!vc.deck.length) return '<p class="vc-empty">There are no words for this choice.</p>';
+  if(vc.pos >= vc.deck.length) return `<div class="vc-card"><p class="vc-def">You have gone through all the cards in this set.</p><div class="vc-actions"><button class="btn btn-line" type="button" data-act="restart" data-focus="1">Start again</button><button class="btn btn-gold" type="button" data-act="mode" data-v="quiz">Take the quiz</button></div></div>`;
+  const v = vc.deck[vc.pos], st = vcStatus(v.id);
+  const back = vc.flipped
+    ? `<div class="vc-def" data-no-i18n lang="en">${esc(v.d)}</div>${v.ex ? `<div class="vc-ex" data-no-i18n lang="en">&ldquo;${esc(v.ex)}&rdquo;</div>` : ''}<div class="vc-src"><span>From the lesson</span>: <i data-no-i18n>${esc(vcLessonTitle(vcRef(v)))}</i></div>
+       <div class="vc-actions"><button class="btn btn-line" type="button" data-act="no">Still learning</button><button class="btn btn-gold" type="button" data-act="yes" data-focus="1">I know it</button></div>`
+    : `<div class="vc-actions"><button class="btn btn-gold" type="button" data-act="flip" data-focus="1">Show meaning</button></div>`;
+  return `<div class="vc-card">
+    <div class="vc-top"><span>Card</span> <b>${vc.pos + 1}</b> / <b>${vc.deck.length}</b> <span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div>
+    <div class="vc-word" data-no-i18n lang="en">${esc(v.w)}</div>${vcSayBtn(v.w)}${back}</div>`;
+}
+function vcNewQuiz(){
+  const pool = vcPool();
+  if(pool.length < 4){ vc.quiz = {err:true}; return; }
+  const g = {learning:[], new:[], known:[]}; pool.forEach(v=>g[vcStatus(v.id)].push(v));
+  const pick = [...vcShuffle(g.learning), ...vcShuffle(g.new), ...vcShuffle(g.known)].slice(0, Math.min(10, pool.length));
+  const items = vcShuffle(pick).map((v, k)=>{
+    const okOther = x => x.id !== v.id && !vcTooClose(v, x);
+    let others = vcShuffle(pool.filter(okOther)).slice(0, 3);
+    if(others.length < 3) others = others.concat(vcShuffle(VOCAB.filter(x=>x.refs.some(r=>r.L === vcRef(v).L) && okOther(x) && !others.includes(x))).slice(0, 3 - others.length));
+    if(others.length < 3) others = others.concat(vcShuffle(VOCAB.filter(x=>okOther(x) && !others.includes(x))).slice(0, 3 - others.length));
+    // wrong answers must also differ clearly from each other
+    others = others.filter((x, n)=>!others.slice(0, n).some(y=>x.d.toLowerCase() === y.d.toLowerCase() || x.w.toLowerCase() === y.w.toLowerCase()));
+    return {v, rev: k % 2 === 1, opts: vcShuffle([v, ...others]), ans: null, ok: false};
+  });
+  vc.quiz = {items, k:0, score:0, wrong:[]};
+}
+function vcQuizHtml(){
+  if(!vc.quiz) vcNewQuiz();
+  const z = vc.quiz;
+  if(z.err) return '<p class="vc-empty">The quiz needs at least 4 words. Choose another level or lesson.</p>';
+  if(z.k >= z.items.length){
+    return `<div class="vc-card"><p class="vc-def"><span>Quiz result</span>: <b>${z.score}/${z.items.length}</b></p>
+      ${z.wrong.length ? `<p class="vc-src"><span>Words to review</span>:</p><ul class="vc-wrong" data-no-i18n lang="en">${z.wrong.map(v=>`<li><b>${esc(v.w)}</b> — ${esc(v.d)}</li>`).join('')}</ul>` : ''}
+      <div class="vc-actions"><button class="btn btn-gold" type="button" data-act="newquiz" data-focus="1">New quiz</button>${z.wrong.length ? '<button class="btn btn-line" type="button" data-act="reviewwrong">Review these words with cards</button>' : ''}</div></div>`;
+  }
+  const it = z.items[z.k];
+  const prompt = it.rev
+    ? `<div class="vc-q-lbl">Which word has this meaning?</div><div class="vc-prompt" data-no-i18n lang="en">${esc(it.v.d)}</div>`
+    : `<div class="vc-q-lbl">Choose the meaning:</div><div class="vc-word" data-no-i18n lang="en">${esc(it.v.w)}</div>${vcSayBtn(it.v.w)}`;
+  const opts = it.opts.map((o, oi)=>{
+    let cls = 'q-opt';
+    if(it.ans !== null){ if(o.id === it.v.id) cls += ' correct'; else if(oi === it.ans) cls += ' wrong'; }
+    return `<button class="${cls}" type="button" data-act="ans" data-v="${oi}"${it.ans === null && oi === 0 ? ' data-focus="1"' : ''}${it.ans !== null ? ' aria-disabled="true"' : ''} lang="en">${esc(it.rev ? o.w : o.d)}</button>`;
+  }).join('');
+  const fb = it.ans === null ? '' : `<div class="q-explain show${it.ok ? '' : ' is-wrong'}"><b>${it.ok ? 'Correct.' : 'Incorrect.'}</b> <span data-no-i18n lang="en">${esc(it.v.w)} — ${esc(it.v.d)}</span></div><div class="vc-actions"><button class="btn btn-gold" type="button" data-act="next" data-focus="1">Next</button></div>`;
+  return `<div class="vc-card vc-quiz"><div class="vc-top"><span>Question</span> <b>${z.k + 1}</b> / <b>${z.items.length}</b> <span class="vc-lvl">${vcRef(it.v).L}</span></div>${prompt}<div class="vc-opts">${opts}</div>${fb}</div>`;
+}
+function vcRowsHtml(){
+  const q = vc.q.trim().toLowerCase();
+  const rows = vcPool().filter(v=>!q || v.w.toLowerCase().includes(q) || v.d.toLowerCase().includes(q));
+  if(!rows.length) return '<p class="vc-empty">Nothing found.</p>';
+  const say = !ttsNoEnglishVoice();
+  return `<ul class="vc-rows">${rows.map(v=>{ const st = vcStatus(v.id); return `<li><div class="vc-r-w"><b data-no-i18n lang="en">${esc(v.w)}</b>${say ? `<button class="vc-say-sm" type="button" data-say="${esc(v.w)}" aria-label="Listen">&#128266;</button>` : ''}</div><div class="vc-r-d" data-no-i18n lang="en">${esc(v.d)}</div><div class="vc-r-m"><span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div></li>`; }).join('')}</ul>`;
+}
+function renderVocab(resetDeck, focus){
+  const root = document.getElementById('vcRoot'); if(!root) return;
+  if(resetDeck) vcNewDeck();
+  const levels = ['all', ...Object.keys(LESSONS)];
+  const lvHtml = levels.map(L=>{
+    const n = L === 'all' ? VOCAB.length : VOCAB.filter(v=>v.refs.some(r=>r.L === L)).length;
+    return `<button class="level-pill${vc.level === L ? ' active' : ''}" type="button" data-act="level" data-v="${L}" aria-pressed="${vc.level === L}"><span class="code">${L === 'all' ? 'All' : L}</span><span class="lp-count" aria-hidden="true">${n}</span></button>`;
+  }).join('');
+  const lessons = vc.level === 'all' ? [] : LESSONS[vc.level].map((l, i)=>[l, i]).filter(x=>x[0].vocab && x[0].vocab.length).sort((a, b)=>a[0].o - b[0].o);
+  const sel = `<select class="vc-select" id="vcLesson" aria-label="Lesson"${vc.level === 'all' ? ' disabled' : ''}><option value="all">All lessons</option>${lessons.map(([l, i])=>`<option value="${vc.level}:${i}"${vc.lesson === vc.level + ':' + i ? ' selected' : ''} data-no-i18n>${l.o}. ${esc(String(l.t).replace(/<[^>]+>/g, ''))}</option>`).join('')}</select>`;
+  const modes = [['cards', 'Cards'], ['quiz', 'Quiz'], ['list', 'Word list']].map(([m, t])=>`<button class="btn ${vc.mode === m ? 'btn-gold' : 'btn-line'} vc-mode" type="button" data-act="mode" data-v="${m}" aria-pressed="${vc.mode === m}">${t}</button>`).join('');
+  const pool = vcPool(), cnt = {known:0, learning:0, new:0}; pool.forEach(v=>cnt[vcStatus(v.id)]++);
+  const pct = pool.length ? Math.round(cnt.known / pool.length * 100) : 0;
+  const stats = `<div class="vc-stats"><div class="vc-stats-row"><span class="st st-done">Known</span> <b>${cnt.known}</b> <span class="st st-progress">Learning</span> <b>${cnt.learning}</b> <span class="st st-new">New</span> <b>${cnt.new}</b> <span class="vc-total"><span>Total</span> <b>${pool.length}</b></span></div><div class="vc-bar2" aria-hidden="true"><i style="width:${pct}%"></i></div></div>`;
+  const stage = vc.mode === 'quiz' ? vcQuizHtml() : vc.mode === 'list'
+    ? `<div class="vc-list"><input class="vc-search" id="vcSearch" type="search" placeholder="Search for a word" aria-label="Search for a word" value="${esc(vc.q)}"><div id="vcRows">${vcRowsHtml()}</div></div>`
+    : vcCardsHtml();
+  root.innerHTML = `<div class="vc-bar"><div class="vc-levels" role="group" aria-label="Level">${lvHtml}</div>${sel}</div>
+    <div class="vc-modes" role="group" aria-label="Mode">${modes}</div>${stats}
+    <div id="vcStage" aria-live="polite">${stage}</div>
+    <p class="vc-note">The words and meanings come from the key words of the lessons. Your progress is saved only in this browser.</p>${ttsNoEnglishVoice() ? '<p class="vc-note">Audio is not available on this device: no English voice was found in the browser.</p>' : ''}`;
+  if(focus){ const f = root.querySelector('#vcStage [data-focus]'); if(f){ try{ f.focus({preventScroll:true}); }catch(e){} } }
+}
+(function(){
+  const root = document.getElementById('vcRoot'); if(!root) return;
+  root.addEventListener('click', e=>{
+    const say = e.target.closest('[data-say]'); if(say){ ttsSpeak(say.dataset.say, 0.85); return; }
+    const b = e.target.closest('[data-act]'); if(!b) return;
+    const act = b.dataset.act, val = b.dataset.v;
+    if(act === 'level'){ vc.level = val; vc.lesson = 'all'; vc.quiz = null; renderVocab(true); }
+    else if(act === 'mode'){ vc.mode = val; vc.quiz = null; renderVocab(val === 'cards', true); }
+    else if(act === 'flip'){ vc.flipped = true; renderVocab(false, true); }
+    else if(act === 'yes' || act === 'no'){ const v = vc.deck[vc.pos]; if(v) vcMark(v.id, act === 'yes' ? 'known' : 'learning'); vc.pos++; vc.flipped = false; renderVocab(false, true); }
+    else if(act === 'restart'){ renderVocab(true, true); }
+    else if(act === 'ans'){
+      const it = vc.quiz && vc.quiz.items[vc.quiz.k]; if(!it || it.ans !== null) return;
+      it.ans = +val; it.ok = it.opts[it.ans].id === it.v.id;
+      if(it.ok) vc.quiz.score++; else vc.quiz.wrong.push(it.v);
+      vcMark(it.v.id, it.ok ? 'known' : 'learning'); renderVocab(false, true);
+    }
+    else if(act === 'next'){ vc.quiz.k++; renderVocab(false, true); }
+    else if(act === 'newquiz'){ vc.quiz = null; renderVocab(false, true); }
+    else if(act === 'reviewwrong'){ const w = vc.quiz.wrong.slice(); vc.mode = 'cards'; vc.quiz = null; vcNewDeck(w); renderVocab(false, true); }
+  });
+  root.addEventListener('change', e=>{ if(e.target.id === 'vcLesson'){ vc.lesson = e.target.value; vc.quiz = null; renderVocab(true); } });
+  root.addEventListener('input', e=>{ if(e.target.id === 'vcSearch'){ vc.q = e.target.value; const r = document.getElementById('vcRows'); if(r) r.innerHTML = vcRowsHtml(); } });
+  window.__vcReady = true;
+})();
 
 /* ---------------- ADD LESSON MODAL ---------------- */
 const modalOverlay = document.getElementById('modalOverlay');
