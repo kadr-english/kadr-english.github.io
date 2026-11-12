@@ -2872,6 +2872,583 @@ Critical response: The argument is persuasive in so far as it draws on historica
  speak:[[`Listen or read, then give a 60-second oral summary in your own words.`,`The speaker argues that ... The main points are ... In conclusion ...`],[`Give a critical response to an article: what is convincing, what is missing?`,`The argument is persuasive in so far as ... However, it overlooks ...`],[`Paraphrase three sentences from a text, changing both vocabulary and structure.`,`Original: ... → In other words, ...`]]}
 ];
 
+const ENRICH = {A1:[],A2:[],B1:[],B2:[],C1:[],C2:[]};
+/* ===== A1 + A2: completed sections for the original lessons ===== */
+ENRICH.A1 = [
+{t:`The verb to be and introductions`, m:`35 min · grammar`,
+ e2:[
+  `<b>Short forms</b> are used in speech and informal writing: <i>I'm, you're, he's, she's, it's, we're, they're</i>. Negatives: <i>isn't, aren't</i>, but with I we say <i>I'm not</i> (never "amn't").`,
+  `<b>Short answers</b> repeat the verb and do not use the short form for "yes": <i>Are you a student? — Yes, I am.</i> (not "Yes, I'm"). <i>Is she a doctor? — No, she isn't.</i>`,
+  `<b>Introductions</b>: <i>Hello, I'm Aziz. I'm sixteen. I'm from Samarkand. I'm a student. Nice to meet you!</i> Useful questions: <i>What's your name? Where are you from? How old are you? What do you do?</i>`
+ ],
+ ex:[[`I'm Aziz. I'm from Samarkand.`,`I'm = I am`],[`She's a doctor. She isn't a teacher.`,`she's = she is`],[`Are you from Uzbekistan? — Yes, I am.`,`short answer: Yes, I am (not "Yes, I'm")`],[`Where are you from? — I'm from Bukhara.`,`question word + are`],[`How old is your brother? — He's twelve.`,`How old + is / are`]],
+ vocab:[[`name`,`what people call you`],[`age`,`how old you are`],[`city`,`a big town where many people live`],[`student`,`a person who studies at school or university`],[`teacher`,`a person who teaches`],[`Nice to meet you.`,`what we say when we meet someone for the first time`]],
+ reading:{title:`Meet Sevara`, text:`Hello! My name is Sevara. I am fifteen years old. I am from Samarkand, but now I live in Tashkent. I am a student. My school is big and beautiful. My best friend is Madina. She is sixteen. She is not from Tashkent. She is from Bukhara. Madina and I are in the same class. We are very happy at school.`,
+  qs:[Q(`How old is Sevara?`,[`Fifteen.`,`Sixteen.`,`Fourteen.`],0,`The text says: "I am fifteen years old." Madina is sixteen.`),
+      Q(`Where is Madina from?`,[`Bukhara.`,`Samarkand.`,`Tashkent.`],0,`"She is from Bukhara." Sevara is from Samarkand, and she now lives in Tashkent.`),
+      Q(`Are Sevara and Madina in the same class?`,[`Yes, they are.`,`No, they aren't.`,`The text does not say.`],0,`"Madina and I are in the same class."`)]},
+ listening:{title:`At a language club`, script:`A: Hello! I'm Jasur. What's your name?
+B: Hi, Jasur. I'm Anna. Nice to meet you.
+A: Nice to meet you too. Where are you from, Anna?
+B: I'm from Russia, but I live in Tashkent now. And you?
+A: I'm from Fergana. I'm a student. Are you a student too?
+B: No, I'm not. I'm a teacher.`,
+  qs:[Q(`Where is Jasur from?`,[`Fergana.`,`Russia.`,`Tashkent.`],0,`Jasur says: "I'm from Fergana."`),
+      Q(`What is Anna's job?`,[`She is a teacher.`,`She is a student.`,`She is a doctor.`],0,`Anna says: "No, I'm not. I'm a teacher."`),
+      Q(`Where does Anna live now?`,[`In Tashkent.`,`In Russia.`,`In Fergana.`],0,`"I'm from Russia, but I live in Tashkent now."`)]},
+ speak:[[`Introduce yourself: your name, your age, your city and what you do.`,`Hello, I'm ... I'm ... years old. I'm from ... I'm a ...`],[`Ask a partner three questions: name, home town, age.`,`What's your name? Where are you from? How old are you?`],[`Introduce a friend or a family member to a new person.`,`This is my friend ... He / She is from ... He / She is ...`]]},
+
+{t:`Numbers, dates, time`, m:`30 min · vocabulary`,
+ e2:[
+  `<b>Numbers.</b> 1–12: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve. 13–19 end in <i>-teen</i> (thirteen, fourteen...), and the tens end in <i>-ty</i> (thirty, forty, fifty...). Join tens and ones with a hyphen: <i>twenty-one, thirty-five, ninety-nine</i>. Listen carefully: <i>fifteen</i> (15) and <i>fifty</i> (50) sound similar.`,
+  `<b>Days and months</b> begin with a capital letter: <i>Monday, Tuesday... Sunday; January, February... December</i>. We say <i>on</i> Monday, <i>in</i> May, <i>at</i> seven o'clock.`,
+  `<b>Questions:</b> <i>What time is it? — It's ten past two. What's the date today? — It's the twelfth of November. When is your birthday? — It's on the third of May.</i> More clock times: 2:10 — ten past two; 2:20 — twenty past two; 2:40 — twenty to three.`
+ ],
+ ex:[[`It's twenty-five past six.`,`6:25`],[`The lesson is at half past nine.`,`9:30`],[`My birthday is on the 3rd of May.`,`on + date; 3rd = third`],[`We have English on Monday and Thursday.`,`on + day`],[`The shop opens at nine o'clock.`,`at + time`]],
+ vocab:[[`o'clock`,`used for an exact hour: three o'clock`],[`quarter`,`15 minutes (a quarter of an hour)`],[`half`,`30 minutes`],[`date`,`the day, month and year`],[`birthday`,`the day each year when you were born`],[`week`,`seven days`],[`month`,`one of the twelve parts of the year`]],
+ reading:{title:`A busy Saturday`, text:`Today is Saturday, the twelfth of November. Bobur gets up at half past eight. At ten o'clock he has an English lesson at the library. The lesson finishes at a quarter to twelve. Then he meets his friend at twelve fifteen, and they have lunch at one o'clock. In the evening there is a birthday party. It starts at seven. It is his sister's birthday. She is twenty today.`,
+  qs:[Q(`What time does Bobur get up?`,[`At 8:30.`,`At 9:30.`,`At 8:15.`],0,`"Half past eight" means 8:30.`),
+      Q(`When does the English lesson finish?`,[`At 11:45.`,`At 11:15.`,`At 12:00.`],0,`"A quarter to twelve" means 15 minutes before twelve: 11:45.`),
+      Q(`Whose birthday is it?`,[`His sister's.`,`His friend's.`,`His own.`],0,`"It is his sister's birthday."`)]},
+ listening:{title:`Making a plan`, script:`A: Hi Dana, are you free on Friday?
+B: Yes, I am. What time?
+A: Let's meet at a quarter past four, at the cinema.
+B: Sorry, I have a class until half past four. Is five o'clock OK?
+A: Yes, that's fine. See you at five.
+B: Great! What's the date on Friday?
+A: It's the eighteenth of November.`,
+  qs:[Q(`What time do they decide to meet?`,[`At 5:00.`,`At 4:15.`,`At 4:30.`],0,`Dana asks "Is five o'clock OK?" and the other speaker says "Yes, that's fine."`),
+      Q(`Why can't Dana meet at a quarter past four?`,[`She has a class until half past four.`,`She is at the cinema.`,`She is not free on Friday.`],0,`"I have a class until half past four."`),
+      Q(`What is the date on Friday?`,[`18 November.`,`8 November.`,`13 November.`],0,`"The eighteenth of November": eighteenth = 18th (not the eighth, 8th).`)]},
+ speak:[[`Say your birthday and today's date.`,`My birthday is on the ... of ... Today is the ... of ...`],[`Ask a partner: What time do you get up? What time is your first lesson?`,`I get up at ... My first lesson is at ...`],[`Arrange a meeting with a friend: say the day and the time.`,`Are you free on ...? Let's meet at ... See you at ...`]]},
+
+{t:`Food and ordering at a cafe`, m:`35 min · speaking`,
+ e2:[
+  `<b>Food and drink words:</b> bread, rice, soup, salad, chicken, fish, meat, egg, cheese, apple; tea, coffee, water, juice, milk. Some words we count (<i>an apple, two apples</i>); others we do not (<i>rice, water, bread</i>). With these we use <i>some</i> or a container: <i>a cup of tea, a glass of juice, a plate of rice, a piece of cake</i>.`,
+  `<b>Paying:</b> <i>How much is it? — It's thirty thousand sum. Could we have the bill, please?</i> In American English people say <i>the check</i> instead of <i>the bill</i>: <i>Check, please.</i>`,
+  `<b>A short dialogue.</b> Waiter: <i>Are you ready to order?</i> Guest: <i>Yes. I'd like the chicken soup, please.</i> Waiter: <i>Anything to drink?</i> Guest: <i>A cup of tea, please.</i> Waiter: <i>Would you like anything else?</i> Guest: <i>No, thank you. That's all.</i>`
+ ],
+ ex:[[`Could I have a cup of tea, please?`,`polite order`],[`I'd like the chicken soup and a salad.`,`I'd like = I want (polite)`],[`Would you like anything else? — No, thank you. That's all.`,`finishing the order`],[`How much is it? — It's thirty thousand sum.`,`asking the price`],[`Could we have the bill, please?`,`British: bill / American: check`]],
+ vocab:[[`menu`,`a list of food and drinks in a cafe`],[`waiter`,`a person who brings food in a cafe`],[`bill`,`the paper that shows how much you must pay`],[`order`,`to ask for food or drink`],[`a cup of`,`used with tea and coffee`],[`a glass of`,`used with water and juice`]],
+ reading:{title:`Lunch at the cafe`, text:`Madina and her friend Laylo are at a cafe. The waiter brings the menu. Madina would like chicken soup and a salad. Laylo would like fish and rice. For drinks, Madina would like green tea, and Laylo would like orange juice. The waiter asks, "Would you like anything else?" Laylo says, "No, thank you." After the meal Madina asks for the bill.`,
+  qs:[Q(`What does Madina order to drink?`,[`Green tea.`,`Orange juice.`,`Water.`],0,`"Madina would like green tea." Orange juice is Laylo's drink.`),
+      Q(`Who orders fish and rice?`,[`Laylo.`,`Madina.`,`The waiter.`],0,`"Laylo would like fish and rice."`),
+      Q(`What does Madina ask for at the end?`,[`The bill.`,`The menu.`,`More tea.`],0,`"After the meal Madina asks for the bill."`)]},
+ listening:{title:`Ordering lunch`, script:`Waiter: Good afternoon. Are you ready to order?
+Guest: Yes, please. I'd like the chicken soup, please.
+Waiter: Anything to drink?
+Guest: Could I have a glass of water and a cup of tea?
+Waiter: Of course. Would you like anything else?
+Guest: No, thank you. That's all.`,
+  qs:[Q(`What food does the guest order?`,[`Chicken soup.`,`Fish and rice.`,`A salad.`],0,`"I'd like the chicken soup, please."`),
+      Q(`What does the guest want to drink?`,[`Water and tea.`,`Juice and coffee.`,`Only water.`],0,`"A glass of water and a cup of tea."`),
+      Q(`Does the guest order anything else?`,[`No, that's all.`,`Yes, dessert.`,`Yes, bread.`],0,`"No, thank you. That's all."`)]},
+ speak:[[`Order a meal and a drink in a cafe. Your partner is the waiter.`,`Could I have ..., please? I'd like ... That's all, thank you.`],[`Ask for the menu and later for the bill.`,`Can I see the menu, please? Could we have the bill, please?`],[`Say what food and drink you like and don't like.`,`I like ... I don't like ... My favourite food is ...`]],
+},
+
+{t:`Family and appearance`, m:`30 min · vocabulary`,
+ e2:[
+  `<b>Family words:</b> mother (mum), father (dad), brother, sister, grandmother, grandfather, grandparents, aunt, uncle, cousin, parents. <b>'s</b> shows who someone belongs to: <i>my mother's sister = my aunt; Aziz's sister.</i>`,
+  `To say what people have, use <b>have / has</b>: <i>I have two brothers. She has a sister. He has short black hair and brown eyes.</i> With he / she / it we say <b>has</b>.`,
+  `To describe a person with <b>be</b> we use adjectives: <i>He is tall. She is young. My grandfather is old but very funny.</i> Do not add -s to adjectives: <i>brown eyes</i>, not "browns eyes".`
+ ],
+ ex:[[`This is my sister. Her name is Dilnoza.`,`my / her`],[`My father's brother is my uncle.`,`'s shows the owner`],[`He has short black hair and brown eyes.`,`he + has`],[`I have two brothers and one sister.`,`I + have`],[`My grandmother is old, but she is very active.`,`be + adjective`]],
+ vocab:[[`grandparents`,`grandmother and grandfather`],[`aunt`,`sister of your mother or father`],[`uncle`,`brother of your mother or father`],[`cousin`,`child of your aunt or uncle`],[`tall`,`high (about a person)`],[`curly hair`,`hair with many small curls`]],
+ reading:{title:`My family`, text:`I have a big family. My father is a doctor and my mother is a teacher. I have one brother and one sister. My brother is twenty. He is tall and he has short black hair. My sister is ten. She has long brown hair and big brown eyes. My grandparents live with us. My grandfather is old, but he is very funny. My aunt and uncle live in Samarkand. Their son is my cousin. His name is Timur.`,
+  qs:[Q(`What is the writer's mother?`,[`A teacher.`,`A doctor.`,`A student.`],0,`"My father is a doctor and my mother is a teacher."`),
+      Q(`What does the writer's sister look like?`,[`She has long brown hair and big brown eyes.`,`She has short black hair.`,`She is tall and has short hair.`],0,`"She has long brown hair and big brown eyes." Short black hair is the brother's.`),
+      Q(`Who is Timur?`,[`The writer's cousin.`,`The writer's brother.`,`The writer's uncle.`],0,`"Their son is my cousin. His name is Timur." He is the son of the writer's aunt and uncle.`)]},
+ listening:{title:`A family photo`, script:`A: Is this your family, Lola?
+B: Yes. This is my mother, and this is my father.
+A: Who is the tall boy?
+B: He's my brother, Karim. He has short curly hair.
+A: And the old woman?
+B: That's my grandmother. She has grey hair, and she wears glasses.`,
+  qs:[Q(`Who is the tall boy?`,[`Lola's brother.`,`Lola's cousin.`,`Lola's father.`],0,`"He's my brother, Karim."`),
+      Q(`What does Karim look like?`,[`He has short curly hair.`,`He has long straight hair.`,`He has grey hair.`],0,`"He has short curly hair." Grey hair is the grandmother's.`),
+      Q(`What does the grandmother wear?`,[`Glasses.`,`A hat.`,`A scarf.`],0,`"She has grey hair, and she wears glasses."`)]},
+ speak:[[`Describe your family: who is in it and how old they are.`,`I have ... In my family there are ... My mother is ...`],[`Describe a friend: tall or short, hair, eyes.`,`He / She is ... He / She has ... hair and ... eyes.`],[`Ask a partner about his or her family.`,`Do you have any brothers or sisters? How old is your ...?`]]}
+];
+
+ENRICH.A2 = [
+{t:`Past Simple in practice`, m:`38 min · grammar`,
+ e2:[
+  `<b>Spelling of -ed:</b> work → worked; like → liked (just add -d); study → studied; stop → stopped (double the last consonant). The ending is pronounced in three ways: <i>worked</i> (like "t"), <i>played</i> (like "d"), <i>wanted</i> (an extra syllable, "id").`,
+  `<b>Useful irregular verbs:</b> go – went, see – saw, have – had, buy – bought, eat – ate, take – took, make – made, come – came, get – got, write – wrote.`,
+  `<b>Time words:</b> yesterday, last night, last week, two days ago, in 2020, on Monday. Questions: <i>What did you do yesterday? Where did you go?</i> Short answers: <i>Yes, I did. / No, I didn't.</i>`,
+  `<b>To be in the past</b> has two forms and does not use did: <i>I was at home. They were tired. Were you there?</i>`
+ ],
+ ex:[[`I watched a film last night.`,`regular: watch + ed`],[`We went to the market two days ago.`,`go → went`],[`Did you see Ali yesterday? — No, I didn't.`,`did + base verb`],[`She didn't buy a new phone.`,`didn't + buy (not bought)`],[`Where were you on Sunday? — I was at my grandmother's.`,`was / were`]],
+ vocab:[[`yesterday`,`the day before today`],[`last week`,`the week before this week`],[`ago`,`used after a time: two days ago`],[`weekend`,`Saturday and Sunday`],[`visit`,`to go and see a person or a place`],[`buy`,`to get something and pay for it (past: bought)`]],
+ reading:{title:`Alisher's weekend`, text:`Last weekend Alisher visited his grandparents in the village. He took a bus on Saturday morning and arrived at ten o'clock. His grandmother cooked a big lunch, and they ate together in the garden. In the afternoon he helped his grandfather, and they planted three apple trees. On Sunday he didn't stay in bed late. He got up at seven and went for a walk by the river. He came home in the evening. He was tired, but he was very happy.`,
+  qs:[Q(`How did Alisher travel to the village?`,[`By bus.`,`By car.`,`On foot.`],0,`"He took a bus on Saturday morning."`),
+      Q(`What did Alisher and his grandfather do in the afternoon?`,[`They planted apple trees.`,`They went for a walk.`,`They cooked lunch.`],0,`"In the afternoon he helped his grandfather, and they planted three apple trees." The grandmother cooked lunch.`),
+      Q(`What did Alisher do on Sunday morning?`,[`He got up at seven and went for a walk.`,`He stayed in bed late.`,`He helped his grandfather in the garden.`],0,`"On Sunday he didn't stay in bed late. He got up at seven and went for a walk by the river."`)]},
+ listening:{title:`What did you do?`, script:`A: Hi, Zarina! What did you do at the weekend?
+B: On Saturday I went shopping with my mother. We bought a new coat for me.
+A: Nice! Did you go out on Sunday?
+B: No, I didn't. I stayed at home and watched a film. It was really good.
+A: What film was it?
+B: It was a comedy. I laughed a lot.`,
+  qs:[Q(`What did Zarina buy?`,[`A coat.`,`A phone.`,`A film.`],0,`"We bought a new coat for me."`),
+      Q(`Did Zarina go out on Sunday?`,[`No, she stayed at home.`,`Yes, she went to the cinema.`,`Yes, she went shopping.`],0,`"No, I didn't. I stayed at home and watched a film."`),
+      Q(`What kind of film was it?`,[`A comedy.`,`A horror film.`,`A cartoon.`],0,`"It was a comedy. I laughed a lot."`)]},
+ speak:[[`Tell a partner what you did last weekend. Use at least four verbs in the past.`,`Last weekend I ... On Saturday I ... Then I ...`],[`Ask a partner: Where did you go yesterday? What did you eat?`,`Where did you ...? Did you ...? — Yes, I did. / No, I didn't.`],[`Tell about a good day in your life.`,`It was ... We went to ... I felt ...`]]},
+
+{t:`Future plans`, m:`35 min · grammar`,
+ e2:[
+  `<b>Forms.</b> <i>I'm going to study tonight. She isn't going to come. Are you going to travel?</i> With will: <i>I'll help you. It won't rain. Will you come?</i> After both, the verb is in the base form.`,
+  `<b>Evidence or opinion?</b> If you can see signs now, use <i>going to</i>: <i>Look at those clouds! It's going to rain.</i> If it is your opinion or guess, use <i>will</i>: <i>I think it will rain tomorrow.</i>`,
+  `<b>Time words:</b> tomorrow, tonight, next week / month / year, this weekend, soon, in two days.`
+ ],
+ ex:[[`I'm going to visit my grandmother on Sunday.`,`plan made before speaking`],[`Are you going to study tonight? — No, I'm not.`,`question and short answer`],[`I'll carry your bag. — Thanks!`,`offer made at the moment of speaking`],[`I think the exam will be difficult.`,`opinion about the future`],[`It's going to snow. Look at the sky!`,`we can see signs now`]],
+ vocab:[[`plan`,`something you decide to do`],[`tomorrow`,`the day after today`],[`next week`,`the week after this week`],[`promise`,`to say that you will definitely do something`],[`maybe`,`perhaps; it is possible`],[`soon`,`in a short time`]],
+ reading:{title:`Plans for the summer`, text:`Next month school finishes, and Nodira has a lot of plans. First, she is going to visit her cousins in Khiva for two weeks. Her uncle is going to show them the old city. After that she is going to learn to swim, because she can't swim yet. In August her family is going to paint the house together. Nodira says, "I think it will be hot, so I'll take a hat!" She isn't going to waste the summer on her phone.`,
+  qs:[Q(`How long is Nodira going to stay in Khiva?`,[`Two weeks.`,`One month.`,`Two days.`],0,`"She is going to visit her cousins in Khiva for two weeks."`),
+      Q(`Why is she going to learn to swim?`,[`She can't swim yet.`,`She loves the sea.`,`Her cousin is a swimmer.`],0,`"She is going to learn to swim, because she can't swim yet."`),
+      Q(`What is the family going to do in August?`,[`Paint the house.`,`Visit Khiva.`,`Learn to swim.`],0,`"In August her family is going to paint the house together."`)]},
+ listening:{title:`Weekend plans`, script:`A: What are you going to do this weekend, Rustam?
+B: I'm going to visit my grandfather on Saturday. We're going to fix his old bike.
+A: Sounds fun. And on Sunday?
+B: I don't know yet. Maybe I'll watch a football match. Oh, wait. My mum says it will rain on Sunday, so I'll stay at home.
+A: OK. I'll call you on Sunday evening!`,
+  qs:[Q(`What is Rustam going to do on Saturday?`,[`Fix a bike with his grandfather.`,`Play football.`,`Visit a museum.`],0,`"I'm going to visit my grandfather on Saturday. We're going to fix his old bike."`),
+      Q(`Why will Rustam probably stay at home on Sunday?`,[`It will rain.`,`He is tired.`,`He has homework.`],0,`"My mum says it will rain on Sunday, so I'll stay at home."`),
+      Q(`When will his friend call him?`,[`On Sunday evening.`,`On Saturday morning.`,`On Saturday evening.`],0,`"I'll call you on Sunday evening!"`)]},
+ speak:[[`Tell a partner about your plans for next weekend. Use going to.`,`I'm going to ... Then I'm going to ... I'm not going to ...`],[`Make three predictions about next year, using will.`,`I think ... will ... Maybe ... won't ...`],[`Offer to help your partner with something (a bag, homework). Use I'll.`,`I'll carry that for you. I'll help you with your homework.`]]},
+
+{t:`The city and directions`, m:`30 min · speaking`,
+ e2:[
+  `<b>Places in a city:</b> bank, bus stop, station, pharmacy, post office, museum, supermarket, park. <b>Prepositions:</b> opposite, next to, between, behind, in front of, on the corner of.`,
+  `<b>Giving directions</b> uses short commands: <i>Go straight on. Turn left / right. Take the second street on the right. Cross the road. Go past the school</i> (= walk by it, without going in). Distance: <i>It's about five minutes on foot.</i>`,
+  `<b>Politeness:</b> start with <i>Excuse me</i>, then ask: <i>Is there a bank near here? How do I get to the station?</i> At the end say <i>Thank you very much!</i> — <i>You're welcome.</i>`
+ ],
+ ex:[[`Excuse me, is there a pharmacy near here?`,`asking about places`],[`Go straight on and take the second street on the right.`,`second = 2nd`],[`The museum is opposite the park.`,`opposite = across from`],[`Go past the school and turn left.`,`go past = walk by`],[`It's about five minutes on foot.`,`on foot = walking`]],
+ vocab:[[`bus stop`,`a place where a bus stops`],[`pharmacy`,`a shop where you buy medicine`],[`post office`,`a place to send letters`],[`cross`,`to go from one side of the road to the other`],[`corner`,`the place where two streets meet`],[`on foot`,`walking`]],
+ reading:{title:`A visitor in Tashkent`, text:`Emma is a tourist in Tashkent. She wants to go to the museum, but she can't find it. She asks a woman, "Excuse me, how do I get to the museum?" The woman says, "Go straight on and take the second street on the right. Go past the bank. The museum is opposite the park, next to a small cafe. It's about ten minutes on foot." Emma says, "Thank you very much!" The woman says, "You're welcome. Have a nice day!"`,
+  qs:[Q(`Where does Emma want to go?`,[`To the museum.`,`To the bank.`,`To the park.`],0,`"She wants to go to the museum."`),
+      Q(`Where is the museum?`,[`Opposite the park.`,`Next to the bank.`,`Behind the cafe.`],0,`"The museum is opposite the park, next to a small cafe." The bank is something Emma goes past.`),
+      Q(`How long does it take on foot?`,[`About ten minutes.`,`About two minutes.`,`About an hour.`],0,`"It's about ten minutes on foot."`)]},
+ listening:{title:`Which way is the post office?`, script:`A: Excuse me. Is there a post office near here?
+B: Yes, there is. Go straight on and turn left at the traffic lights.
+A: Left at the lights. OK.
+B: Then go past the bank. The post office is on the corner, next to the pharmacy.
+A: Is it far?
+B: No, it's only five minutes on foot.
+A: Thank you very much!`,
+  qs:[Q(`Where must the man turn left?`,[`At the traffic lights.`,`At the bank.`,`At the pharmacy.`],0,`"Go straight on and turn left at the traffic lights."`),
+      Q(`Where is the post office?`,[`On the corner, next to the pharmacy.`,`Opposite the bank.`,`Behind the station.`],0,`"The post office is on the corner, next to the pharmacy."`),
+      Q(`How far is it?`,[`Five minutes on foot.`,`Ten minutes by bus.`,`Twenty minutes on foot.`],0,`"It's only five minutes on foot."`)]},
+ speak:[[`Ask a partner for directions to a place in your town. Then give directions back.`,`Excuse me, how do I get to ...? Go straight on. Turn left / right at ...`],[`Describe where your school (or home) is.`,`It's next to ... It's opposite ... It's between ... and ...`],[`Tell a visitor how to get from your school to the nearest bus stop.`,`Go out of the school and turn ... It's about ... minutes on foot.`]]},
+
+{t:`Shopping and prices`, m:`35 min · vocabulary`,
+ e2:[
+  `<b>Superlatives:</b> short adjectives take <i>the + -est</i> (cheap → the cheapest), long adjectives take <i>the most</i> (the most expensive). Spelling: big → bigger → the biggest (double the consonant); easy → easier → the easiest. Irregular: good → better → the best; bad → worse → the worst.`,
+  `<b>Prices:</b> <i>How much is this shirt? How much are these jeans?</i> (jeans, shoes and trousers are plural, so we use <i>are</i>). Answer: <i>It's eighty thousand sum. They're one hundred and twenty thousand.</i>`,
+  `<b>In a shop:</b> <i>Can I try it on? Do you have it in another colour? Can I pay by card? Here's your change.</i> If something costs too much: <i>That's too expensive.</i>`
+ ],
+ ex:[[`This jacket is cheaper than that one.`,`short adjective + -er + than`],[`These shoes are more comfortable than my old ones.`,`long adjective: more + adjective`],[`It's the most expensive phone in the shop.`,`the most + long adjective`],[`How much are these jeans? — They're 120,000 sum.`,`jeans = plural → are`],[`Can I try it on? — Of course. The changing room is over there.`,`try on = test clothes`]],
+ vocab:[[`size`,`how big or small clothes are (S, M, L)`],[`change`,`money you get back after paying`],[`discount`,`a lower price`],[`cheap / expensive`,`low price / high price`],[`try on`,`to put on clothes to see if they fit`],[`pay by card`,`to pay with a bank card`]],
+ reading:{title:`Shopping for a coat`, text:`Sardor wants a new winter coat. In the first shop the coats are very expensive. A black coat costs 900,000 sum, and that is too much for him. In the second shop he finds a grey coat. It is cheaper than the black one, and it costs 600,000 sum. The shop assistant says, "This is the best price today." Sardor tries on the coat. It fits well. He says, "I'll take this one," and pays by card.`,
+  qs:[Q(`Why doesn't Sardor buy the black coat?`,[`It is too expensive.`,`It is too small.`,`He doesn't like grey.`],0,`"A black coat costs 900,000 sum, and that is too much for him."`),
+      Q(`How much is the grey coat?`,[`600,000 sum.`,`900,000 sum.`,`500,000 sum.`],0,`"It costs 600,000 sum." The black coat costs 900,000.`),
+      Q(`How does Sardor pay?`,[`By card.`,`In cash.`,`He doesn't pay.`],0,`"He says, 'I'll take this one,' and pays by card."`)]},
+ listening:{title:`In a clothes shop`, script:`A: Hello. Can I help you?
+B: Yes, please. How much is this blue shirt?
+A: It's eighty thousand sum.
+B: Hmm, that's a bit expensive. Do you have it in a smaller size?
+A: Yes, we do. Here you are. You can try it on over there.
+B: Thanks. ... It fits well. I'll take it. Can I pay by card?
+A: Of course.`,
+  qs:[Q(`How much is the shirt?`,[`80,000 sum.`,`18,000 sum.`,`800,000 sum.`],0,`"Eighty thousand sum" is 80,000 (not eighteen, 18,000).`),
+      Q(`What does the customer ask for?`,[`A smaller size.`,`Another colour.`,`A cheaper shirt.`],0,`"Do you have it in a smaller size?"`),
+      Q(`How does the customer want to pay?`,[`By card.`,`In cash.`,`He doesn't want to pay.`],0,`"Can I pay by card?"`)]},
+ speak:[[`Role-play: you are in a shop. Ask the price, ask for another size and decide to buy.`,`How much is ...? Do you have it in ...? I'll take it.`],[`Compare two things you own (phones, bags). Say which is cheaper or better.`,`... is cheaper / more expensive than ... I think ... is the best.`],[`Tell a partner about something good you bought.`,`I bought ... It was ... It cost ... I like it because ...`]]}
+];
+
+/* ===== B1 + B2 ===== */
+ENRICH.B1 = [
+{t:`Present Perfect vs Past Simple`, m:`40 min · grammar`,
+ e2:[
+  `<b>Form.</b> Present Perfect = <i>have / has + past participle</i>: <i>I have finished. She has lived here for ten years. Have you ever been to Japan?</i> Past Simple = the finished past with a stated time: <i>I finished at six. She moved here in 2016. Did you go to Japan last year?</i>`,
+  `<b>Signal words.</b> Present Perfect: <i>ever, never, already, yet, just, so far, for, since, this week</i>. Past Simple: <i>yesterday, last year, in 2019, two hours ago, when I was young</i>. <i>For</i> = how long (for three years); <i>since</i> = from when (since 2021).`,
+  `<b>Main idea.</b> Present Perfect connects the past with now (the result or the experience is important now). Past Simple tells a finished story. Compare: <i>I've lost my keys</i> (I still don't have them) / <i>I lost my keys yesterday</i> (and perhaps I found them).`
+ ],
+ ex:[[`I've known Ali since 2018.`,`since + starting point`],[`We've lived here for five years.`,`for + period`],[`Have you finished your homework yet? — Yes, I've just done it.`,`yet / just`],[`I saw that film last week.`,`finished time → Past Simple`],[`She has never been abroad.`,`life experience → Present Perfect`]],
+ vocab:[[`experience`,`something you have done or seen in your life`],[`already`,`before now, sooner than expected`],[`so far`,`until now`],[`recently`,`not long ago`],[`achievement`,`something good that you have done`]],
+ reading:{title:`A year abroad`, text:`Malika has been in Canada for six months. She went there in March to study English. So far she has made many new friends and she has visited Toronto twice. Last week she tried ice hockey for the first time, and she loved it. She hasn't seen her family since she left, but she has called them every Sunday. She has already decided to stay another six months, because her English has improved a lot.`,
+  qs:[Q(`How long has Malika been in Canada?`,[`Six months.`,`Six weeks.`,`Two years.`],0,`"Malika has been in Canada for six months."`),
+      Q(`What did she try last week?`,[`Ice hockey.`,`A new language.`,`A trip to Toronto.`],0,`"Last week she tried ice hockey for the first time." The trips to Toronto are described with has visited.`),
+      Q(`Why has she decided to stay longer?`,[`Her English has improved a lot.`,`Her family wants it.`,`She has found a job.`],0,`"...because her English has improved a lot."`)]},
+ listening:{title:`Have you ever...?`, script:`A: Have you ever been to London, Bek?
+B: Yes, I have. I went there in 2022 with my school.
+A: Really? How long did you stay?
+B: Only four days. But I've wanted to go back ever since. And you?
+A: No, I've never been abroad. But I've just got my first passport!
+B: That's great. Where are you going to go first?`,
+  qs:[Q(`When did Bek go to London?`,[`In 2022.`,`Last month.`,`He has never been.`],0,`"I went there in 2022" is a finished time, so Past Simple.`),
+      Q(`How long did Bek stay?`,[`Four days.`,`Four weeks.`,`Four months.`],0,`"Only four days."`),
+      Q(`What has the other speaker just got?`,[`A passport.`,`A ticket.`,`A visa.`],0,`"I've just got my first passport!"`)]},
+ speak:[[`Tell a partner three things you have done in your life and one you have never done.`,`I've (visited / tried) ... I've never ...`],[`Ask your partner: Have you ever...? Then ask a follow-up question in Past Simple.`,`Have you ever ...? When did you ...? What was it like?`],[`Say how long you have lived in your town and studied English.`,`I've lived here for ... I've studied English since ...`]]},
+
+{t:`Work and job interviews`, m:`40 min · speaking`,
+ e2:[
+  `<b>Typical questions.</b> <i>Tell me about yourself. Why do you want this job? What are your strengths and weaknesses? Where do you see yourself in five years? Do you have any questions for us?</i>`,
+  `<b>Useful language.</b> Strengths: <i>I'm hard-working, reliable and good at working in a team.</i> Experience: <i>I have three years' experience in sales. I worked as a waiter for a year.</i> Skills: <i>I'm able to / I'm good at ...</i> Be honest about weaknesses and add what you do about them: <i>I sometimes work too slowly, so I make a list every morning.</i>`,
+  `<b>Style.</b> Greet with a handshake and eye contact. Say <i>Thank you for inviting me</i>. Use polite forms (<i>I'd like to ..., I would be happy to ...</i>) and give examples, not only adjectives.`
+ ],
+ ex:[[`I have two years' experience as a sales assistant.`,`experience in / as`],[`I'm good at solving problems and working in a team.`,`good at + -ing`],[`I'd like to develop my skills in marketing.`,`I'd like to = polite`],[`My biggest weakness is that I'm shy, but I'm working on it.`,`weakness + what you do`],[`What does the job involve?`,`question for the employer`]],
+ vocab:[[`candidate`,`a person who applies for a job`],[`CV (résumé)`,`a document about your education and work`],[`salary`,`money you get for your work`],[`skills`,`things you can do well`],[`reliable`,`people can trust you`],[`apply for`,`to ask formally for a job`]],
+ reading:{title:`The interview`, text:`Aziza is applying for a job as a tour guide. At the interview the manager asks, "Why do you want this job?" Aziza says, "I love history, and I enjoy meeting people from different countries." The manager asks about her experience. She has worked as a volunteer guide for two summers and speaks three languages. Her weakness, she admits, is that she gets nervous in front of big groups, so she has joined a public speaking club. At the end the manager says, "We'll call you on Friday."`,
+  qs:[Q(`What job is Aziza applying for?`,[`Tour guide.`,`Teacher.`,`Manager.`],0,`"Aziza is applying for a job as a tour guide."`),
+      Q(`What is her weakness?`,[`She gets nervous in front of big groups.`,`She doesn't speak languages.`,`She is often late.`],0,`"...she gets nervous in front of big groups."`),
+      Q(`What is she doing about it?`,[`She has joined a public speaking club.`,`She is changing her job.`,`She is ignoring it.`],0,`"...so she has joined a public speaking club."`)]},
+ listening:{title:`A phone call about a job`, script:`A: Good morning. I'm calling about the sales assistant job.
+B: Good morning. Yes, we're still looking for someone. Do you have any experience?
+A: Yes, I worked in a shop for two years. I'm good at talking to customers.
+B: Excellent. Can you come for an interview on Thursday at ten?
+A: Yes, of course. Should I bring my CV?
+B: Please do. And bring a copy of your certificate.`,
+  qs:[Q(`How much experience does the caller have?`,[`Two years.`,`Ten years.`,`None.`],0,`"I worked in a shop for two years."`),
+      Q(`When is the interview?`,[`Thursday at ten.`,`Tuesday at two.`,`Friday at ten.`],0,`"Can you come for an interview on Thursday at ten?"`),
+      Q(`What must the caller bring?`,[`A CV and a copy of a certificate.`,`Only a photo.`,`A letter from a teacher.`],0,`"Please do. And bring a copy of your certificate."`)]},
+ speak:[[`Role-play an interview: one is the manager, one is the candidate. Ask and answer three questions.`,`Tell me about yourself. I'm good at ... I have experience in ...`],[`Talk about your strengths and a weakness, with an example.`,`My main strength is ... For example, ... My weakness is ..., but I ...`],[`Say what job you would like in the future and why.`,`I'd like to be a ... because ... To do this I need ...`]]},
+
+{t:`Opinions and arguments`, m:`35 min · speaking`,
+ e2:[
+  `<b>Giving an opinion:</b> <i>In my opinion... / I think... / As far as I'm concerned... / I believe that...</i> <b>Agreeing:</b> <i>I agree. / That's true. / Exactly!</i> <b>Disagreeing politely:</b> <i>I see what you mean, but... / I'm afraid I don't agree. / That's a good point, however...</i>`,
+  `<b>Giving reasons and examples:</b> <i>because, since, for example, for instance, such as</i>. <b>Contrast:</b> <i>but, however, although, on the other hand</i>: <i>Although it is expensive, it is worth it.</i>`,
+  `<b>Structure of an argument:</b> 1) opinion, 2) reason, 3) example, 4) conclusion. Avoid "You are wrong!" — attack the idea, not the person.`
+ ],
+ ex:[[`In my opinion, students should wear uniforms.`,`giving an opinion`],[`I see what you mean, but I'm afraid I don't agree.`,`polite disagreement`],[`Although online lessons are convenient, they can be lonely.`,`although + contrast`],[`For example, many people study better in groups.`,`for example`],[`On the other hand, it saves a lot of time.`,`other side of the argument`]],
+ vocab:[[`argument`,`a reason for or against something`],[`opinion`,`what you think about something`],[`convince`,`to make someone believe something`],[`advantage / disadvantage`,`good / bad point`],[`point of view`,`a way of thinking about something`]],
+ reading:{title:`Should phones be banned in class?`, text:`Many teachers say that mobile phones should be banned in class. In their opinion, phones distract students and make them forget the lesson. However, some students argue that phones are useful. For example, they can use a dictionary or take a photo of the board. On the other hand, a recent school survey shows that students who put their phones in a box learn faster. The headteacher believes that the best solution is a compromise: phones are allowed only when the teacher asks for them.`,
+  qs:[Q(`Why do some teachers want to ban phones?`,[`Phones distract students.`,`Phones are expensive.`,`Phones break easily.`],0,`"...phones distract students and make them forget the lesson."`),
+      Q(`What does the survey show?`,[`Students without phones learn faster.`,`Phones help everyone learn.`,`Nothing about phones.`],0,`"...students who put their phones in a box learn faster."`),
+      Q(`What does the headteacher suggest?`,[`A compromise.`,`A total ban.`,`Phones at all times.`],0,`"...the best solution is a compromise."`)]},
+ listening:{title:`A friendly debate`, script:`A: I think everyone should learn a second language at school.
+B: I see what you mean, but I'm not sure. Some students find it really difficult.
+A: That's true, but it's good for your career. For example, many companies want people who speak English.
+B: Good point. Although it's hard, I agree it's useful. Maybe schools should offer more help.
+A: Exactly! Then everyone can succeed.`,
+  qs:[Q(`What is the first speaker's opinion?`,[`Everyone should learn a second language.`,`Languages are too difficult.`,`Schools should stop teaching English.`],0,`"I think everyone should learn a second language at school."`),
+      Q(`What example does the first speaker give?`,[`Companies want people who speak English.`,`Students enjoy it.`,`It is easy to learn.`],0,`"...many companies want people who speak English."`),
+      Q(`At the end, the speakers...`,[`mostly agree.`,`argue angrily.`,`change the topic.`],0,`"Good point... I agree it's useful." / "Exactly!"`)]},
+ speak:[[`Choose a topic (school uniforms, social media, homework). Give your opinion, one reason and one example.`,`In my opinion... because... For example...`],[`Disagree politely with a partner's opinion and give a reason.`,`I see what you mean, but... I'm afraid I don't agree because...`],[`Give one advantage and one disadvantage of studying online.`,`One advantage is... On the other hand, ...`]]},
+
+{t:`Travel: telling a story`, m:`35 min · speaking`,
+ e2:[
+  `<b>Narrative tenses.</b> <i>Past Simple</i> moves the story forward (<i>We arrived. We checked in.</i>), <i>Past Continuous</i> sets the scene (<i>It was raining. People were waiting.</i>), <i>Past Perfect</i> shows what happened earlier (<i>When we arrived, the train had already left.</i>).`,
+  `<b>Linking words:</b> <i>first, then, after that, suddenly, meanwhile, in the end, finally</i>. <i>While</i> + continuous (while we were walking), <i>when</i> + short action (when the phone rang).`,
+  `<b>Telling a travel story:</b> 1) where and when, 2) what you expected, 3) the problem or surprise, 4) what happened in the end, 5) how you felt.`
+ ],
+ ex:[[`We were waiting at the station when it started to rain.`,`continuous + simple`],[`When we arrived, the train had already left.`,`earlier action → Past Perfect`],[`First we visited the old town. Then we had lunch.`,`sequence words`],[`Suddenly, I realised I had lost my passport.`,`suddenly + simple`],[`In the end, everything was fine.`,`ending the story`]],
+ vocab:[[`journey`,`a trip from one place to another`],[`luggage`,`bags you take on a trip`],[`delay`,`when something is late`],[`sightseeing`,`visiting famous places`],[`miss (a train)`,`to arrive too late for it`]],
+ reading:{title:`The missed train`, text:`Last summer Farhod went to Bukhara by train. While he was reading on the platform, his train left, and he realised he had looked at the wrong time on his ticket. At first he felt terrible. Then a friendly station worker told him about a later train, and Farhod bought a new ticket. In the end he arrived in Bukhara four hours late, but he had a lovely evening in the old town and met two travellers from Italy.`,
+  qs:[Q(`Why did Farhod miss his train?`,[`He looked at the wrong time on his ticket.`,`He lost his ticket.`,`The train was cancelled.`],0,`"...he had looked at the wrong time on his ticket."`),
+      Q(`Who helped him?`,[`A station worker.`,`A taxi driver.`,`Two Italians.`],0,`"...a friendly station worker told him about a later train."`),
+      Q(`How late did he arrive?`,[`Four hours.`,`One hour.`,`The next day.`],0,`"...he arrived in Bukhara four hours late."`)]},
+ listening:{title:`Trip to the mountains`, script:`A: How was your trip to the mountains, Nigora?
+B: It was great, but a bit crazy. While we were driving, the car broke down.
+A: Oh no! What did you do?
+B: We waited for two hours. Then a farmer stopped and helped us. When we finally arrived, the hotel had already given our room to someone else!
+A: Seriously? What happened in the end?
+B: They found us a lovely room with a view. It was even better.`,
+  qs:[Q(`What happened while they were driving?`,[`The car broke down.`,`They got lost.`,`It started to snow.`],0,`"While we were driving, the car broke down."`),
+      Q(`Who helped them?`,[`A farmer.`,`A policeman.`,`A mechanic.`],0,`"...a farmer stopped and helped us."`),
+      Q(`What was the problem at the hotel?`,[`Their room had been given to someone else.`,`The hotel was closed.`,`The hotel was very expensive.`],0,`"...the hotel had already given our room to someone else!"`)]},
+ speak:[[`Tell a partner about a trip (real or imaginary) with a problem. Use Past Simple, Past Continuous and Past Perfect.`,`Last summer I... While I was ..., ... When I arrived, ... had already...`],[`Ask your partner: Where did you go? What went wrong? How did it end?`,`Where did you go? What happened? How did you feel?`],[`Give a short travel tip based on your story.`,`Next time I'll ... My advice is to ...`]]}
+];
+
+ENRICH.B2 = [
+{t:`Conditionals 0–3`, m:`40 min · grammar`,
+ e2:[
+  `<b>Zero:</b> <i>If + present, present</i> (general truths): <i>If you heat ice, it melts.</i> <b>First:</b> <i>If + present, will + base</i> (real future): <i>If it rains, we'll stay at home.</i> <b>Second:</b> <i>If + past, would + base</i> (unreal present or future): <i>If I had more time, I would learn French.</i> <b>Third:</b> <i>If + past perfect, would have + past participle</i> (unreal past): <i>If I had studied, I would have passed.</i>`,
+  `<b>Details.</b> In the second conditional we often say <i>If I were you...</i> for advice. <i>Unless</i> = if not. <i>Will / would</i> are not used in the if-clause. Mixed conditionals link times: <i>If I had taken the job, I would be living in Dubai now.</i>`,
+  `<b>Meaning check.</b> Ask: is it a fact (0), a real possibility (1), an imagined situation now (2), or an imagined past that cannot change (3)? The form follows the meaning.`
+ ],
+ ex:[[`If you mix red and blue, you get purple.`,`zero: always true`],[`If it snows tomorrow, we'll cancel the match.`,`first: real possibility`],[`If I were you, I would talk to the manager.`,`second: advice`],[`If she had left earlier, she wouldn't have missed the bus.`,`third: unreal past`],[`Unless you hurry, you'll be late.`,`unless = if ... not`]],
+ vocab:[[`unless`,`if not`],[`provided that`,`only if (a condition)`],[`regret`,`to feel sorry about the past`],[`hypothetical`,`imagined, not real`],[`consequence`,`a result of an action`]],
+ reading:{title:`If only...`, text:`Dilshod often thinks about what might have been. If he had studied harder at school, he would have got into a better university. If he had got into a better university, he might have found a different job. But he tries not to feel sad. "If I could change the past, I would," he says, "but I can't. If I work hard now, I'll have a better future." This year he has started evening classes. Unless something unexpected happens, he'll finish his course in June.`,
+  qs:[Q(`What does Dilshod regret?`,[`Not studying harder at school.`,`Leaving his job.`,`Moving to another city.`],0,`"If he had studied harder at school..." — a third-conditional regret.`),
+      Q(`Which sentence is a REAL possibility for the future?`,[`If I work hard now, I'll have a better future.`,`If I could change the past, I would.`,`If he had studied harder, he would have got in.`],0,`First conditional (if + present, will) = real future. The other two are unreal.`),
+      Q(`When will he finish his course?`,[`In June, unless something unexpected happens.`,`Next week.`,`He has stopped the course.`],0,`"Unless something unexpected happens, he'll finish his course in June."`)]},
+ listening:{title:`What would you do?`, script:`A: If you won a million dollars, what would you do?
+B: I'd buy a house for my parents, and I'd travel round the world. What about you?
+A: I think I'd open a small school. If I had enough money, I'd help children in villages.
+B: That's a lovely idea. If I had known you wanted that, I would have given you my lottery ticket!
+A: Ha! Well, if it wins, I'll let you know.`,
+  qs:[Q(`What would speaker B do with a million dollars?`,[`Buy a house for his parents and travel.`,`Open a school.`,`Save it all.`],0,`"I'd buy a house for my parents, and I'd travel round the world."`),
+      Q(`What would speaker A do?`,[`Open a small school.`,`Buy a car.`,`Stop working.`],0,`"I think I'd open a small school."`),
+      Q(`Which type of conditional is "If I had known, I would have given you my ticket"?`,[`Third conditional.`,`Second conditional.`,`First conditional.`],0,`If + past perfect, would have + past participle = third conditional (unreal past).`)]},
+ speak:[[`Tell a partner what you would do if you could live anywhere (second conditional).`,`If I could live anywhere, I would... because...`],[`Talk about something in the past you would do differently (third conditional).`,`If I had..., I would have... I regret...`],[`Give advice to a friend with a problem using If I were you...`,`If I were you, I'd... You could also...`]]},
+
+{t:`Discussion: technology and society`, m:`40 min · speaking`,
+ e2:[
+  `<b>Vocabulary for the topic:</b> <i>artificial intelligence, privacy, automation, addiction, digital divide, social media, surveillance, innovation</i>. Collocations: <i>raise awareness, bring benefits, pose a threat, keep up with technology</i>.`,
+  `<b>Structure a discussion:</b> state the issue → give a balanced view (<i>Some people argue that..., while others believe...</i>) → support with evidence (<i>research shows that..., according to...</i>) → give your conclusion (<i>On balance, I think...</i>).`,
+  `<b>Hedging</b> sounds more thoughtful: <i>It seems that..., This could lead to..., It may be that...</i> Avoid absolute claims such as "Everybody" or "Nobody".`
+ ],
+ ex:[[`Some people argue that AI will take over many jobs, while others believe it will create new ones.`,`balanced view`],[`Research shows that teenagers spend four hours a day online.`,`evidence`],[`This could pose a threat to our privacy.`,`hedging + collocation`],[`On balance, the benefits seem to outweigh the risks.`,`conclusion`],[`We need to keep up with technology.`,`collocation`]],
+ vocab:[[`privacy`,`being free from public attention or surveillance`],[`automation`,`using machines to do work`],[`digital divide`,`gap between those with and without technology`],[`addiction`,`being unable to stop doing something`],[`outweigh`,`to be more important than`]],
+ reading:{title:`Smart cities`, text:`More and more cities are using sensors and data to manage traffic, energy and waste. Supporters argue that smart cities are cleaner and more efficient. For instance, smart traffic lights can reduce jams by up to 20 per cent. Critics, however, warn about privacy: cameras and sensors collect huge amounts of personal data, and it is not always clear who owns it. There is also a risk that poorer areas will be left behind. On balance, experts suggest that technology can help, provided that citizens are involved in the decisions.`,
+  qs:[Q(`What do supporters say about smart cities?`,[`They are cleaner and more efficient.`,`They are cheaper to build.`,`They remove all traffic.`],0,`"Supporters argue that smart cities are cleaner and more efficient."`),
+      Q(`What worry do critics have?`,[`Privacy and unclear data ownership.`,`Too many trees.`,`Low internet speed.`],0,`"...warn about privacy..."`),
+      Q(`What condition do experts give?`,[`Citizens must be involved in decisions.`,`Cities must be small.`,`Cameras must be removed.`],0,`"...provided that citizens are involved in the decisions."`)]},
+ listening:{title:`A radio discussion`, script:`Host: Today we are discussing social media and teenagers. Dr Karimova, is it harmful?
+Dr K: It's not that simple. Some research suggests that heavy use can affect sleep and concentration. On the other hand, social media helps young people stay in touch and share ideas.
+Host: So what is your advice?
+Dr K: Balance. Parents and teenagers should agree on screen-free times, for instance during meals and one hour before bed.`,
+  qs:[Q(`What problem does Dr Karimova mention?`,[`Effects on sleep and concentration.`,`High prices.`,`Lack of friends.`],0,`"...heavy use can affect sleep and concentration."`),
+      Q(`What benefit does she mention?`,[`Staying in touch and sharing ideas.`,`Free education.`,`Better grades.`],0,`"...social media helps young people stay in touch and share ideas."`),
+      Q(`What is her advice?`,[`Agree on screen-free times.`,`Ban all phones.`,`Use social media more.`],0,`"Balance... agree on screen-free times."`)]},
+ speak:[[`Discuss with a partner: "Does technology make our lives better?" Give two sides and a conclusion.`,`Some people argue... Others believe... On balance, I think...`],[`Present one piece of evidence or a real example about technology.`,`Research shows that... For instance...`],[`Talk about one technology you could not live without, and why.`,`I couldn't live without... because... It has changed my life by...`]]},
+
+{t:`Phrasal verbs in conversation`, m:`35 min · vocabulary`,
+ e2:[
+  `<b>Types.</b> Some phrasal verbs take no object (<i>The plane took off. Wake up!</i>). Some are <b>separable</b>: <i>turn off the light / turn the light off / turn it off</i> (a pronoun goes in the middle). Some are <b>inseparable</b>: <i>look after the children, look into a problem</i>.`,
+  `<b>Common ones:</b> give up (stop), carry on (continue), find out (discover), put off (delay), bring up (raise a topic / raise a child), run out of (have no more), get along with (have a good relationship), look forward to + -ing, come up with (think of an idea).`,
+  `<b>Learning tip.</b> Learn phrasal verbs in sentences and in groups by particle or topic, not as a long list. Many have a formal single-word equivalent: <i>put off = postpone, find out = discover, give up = abandon</i>.`
+ ],
+ ex:[[`I can't find out the answer. — I'll look it up.`,`look up = search`],[`Don't give up! Carry on.`,`give up / carry on`],[`We've run out of milk.`,`run out of + noun`],[`I'm looking forward to seeing you.`,`look forward to + -ing`],[`She came up with a great idea.`,`come up with = think of`]],
+ vocab:[[`give up`,`to stop trying`],[`put off`,`to delay`],[`get along with`,`to have a good relationship with`],[`bring up`,`to mention a topic`],[`come up with`,`to think of (an idea)`]],
+ reading:{title:`The project that nearly failed`, text:`Our team had to finish a big project in two weeks, but we ran out of time almost immediately. At first we put off the hard parts, and then we fell behind. Luckily, our leader, Kamila, came up with a plan. She told us not to give up and to carry on, one task at a time. We got along well, so we worked together late in the evenings. In the end we handed in the project on time. We are all looking forward to the holidays!`,
+  qs:[Q(`What does "put off" mean in the text?`,[`Delay.`,`Finish.`,`Cancel.`],0,`"put off the hard parts" = delayed them.`),
+      Q(`Who came up with a plan?`,[`Kamila.`,`The whole class.`,`The teacher.`],0,`"...our leader, Kamila, came up with a plan."`),
+      Q(`What does "carry on" mean?`,[`Continue.`,`Take away.`,`Move house.`],0,`"...not to give up and to carry on" = continue.`)]},
+ listening:{title:`Moving out`, script:`A: So, are you ready for the move?
+B: Almost. I've packed most things, but I've run out of boxes.
+A: I'll bring some tomorrow. Did you find out when the van is coming?
+B: Yes, I called them. They'll turn up at eight. I'm looking forward to the new flat, but I'll miss my old neighbours. We got along really well.
+A: You can always drop in and see them.`,
+  qs:[Q(`What problem does B have?`,[`B has run out of boxes.`,`B has lost the keys.`,`B can't find the van.`],0,`"I've run out of boxes."`),
+      Q(`What does "turn up" mean here?`,[`Arrive.`,`Turn round.`,`Increase the volume.`],0,`"They'll turn up at eight" = arrive.`),
+      Q(`How did B get on with the neighbours?`,[`Very well.`,`Badly.`,`B didn't know them.`],0,`"We got along really well."`)]},
+ speak:[[`Tell a partner about a project or exam. Use at least four phrasal verbs.`,`I had to... but I ran out of... In the end I came up with...`],[`Replace formal words with phrasal verbs (postpone, continue, discover) in your own sentences.`,`We put off the meeting. Let's carry on. I found out that...`],[`Describe a plan you are looking forward to.`,`I'm looking forward to... because...`]]},
+
+{t:`Small talk and polite nuances`, m:`35 min · speaking`,
+ e2:[
+  `<b>Starting and keeping small talk:</b> comment on the situation (<i>Lovely weather, isn't it?</i>), ask open questions (<i>How was your weekend? What brings you here?</i>), show interest (<i>Really? That sounds interesting!</i>), and ask follow-up questions.`,
+  `<b>Polite requests and softening:</b> <i>Could you possibly...? Would you mind + -ing? I was wondering if you could... Sorry to bother you, but...</i> A direct "Give me water" is rude; "Could I have some water, please?" is neutral; "Would you mind passing the water?" is more polite.`,
+  `<b>Polite refusals and bad news:</b> <i>I'd love to, but I'm afraid I can't. That's very kind of you, but... Unfortunately...</i> Avoid sensitive topics (salary, age, politics) with people you have just met.`
+ ],
+ ex:[[`Lovely weather, isn't it?`,`opening small talk`],[`Would you mind opening the window?`,`would you mind + -ing`],[`I was wondering if you could help me with this.`,`very polite`],[`I'd love to, but I'm afraid I can't make it.`,`polite refusal`],[`Really? That sounds fascinating. What did you do next?`,`showing interest`]],
+ vocab:[[`small talk`,`light, friendly conversation`],[`polite`,`showing good manners`],[`mind`,`to be annoyed by; Would you mind...?`],[`awkward silence`,`an uncomfortable pause`],[`hesitate`,`to pause before doing or saying something`]],
+ reading:{title:`The networking event`, text:`Samira went to a business event where she knew nobody. She felt nervous, but she decided to start a conversation. "Excuse me, would you mind if I joined you? I'm Samira." The woman smiled and said, "Of course! I'm Helen. What brings you here?" They talked about their jobs and the city. Later, a man asked Samira about her salary, and she answered politely, "I'd rather not say, but thank you for asking." At the end she exchanged cards with three people.`,
+  qs:[Q(`How did Samira start the conversation?`,[`By asking politely to join someone.`,`By talking about her salary.`,`By giving her business card first.`],0,`"Would you mind if I joined you? I'm Samira."`),
+      Q(`How did she respond about her salary?`,[`She refused politely.`,`She told him exactly.`,`She got angry.`],0,`"I'd rather not say, but thank you for asking."`),
+      Q(`How many people did she exchange cards with?`,[`Three.`,`Two.`,`Nobody.`],0,`"...she exchanged cards with three people."`)]},
+ listening:{title:`At a party`, script:`A: Hi, I don't think we've met. I'm David.
+B: Hello, David. I'm Leyla. Lovely party, isn't it?
+A: It is. How do you know the host?
+B: We work together. And you?
+A: We studied together years ago. Would you like something to drink?
+B: That's very kind of you, but I'm afraid I have to leave soon. It was really nice meeting you.`,
+  qs:[Q(`How do they meet?`,[`At a party.`,`At work.`,`At school.`],0,`"Lovely party, isn't it?"`),
+      Q(`How does Leyla know the host?`,[`They work together.`,`They studied together.`,`They are neighbours.`],0,`"We work together." David is the one who studied with the host.`),
+      Q(`How does Leyla refuse the drink?`,[`Politely: "That's very kind of you, but I'm afraid..."`,`Rudely: "No."`,`She doesn't answer.`],0,`"That's very kind of you, but I'm afraid I have to leave soon."`)]},
+ speak:[[`Start a small-talk conversation with a partner you "don't know" at an event.`,`Hi, I don't think we've met. What brings you here? Really? That sounds interesting.`],[`Make three polite requests with different levels of politeness.`,`Could you...? Would you mind...? I was wondering if you could...`],[`Politely refuse an invitation and give a reason.`,`That's very kind of you, but I'm afraid... I'd love to another time.`]]}
+];
+
+/* ===== C1 + C2 ===== */
+ENRICH.C1 = [
+{t:`Academic and Business English`, m:`45 min · writing & vocabulary`,
+ e2:[
+  `<b>Register.</b> Academic and business English is formal, precise and impersonal: <i>It is widely believed that..., The data suggest that..., We would appreciate it if you could...</i> Avoid contractions (<i>do not</i>), slang and vague words (<i>a lot of, stuff, things</i>).`,
+  `<b>Useful structures.</b> Nominalisation: <i>The company expanded rapidly → The rapid expansion of the company...</i> Passive for objectivity: <i>The survey was conducted in 2025.</i> Reporting verbs: <i>argue, claim, suggest, demonstrate, indicate</i> (note the difference: <i>claim</i> is cautious; <i>demonstrate</i> is strong).`,
+  `<b>Business writing.</b> Email openings: <i>I am writing to enquire about... / Further to our meeting...</i> Closings: <i>I look forward to hearing from you. / Please do not hesitate to contact me.</i> Make one request per paragraph and state the next step clearly.`
+ ],
+ ex:[[`The data suggest that demand will continue to grow.`,`hedged, impersonal`],[`The rapid expansion of the firm led to higher costs.`,`nominalisation`],[`I am writing to enquire about your pricing.`,`formal opening`],[`Further to our meeting, please find the report attached.`,`business email`],[`Several studies have indicated a link between sleep and memory.`,`reporting verb`]],
+ vocab:[[`assess`,`to judge or evaluate`],[`implement`,`to put a plan into action`],[`stakeholder`,`a person with an interest in a business`],[`feasible`,`possible to do`],[`substantial`,`large in amount or importance`],[`allocate`,`to give for a particular purpose`]],
+ reading:{title:`A proposal`, text:`The proposed scheme aims to reduce energy consumption in public buildings by 20 per cent over three years. A pilot study, conducted in six schools, indicates that simple measures, such as improved insulation and smart lighting, can yield substantial savings. However, it remains to be seen whether these results can be replicated on a larger scale. It is therefore recommended that funding be allocated in two phases, with a full assessment after the first.`,
+  qs:[Q(`What is the main purpose of the scheme?`,[`To cut energy use in public buildings.`,`To build new schools.`,`To raise taxes.`],0,`"...reduce energy consumption in public buildings by 20 per cent."`),
+      Q(`Why does the writer suggest two phases?`,[`The results may not be repeatable on a larger scale.`,`The money has run out.`,`The pilot failed.`],0,`"...it remains to be seen whether these results can be replicated on a larger scale."`),
+      Q(`Which feature makes the text formal?`,[`Passive and impersonal structures.`,`Slang and contractions.`,`Direct questions.`],0,`e.g. "it is therefore recommended that funding be allocated" — impersonal passive.`)]},
+ listening:{title:`A team meeting`, script:`A: Thank you all for coming. The purpose of today's meeting is to review the Q3 results.
+B: Overall, sales increased by eight per cent, which is slightly below our target.
+A: What accounts for the shortfall?
+B: Primarily the delay in launching the new product. Had it been released on schedule, we would have exceeded the target.
+A: Understood. Could you circulate a revised timeline by Friday?
+B: Certainly.`,
+  qs:[Q(`What was the result for Q3?`,[`Sales rose by 8%, slightly below target.`,`Sales exceeded the target.`,`Sales fell.`],0,`"sales increased by eight per cent, which is slightly below our target."`),
+      Q(`What caused the shortfall?`,[`The delay in launching a product.`,`A price rise.`,`Staff shortages.`],0,`"Primarily the delay in launching the new product."`),
+      Q(`What is B asked to do?`,[`Circulate a revised timeline by Friday.`,`Resign.`,`Cancel the product.`],0,`"Could you circulate a revised timeline by Friday?"`)]},
+ speak:[[`Present a short proposal (1 minute) using formal language: aim, method, expected result.`,`The aim of this proposal is to... It is recommended that... We expect...`],[`Summarise a report you have read, using reporting verbs.`,`The author argues that... The data indicate... It is claimed that...`],[`Rephrase a casual request as a formal one.`,`Could you possibly...? I would be grateful if you could...`]]},
+
+{t:`Idioms and Set Expressions`, m:`35 min · vocabulary`,
+ e2:[
+  `<b>What idioms are.</b> An idiom's meaning is not the sum of its words: <i>It's a piece of cake</i> = very easy. Most idioms are fixed, so do not change the words (not "a slice of cake").`,
+  `<b>Common groups.</b> Work and effort: <i>burn the midnight oil, hit the ground running, go the extra mile</i>. Difficulty: <i>a tough nut to crack, on thin ice</i>. Success and luck: <i>break the ice, hit the jackpot</i>. Caution: <i>the tip of the iceberg, cut corners</i>. Collocations (<i>heavy rain, make a decision</i>) and binomials (<i>pros and cons, sooner or later, more or less</i>) are also set expressions.`,
+  `<b>Using them well.</b> They suit informal and semi-formal speech. Do not overuse them: one or two natural idioms in a paragraph is enough. Check meaning and register in a good dictionary before you use a new one.`
+ ],
+ ex:[[`The exam was a piece of cake.`,`very easy`],[`We burned the midnight oil to finish the report.`,`worked late`],[`She broke the ice with a joke.`,`started a friendly atmosphere`],[`Those delays are just the tip of the iceberg.`,`a small visible part of a bigger problem`],[`Sooner or later you'll have to decide.`,`binomial: eventually`]],
+ vocab:[[`cut corners`,`to do something cheaply or badly to save time`],[`go the extra mile`,`to make more effort than expected`],[`on the same page`,`in agreement`],[`back to square one`,`back to the start`],[`a blessing in disguise`,`something that seems bad but turns out good`]],
+ reading:{title:`The new boss`, text:`When Karina became the manager, nobody knew what to expect. In the first week she broke the ice by bringing cakes to the meeting. She soon made it clear that she would not tolerate cutting corners, but she was also ready to go the extra mile for her team. When a big order was delayed, many feared they would be back to square one. In fact, it turned out to be a blessing in disguise: the team found a better supplier and saved money.`,
+  qs:[Q(`What does "break the ice" mean in the text?`,[`Make people relaxed at the start.`,`Break something.`,`Be rude.`],0,`She "broke the ice" by bringing cakes — created a friendly start.`),
+      Q(`What does "a blessing in disguise" mean?`,[`A bad thing that turned out well.`,`A secret gift.`,`A religious event.`],0,`The delay led to a better supplier.`),
+      Q(`What would Karina NOT tolerate?`,[`Cutting corners.`,`Working late.`,`Asking questions.`],0,`"...she would not tolerate cutting corners."`)]},
+ listening:{title:`Talking about the exam`, script:`A: How did the interview go?
+B: Honestly, it was a piece of cake. I'd burned the midnight oil all week, so I was well prepared.
+A: Great! Do you think you'll get the job?
+B: I hope so, but I won't count my chickens before they hatch. There are two other candidates.
+A: Fair enough. Fingers crossed!`,
+  qs:[Q(`How was the interview?`,[`Very easy.`,`Very difficult.`,`Cancelled.`],0,`"it was a piece of cake" = very easy.`),
+      Q(`How did B prepare?`,[`By working late all week.`,`Not at all.`,`By asking a friend.`],0,`"I'd burned the midnight oil all week."`),
+      Q(`What does "I won't count my chickens before they hatch" mean?`,[`I won't be sure of success too early.`,`I'll buy chickens.`,`I'm hungry.`],0,`It means: don't expect a result before it is certain.`)]},
+ speak:[[`Tell a story about a hard task. Use at least three idioms correctly.`,`It was a tough nut to crack, but... In the end... it was a blessing in disguise.`],[`Explain an idiom from your own language in English.`,`In my language we say... It means...`],[`Give advice using idioms.`,`My advice is to... Don't cut corners. It's better to go the extra mile.`]]},
+
+{t:`Debating Complex Topics`, m:`45 min · speaking`,
+ e2:[
+  `<b>Structure.</b> Opening: <i>The motion before us is... / I would like to argue that...</i>. Signposting: <i>Firstly... Secondly... Finally...</i>. Concession and rebuttal: <i>While it is true that..., this overlooks the fact that...</i>. Closing: <i>In conclusion, the evidence clearly shows...</i>`,
+  `<b>Evaluating arguments.</b> Look for evidence (<i>statistics, expert opinion, examples</i>), reasoning (<i>does it follow?</i>) and bias. Common fallacies: <i>straw man</i> (misrepresenting an opponent's view), <i>ad hominem</i> (attacking the person), <i>slippery slope</i> (claiming one step leads inevitably to disaster).`,
+  `<b>Tone.</b> Stay respectful: <i>With respect, I would challenge that claim. / That is a fair point; nevertheless...</i> Address the idea, never the person.`
+ ],
+ ex:[[`I would like to argue that remote work benefits employees.`,`opening`],[`While it is true that offices encourage teamwork, this overlooks the cost of commuting.`,`concession + rebuttal`],[`With respect, I would challenge that claim.`,`polite challenge`],[`Firstly, ... Secondly, ... Finally, ...`,`signposting`],[`That is a straw man: no one said we should abolish exams.`,`naming a fallacy`]],
+ vocab:[[`motion`,`the statement being debated`],[`rebuttal`,`a reply that shows an argument is wrong`],[`concede`,`to admit a point is true`],[`premise`,`a statement an argument is built on`],[`fallacy`,`a mistake in reasoning`]],
+ reading:{title:`A debate on nuclear energy`, text:`In the debate, the proposition argued that nuclear energy is essential for reducing carbon emissions. They pointed out that nuclear plants produce reliable power around the clock. The opposition conceded that emissions are low but argued that the waste problem remains unresolved and construction costs are very high. In rebuttal, the proposition said that modern reactors produce much less waste. The judges noted that the proposition had used more recent evidence, but the opposition had made the more persuasive point on cost.`,
+  qs:[Q(`What did the opposition concede?`,[`That emissions are low.`,`That waste is not a problem.`,`That costs are low.`],0,`"The opposition conceded that emissions are low..."`),
+      Q(`What did the proposition claim in rebuttal?`,[`Modern reactors produce much less waste.`,`Nuclear plants are cheap.`,`Waste doesn't matter.`],0,`"...modern reactors produce much less waste."`),
+      Q(`On which point was the opposition stronger?`,[`Cost.`,`Emissions.`,`Reliability.`],0,`"the opposition had made the more persuasive point on cost."`)]},
+ listening:{title:`A debate speech`, script:`Ladies and gentlemen, today I will argue that social media should be regulated more strictly. Firstly, platforms profit from our attention, and this encourages harmful content. Secondly, young people are particularly vulnerable. My opponent will say that regulation limits freedom. While that is a legitimate concern, freedom without safeguards is not freedom at all. In conclusion, sensible regulation protects both individuals and democracy.`,
+  qs:[Q(`What is the speaker's position?`,[`Social media should be regulated more.`,`Regulation should be removed.`,`Social media should be banned.`],0,`"social media should be regulated more strictly."`),
+      Q(`How does the speaker answer the objection about freedom?`,[`By conceding the concern but arguing that safeguards are needed.`,`By ignoring it.`,`By attacking the opponent personally.`],0,`"While that is a legitimate concern, freedom without safeguards is not freedom at all."`),
+      Q(`Which signposting words appear?`,[`Firstly, secondly, in conclusion.`,`First of all, by the way.`,`Anyway, so.`],0,`The speech uses "Firstly... Secondly... In conclusion..."`)]},
+ speak:[[`Prepare and deliver a 1-minute speech on a motion (e.g. "Homework should be abolished"). Use signposting.`,`I would like to argue that... Firstly... Secondly... In conclusion...`],[`Respond to your partner's argument: concede one point and rebut another.`,`While it is true that..., this overlooks...`],[`Identify a fallacy in a short argument you hear or read.`,`That is a straw man / slippery slope because...`]]},
+
+{t:`Nuances of Modal Verbs`, m:`40 min · grammar`,
+ e2:[
+  `<b>Degrees of certainty (present):</b> <i>must</i> (almost sure: He must be at work) > <i>should / ought to</i> (probable) > <i>may / might / could</i> (possible) > <i>can't</i> (impossible: She can't be serious).`,
+  `<b>Past:</b> <i>must / may / might / could / can't + have + past participle</i>: <i>He must have missed the bus. She may have forgotten. They can't have known.</i> Criticism and regret: <i>should have / shouldn't have + past participle</i>: <i>You should have called me.</i> <i>Needn't have</i> = did it but it was not necessary.`,
+  `<b>Other nuances.</b> <i>Would</i> for habits in the past (<i>We would play there every summer</i>) and <i>used to</i> for states and habits. <i>Be able to</i> for a specific past achievement (<i>I was able to finish</i>); <i>could</i> for general ability (<i>I could swim at five</i>). Politeness: <i>might</i> sounds more tentative than <i>may</i>.`
+ ],
+ ex:[[`He must be exhausted after the journey.`,`almost certain`],[`She can't have heard us.`,`it is impossible that she heard`],[`You should have told me earlier.`,`criticism`],[`We needn't have hurried — the train was late.`,`unnecessary action`],[`I was able to solve it in the end.`,`specific past success`]],
+ vocab:[[`certainty`,`being sure`],[`obligation`,`something you must do`],[`tentative`,`not certain; cautious`],[`speculate`,`to guess without full knowledge`],[`deduction`,`a conclusion from evidence`]],
+ reading:{title:`Who took the cake?`, text:`When Mrs Brown came home, the cake on the table had disappeared. "The dog can't have eaten it," she said, "because the door was closed." Her son must have been in the kitchen earlier, since there were crumbs on his chair. "He might have taken it to school," she thought, "but he shouldn't have taken it without asking." Later he explained that he had shared it with his friends. "You could have asked me," she said, smiling, "but I needn't have worried."`,
+  qs:[Q(`Why does Mrs Brown think the dog did NOT eat the cake?`,[`The door was closed.`,`The dog was ill.`,`The dog was at school.`],0,`"The dog can't have eaten it... because the door was closed."`),
+      Q(`What does "must have been" show?`,[`She is almost sure.`,`It is impossible.`,`It is only a small possibility.`],0,`"must have" = strong deduction.`),
+      Q(`What does "needn't have worried" mean?`,[`She worried, but it was unnecessary.`,`She didn't worry.`,`She wasn't allowed to worry.`],0,`"needn't have + past participle" = did something unnecessarily.`)]},
+ listening:{title:`Where is Tom?`, script:`A: Tom isn't answering his phone. He must be in a meeting.
+B: He can't be in a meeting. I saw him leave an hour ago.
+A: Then he may have gone to the gym. He might be on his way back.
+B: He should have told us. We needed him for the presentation.
+A: Well, we needn't have waited. Let's start without him.`,
+  qs:[Q(`Why does B say Tom can't be in a meeting?`,[`B saw him leave an hour ago.`,`The meeting was cancelled.`,`Tom hates meetings.`],0,`"I saw him leave an hour ago."`),
+      Q(`What does "should have told us" express?`,[`Criticism about the past.`,`A prediction.`,`A request for the future.`],0,`should have + past participle = criticism / regret.`),
+      Q(`What do they decide?`,[`To start without him.`,`To cancel.`,`To phone his mother.`],0,`"Let's start without him."`)]},
+ speak:[[`Speculate with a partner about a mystery (a closed shop, a late friend). Use must, might, can't + have.`,`It must have... It can't have... They might have...`],[`Tell a partner about something you should or shouldn't have done.`,`I should have... I shouldn't have... I needn't have...`],[`Make polite, tentative suggestions with might and could.`,`You might want to... We could try...`]]}
+];
+
+ENRICH.C2 = [
+{t:`Speech Registers: Formal vs Informal`, m:`40 min · vocabulary & style`,
+ e2:[
+  `<b>Register</b> is the level of formality that suits the situation, audience and purpose. Informal: <i>Sorry I'm late, got held up.</i> Neutral: <i>Sorry I'm late, I was delayed.</i> Formal: <i>I apologise for my late arrival; I was unavoidably detained.</i>`,
+  `<b>Markers.</b> Formal: Latin-origin words (<i>commence, purchase, inform</i>), passives, full forms, complex sentences, nominalisation. Informal: phrasal verbs (<i>start, buy, tell</i>), contractions, ellipsis (<i>Seen it?</i>), idioms, discourse markers (<i>you know, I mean</i>).`,
+  `<b>Skill at C2.</b> Shift register deliberately and consistently within a text. Mixing registers by accident (<i>Dear Sir, I'd like to complain about your rubbish service</i>) weakens the effect; mixing on purpose can create humour or irony.`
+ ],
+ ex:[[`We regret to inform you that your application has been unsuccessful.`,`formal letter`],[`Sorry, but we can't offer you the job.`,`informal / spoken`],[`I would be most grateful for your prompt reply.`,`very formal`],[`Could you get back to me asap?`,`informal / business casual`],[`Notwithstanding the delay, the project was completed.`,`formal connector`]],
+ vocab:[[`commence / begin / start`,`formal / neutral / informal`],[`purchase / buy / get`,`formal / neutral / informal`],[`ascertain / find out / work out`,`formal / neutral / informal`],[`notwithstanding`,`in spite of (formal)`],[`colloquial`,`typical of informal speech`]],
+ reading:{title:`Two notes`, text:`Note A: "Hi Sam, so sorry, I won't be able to make it tonight — something's come up at work. Hope you guys have a great time. Catch you next week!" Note B: "Dear Mr Reynolds, I regret to inform you that I shall be unable to attend this evening's event owing to an unforeseen professional commitment. Please convey my apologies to the other guests. I look forward to seeing you next week."`,
+  qs:[Q(`How would you describe Note A?`,[`Informal, to a friend.`,`Formal, to a stranger.`,`Academic.`],0,`Contractions, "Hi", "guys", "Catch you next week".`),
+      Q(`Which feature makes Note B formal?`,[`Full forms and complex vocabulary such as "owing to an unforeseen professional commitment".`,`Contractions.`,`Slang.`],0,`"I regret to inform you...", "shall", "owing to".`),
+      Q(`Which phrase from Note A matches "I regret to inform you that I shall be unable to attend"?`,[`I won't be able to make it.`,`Hope you have a great time.`,`Catch you next week.`],0,`Both mean the speaker cannot come.`)]},
+ listening:{title:`Same message, two voices`, script:`Speaker 1 (to a friend): Hey, just letting you know the meeting's been pushed back to three. Don't be late!
+Speaker 2 (to a client): Good afternoon. I should like to inform you that the meeting has been rescheduled for three o'clock. We would be grateful if you could arrive punctually.`,
+  qs:[Q(`What is the same in both messages?`,[`The meeting is at three.`,`The speakers' relationship.`,`The vocabulary.`],0,`Both state that the meeting is at three o'clock.`),
+      Q(`Which phrase is more formal?`,[`"We would be grateful if you could arrive punctually."`,`"Don't be late!"`,`"just letting you know"`],0,`It uses a polite conditional structure and formal vocabulary.`),
+      Q(`What does "pushed back" mean in speaker 1's message?`,[`Postponed.`,`Cancelled.`,`Moved earlier.`],0,`"pushed back to three" = rescheduled to a later time.`)]},
+ speak:[[`Say the same message (an apology) in three registers: to a friend, to a colleague, to a client.`,`Sorry! / I apologise for... / I would like to express my sincere regret for...`],[`Rewrite a very informal sentence in formal English aloud.`,`Instead of "get back to me" I would say "reply at your earliest convenience".`],[`Talk for one minute and deliberately keep one consistent register.`,`(Choose a register and keep it.)`]]},
+
+{t:`Humor, irony, subtext`, m:`40 min · reading & listening`,
+ e2:[
+  `<b>Types of humour.</b> Understatement: <i>It's a bit chilly</i> (at -20°C). Irony: saying the opposite of what you mean (<i>What lovely weather!</i> in a storm). Sarcasm: ironic remarks meant to hurt or mock. Dry humour: serious tone, no smile. Wordplay and puns exploit double meanings.`,
+  `<b>Subtext</b> is the meaning under the words. "That's an interesting idea" can mean "I disagree". Clues: tone, exaggeration, what is not said, the gap between words and situation, polite formulas with a cool tone.`,
+  `<b>Cultural note.</b> British humour often uses understatement and self-deprecation. Do not translate jokes word for word; learn the situation they belong to. If unsure whether someone is joking, ask lightly (<i>Are you serious?</i>) rather than answering literally.`
+ ],
+ ex:[[`"Oh, brilliant!" he said, as the bus drove past without stopping.`,`irony`],[`It's a bit of a squeeze, isn't it? (in a crowded lift)`,`understatement`],[`"I'd hardly call it a success," she said, looking at the empty hall.`,`dry understatement`],[`That's an interesting idea.`,`possible subtext: I don't like it`],[`I used to be a banker, but I lost interest.`,`pun on interest`]],
+ vocab:[[`irony`,`saying one thing and meaning the opposite`],[`understatement`,`saying something is less than it is`],[`subtext`,`the hidden meaning`],[`deadpan`,`serious tone to be funny`],[`self-deprecating`,`making fun of yourself`]],
+ reading:{title:`A polite complaint`, text:`The hotel manager asked whether everything was satisfactory. "Oh yes," replied Mr Carter, "I particularly enjoyed the way the shower produced no water at all. It was refreshingly minimalist." The manager coughed. "I'm so sorry, sir. We will look into it immediately." Mr Carter nodded. "How kind. I'd hate to trouble you, of course, given that I've only been waiting four days."`,
+  qs:[Q(`What does Mr Carter really mean by "refreshingly minimalist"?`,[`The shower did not work.`,`He liked the shower.`,`The room was small.`],0,`Irony: he is complaining.`),
+      Q(`What is the effect of "I'd hate to trouble you... only been waiting four days"?`,[`Ironic understatement that criticises the hotel.`,`A sincere thank-you.`,`A joke about prices.`],0,`Polite words hide a sharp criticism.`),
+      Q(`How does the manager respond?`,[`Embarrassed and apologetic.`,`Angry.`,`Confused about the language.`],0,`He coughs and apologises.`)]},
+ listening:{title:`Reading between the lines`, script:`A: So, what did you think of my presentation?
+B: Well, it was... certainly very long.
+A: Long?
+B: And very detailed. I particularly liked the way you didn't skip a single slide.
+A: Hm. I'll take that as a compliment.
+B: I'd say take it as an observation.`,
+  qs:[Q(`What is B's real opinion?`,[`The presentation was too long.`,`The presentation was perfect.`,`B didn't see it.`],0,`The subtext: too long and too detailed.`),
+      Q(`What is the effect of "I'd say take it as an observation"?`,[`It avoids a direct compliment and confirms the criticism.`,`It repeats the praise.`,`It changes the topic.`],0,`B declines to say it was a compliment, confirming the criticism.`),
+      Q(`Which technique does B use?`,[`Understatement and ironic politeness.`,`Direct insults.`,`Puns.`],0,`B stays polite but signals disapproval.`)]},
+ speak:[[`Say a sentence with irony, and explain the real meaning to your partner.`,`What I said was ironic: I meant... The clue is my tone.`],[`Retell a funny story using understatement.`,`It was a bit of a disaster, to be fair. It wasn't entirely ideal...`],[`Explain the subtext of "That's an interesting idea."`,`It might mean the speaker disagrees but is being polite.`]]},
+
+{t:`Public speaking`, m:`45 min · speaking`,
+ e2:[
+  `<b>Structure.</b> Hook (a question, a story, a surprising fact) → clear aim (<i>Today I want to show that...</i>) → 2–3 main points with signposts (<i>Let me turn to...</i>) → memorable conclusion (<i>So, if you remember one thing...</i>).`,
+  `<b>Rhetorical devices.</b> Rule of three (<i>veni, vidi, vici</i>), repetition (<i>We shall fight... We shall fight...</i>), rhetorical questions, contrast (<i>Ask not what your country can do for you...</i>), and vivid examples. Use pauses to let a point land.`,
+  `<b>Delivery.</b> Slow down; use pauses; vary pitch and volume; eye contact; use hand gestures with purpose; keep slides simple. Prepare for questions: <i>That's a good question. Let me address it...</i> If you lose your place, pause and breathe — silence feels longer to you than to the audience.`
+ ],
+ ex:[[`Let me begin with a question: what would you do if you had no internet for a week?`,`hook`],[`I will make three points. First... Second... Third...`,`rule of three`],[`This brings me to my second point.`,`signposting`],[`If you remember one thing from today, remember this...`,`memorable close`],[`That's a very good question. Let me address it.`,`handling questions`]],
+ vocab:[[`hook`,`an opening that catches attention`],[`rapport`,`a good relationship with the audience`],[`rhetorical question`,`a question asked for effect, not for an answer`],[`pace`,`speed of speaking`],[`emphasis`,`special stress on a word or point`]],
+ reading:{title:`A speech opening`, text:`Good evening. Imagine standing in a room of two hundred strangers, every eye on you. For many people it is a fear greater than flying, greater than spiders. Tonight I will make three points: that public speaking is a skill, not a talent; that it can be learned step by step; and that everyone in this room can do it. So let us begin with the first.`,
+  qs:[Q(`How does the speaker open?`,[`With an imaginary situation (a hook).`,`With a list of facts.`,`With an apology.`],0,`"Imagine standing in a room of two hundred strangers..."`),
+      Q(`How many main points are announced?`,[`Three.`,`Two.`,`Five.`],0,`"I will make three points..."`),
+      Q(`Which device is used in "greater than flying, greater than spiders"?`,[`Repetition.`,`Pun.`,`Irony.`],0,`The phrase "greater than" is repeated for effect.`)]},
+ listening:{title:`Coach's advice`, script:`Many speakers go too fast because they are nervous. Slow down. Pause after each key point and look at someone in the audience. Use a short story at the start; people remember stories far better than statistics. And when you finish, do not say "That's all". End with a clear, memorable sentence.`,
+  qs:[Q(`Why do many speakers go too fast?`,[`They are nervous.`,`They have no time.`,`They want to finish early.`],0,`"...because they are nervous."`),
+      Q(`What does the coach recommend at the start?`,[`A short story.`,`A joke only.`,`An apology.`],0,`"Use a short story at the start."`),
+      Q(`How should a speech end?`,[`With a clear, memorable sentence.`,`With "That's all."`,`With silence.`],0,`"End with a clear, memorable sentence."`)]},
+ speak:[[`Deliver a two-minute talk on a topic you know: hook, three points, conclusion.`,`Let me begin with... My first point is... In conclusion...`],[`Practise a strong opening and a strong ending for the same talk.`,`Imagine... / So, if you remember one thing, remember...`],[`Answer an unexpected question from your partner confidently.`,`That's a good question. Let me address it. As I see it...`]]},
+
+{t:`Rare vocabulary and style`, m:`40 min · vocabulary`,
+ e2:[
+  `<b>Precision.</b> Rare words add precision, not just decoration: <i>ephemeral</i> (lasting a very short time), <i>ubiquitous</i> (found everywhere), <i>meticulous</i> (very careful), <i>ambivalent</i> (having mixed feelings), <i>candid</i> (frank), <i>cogent</i> (clear and convincing), <i>pernicious</i> (harmful in a gradual way).`,
+  `<b>Collocations and connotation.</b> Words that mean almost the same can differ in tone: <i>thrifty</i> (positive) vs <i>stingy</i> (negative); <i>determined</i> vs <i>stubborn</i>. Learn the typical partners: <i>cogent argument, meticulous planning, pernicious influence, ubiquitous smartphones</i>.`,
+  `<b>Style.</b> Vary sentence length; prefer concrete verbs to "be" + abstract noun; avoid cliches; do not stack rare words. The best style is clear: the reader should not need a dictionary to follow the main point.`
+ ],
+ ex:[[`Smartphones are now ubiquitous.`,`everywhere`],[`She is meticulous about detail.`,`very careful`],[`The speaker presented a cogent argument.`,`convincing`],[`He felt ambivalent about moving abroad.`,`mixed feelings`],[`Fame can be ephemeral.`,`short-lived`]],
+ vocab:[[`ubiquitous`,`found everywhere`],[`ephemeral`,`lasting a short time`],[`meticulous`,`extremely careful and precise`],[`candid`,`honest and direct`],[`pernicious`,`slowly and subtly harmful`],[`ambivalent`,`having mixed feelings`]],
+ reading:{title:`A restaurant review`, text:`The restaurant's reputation is far from ephemeral: it has been admired for decades. The chef is meticulous about sourcing local ingredients, and the service is candid without being rude. Smartphones, those ubiquitous companions, are discouraged at the table, and the effect is a surprisingly intimate atmosphere. I felt somewhat ambivalent about the price, but the dessert alone made the evening memorable.`,
+  qs:[Q(`What does "ephemeral" mean?`,[`Short-lived.`,`Famous.`,`Expensive.`],0,`The writer says the reputation is NOT short-lived.`),
+      Q(`Why is the chef called "meticulous"?`,[`He is very careful about ingredients.`,`He cooks fast.`,`He is famous.`],0,`"...meticulous about sourcing local ingredients."`),
+      Q(`How does the writer feel about the price?`,[`Ambivalent.`,`Delighted.`,`Angry.`],0,`"I felt somewhat ambivalent about the price."`)]},
+ listening:{title:`Choosing the right word`, script:`A: Would you call him thrifty or stingy?
+B: It depends. Thrifty sounds like a compliment: he saves money sensibly. Stingy suggests he's unwilling to spend even when he should.
+A: And determined versus stubborn?
+B: Same idea. Determined is positive; stubborn is negative. The facts may be the same, but the connotation differs.`,
+  qs:[Q(`Which word is positive?`,[`Thrifty.`,`Stingy.`,`Stubborn.`],0,`"Thrifty sounds like a compliment."`),
+      Q(`What does the speaker say differs?`,[`The connotation.`,`The facts.`,`The grammar.`],0,`"The facts may be the same, but the connotation differs."`),
+      Q(`Which word pair is positive/negative?`,[`determined / stubborn.`,`thrifty / determined.`,`stingy / stubborn.`],0,`determined = positive; stubborn = negative.`)]},
+ speak:[[`Describe a person using three precise words (e.g. meticulous, candid, ambivalent).`,`My friend is meticulous: he always... I find him candid because...`],[`Explain the difference between two near-synonyms (thrifty / stingy).`,`Both mean..., but ... sounds positive because...`],[`Say a sentence that contains a rare word and then paraphrase it simply.`,`Smartphones are ubiquitous, in other words, they are everywhere.`]]}
+];
+
+/* harder replacements for quiz items that were below the lesson level */
+ENRICH.C1[0].repl = {4: Q(`Which sentence is a nominalisation of "The company expanded rapidly"?`,[`The rapid expansion of the company...`,`The company is expanding rapidly.`,`Rapidly, the company expanded.`],0,`Nominalisation turns a verb (expand) into a noun (expansion), which makes academic style more compact and impersonal.`)};
+ENRICH.C1[1].repl = {
+ 4: Q(`"After the supplier pulled out, we were back to square one." What does this mean?`,[`We had to start the process again.`,`We reached the final stage.`,`We changed the shape of the project.`],0,`"Back to square one" = back at the very beginning, with no progress.`),
+ 5: Q(`Which idiom best fits: "Her sudden resignation turned out to be ___; it pushed the team to reorganise and improve."?`,[`a blessing in disguise`,`a piece of cake`,`the tip of the iceberg`],0,`A "blessing in disguise" is something that seems bad but has a good result.`)};
+ENRICH.C1[3].repl = {
+ 0: Q(`"He can't have known about the changes." The speaker is saying that...`,[`it is impossible that he knew.`,`he was not allowed to know.`,`he did not want to know.`],0,`can't + have + past participle = a logical deduction about the past: I am sure it did not happen.`),
+ 3: Q(`Which is the most tentative (least certain) sentence?`,[`She might have forgotten.`,`She must have forgotten.`,`She will have forgotten.`],0,`might = weaker possibility; must and will are strong deductions.`)};
+ENRICH.C2[0].repl = {8: Q(`Which sentence is the most formal way of saying "We can't give you the job"?`,[`We regret to inform you that your application has been unsuccessful.`,`Sorry, but you didn't get the job.`,`We've decided to go with someone else, I'm afraid.`],0,`Formal register uses full forms, "regret to inform you" and the passive/nominal style.`)};
+ENRICH.C2[1].repl = {
+ 0: Q(`A colleague says "That's an interesting idea" in a flat, cool tone. The most likely subtext is...`,[`I do not think it is a good idea.`,`I am delighted with the idea.`,`I did not hear the idea.`],0,`In British English, polite praise with a cool tone often signals polite disagreement.`),
+ 3: Q(`"The food was a bit disappointing," said the critic, about a meal that made him ill. This is...`,[`understatement.`,`exaggeration.`,`a literal statement.`],0,`Understatement describes something serious as less serious than it is.`)};
+ENRICH.C2[3].repl = {
+ 0: Q(`Which word best describes a harmful influence that works slowly and almost unnoticed?`,[`pernicious`,`ephemeral`,`candid`],0,`"Pernicious" means harmful in a gradual or subtle way.`),
+ 1: Q(`"The film was ephemeral, forgotten within a month." "Ephemeral" means...`,[`lasting a very short time.`,`extremely popular.`,`badly made.`],0,`"Ephemeral" = short-lived.`),
+ 9: Q(`Which pair differs mainly in connotation (positive vs negative), not in basic meaning?`,[`thrifty / stingy`,`big / large`,`start / begin`],0,`Thrifty = sensible with money (positive); stingy = unwilling to spend (negative).`)};
+
+/* merge the completed sections into the original lessons (existing text and quiz questions are kept) */
+Object.keys(ENRICH).forEach(L=>{ ENRICH[L].forEach((e,idx)=>{
+  const l = LESSONS[L][idx];
+  if(!l || l.t !== e.t){ console.warn('ENRICH mismatch', L, idx); return; }
+  l.explain = l.explain.concat(e.e2);
+  l.ex = e.ex; l.vocab = e.vocab; l.reading = e.reading; l.listening = e.listening; l.speak = e.speak;
+  if(e.m) l.m = e.m;
+  if(e.repl){ Object.keys(e.repl).forEach(k=>{ l.quiz[k] = e.repl[k]; }); }
+  l.review = 'teacher'; l.enriched = true;
+}); });
+
 Object.keys(NEW_LESSONS).forEach(L=>{ NEW_LESSONS[L].forEach(n=>{ n.isNew = true; LESSONS[L].push(n); }); /* supplemental records carry an explicit review: 'teacher' status */ });
 Object.keys(LESSONS).forEach(L=>{
   const arr = LESSONS[L], used = new Set(arr.filter(x=>x.o).map(x=>x.o)); let slot = 1;
@@ -3019,6 +3596,7 @@ function openLessonDetail(level, i){
   const answers = {};
   lessonDetailContent.querySelectorAll('.q-opt').forEach(btn=>{
     btn.addEventListener('click', ()=>{
+      if(document.getElementById('checkQuizBtn').dataset.done) return;
       const qi = btn.dataset.qi;
       answers[qi] = parseInt(btn.dataset.oi);
       lessonDetailContent.querySelectorAll(`.q-opt[data-qi="${qi}"]`).forEach(b=>b.classList.remove('picked'));
@@ -3026,6 +3604,9 @@ function openLessonDetail(level, i){
     });
   });
   document.getElementById('checkQuizBtn').addEventListener('click', ()=>{
+    const cb = document.getElementById('checkQuizBtn');
+    if(cb.dataset.done){ openLessonDetail(level, i); return; }
+    cb.dataset.done = '1'; cb.textContent = 'Try again';
     let correctCount = 0; const by = {};
     flat.forEach((q, qi)=>{
       const opts = lessonDetailContent.querySelectorAll(`.q-opt[data-qi="${qi}"]`);
@@ -3050,7 +3631,7 @@ function openLessonDetail(level, i){
     scoreEl.textContent = `Result: ${correctCount} out of ${flat.length}`;
     scoreEl.style.display = 'inline';
     const nm = {quiz:'Grammar & vocabulary', reading:'Reading', listening:'Listening'};
-    document.getElementById('quizBreak').innerHTML = '<ul>' + Object.keys(by).map(k=>`<li>${nm[k]}: <b>${by[k][0]}/${by[k][1]}</b></li>`).join('') + '</ul>';
+    document.getElementById('quizBreak').innerHTML = '<ul>' + Object.keys(by).map(k=>`<li>${nm[k]}: <b>${by[k][0]}/${by[k][1]}</b></li>`).join('') + '</ul>' + (l.listening && !audioAvailable ? '<p class="lx-note">Listening questions are not counted: audio is not available on this device. The score includes only the tasks shown above.</p>' : '') + '<p class="lx-note">Speaking practice is not scored. The score counts only the questions above; your best result is saved.</p>';
     // merge with saved result: keep whichever attempt has the better share of correct answers (old results stay valid)
     const qk = level + ':' + i, prevQ = PG.d.quiz[qk];
     let best = correctCount, tot = flat.length;
