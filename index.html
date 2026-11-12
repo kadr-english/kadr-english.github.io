@@ -328,6 +328,10 @@
   footer{background:var(--ink); color:#9aa39a; padding:36px 0; font-size:13.5px;}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
   footer .tg-list{display:flex; gap:16px; flex-wrap:wrap;}
+  footer .support-band{align-items:center; padding-bottom:24px; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,.09); gap:16px 24px;}
+  footer .support-band h3{color:#f3efe2; font-size:18px; margin:0 0 6px;}
+  footer .support-band p{margin:0; color:#c9cfc9; font-size:15px; line-height:1.5; max-width:620px;}
+  footer .support-btn{white-space:nowrap;}
   footer .tg-list a{color:var(--gold);}
   footer .tg-list a:hover{text-decoration:underline;}
 
@@ -1230,6 +1234,11 @@
           <li>A level test (12 questions: grammar, vocabulary, reading and listening) and speaking practice (5 questions, by voice or by typing). Both give rough estimates, not official results.</li>
         </ul>
       </div>
+      <div class="about-card wide">
+        <h3>How the level lessons are prepared</h3>
+        <p>The lessons for levels A1–C2 were prepared with the help of artificial intelligence and have not yet been checked by a teacher, so they may contain inaccuracies. If you notice a mistake, please write to support.</p>
+        <div class="about-actions"><a class="btn btn-line" href="https://t.me/alivvsx7" target="_blank" rel="noopener">Write to support</a></div>
+      </div>
       <div class="about-card">
         <h3>Your progress and privacy</h3>
         <p>There are no accounts. Your progress is saved only in this browser on this device, so it is not shared between devices. You can clear it at any time with "Reset my progress" at the bottom of the page. Speaking test audio is not recorded or sent anywhere from this page.</p>
@@ -1240,8 +1249,8 @@
       </div>
       <div class="about-card wide">
         <h3>Authors and contacts</h3>
-        <p>The names of the authors and contact details are not published on this site. For questions and new materials, please use the project's Telegram channel.</p>
-        <div class="about-actions"><a class="btn btn-gold" href="#" data-target="test">Start with the level test</a><a class="btn btn-line" href="#" data-target="books">Browse the textbooks</a></div>
+        <p>The authors' names are not published on this site. If you have a question or find a mistake, write to support. New materials are published in the project's Telegram channel.</p>
+        <div class="about-actions"><a class="btn btn-line" href="https://t.me/alivvsx7" target="_blank" rel="noopener">Write to support</a><a class="btn btn-gold" href="#" data-target="test">Start with the level test</a><a class="btn btn-line" href="#" data-target="books">Browse the textbooks</a></div>
       </div>
     </div>
   </div>
@@ -1249,6 +1258,13 @@
 
 </main>
 <footer>
+  <div class="wrap support-band" id="support">
+    <div class="support-text">
+      <h3>Support</h3>
+      <p>Have a question or found a mistake on the site? Write to support and we will try to help.</p>
+    </div>
+    <a class="btn btn-gold support-btn" href="https://t.me/alivvsx7" target="_blank" rel="noopener">Write to support</a>
+  </div>
   <div class="wrap">
     <div>KADR is part of the "Al-Khwarizmi Successors" project</div>
     <div class="tg-list">
@@ -1300,6 +1316,19 @@ DICT.uz['Up to 12 questions and an approximate result on the CEFR scale'] = 'CEF
 DICT.ru['Up to 12 quick questions show roughly where to start on the CEFR scale.'] = 'До 12 быстрых вопросов примерно покажут, с какого уровня начать по шкале CEFR.';
 DICT.uz['Up to 12 quick questions show roughly where to start on the CEFR scale.'] = '12 tagacha tezkor savol CEFR bo‘yicha qaysi darajadan boshlashni ko‘rsatadi.';
 const RXC = I18N_DATA.rx.map(r=>({re:new RegExp(r[0]), ru:r[1], uz:r[2]}));
+[
+['Support','Поддержка','Qo‘llab-quvvatlash'],
+['Write to support','Написать в поддержку','Qo‘llab-quvvatlashga yozish'],
+['Have a question or found a mistake on the site? Write to support and we will try to help.','Есть вопрос или нашли ошибку на сайте? Напишите в поддержку, и мы постараемся помочь.','Savolingiz bormi yoki saytda xato topdingizmi? Qo‘llab-quvvatlash xizmatiga yozing, yordam berishga harakat qilamiz.'],
+['The lessons for levels A1–C2 were prepared with the help of artificial intelligence and have not yet been checked by a teacher, so they may contain inaccuracies. If you notice a mistake, please write to support.','Уроки уровней A1–C2 подготовлены с помощью искусственного интеллекта и пока не проверены преподавателем, поэтому в них возможны неточности. Если вы заметили ошибку, напишите в поддержку.','A1–C2 darajalaridagi darslar sun’iy intellekt yordamida tayyorlangan va hali o‘qituvchi tomonidan tekshirilmagan, shuning uchun ularda noaniqliklar bo‘lishi mumkin. Xatoni sezsangiz, qo‘llab-quvvatlash xizmatiga yozing.'],
+["The authors' names are not published on this site. If you have a question or find a mistake, write to support. New materials are published in the project's Telegram channel.",'Имена авторов на сайте не публикуются. Если у вас есть вопрос или вы нашли ошибку, напишите в поддержку. Новые материалы публикуются в Telegram-канале проекта.','Mualliflarning ismlari saytda e’lon qilinmaydi. Savolingiz bo‘lsa yoki xato topsangiz, qo‘llab-quvvatlash xizmatiga yozing. Yangi materiallar loyihaning Telegram kanalida e’lon qilinadi.']
+].forEach(r=>{ DICT.ru[nrm(r[0])] = r[1]; DICT.uz[nrm(r[0])] = r[2]; });
+
+[
+['How the level lessons are prepared','Как подготовлены уроки по уровням','Darajalar bo‘yicha darslar qanday tayyorlangan'],
+["The lessons for levels A1–C2 were prepared with the help of artificial intelligence and have not yet been checked by a teacher, so they may contain inaccuracies. If you notice a mistake, please let us know through the project's Telegram channel.",'Уроки уровней A1–C2 подготовлены с помощью искусственного интеллекта и пока не проверены преподавателем, поэтому в них возможны неточности. Если вы заметили ошибку, сообщите нам через Telegram-канал проекта.','A1–C2 darajalaridagi darslar sun’iy intellekt yordamida tayyorlangan va hali o‘qituvchi tomonidan tekshirilmagan, shuning uchun ularda noaniqliklar bo‘lishi mumkin. Xatoni sezsangiz, loyihaning Telegram kanali orqali bizga xabar bering.']
+].forEach(r=>{ DICT.ru[nrm(r[0])] = r[1]; DICT.uz[nrm(r[0])] = r[2]; });
+
 /* progress-status strings (RU / UZ) */
 [
 ['Not started','Не начат','Boshlanmagan'],['In progress','В процессе','Jarayonda'],['Completed','Пройден','Yakunlangan'],
@@ -2075,7 +2104,7 @@ function renderLessons(){
       </div>
       <p>${l.d}</p>
       <div class="lc-skills">${lessonSkills(l).map(s=>`<span class="sk-chip">${s}</span>`).join('')}</div>
-      <div class="lc-chips">${dur ? `<span class="lc-chip">${svgIcon('clock',15)}${dur}</span>` : ''}${typ ? `<span class="lc-chip">${svgIcon('tag',15)}${esc(typ)}</span>` : ''}${l.review==='teacher' ? '<span class="lc-chip teacher-review">Needs teacher review</span>' : ''}</div>
+      <div class="lc-chips">${dur ? `<span class="lc-chip">${svgIcon('clock',15)}${dur}</span>` : ''}${typ ? `<span class="lc-chip">${svgIcon('tag',15)}${esc(typ)}</span>` : ''}</div>
       ${result}
       <button class="lc-cta${started ? ' cont' : ''}" type="button" data-cta="1" aria-label="${started ? (ls.st==='done' ? 'Review' : 'Continue') : 'Start lesson'}: ${esc(l.t.replace(/<[^>]+>/g,''))}">${started ? (ls.st==='done' ? 'Review' : 'Continue') : 'Start lesson'}</button>
     </article>`;
@@ -3596,7 +3625,7 @@ function openLessonDetail(level, i){
   if(!PG.d.opened[level + ':' + i]) PG.d.opened[level + ':' + i] = Date.now();
   PG.save(); renderContinue(); renderLevels(); renderLessons();
   const explainHtml = l.explain.map(p=>`<p>${p}</p>`).join('');
-  const reviewLine = l.review==='teacher' ? '<p class="lesson-review">Needs teacher review</p>' : '';
+  const reviewLine = ''; // review status is explained once in the "About" section
   const total = LESSONS[level].length;
   // groups of questions: options are shuffled once per opening
   const groups = [{key:'quiz', title:'Grammar & vocabulary', qs:l.quiz}];
