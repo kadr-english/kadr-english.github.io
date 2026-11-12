@@ -976,6 +976,15 @@
     .zoom-ctl button{min-width:40px; min-height:40px;}
     .zoom-ctl .zv{min-width:44px; font-size:12px;}
   }
+
+  .lc-result .st{display:inline-block;font-weight:600;border-radius:999px;padding:2px 9px;font-size:12.5px;margin-right:8px;white-space:nowrap}
+  .st-new{color:#b9c7bd;background:rgba(255,255,255,.08)} .st-progress{color:#f0c96b;background:rgba(240,201,107,.15)} .st-done{color:#8fe0ae;background:rgba(88,176,120,.18)}
+  .lx-gate{margin-top:12px;padding:12px 14px;border:1px solid #f0c96b;border-radius:10px;background:rgba(240,201,107,.1)}
+  .lx-gate p{margin:0 0 6px} .lx-gate .row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 6px}
+  .q-item.unanswered{outline:2px solid #f0c96b;outline-offset:4px;border-radius:8px}
+  .lx-status{margin-top:12px;padding:12px 14px;border-radius:10px;font-weight:600}
+  .lx-status.pass{background:rgba(88,176,120,.16);color:#8fe0ae} .lx-status.fail{background:rgba(224,120,120,.14);color:#f1a3a3} .lx-status.part{background:rgba(240,201,107,.12);color:#f0c96b}
+  .lx-hist{margin-top:14px;font-size:14px} .lx-hist h4{margin:0 0 6px;font-size:14px} .lx-hist ul{margin:0;padding-left:18px} .lx-hist em{opacity:.8}
 </style>
 </head>
 <body>
@@ -1291,6 +1300,28 @@ DICT.uz['Up to 12 questions and an approximate result on the CEFR scale'] = 'CEF
 DICT.ru['Up to 12 quick questions show roughly where to start on the CEFR scale.'] = 'До 12 быстрых вопросов примерно покажут, с какого уровня начать по шкале CEFR.';
 DICT.uz['Up to 12 quick questions show roughly where to start on the CEFR scale.'] = '12 tagacha tezkor savol CEFR bo‘yicha qaysi darajadan boshlashni ko‘rsatadi.';
 const RXC = I18N_DATA.rx.map(r=>({re:new RegExp(r[0]), ru:r[1], uz:r[2]}));
+/* progress-status strings (RU / UZ) */
+[
+['Not started','Не начат','Boshlanmagan'],['In progress','В процессе','Jarayonda'],['Completed','Пройден','Yakunlangan'],
+['Review','Повторить','Takrorlash'],['Best result','Лучший результат','Eng yaxshi natija'],
+['No completed attempt yet','Завершённой попытки ещё нет','Hali yakunlangan urinish yo‘q'],
+['Your attempts','Ваши попытки','Urinishlaringiz'],['Last attempt','Последняя попытка','Oxirgi urinish'],['Best attempt','Лучшая попытка','Eng yaxshi urinish'],['Attempts','Всего попыток','Urinishlar soni'],
+['(incomplete)','(неполная)','(to‘liq emas)'],
+['Back to questions','Вернуться к заданиям','Topshiriqlarga qaytish'],['Check incomplete attempt','Проверить неполную попытку','To‘liq bo‘lmagan urinishni tekshirish'],
+['Answer at least one question first. An attempt with no answers is not counted and does not change your progress.','Сначала ответьте хотя бы на один вопрос. Попытка без ответов не засчитывается и не меняет ваш прогресс.','Avval kamida bitta savolga javob bering. Javobsiz urinish hisobga olinmaydi va progressingizni o‘zgartirmaydi.'],
+['An incomplete attempt cannot complete the lesson. It is saved only as your last attempt.','Неполная попытка не засчитывает урок как пройденный. Она сохраняется только как последняя попытка.','To‘liq bo‘lmagan urinish darsni yakunlamaydi. U faqat oxirgi urinish sifatida saqlanadi.'],
+['Lesson completed: you answered all available questions and scored at least 70%.','Урок пройден: вы ответили на все доступные вопросы и набрали не менее 70%.','Dars yakunlandi: barcha mavjud savollarga javob berdingiz va kamida 70% to‘pladingiz.'],
+['This attempt is below 70%. The lesson stays completed because of your earlier best result.','Эта попытка ниже 70%. Урок остаётся пройденным благодаря вашему прежнему лучшему результату.','Bu urinish 70% dan past. Oldingi eng yaxshi natijangiz tufayli dars yakunlangan holda qoladi.'],
+['To complete the lesson, answer all available questions and score at least 70%. Speaking practice is shown separately and is not scored.','Чтобы пройти урок, ответьте на все доступные вопросы и наберите не менее 70%. Разговорная практика показана отдельно и не оценивается.','Darsni yakunlash uchun barcha mavjud savollarga javob bering va kamida 70% to‘plang. Gapirish mashqi alohida ko‘rsatiladi va baholanmaydi.'],
+['Listening questions are not counted: audio is not available on this device. The score includes only the tasks shown above.','Вопросы по аудированию не учитываются: на этом устройстве нет аудио. В счёт входят только показанные выше задания.','Tinglab tushunish savollari hisobga olinmaydi: bu qurilmada audio mavjud emas. Natijaga faqat yuqorida ko‘rsatilgan topshiriqlar kiradi.'],
+['Speaking practice is shown separately: the site does not score it or check pronunciation or grammar.','Разговорная практика показана отдельно: сайт её не оценивает и не проверяет произношение и грамматику.','Gapirish mashqi alohida ko‘rsatiladi: sayt uni baholamaydi va talaffuz yoki grammatikani tekshirmaydi.']
+].forEach(r=>{ DICT.ru[nrm(r[0])] = r[1]; DICT.uz[nrm(r[0])] = r[2]; });
+RXC.unshift(
+ {re:/^You have answered (\d+) of (\d+) questions\. (\d+) still unanswered\.$/, ru:'Вы ответили на $1 из $2 вопросов. Без ответа осталось: $3.', uz:'Siz $2 ta savoldan $1 tasiga javob berdingiz. Javobsiz qolgani: $3.'},
+ {re:/^Incomplete attempt: (\d+) of (\d+) questions were not answered\. An incomplete attempt cannot complete the lesson; it is saved only as your last attempt\.$/, ru:'Неполная попытка: без ответа осталось $1 из $2 вопросов. Неполная попытка не засчитывает урок; она сохранена только как последняя.', uz:'To‘liq bo‘lmagan urinish: $2 ta savoldan $1 tasiga javob berilmadi. Bunday urinish darsni yakunlamaydi; u faqat oxirgi urinish sifatida saqlandi.'},
+ {re:/^Not completed yet: you need at least 70% \((\d+) of (\d+) correct\)\. Read the explanations and try again\. Your attempt is saved\.$/, ru:'Урок пока не пройден: нужно не менее 70% (правильно $1 из $2). Прочитайте объяснения и попробуйте снова. Попытка сохранена.', uz:'Dars hali yakunlanmadi: kamida 70% kerak ($2 tadan $1 ta to‘g‘ri). Izohlarni o‘qing va qayta urinib ko‘ring. Urinish saqlandi.'}
+);
+
 function trStr(en){
   if(LANG==='en') return null;
   const k = nrm(en);
@@ -1395,11 +1426,11 @@ const PG = (function(){
   const K = 'kadr_progress_v1';
   let d = {};
   try{ d = JSON.parse(localStorage.getItem(K) || '{}') || {}; }catch(e){ d = {}; }
-  ['quiz','units','club','pos'].forEach(k=>{ if(!d[k] || typeof d[k] !== 'object') d[k] = {}; });
+  ['quiz','units','club','pos','opened'].forEach(k=>{ if(!d[k] || typeof d[k] !== 'object') d[k] = {}; });
   return {
     d,
     save(){ try{ localStorage.setItem(K, JSON.stringify(d)); }catch(e){} },
-    reset(){ ['quiz','units','club','pos'].forEach(k=>d[k]={}); delete d.last; delete d.level; delete d.speaking; delete d.writing; this.save(); }
+    reset(){ ['quiz','units','club','pos','opened'].forEach(k=>d[k]={}); delete d.last; delete d.level; delete d.speaking; delete d.writing; this.save(); }
   };
 })();
 function fmtDate(t){ try{ return new Date(t).toLocaleDateString(LANG==='ru'?'ru-RU':LANG==='uz'?'uz-UZ':'en-GB',{day:'numeric',month:'short',year:'numeric'}); }catch(e){ return ''; } }
@@ -1981,10 +2012,34 @@ async function saveCustomLessons(){
   }
 }
 
+
+/* ---- lesson status: not started / in progress / completed (pass mark 70% on all available tasks) ---- */
+const PASS_RATE = 0.7;
+function pctOf(a, b){ return b ? Math.round(a / b * 100) : 0; }
+function lessonState(level, i){
+  const key = level + ':' + i, r = PG.d.quiz[key];
+  if(!r || typeof r !== 'object') return {st: (PG.d.opened && PG.d.opened[key]) ? 'progress' : 'new', rec:null, hasBest:false, passed:false};
+  const hasBest = typeof r.best === 'number' && r.total > 0;
+  // results saved before this update have no "passed" flag: they count as completed only if they reach the pass mark
+  const passed = r.passed !== undefined ? !!r.passed : (hasBest && r.best / r.total >= PASS_RATE);
+  return {st: passed ? 'done' : 'progress', rec:r, hasBest, passed};
+}
+function countDone(level){ return (LESSONS[level] || []).filter((_, i)=>lessonState(level, i).st === 'done').length; }
+function attemptsHtml(rec){
+  if(!rec) return '';
+  const hasBest = typeof rec.best === 'number' && rec.total > 0;
+  const rows = [];
+  if(rec.last) rows.push(`<li><span>Last attempt</span>: <b>${rec.last.c}/${rec.last.n} (${pctOf(rec.last.c, rec.last.n)}%)</b> <span data-no-i18n>${esc(fmtDate(rec.last.t))}</span>${rec.last.complete ? '' : ' <em>(incomplete)</em>'}</li>`);
+  if(hasBest) rows.push(`<li><span>Best attempt</span>: <b>${rec.best}/${rec.total} (${pctOf(rec.best, rec.total)}%)</b>${rec.bestT || (!rec.last && rec.t) ? ` <span data-no-i18n>${esc(fmtDate(rec.bestT || rec.t))}</span>` : ''}</li>`);
+  else rows.push('<li><span>No completed attempt yet</span></li>');
+  if(rec.attempts) rows.push(`<li><span>Attempts</span>: <b>${rec.attempts}</b></li>`);
+  return `<div class="lx-hist"><h4>Your attempts</h4><ul>${rows.join('')}</ul></div>`;
+}
+
 function renderLevels(){
   levelRow.innerHTML = LEVELS.map(l=>{
     const total = (LESSONS[l.code]||[]).length;
-    const done = (LESSONS[l.code]||[]).filter((_,i)=>PG.d.quiz[l.code + ':' + i]).length;
+    const done = countDone(l.code);
     return `<button class="level-pill ${l.code===currentLevel?'active':''}" data-level="${l.code}" aria-pressed="${l.code===currentLevel}" aria-label="Level ${l.code} ${l.name}, ${done} of ${total} lessons completed">
       <span class="code">${l.code}</span><span class="lp-name">${l.name}</span>${total ? `<span class="lp-count" aria-hidden="true">${done}/${total}</span>` : ''}
     </button>`;
@@ -2000,21 +2055,20 @@ function renderLevels(){
 
 function renderLessons(){
   const lvlTotal = LESSONS[currentLevel].length;
-  const lvlDone = LESSONS[currentLevel].filter((_,i)=>PG.d.quiz[currentLevel + ':' + i]).length;
+  const lvlDone = countDone(currentLevel);
   const sum = document.getElementById('lvlSummary');
   if(sum){
     sum.innerHTML = `<p class="lvl-goal"><b>${currentLevel}</b> <span>${LEVEL_GOALS[currentLevel]}</span> <span>Each lesson goes from explanation and examples to a quiz, reading, listening and speaking practice.</span></p><div class="ls-text">Level <b>${currentLevel}</b>: <b>${lvlDone}</b> of ${lvlTotal} lessons completed</div><div class="ls-bar" role="progressbar" aria-valuemin="0" aria-valuemax="${lvlTotal}" aria-valuenow="${lvlDone}" aria-label="Lessons completed at level ${currentLevel}"><i style="width:${lvlTotal ? Math.round(lvlDone/lvlTotal*100) : 0}%"></i></div>`;
   }
   const builtIn = LESSONS[currentLevel].map((l,i)=>[l,i]).sort((a,b)=>a[0].o-b[0].o).map(([l,i])=>{
-    const qz = PG.d.quiz[currentLevel + ':' + i];
+    const ls = lessonState(currentLevel, i), qz = ls.rec;
     const kind = lessonKind(l), dur = lessonDuration(l), typ = lessonType(l);
-    const pct = qz ? Math.round(qz.best/qz.total*100) : 0;
-    const LL = PG.d.last; const started = !!qz || !!(LL && LL.type==='lesson' && LL.level===currentLevel && LL.i===i);
-    const result = qz
-      ? `<div class="lc-result done"><span>&#10003; Best result ${qz.best}/${qz.total}</span><div class="lr-bar" aria-hidden="true"><i style="width:${pct}%"></i></div></div>`
-      : `<div class="lc-result none"><span>Not started yet</span></div>`;
+    const pct = ls.hasBest ? pctOf(qz.best, qz.total) : 0;
+    const started = ls.st !== 'new';
+    const stLabel = {new:'Not started', progress:'In progress', done:'Completed'}[ls.st];
+    const result = `<div class="lc-result ${ls.st==='done' ? 'done' : 'none'}"><span><span class="st st-${ls.st}">${stLabel}</span>${ls.hasBest ? `<span>Best result</span> <b>${qz.best}/${qz.total}</b> (${pct}%)` : (ls.st==='progress' ? '<span>No completed attempt yet</span>' : '')}</span>${ls.hasBest ? `<div class="lr-bar" aria-hidden="true"><i style="width:${pct}%"></i></div>` : ''}</div>`;
     return `
-    <article class="lesson-card${qz ? ' is-done' : ''}" data-built-i="${i}">
+    <article class="lesson-card${ls.st==='done' ? ' is-done' : ''}" data-built-i="${i}">
       <div class="lc-head">
         <div class="lc-icon t-${kind}">${svgIcon(kind, 26)}</div>
         <div class="lc-titles"><h3>${l.t}</h3><span class="lc-level">${currentLevel} · ${l.o}/${LESSONS[currentLevel].length}</span></div>
@@ -2023,7 +2077,7 @@ function renderLessons(){
       <div class="lc-skills">${lessonSkills(l).map(s=>`<span class="sk-chip">${s}</span>`).join('')}</div>
       <div class="lc-chips">${dur ? `<span class="lc-chip">${svgIcon('clock',15)}${dur}</span>` : ''}${typ ? `<span class="lc-chip">${svgIcon('tag',15)}${esc(typ)}</span>` : ''}${l.review==='teacher' ? '<span class="lc-chip teacher-review">Needs teacher review</span>' : ''}</div>
       ${result}
-      <button class="lc-cta${started ? ' cont' : ''}" type="button" data-cta="1" aria-label="${started ? 'Continue' : 'Start lesson'}: ${esc(l.t.replace(/<[^>]+>/g,''))}">${started ? 'Continue' : 'Start lesson'}</button>
+      <button class="lc-cta${started ? ' cont' : ''}" type="button" data-cta="1" aria-label="${started ? (ls.st==='done' ? 'Review' : 'Continue') : 'Start lesson'}: ${esc(l.t.replace(/<[^>]+>/g,''))}">${started ? (ls.st==='done' ? 'Review' : 'Continue') : 'Start lesson'}</button>
     </article>`;
   }).join('');
 
@@ -3342,11 +3396,11 @@ ENRICH.C2 = [
 {t:`Speech Registers: Formal vs Informal`, m:`40 min · vocabulary & style`,
  e2:[
   `<b>Register</b> is the level of formality that suits the situation, audience and purpose. Informal: <i>Sorry I'm late, got held up.</i> Neutral: <i>Sorry I'm late, I was delayed.</i> Formal: <i>I apologise for my late arrival; I was unavoidably detained.</i>`,
-  `<b>Markers.</b> Formal: Latin-origin words (<i>commence, purchase, inform</i>), passives, full forms, complex sentences, nominalisation. Informal: phrasal verbs (<i>start, buy, tell</i>), contractions, ellipsis (<i>Seen it?</i>), idioms, discourse markers (<i>you know, I mean</i>).`,
+  `<b>Markers.</b> Formal English prefers single, often Latin-origin verbs (<i>commence, purchase, inform, ascertain</i>), passives, full forms, complex sentences and nominalisation. Informal English prefers everyday verbs and phrasal verbs (<i>get, find out, put off, get back to</i>), contractions, ellipsis (<i>Seen it?</i>), idioms and discourse markers (<i>you know, I mean</i>). Compare: <i>postpone</i> (formal) = <i>put off</i> (phrasal verb, informal/neutral); <i>purchase</i> (formal) = <i>buy</i> (neutral) = <i>get</i> (informal). Note that <i>start, buy, tell</i> are ordinary neutral verbs, not phrasal verbs: <i>give up, look into, get back to</i> are phrasal verbs.`,
   `<b>Skill at C2.</b> Shift register deliberately and consistently within a text. Mixing registers by accident (<i>Dear Sir, I'd like to complain about your rubbish service</i>) weakens the effect; mixing on purpose can create humour or irony.`
  ],
  ex:[[`We regret to inform you that your application has been unsuccessful.`,`formal letter`],[`Sorry, but we can't offer you the job.`,`informal / spoken`],[`I would be most grateful for your prompt reply.`,`very formal`],[`Could you get back to me asap?`,`informal / business casual`],[`Notwithstanding the delay, the project was completed.`,`formal connector`]],
- vocab:[[`commence / begin / start`,`formal / neutral / informal`],[`purchase / buy / get`,`formal / neutral / informal`],[`ascertain / find out / work out`,`formal / neutral / informal`],[`notwithstanding`,`in spite of (formal)`],[`colloquial`,`typical of informal speech`]],
+ vocab:[[`commence / begin, start`,`formal / neutral (everyday verbs)`],[`purchase / buy / get`,`formal / neutral / informal`],[`ascertain / find out`,`formal / neutral (find out is a phrasal verb)`],[`notwithstanding`,`in spite of (formal)`],[`colloquial`,`typical of informal speech`]],
  reading:{title:`Two notes`, text:`Note A: "Hi Sam, so sorry, I won't be able to make it tonight — something's come up at work. Hope you guys have a great time. Catch you next week!" Note B: "Dear Mr Reynolds, I regret to inform you that I shall be unable to attend this evening's event owing to an unforeseen professional commitment. Please convey my apologies to the other guests. I look forward to seeing you next week."`,
   qs:[Q(`How would you describe Note A?`,[`Informal, to a friend.`,`Formal, to a stranger.`,`Academic.`],0,`Contractions, "Hi", "guys", "Catch you next week".`),
       Q(`Which feature makes Note B formal?`,[`Full forms and complex vocabulary such as "owing to an unforeseen professional commitment".`,`Contractions.`,`Slang.`],0,`"I regret to inform you...", "shall", "owing to".`),
@@ -3537,7 +3591,10 @@ function closeLessonDetail(){ ttsStop(); lessonOverlay.classList.remove('open');
 
 function openLessonDetail(level, i){
   const l = LESSONS[level][i];
-  PG.d.last = {type:'lesson', level, i}; PG.save(); renderContinue();
+  PG.d.last = {type:'lesson', level, i};
+  if(!PG.d.opened) PG.d.opened = {};
+  if(!PG.d.opened[level + ':' + i]) PG.d.opened[level + ':' + i] = Date.now();
+  PG.save(); renderContinue(); renderLevels(); renderLessons();
   const explainHtml = l.explain.map(p=>`<p>${p}</p>`).join('');
   const reviewLine = l.review==='teacher' ? '<p class="lesson-review">Needs teacher review</p>' : '';
   const total = LESSONS[level].length;
@@ -3576,6 +3633,8 @@ function openLessonDetail(level, i){
     <div class="quiz-block" id="lx-quiz">
       <h3>Test yourself</h3>
       <div class="quiz-sub">Answer the questions in each part, then press "Check all answers" at the end of the lesson.</div>
+      <div class="quiz-sub">To complete the lesson, answer all available questions and score at least 70%. Speaking practice is shown separately and is not scored.</div>
+      <div id="quizHist">${attemptsHtml(lessonState(level, i).rec)}</div>
       <h4 class="lx-part">Grammar &amp; vocabulary</h4>
       <div id="quizQuestions">${qHtml('quiz')}</div>
     </div>
@@ -3585,6 +3644,8 @@ function openLessonDetail(level, i){
         <button class="btn btn-gold" id="checkQuizBtn" type="button">Check all answers</button>
         <span class="quiz-score" id="quizScore" role="status"></span>
       </div>
+      <div id="quizGate"></div>
+      <div id="quizStatus" role="status"></div>
       <div class="lx-breakdown" id="quizBreak"></div>
     </div>
   `;
@@ -3599,14 +3660,39 @@ function openLessonDetail(level, i){
       if(document.getElementById('checkQuizBtn').dataset.done) return;
       const qi = btn.dataset.qi;
       answers[qi] = parseInt(btn.dataset.oi);
+      const itemEl = btn.closest('.q-item'); if(itemEl) itemEl.classList.remove('unanswered');
       lessonDetailContent.querySelectorAll(`.q-opt[data-qi="${qi}"]`).forEach(b=>b.classList.remove('picked'));
       btn.classList.add('picked');
     });
   });
+  const gateEl = document.getElementById('quizGate');
+  function goToQuestions(){
+    gateEl.innerHTML = '';
+    const first = lessonDetailContent.querySelector('.q-item.unanswered') || lessonDetailContent.querySelector('.q-item');
+    if(first){ try{ first.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){} }
+  }
   document.getElementById('checkQuizBtn').addEventListener('click', ()=>{
     const cb = document.getElementById('checkQuizBtn');
     if(cb.dataset.done){ openLessonDetail(level, i); return; }
+    const answered = Object.keys(answers).length;
+    if(answered === 0){
+      gateEl.innerHTML = '<div class="lx-gate" role="alert"><p>Answer at least one question first. An attempt with no answers is not counted and does not change your progress.</p><div class="row"><button class="btn btn-gold" type="button" id="gateBack">Back to questions</button></div></div>';
+      document.getElementById('gateBack').addEventListener('click', goToQuestions);
+      return;
+    }
+    if(answered < flat.length){
+      lessonDetailContent.querySelectorAll('.q-item').forEach(it=>{ it.classList.toggle('unanswered', answers[it.dataset.qi] === undefined); });
+      gateEl.innerHTML = `<div class="lx-gate" role="alert"><p>You have answered ${answered} of ${flat.length} questions. ${flat.length - answered} still unanswered.</p><div class="row"><button class="btn btn-gold" type="button" id="gateBack">Back to questions</button><button class="btn btn-line-dark" type="button" id="gateCheck">Check incomplete attempt</button></div><p class="lx-note">An incomplete attempt cannot complete the lesson. It is saved only as your last attempt.</p></div>`;
+      document.getElementById('gateBack').addEventListener('click', goToQuestions);
+      document.getElementById('gateCheck').addEventListener('click', ()=>{ gateEl.innerHTML=''; runCheck(); });
+      return;
+    }
+    runCheck();
+  });
+  function runCheck(){
+    const cb = document.getElementById('checkQuizBtn');
     cb.dataset.done = '1'; cb.textContent = 'Try again';
+    lessonDetailContent.querySelectorAll('.q-item.unanswered').forEach(it=>it.classList.remove('unanswered'));
     let correctCount = 0; const by = {};
     flat.forEach((q, qi)=>{
       const opts = lessonDetailContent.querySelectorAll(`.q-opt[data-qi="${qi}"]`);
@@ -3631,15 +3717,32 @@ function openLessonDetail(level, i){
     scoreEl.textContent = `Result: ${correctCount} out of ${flat.length}`;
     scoreEl.style.display = 'inline';
     const nm = {quiz:'Grammar & vocabulary', reading:'Reading', listening:'Listening'};
-    document.getElementById('quizBreak').innerHTML = '<ul>' + Object.keys(by).map(k=>`<li>${nm[k]}: <b>${by[k][0]}/${by[k][1]}</b></li>`).join('') + '</ul>' + (l.listening && !audioAvailable ? '<p class="lx-note">Listening questions are not counted: audio is not available on this device. The score includes only the tasks shown above.</p>' : '') + '<p class="lx-note">Speaking practice is not scored. The score counts only the questions above; your best result is saved.</p>';
-    // merge with saved result: keep whichever attempt has the better share of correct answers (old results stay valid)
-    const qk = level + ':' + i, prevQ = PG.d.quiz[qk];
-    let best = correctCount, tot = flat.length;
-    if(prevQ && prevQ.total && prevQ.best/prevQ.total > correctCount/flat.length){ best = prevQ.best; tot = prevQ.total; }
-    PG.d.quiz[qk] = {best, total: tot, t: Date.now()};
+    document.getElementById('quizBreak').innerHTML = '<ul>' + Object.keys(by).map(k=>`<li>${nm[k]}: <b>${by[k][0]}/${by[k][1]}</b></li>`).join('') + '</ul>' + (l.listening && !audioAvailable ? '<p class="lx-note">Listening questions are not counted: audio is not available on this device. The score includes only the tasks shown above.</p>' : '') + '<p class="lx-note">Speaking practice is shown separately: the site does not score it or check pronunciation or grammar.</p>';
+    // save the attempt: last + best (best only from complete attempts); "passed" needs all available questions answered and >= 70%
+    const answeredN = Object.keys(answers).length, complete = answeredN === flat.length;
+    const qk = level + ':' + i, prev = PG.d.quiz[qk];
+    const rec = (prev && typeof prev === 'object') ? Object.assign({}, prev) : {};
+    if(rec.passed === undefined && typeof rec.best === 'number' && rec.total > 0) rec.passed = rec.best / rec.total >= PASS_RATE; // result saved before this update
+    const now = Date.now(), wasPassed = !!rec.passed;
+    rec.last = {c: correctCount, n: flat.length, a: answeredN, t: now, complete};
+    rec.attempts = (prev ? (prev.attempts || 1) : 0) + 1;
+    if(complete && (typeof rec.best !== 'number' || !rec.total || correctCount / flat.length > rec.best / rec.total)){ rec.best = correctCount; rec.total = flat.length; rec.bestT = now; }
+    const passNow = complete && correctCount / flat.length >= PASS_RATE;
+    if(passNow) rec.passed = true;
+    rec.passed = !!rec.passed; rec.t = now;
+    PG.d.quiz[qk] = rec;
+    const need = Math.ceil(flat.length * PASS_RATE - 1e-9);
+    const stEl = document.getElementById('quizStatus');
+    let cls, msg;
+    if(!complete){ cls = 'part'; msg = `Incomplete attempt: ${flat.length - answeredN} of ${flat.length} questions were not answered. An incomplete attempt cannot complete the lesson; it is saved only as your last attempt.`; }
+    else if(passNow){ cls = 'pass'; msg = 'Lesson completed: you answered all available questions and scored at least 70%.'; }
+    else if(wasPassed){ cls = 'part'; msg = 'This attempt is below 70%. The lesson stays completed because of your earlier best result.'; }
+    else { cls = 'fail'; msg = `Not completed yet: you need at least 70% (${need} of ${flat.length} correct). Read the explanations and try again. Your attempt is saved.`; }
+    stEl.className = 'lx-status ' + cls; stEl.textContent = msg;
+    document.getElementById('quizHist').innerHTML = attemptsHtml(rec);
     PG.d.last = {type:'lesson', level, i};
     PG.save(); renderLevels(); renderLessons(); renderContinue();
-  });
+  }
   lessonOverlay.classList.add('open');
   lessonOverlay.scrollTop = 0;
 }
@@ -4658,7 +4761,7 @@ function renderContinue(){
   const box = document.getElementById('continueBox');
   if(!box) return;
   const L = PG.d.last;
-  const nQuiz = Object.keys(PG.d.quiz).length, nUnit = Object.keys(PG.d.units).length, nClub = Object.keys(PG.d.club).length;
+  const nQuiz = Object.keys(LESSONS).reduce((a,k)=>a+countDone(k),0), nUnit = Object.keys(PG.d.units).length, nClub = Object.keys(PG.d.club).length;
   if(!L && !PG.d.level && !PG.d.speaking && !PG.d.writing && !nQuiz){ box.classList.remove('show'); box.innerHTML = ''; return; }
   let label = '';
   if(L && L.type === 'lesson' && LESSONS[L.level] && LESSONS[L.level][L.i]) label = `Lesson ${L.level} · ${LESSONS[L.level][L.i].t.replace(/<[^>]+>/g,'')}`;
