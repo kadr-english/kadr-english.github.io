@@ -1030,6 +1030,39 @@
   .vc-empty{color:#c9cfc9; text-align:center; padding:24px 0}
   .vc-note{font-size:13.5px; color:#9aa39a; margin-top:20px}
   .lx-vc{margin-top:14px}
+  .vc-modes-wrap{display:flex; flex-wrap:wrap; gap:10px 28px; margin:6px 0 16px}
+  .vc-mgroup{display:flex; flex-direction:column; gap:6px; min-width:0}
+  .vc-mlabel{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); font-weight:700}
+  .vc-modes-wrap .vc-modes{margin:0}
+  .vc-mode{padding:10px 16px; min-height:44px}
+  .vc-n{display:inline-block; min-width:22px; padding:1px 6px; border-radius:99px; background:rgba(240,201,107,.2); font-size:12px; margin-left:4px}
+  .vc-banner{max-width:680px; margin:0 auto 12px; padding:10px 14px; border:1px solid rgba(240,201,107,.5); border-radius:10px; background:rgba(240,201,107,.1); color:#f0d9a0; font-size:14.5px; text-align:center}
+  .vc-legend{margin-top:12px; font-size:14px; color:#c9cfc9; max-width:680px}
+  .vc-legend summary{cursor:pointer; color:var(--gold); font-weight:600; min-height:32px}
+  .vc-legend ul{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:8px}
+  .vc-legend li{display:flex; gap:10px; align-items:flex-start; line-height:1.5}
+  .vc-legend .st{flex:0 0 auto}
+  .vc-link{background:none; border:0; color:var(--gold); font:inherit; font-size:14.5px; font-weight:600; text-decoration:underline; cursor:pointer; padding:8px 4px; min-height:40px}
+  .vc-tr-box{margin:6px 0 4px}
+  .vc-tr{display:grid; gap:6px; margin:6px auto 4px; max-width:420px; text-align:left}
+  .vc-tr div{display:flex; gap:10px; align-items:baseline; padding:8px 12px; border-radius:8px; background:rgba(255,255,255,.05)}
+  .vc-tr dt{flex:0 0 96px; font-size:12.5px; color:#9aa39a}
+  .vc-tr dd{margin:0; color:#f3efe2; font-size:16px}
+  .vc-tr-none{font-size:13.5px; color:#9aa39a; margin:4px 0}
+  .vc-fb-line{margin-top:6px; font-weight:400}
+  .vc-fb-line.vc-ex{margin-bottom:0}
+  .vc-build{min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px; margin:12px 0; border:1.5px dashed #5c6a61; border-radius:10px; text-align:left}
+  .vc-build.ok{border-style:solid; border-color:#58b078} .vc-build.bad{border-style:solid; border-color:var(--red)}
+  .vc-ph{color:#9aa39a; font-size:14px}
+  .vc-bank{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:6px 0 4px}
+  .vc-tok{background:rgba(255,255,255,.06); color:#f3efe2; border:1px solid #5c6a61; border-radius:8px; padding:9px 13px; font:inherit; font-size:16px; min-height:44px; cursor:pointer}
+  .vc-tok.on{background:rgba(201,151,63,.18); border-color:var(--gold)}
+  .vc-tok:disabled{opacity:.3; cursor:default} .vc-build .vc-tok:disabled{opacity:1}
+  .vc-spell{margin:12px 0 4px} .vc-spell .vc-search{max-width:360px; margin:0 auto; display:block; text-align:center; font-size:18px}
+  .vc-wrap .btn:disabled{opacity:.45; cursor:default}
+  .vc-list-top{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; margin-bottom:14px} .vc-list-top .vc-search{margin-bottom:0}
+  .vc-r-d{display:grid; gap:3px} .vc-r-d em{color:#9aa39a; font-size:13.5px} .vc-r-tr{color:#e0c88f; font-size:13.5px}
+  @media (max-width:760px){ .vc-modes-wrap{flex-direction:column} .vc-mode{flex:1 1 auto} .vc-tr dt{flex-basis:78px} }
   @media (max-width:760px){ .vc-card{padding:22px 16px} .vc-word{font-size:28px} .vc-rows li{grid-template-columns:1fr; gap:4px} .vc-r-m{justify-content:flex-start} .vc-select{width:100%} }
   @media (min-width:1101px){ nav.links{gap:14px} nav.links button{font-size:14.5px; white-space:nowrap} html[lang="uz"] nav.links{gap:10px} html[lang="uz"] nav.links button{font-size:14px} }
   @media (max-width:1100px){ nav.links.open{max-height:560px !important} }
@@ -1379,7 +1412,7 @@ const RXC = I18N_DATA.rx.map(r=>({re:new RegExp(r[0]), ru:r[1], uz:r[2]}));
 ['All the key words from the lessons, A1–C2, in one place. Learn them with flashcards, check yourself with a short quiz and follow your progress.','Все ключевые слова из уроков A1–C2 в одном месте. Учите их по карточкам, проверяйте себя коротким тестом и следите за прогрессом.','A1–C2 darslaridagi barcha kalit so‘zlar bir joyda. Ularni kartochkalar orqali o‘rganing, qisqa test bilan o‘zingizni tekshiring va natijangizni kuzating.'],
 ['All','Все','Hammasi'],['All lessons','Все уроки','Barcha darslar'],
 ['Cards','Карточки','Kartochkalar'],['Word list','Список слов','So‘zlar ro‘yxati'],
-['Known','Знаю','Bilaman'],['Learning','Учу','O‘rganyapman'],['New','Новое','Yangi'],['Total','Всего','Jami'],
+['Known','Знаю','Bilaman'],['Learning','Изучаю','O‘rganyapman'],['Know well','Хорошо знаю','Yaxshi bilaman'],['New','Новое','Yangi'],['Total','Всего','Jami'],
 ['Card','Карточка','Kartochka'],['Question','Вопрос','Savol'],
 ['Show meaning','Показать значение','Ma’nosini ko‘rsatish'],['Still learning','Пока не знаю','Hali bilmayman'],['I know it','Знаю это слово','Bu so‘zni bilaman'],
 ['From the lesson','Из урока','Darsdan'],
@@ -1396,6 +1429,33 @@ const RXC = I18N_DATA.rx.map(r=>({re:new RegExp(r[0]), ru:r[1], uz:r[2]}));
 ['Practise these words','Потренировать эти слова','Bu so‘zlarni mashq qilish'],
 ['A vocabulary trainer with all the key words from the lessons: flashcards, a short quiz and a word list.','Тренажёр слов со всеми ключевыми словами из уроков: карточки, короткий тест и список слов.','Darslardagi barcha kalit so‘zlar bilan lug‘at mashqi: kartochkalar, qisqa test va so‘zlar ro‘yxati.'],
 ['Mode','Режим','Rejim'],
+['Learn','Учить','O‘rganish'],['Exercises','Упражнения','Mashqlar'],
+['Review words','Повторить слова','So‘zlarni takrorlash'],
+['Choose the meaning','Выбрать значение','Ma’noni tanlash'],['Fill the gap','Вставить слово','So‘zni qo‘yish'],['Build a sentence','Собрать предложение','Gap tuzish'],['Write the word','Написать слово','So‘zni yozish'],
+['Review mode: only words with the status "Learning" in the chosen level and lesson.','Режим повторения: только слова со статусом «Изучаю» в выбранном уровне и уроке.','Takrorlash rejimi: tanlangan daraja va darsdagi faqat «O‘rganyapman» holatidagi so‘zlar.'],
+['There are no words to review yet.','Слов для повторения пока нет.','Hozircha takrorlash uchun so‘zlar yo‘q.'],
+['Words appear here after you practise them. They keep the status "Learning" until you answer correctly 3 times in a row.','Слова появляются здесь после первой тренировки. Они остаются со статусом «Изучаю», пока вы не ответите правильно 3 раза подряд.','So‘zlar birinchi mashqdan keyin shu yerda paydo bo‘ladi. Ketma-ket 3 marta to‘g‘ri javob bermaguningizcha ular «O‘rganyapman» holatida qoladi.'],
+['Go to all cards','Перейти ко всем карточкам','Barcha kartochkalarga o‘tish'],['Go to the exercises','Перейти к упражнениям','Mashqlarga o‘tish'],
+['Show translation','Показать перевод','Tarjimani ko‘rsatish'],['Hide translation','Скрыть перевод','Tarjimani yashirish'],
+['There is no translation for this word yet.','Для этого слова перевода пока нет.','Bu so‘z uchun hozircha tarjima yo‘q.'],
+['Russian','Русский','Ruscha'],['Uzbek','Узбекский','O‘zbekcha'],
+['Correct in a row','Правильно подряд','Ketma-ket to‘g‘ri'],
+['Choose the word for the gap:','Выберите слово для пропуска:','Bo‘sh joy uchun so‘zni tanlang:'],
+['Put the words in the correct order:','Расставьте слова в правильном порядке:','So‘zlarni to‘g‘ri tartibda joylashtiring:'],
+['Tap the words below.','Нажимайте на слова ниже.','Quyidagi so‘zlarni bosing.'],
+['Check','Проверить','Tekshirish'],['Clear','Очистить','Tozalash'],
+['Write the word that has this meaning:','Напишите слово с этим значением:','Shu ma’noli so‘zni yozing:'],
+['First letter','Первая буква','Birinchi harf'],['Your answer','Ваш ответ','Javobingiz'],['You wrote','Вы написали','Siz yozdingiz'],
+['Capital letters and extra spaces do not matter.','Заглавные буквы и лишние пробелы не учитываются.','Bosh harflar va ortiqcha bo‘shliqlar hisobga olinmaydi.'],
+['Correct answer','Правильный ответ','To‘g‘ri javob'],['Result','Результат','Natija'],
+['Try again with new words','Ещё раз с новыми словами','Yangi so‘zlar bilan yana bir bor'],
+['This exercise needs at least 4 words. Choose another level or lesson.','Для этого упражнения нужно не меньше 4 слов. Выберите другой уровень или урок.','Bu mashq uchun kamida 4 ta so‘z kerak. Boshqa daraja yoki darsni tanlang.'],
+['There are no suitable sentences for this choice. Choose another level or lesson.','Для этого выбора нет подходящих предложений. Выберите другой уровень или урок.','Bu tanlov uchun mos gaplar yo‘q. Boshqa daraja yoki darsni tanlang.'],
+['What do the statuses mean?','Что означают статусы?','Holatlar nimani anglatadi?'],
+['You have not practised this word yet.','Вы ещё не тренировали это слово.','Siz bu so‘zni hali mashq qilmagansiz.'],
+['You have practised the word, but have not yet answered correctly 3 times in a row. A mistake returns the word to this status.','Вы уже тренировали слово, но ещё не ответили правильно 3 раза подряд. После ошибки слово возвращается в этот статус.','Siz so‘zni mashq qilgansiz, lekin hali ketma-ket 3 marta to‘g‘ri javob bermagansiz. Xatodan keyin so‘z shu holatga qaytadi.'],
+['You answered correctly 3 times in a row, on the cards or in the exercises.','Вы ответили правильно 3 раза подряд — на карточках или в упражнениях.','Siz kartochkalarda yoki mashqlarda ketma-ket 3 marta to‘g‘ri javob berdingiz.'],
+['Translations are available only for some words. They were prepared for KADR and have not been checked by a teacher yet.','Переводы есть только у части слов. Они подготовлены для KADR и пока не проверены преподавателем.','Tarjimalar faqat ayrim so‘zlar uchun mavjud. Ular KADR uchun tayyorlangan va hali o‘qituvchi tomonidan tekshirilmagan.'],
 ['flashcards and a quick quiz with the key words from the lessons','карточки и короткий тест с ключевыми словами из уроков','darslardagi kalit so‘zlar bo‘yicha kartochkalar va qisqa test']
 ].forEach(r=>{ if(DICT.ru[nrm(r[0])] === undefined || r[0]==='Words'){ DICT.ru[nrm(r[0])] = r[1]; DICT.uz[nrm(r[0])] = r[2]; } });
 
@@ -3865,32 +3925,300 @@ function openLessonDetail(level, i){
 lessonOverlay.addEventListener('click', e=>{ if(e.target===lessonOverlay) closeLessonDetail(); });
 
 
+/* Vocabulary trainer data: [example with the word in {braces}, Russian, Uzbek]. Translations are given only where prepared; null = none. */
+const VC_DATA = {
+// ---- A1 ----
+"name": ["My {name} is Sevara.", "имя", "ism"],
+"age": ["Please write your name and {age} here.", "возраст", "yosh"],
+"city": ["Tashkent is a big {city}.", "город", "shahar"],
+"student": ["I am a {student} at this school.", "ученик, студент", "o‘quvchi, talaba"],
+"teacher": ["Our {teacher} is very kind.", "учитель", "o‘qituvchi"],
+"nice to meet you.": ["Hello, I'm Anna. {Nice to meet you.}", "Приятно познакомиться.", "Tanishganimdan xursandman."],
+"get up": ["I {get up} at seven o'clock.", "вставать", "o‘rindan turmoq"],
+"have breakfast": ["We {have breakfast} at eight.", "завтракать", "nonushta qilmoq"],
+"go to school": ["I {go to school} by bus.", "ходить в школу", "maktabga bormoq"],
+"usually": ["I {usually} walk to school.", "обычно", "odatda"],
+"always": ["She is {always} happy.", "всегда", "doim"],
+"never": ["I {never} drink coffee.", "никогда", "hech qachon"],
+"every day": ["I read a book {every day}.", "каждый день", "har kuni"],
+"o'clock": ["The lesson starts at nine {o'clock}.", "… часов (точное время)", null],
+"quarter": ["It is a {quarter} past six.", "четверть", "chorak"],
+"half": ["It is {half} past nine.", "половина", "yarim"],
+"date": ["What is the {date} today?", "дата", "sana"],
+"birthday": ["My {birthday} is in May.", "день рождения", "tug‘ilgan kun"],
+"week": ["There are seven days in a {week}.", "неделя", "hafta"],
+"month": ["May is my favourite {month}.", "месяц", "oy"],
+"menu": ["Can I see the {menu}, please?", "меню", "menyu"],
+"waiter": ["The {waiter} brings our food.", "официант", "ofitsiant"],
+"bill": ["Could we have the {bill}, please?", "счёт", "hisob"],
+"order": ["I want to {order} a pizza.", "заказывать", "buyurtma bermoq"],
+"a cup of": ["I'd like {a cup of} tea, please.", "чашка (чая, кофе)", null],
+"a glass of": ["Can I have {a glass of} water?", "стакан (воды, сока)", "bir stakan"],
+"living room": ["We watch TV in the {living room}.", "гостиная", "mehmonxona"],
+"kitchen": ["My mother is in the {kitchen}.", "кухня", "oshxona"],
+"bedroom": ["My {bedroom} is small but nice.", "спальня", "yotoqxona"],
+"bathroom": ["The {bathroom} is next to my room.", "ванная", "hammom"],
+"desk": ["My books are on the {desk}.", "письменный стол", "yozuv stoli"],
+"shelf": ["The dictionary is on the {shelf}.", "полка", "tokcha"],
+"next to": ["The bank is {next to} the school.", "рядом с", "yonida"],
+"grandparents": ["My {grandparents} live in a village.", "бабушка и дедушка", "buvi va bobo"],
+"aunt": ["My {aunt} is my mother's sister.", "тётя", "xola, amma"],
+"uncle": ["My {uncle} has a big car.", "дядя", "tog‘a, amaki"],
+"cousin": ["My {cousin} is ten years old.", "двоюродный брат, двоюродная сестра", null],
+"tall": ["My brother is very {tall}.", "высокий", "baland bo‘yli"],
+"curly hair": ["She has long {curly hair}.", "кудрявые волосы", "jingalak soch"],
+"swim": ["I can {swim} very well.", "плавать", "suzmoq"],
+"cook": ["My father can {cook} plov.", "готовить", "ovqat pishirmoq"],
+"draw": ["I like to {draw} animals.", "рисовать", "rasm chizmoq"],
+"ride a bike": ["I {ride a bike} in the park.", "кататься на велосипеде", "velosiped minmoq"],
+"sing": ["She can {sing} beautiful songs.", "петь", "qo‘shiq aytmoq"],
+"dance": ["We {dance} at every party.", "танцевать", "raqsga tushmoq"],
+"chess": ["We play {chess} after school.", "шахматы", "shaxmat"],
+"hobby": ["My {hobby} is reading books.", "хобби", "sevimli mashg‘ulot"],
+"favourite": ["Blue is my {favourite} colour.", "любимый", "sevimli"],
+"best friend": ["Madina is my {best friend}.", "лучший друг, лучшая подруга", "eng yaqin do‘st"],
+"language": ["English is a beautiful {language}.", "язык", "til"],
+"brother / sister": ["I have one {brother} and one sister.", "брат / сестра", "aka, uka / opa, singil"],
+// ---- A2 ----
+"at the moment": ["I am very busy {at the moment}.", "в данный момент", "hozir"],
+"wait for": ["We {wait for} the bus every morning.", "ждать", "kutmoq"],
+"wear": ["I {wear} a warm coat in winter.", "носить (одежду)", "kiymoq"],
+"shade": ["Let's sit in the {shade}.", "тень", "soya"],
+"tourist": ["A {tourist} asked me the way.", "турист", "sayyoh"],
+"volleyball": ["We play {volleyball} on the beach.", "волейбол", "voleybol"],
+"yesterday": ["I saw him at school {yesterday}.", "вчера", "kecha"],
+"last week": ["We had a test {last week}.", "на прошлой неделе", "o‘tgan hafta"],
+"ago": ["I came here two years {ago}.", "назад", "oldin"],
+"weekend": ["What did you do at the {weekend}?", "выходные", "dam olish kunlari"],
+"visit": ["I often {visit} my grandmother.", "навещать, посещать", "tashrif buyurmoq"],
+"buy": ["I want to {buy} a new phone.", "покупать", "sotib olmoq"],
+"plan": ["What is your {plan} for tomorrow?", "план", "reja"],
+"tomorrow": ["I will call you {tomorrow}.", "завтра", "ertaga"],
+"next week": ["We are going to travel {next week}.", "на следующей неделе", "keyingi hafta"],
+"promise": ["I {promise} to help you.", "обещать", "va’da bermoq"],
+"maybe": ["It's cloudy, so {maybe} it will rain.", "может быть", "balki"],
+"soon": ["The film will start {soon}.", "скоро", "tez orada"],
+"bus stop": ["I am waiting at the {bus stop}.", "автобусная остановка", "avtobus bekati"],
+"pharmacy": ["You can buy medicine at the {pharmacy}.", "аптека", "dorixona"],
+"post office": ["I sent a letter at the {post office}.", "почта", "pochta"],
+"cross": ["Be careful when you {cross} the road.", "переходить", "kesib o‘tmoq"],
+"corner": ["The shop is on the {corner}.", "угол", "burchak"],
+"on foot": ["I go to school {on foot}.", "пешком", "piyoda"],
+"size": ["What {size} are these shoes?", "размер", "o‘lcham"],
+"change": ["Here is your {change}, sir.", "сдача", "qaytim"],
+"discount": ["There is a {discount} on these shoes.", "скидка", "chegirma"],
+"cheap / expensive": ["This bag is {cheap}, but that one is expensive.", "дешёвый / дорогой", "arzon / qimmat"],
+"try on": ["Can I {try on} this jacket?", "примерять", "kiyib ko‘rmoq"],
+"pay by card": ["Can I {pay by card} here?", "платить картой", "karta bilan to‘lamoq"],
+"headache": ["I have a bad {headache} today.", "головная боль", "bosh og‘rig‘i"],
+"sore throat": ["I can't sing because I have a {sore throat}.", "боль в горле", "tomoq og‘rig‘i"],
+"fever": ["He has a {fever} and feels hot.", "жар, высокая температура", "isitma"],
+"medicine": ["Take this {medicine} twice a day.", "лекарство", "dori"],
+"rest": ["You should {rest} at home today.", "отдыхать", "dam olmoq"],
+"healthy": ["Fruit is {healthy} food.", "полезный, здоровый", "sog‘lom, foydali"],
+"invite": ["I want to {invite} you to my party.", "приглашать", "taklif qilmoq"],
+"party": ["We had a birthday {party} on Saturday.", "вечеринка, праздник", "ziyofat"],
+"free": ["Are you {free} on Friday evening?", "свободный", "bo‘sh"],
+"arrange": ["Let's {arrange} a time to meet.", "договариваться, организовывать", null],
+"sounds great": ["A picnic on Sunday? That {sounds great}!", "звучит отлично", null],
+"journey": ["The {journey} to Bukhara takes four hours.", "поездка, путешествие", "safar"],
+"ending": ["The film has a happy {ending}.", "конец, финал", "yakun"],
+"board game": ["Chess is my favourite {board game}.", "настольная игра", "stol o‘yini"],
+"best wishes": ["See you soon. {Best wishes}, Timur", "С наилучшими пожеланиями", "Eng ezgu tilaklar bilan"],
+"write soon": ["I miss you. Please {write soon}!", "Напиши поскорее", null],
+// ---- B1 ----
+"rule": ["It is a school {rule} to arrive on time.", "правило", null],
+"uniform": ["All the students wear a {uniform}.", "форма", null],
+"forbidden": ["Smoking is {forbidden} in this building.", "запрещённый", null],
+"necessary": ["It is {necessary} to book a ticket.", "необходимый", null],
+"advice": ["Can you give me some {advice}?", "совет", null],
+"borrow": ["Can I {borrow} your pen for a minute?", "брать на время, одалживать", null],
+"experience": ["She has a lot of {experience} with children.", "опыт", null],
+"already": ["I have {already} finished my homework.", "уже", null],
+"so far": ["I have read three chapters {so far}.", "до сих пор, пока", null],
+"recently": ["I have {recently} started a new course.", "недавно", null],
+"achievement": ["Winning the prize was a great {achievement}.", "достижение", null],
+"notice": ["Did you {notice} her new haircut?", "замечать", null],
+"realise": ["I didn't {realise} it was so late.", "осознавать, понимать", null],
+"refuse": ["I had to {refuse} his offer.", "отказываться", null],
+"nearby": ["Is there a bank {nearby}?", "поблизости", null],
+"discover": ["Scientists {discover} new things every year.", "обнаруживать, открывать", null],
+"suddenly": ["The lights {suddenly} went out.", "внезапно", null],
+"candidate": ["She is the best {candidate} for the job.", "кандидат", null],
+"cv (résumé)": ["Please send your {CV} with the application.", "резюме", null],
+"salary": ["The job has a good {salary}.", "зарплата", null],
+"skills": ["You need computer {skills} for this job.", "навыки", null],
+"reliable": ["He is a {reliable} worker.", "надёжный", null],
+"apply for": ["I want to {apply for} this job.", "подавать заявление на", null],
+"argument": ["That is a strong {argument} for the plan.", "аргумент, довод", null],
+"opinion": ["In my {opinion}, the film is too long.", "мнение", null],
+"convince": ["I tried to {convince} him to stay.", "убеждать", null],
+"advantage / disadvantage": ["One {advantage} of the city is good transport.", "преимущество / недостаток", null],
+"point of view": ["I understand your {point of view}.", "точка зрения", null],
+"luggage": ["We left our {luggage} at the hotel.", "багаж", null],
+"delay": ["There was a two-hour {delay} at the airport.", "задержка", null],
+"sightseeing": ["We went {sightseeing} in Samarkand.", "осмотр достопримечательностей", null],
+"miss (a train)": ["Hurry up, or we will {miss} the train.", "опоздать (на поезд)", null],
+"invent": ["Engineers {invent} new machines every year.", "изобретать", null],
+"recycle": ["We {recycle} paper and glass at school.", "перерабатывать", null],
+"pulp": ["Paper is made from wood {pulp}.", null, null],
+"donate": ["Many people {donate} money to charity.", "жертвовать", null],
+"postpone": ["We had to {postpone} the meeting.", "откладывать, переносить", null],
+"announce": ["They will {announce} the winner tonight.", "объявлять", null],
+"skim": ["First, {skim} the text to get the main idea.", "бегло просматривать", null],
+"scan": ["Now {scan} the page to find the date.", null, null],
+"summary": ["Write a short {summary} of the article.", "краткое изложение", null],
+"concentrate": ["I can't {concentrate} with all this noise.", "сосредоточиться", null],
+"benefit": ["One {benefit} of sport is better health.", "польза, преимущество", null],
+"anxious": ["She felt {anxious} before the exam.", "встревоженный", null],
+// ---- B2 ----
+"retired": ["My grandfather is a {retired} doctor.", "на пенсии", null],
+"second-hand": ["I bought a {second-hand} bike.", "подержанный", null],
+"atmosphere": ["The cafe has a friendly {atmosphere}.", "атмосфера", null],
+"recommend": ["Can you {recommend} a good book?", "рекомендовать", null],
+"stationery": ["The shop sells books and {stationery}.", "канцелярские товары", null],
+"customer": ["The {customer} asked for a refund.", "покупатель, клиент", null],
+"unless": ["We will be late {unless} we leave now.", "если не", null],
+"provided that": ["You can go out {provided that} you finish your homework.", "при условии, что", null],
+"regret": ["I {regret} not studying harder at school.", "сожалеть", null],
+"hypothetical": ["It is only a {hypothetical} situation.", "гипотетический", null],
+"consequence": ["Every decision has a {consequence}.", "последствие", null],
+"explain": ["Could you {explain} this rule again?", "объяснять", null],
+"complain": ["Customers often {complain} about the noise.", "жаловаться", null],
+"add": ["I would like to {add} one more point.", "добавлять", null],
+"resident": ["Every {resident} of the building has a key.", "житель", null],
+"volunteer": ["She works as a {volunteer} at the hospital.", "волонтёр", null],
+"privacy": ["Social media can be a risk to your {privacy}.", "частная жизнь, конфиденциальность", null],
+"automation": ["Many factory jobs have changed because of {automation}.", "автоматизация", null],
+"digital divide": ["The {digital divide} separates people with and without internet access.", "цифровое неравенство", null],
+"addiction": ["Phone {addiction} is a growing problem.", "зависимость", null],
+"outweigh": ["The benefits {outweigh} the risks.", "перевешивать", null],
+"give up": ["Don't {give up} after one mistake.", "сдаваться", null],
+"put off": ["Don't {put off} your homework until Sunday.", "откладывать", null],
+"get along with": ["I {get along with} all my classmates.", "ладить с", null],
+"bring up": ["Please don't {bring up} that topic at dinner.", "поднимать (тему)", null],
+"come up with": ["We need to {come up with} a better plan.", "придумать", null],
+"small talk": ["We made {small talk} about the weather.", "светская беседа", null],
+"polite": ["It is {polite} to say thank you.", "вежливый", null],
+"mind": ["Do you {mind} if I open the window?", "возражать", null],
+"awkward silence": ["There was an {awkward silence} after his joke.", "неловкое молчание", null],
+"hesitate": ["Don't {hesitate} to ask for help.", "колебаться", null],
+"absorb": ["Plants {absorb} water through their roots.", "впитывать, поглощать", null],
+"vegetation": ["The island is covered with thick {vegetation}.", "растительность", null],
+"by-product": ["Heat is a {by-product} of this process.", "побочный продукт", null],
+"convinced": ["I am {convinced} that she is right.", "убеждённый", null],
+"discard": ["Please {discard} any food that is out of date.", "выбрасывать", null],
+"enquire": ["I am writing to {enquire} about the course.", "наводить справки", null],
+"at your earliest convenience": ["Please reply {at your earliest convenience}.", "при первой возможности", null],
+"attach": ["Don't forget to {attach} the file to your email.", "прикреплять", null],
+"fees": ["The course {fees} are quite high.", "плата (за обучение)", null],
+"timetable": ["Check the {timetable} for the next train.", "расписание", null],
+"volunteering": ["She learned a lot from {volunteering}.", "волонтёрство", null],
+// ---- C1 ----
+"relieved": ["I was {relieved} to hear that everyone was safe.", null, null],
+"unprecedented": ["The storm caused {unprecedented} damage.", null, null],
+"reluctantly": ["She {reluctantly} agreed to work at the weekend.", null, null],
+"resilience": ["The team showed great {resilience} after the defeat.", null, null],
+"undertake": ["The firm will {undertake} a full review of its costs.", null, null],
+"scarcely": ["I could {scarcely} believe my eyes.", null, null],
+"assess": ["We need to {assess} the risks before we invest.", null, null],
+"implement": ["The school will {implement} the new policy in September.", null, null],
+"stakeholder": ["Every {stakeholder} was invited to the meeting.", null, null],
+"feasible": ["The plan is technically {feasible} but expensive.", null, null],
+"substantial": ["The company made a {substantial} profit last year.", null, null],
+"allocate": ["The council will {allocate} more money to schools.", null, null],
+"indicate": ["The results {indicate} a clear improvement.", null, null],
+"tend to": ["People {tend to} overestimate their own abilities.", null, null],
+"evidence": ["There is little {evidence} to support this claim.", null, null],
+"mitigate": ["Planting trees can {mitigate} the effects of pollution.", null, null],
+"inconclusive": ["The results of the study were {inconclusive}.", null, null],
+"cut corners": ["If you {cut corners}, the quality will suffer.", null, null],
+"go the extra mile": ["Good teachers {go the extra mile} for their students.", null, null],
+"on the same page": ["Let's make sure we are all {on the same page}.", null, null],
+"back to square one": ["The deal collapsed, so we are {back to square one}.", null, null],
+"a blessing in disguise": ["Losing that job was {a blessing in disguise}.", null, null],
+"motion": ["The {motion} was that schools should ban homework.", null, null],
+"rebuttal": ["Her {rebuttal} exposed the weakness in his argument.", null, null],
+"concede": ["I {concede} that the plan has some risks.", null, null],
+"premise": ["The argument rests on a false {premise}.", null, null],
+"fallacy": ["It is a {fallacy} that money always brings happiness.", null, null],
+"certainty": ["I can say with {certainty} that he was there.", null, null],
+"obligation": ["You are under no {obligation} to buy anything.", null, null],
+"tentative": ["We have made a {tentative} plan for the summer.", null, null],
+"speculate": ["I would rather not {speculate} about the cause.", null, null],
+"deduction": ["By {deduction}, the thief must have had a key.", null, null],
+"irony": ["The {irony} is that the fire station burned down.", null, null],
+"concession": ["The author makes one {concession} to her critics.", null, null],
+"connotation": ["The word 'cheap' has a negative {connotation}.", null, null],
+"implicit": ["There was an {implicit} criticism in her remark.", null, null],
+"sceptical": ["I am {sceptical} about these promises.", null, null],
+"compelling": ["She gave a {compelling} reason for the change.", null, null],
+"implication": ["The decision has a serious {implication} for small firms.", null, null],
+"regulation": ["A new {regulation} limits traffic in the city centre.", null, null],
+"counter-argument": ["A good essay considers the {counter-argument} as well.", null, null],
+"on balance": ["I think the change was, {on balance}, positive.", null, null],
+// ---- C2 ----
+"nuance": ["A good translator notices every {nuance} of the text.", null, null],
+"commence": ["The ceremony will {commence} at noon.", null, null],
+"tip of the iceberg": ["These complaints are only the {tip of the iceberg}.", null, null],
+"pivotal": ["She played a {pivotal} role in the negotiations.", null, null],
+"unequivocal": ["The minister gave an {unequivocal} answer.", null, null],
+"register": ["An email to a friend needs an informal {register}.", null, null],
+"purchase": ["Customers may {purchase} tickets online.", null, null],
+"ascertain": ["The police are trying to {ascertain} the facts.", null, null],
+"convey": ["Please {convey} my thanks to your colleagues.", null, null],
+"notwithstanding": ["The match went ahead, the rain {notwithstanding}.", null, null],
+"colloquial": ["'Gonna' is a {colloquial} form of 'going to'.", null, null],
+"persuade": ["He tried to {persuade} the jury of his innocence.", null, null],
+"rhetoric": ["Voters are tired of empty political {rhetoric}.", null, null],
+"audience": ["The speaker kept the {audience} interested throughout.", null, null],
+"appeal to": ["The campaign is designed to {appeal to} young voters.", null, null],
+"emphasis": ["The course places great {emphasis} on speaking.", null, null],
+"call to action": ["The speech ended with a clear {call to action}.", null, null],
+"understatement": ["To say the exam was hard is an {understatement}.", null, null],
+"subtext": ["The {subtext} of his remark was that he disagreed.", null, null],
+"deadpan": ["She told the joke in a {deadpan} voice.", null, null],
+"self-deprecating": ["His {self-deprecating} humour made everyone relax.", null, null],
+"hook": ["A good speech opens with a strong {hook}.", null, null],
+"rapport": ["The teacher quickly built a {rapport} with the class.", null, null],
+"rhetorical question": ["'Who knows?' is often a {rhetorical question}.", null, null],
+"pace": ["Slow your {pace} when you make a key point.", null, null],
+"ubiquitous": ["Plastic bottles have become {ubiquitous}.", null, null],
+"ephemeral": ["Fashion trends are often {ephemeral}.", null, null],
+"meticulous": ["She keeps {meticulous} records of every payment.", null, null],
+"candid": ["He was {candid} about his mistakes.", null, null],
+"pernicious": ["The rumour had a {pernicious} effect on morale.", null, null],
+"ambivalent": ["I feel {ambivalent} about moving abroad.", null, null],
+"ostensibly": ["He called, {ostensibly} to ask about the weather.", null, null],
+"arguably": ["This is {arguably} her best novel.", null, null],
+"euphemism": ["'Passed away' is a {euphemism} for 'died'.", null, null],
+"lukewarm": ["The proposal received a {lukewarm} response.", null, null],
+"summarise": ["Can you {summarise} the article in two sentences?", null, null],
+"paraphrase": ["Try to {paraphrase} the sentence in simpler words.", null, null],
+"overlook": ["It is easy to {overlook} small errors.", null, null],
+"in so far as": ["The plan worked {in so far as} it reduced costs.", null, null],
+"valid": ["That is a {valid} point.", null, null],
+"bias": ["The report shows a clear {bias} against small firms.", null, null]
+};
+
 /* ---------------- VOCABULARY TRAINER: key words from all lessons (progress saved in this browser) ---------------- */
+const VC_NEED = 3; // correct answers in a row before a word is marked "Know well"
 const VOCAB = (function(){
   const out = [], byId = {};
   const strip = s => String(s).replace(/<[^>]+>/g, '');
-  const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  // tidy a sentence taken from a lesson so that it can stand alone on a card
-  const tidy = s => { s = s.trim().replace(/^[A-Z][A-Za-z]+:\s+/, ''); if((s.match(/"/g) || []).length % 2) s = s.replace(/"/g, ''); return s.trim(); };
   Object.keys(LESSONS).forEach(L=>{
     LESSONS[L].map((l, i)=>[l, i]).sort((a, b)=>a[0].o - b[0].o).forEach(([l, i])=>{
       (l.vocab || []).forEach(v=>{
         const w = strip(v[0]).trim(), id = w.toLowerCase();
         if(!w) return;
         if(byId[id]){ if(!byId[id].refs.some(r=>r.L === L && r.i === i)) byId[id].refs.push({L, i}); return; } // the same word in a later lesson: one card, several lessons
-        // example: the shortest complete sentence of the lesson (examples, then the reading text) that contains the word
-        let cands = w.toLowerCase().split('/').map(s=>s.replace(/\(.*?\)/g, '').replace(/\.\.\./g, '').replace(/[.!?]+$/, '').trim()).filter(s=>s.length > 2);
-        if(cands.length > 1) cands = cands.filter(s=>s.length > 3);
-        const sents = [...(l.ex || []).map(e=>strip(e[0])), ...((l.reading && l.reading.text.match(/[^.!?]+[.!?]+/g)) || [])]
-          .filter(s=>!/\.\.\.|…/.test(s)).map(tidy).filter(s=>s.split(/\s+/).length >= 3 && s.length <= 200);
-        let ex = '';
-        for(const c of cands){
-          const re = new RegExp('\\b' + reEsc(c) + '(s|es|ed|d|ing|er|est|r|st|ly)?\\b', 'i');
-          const quoted = new RegExp('"\\s*' + reEsc(c) + '\\s*"', 'i');
-          const hits = sents.filter(s=>re.test(s) && !quoted.test(s) && s.toLowerCase().replace(/[.!?]+$/, '') !== c);
-          if(hits.length){ ex = hits.sort((a, b)=>a.length - b.length)[0]; break; }
-        }
-        const item = {id, w, d: strip(v[1]), L, i, ex, refs: [{L, i}]};
+        const d = VC_DATA[id] || [];
+        const raw = d[0] || '', m = /\{([^}]+)\}/.exec(raw);
+        const item = {id, w, d: strip(v[1]), L, i, refs: [{L, i}],
+          ex: raw.replace(/[{}]/g, ''),            // example sentence
+          g: m ? m[1] : '',                        // the form of the word used in the example
+          gap: m ? raw.replace(/\{[^}]+\}/, '_____') : '',
+          ru: d[1] || '', uz: d[2] || ''};
         byId[id] = item; out.push(item);
       });
     });
@@ -3898,11 +4226,12 @@ const VOCAB = (function(){
   return out;
 })();
 /* words that are too close in meaning to be offered as wrong answers for each other */
-const VC_SYN = [['put off','postpone','delay'],['benefit','advantage / disadvantage'],['convince','persuade'],['discover','ascertain'],['purchase','buy'],['opinion','point of view'],['summary','summarise'],['volunteer','volunteering'],['concede','concession'],['convinced','certainty'],['rebuttal','counter-argument'],['nearby','next to'],['come up with','invent'],['undertake','promise'],['notice','realise','discover'],['irony','understatement'],['skills','achievement'],['experience','achievement']];
+const VC_SYN = [['put off','postpone','delay'],['benefit','advantage / disadvantage'],['convince','persuade'],['discover','ascertain'],['purchase','buy'],['opinion','point of view'],['summary','summarise'],['volunteer','volunteering'],['concede','concession'],['convinced','certainty'],['rebuttal','counter-argument'],['nearby','next to'],['come up with','invent'],['undertake','promise'],['notice','realise','discover'],['irony','understatement'],['skills','achievement'],['experience','achievement'],['usually','always','never','every day'],['explain','announce','add','complain'],['recommend','convince','persuade'],['commence','undertake'],['assess','ascertain'],['indicate','announce'],['substantial','pivotal'],['meticulous','reliable'],['rule','regulation','obligation'],['week','month','weekend'],['yesterday','tomorrow','last week','next week','soon','ago','recently','already','at the moment'],['kitchen','bedroom','bathroom','living room'],['aunt','uncle','cousin','grandparents','brother / sister'],['swim','cook','draw','sing','dance'],['chess','volleyball','board game'],['menu','bill'],['teacher','student'],['desk','shelf'],['headache','sore throat','fever'],['bus stop','post office','pharmacy','corner'],['invite','visit'],['customer','resident','volunteer','candidate','tourist','waiter'],['recommend','explain'],['postpone','announce','arrange'],['feasible','valid','compelling','substantial'],['hesitate','give up'],['assess','implement','undertake','allocate','mitigate'],['candid','ambivalent','sceptical','convinced','relieved','anxious'],['summarise','paraphrase'],['buy','order']];
+function vcSyn(a, b){ const aw = a.w.toLowerCase(), bw = b.w.toLowerCase(); return VC_SYN.some(g=>g.includes(aw) && g.includes(bw)); }
 function vcTooClose(a, b){
   const aw = a.w.toLowerCase(), bw = b.w.toLowerCase(), ad = a.d.toLowerCase(), bd = b.d.toLowerCase();
   if(aw === bw || ad === bd) return true;
-  if(VC_SYN.some(g=>g.includes(aw) && g.includes(bw))) return true;
+  if(VC_SYN.slice(0, 18).some(g=>g.includes(aw) && g.includes(bw))) return true;
   const toks = s => s.replace(/\(.*?\)/g, ' ').split(/[^a-z'-]+/).filter(t=>t.length >= 4);
   if(toks(aw).some(t=>new RegExp('\\b' + t).test(bd)) || toks(bw).some(t=>new RegExp('\\b' + t).test(ad))) return true; // one headword is used in the other definition
   const A = new Set(ad.split(/[^a-z]+/).filter(Boolean)), B = new Set(bd.split(/[^a-z]+/).filter(Boolean));
@@ -3916,74 +4245,151 @@ function vcRef(v){
   return v.refs[0];
 }
 function vcLessonTitle(r){ const l = LESSONS[r.L] && LESSONS[r.L][r.i]; return l ? String(l.t).replace(/<[^>]+>/g, '') : ''; }
-const vc = {level:'all', lesson:'all', mode:'cards', deck:[], pos:0, flipped:false, quiz:null, q:''};
-const VC_ST = {known:'Known', learning:'Learning', new:'New'};
+const vc = {level:'all', lesson:'all', mode:'cards', ex:'meaning', deck:[], pos:0, flipped:false, quiz:null, q:'', tr:false};
+const VC_ST = {known:'Know well', learning:'Learning', new:'New'};
 const VC_CLS = {known:'st-done', learning:'st-progress', new:'st-new'};
-function vcStatus(id){ const r = PG.d.vocab && PG.d.vocab[id]; return r && r.s ? r.s : 'new'; }
-function vcMark(id, s){ if(!PG.d.vocab) PG.d.vocab = {}; const r = PG.d.vocab[id] || {n:0}; r.s = s; r.n = (r.n || 0) + 1; r.t = Date.now(); PG.d.vocab[id] = r; PG.save(); }
+/* status: results saved by the first version of the trainer ({s:'known'|'learning'}) stay valid */
+function vcStatus(id){ const r = PG.d.vocab && PG.d.vocab[id]; return r && (r.s === 'known' || r.s === 'learning') ? r.s : 'new'; }
+function vcStreak(id){ const r = PG.d.vocab && PG.d.vocab[id]; if(!r) return 0; return typeof r.k === 'number' ? r.k : (r.s === 'known' ? VC_NEED : 0); }
+function vcMark(id, ok){
+  if(!PG.d.vocab) PG.d.vocab = {};
+  const r = PG.d.vocab[id] || {n:0};
+  const k = ok ? Math.min(vcStreak(id) + 1, VC_NEED) : 0;
+  r.k = k; r.s = k >= VC_NEED ? 'known' : 'learning'; r.n = (r.n || 0) + 1; r.t = Date.now();
+  PG.d.vocab[id] = r; PG.save();
+}
 function vcPool(){ return VOCAB.filter(v=>(vc.level === 'all' || v.refs.some(r=>r.L === vc.level)) && (vc.lesson === 'all' || v.refs.some(r=>r.L + ':' + r.i === vc.lesson))); }
 function vcShuffle(a){ a = a.slice(); for(let k = a.length - 1; k > 0; k--){ const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+function vcByStatus(list){ const g = {learning:[], new:[], known:[]}; list.forEach(v=>g[vcStatus(v.id)].push(v)); return [...vcShuffle(g.learning), ...vcShuffle(g.new), ...vcShuffle(g.known)]; }
 function vcNewDeck(list){
-  if(list){ vc.deck = vcShuffle(list); }
-  else{ const g = {learning:[], new:[], known:[]}; vcPool().forEach(v=>g[vcStatus(v.id)].push(v)); vc.deck = [...vcShuffle(g.learning), ...vcShuffle(g.new), ...vcShuffle(g.known)]; }
+  if(list) vc.deck = vcShuffle(list);
+  else if(vc.mode === 'review') vc.deck = vcShuffle(vcPool().filter(v=>vcStatus(v.id) === 'learning'));
+  else vc.deck = vcByStatus(vcPool());
   vc.pos = 0; vc.flipped = false;
 }
 function vcSayBtn(w){ return ttsNoEnglishVoice() ? '' : `<button class="btn btn-line vc-say" type="button" data-say="${esc(w)}">&#128266; <span>Listen</span></button>`; }
+function vcTrHtml(v){
+  if(!v.ru && !v.uz) return '<p class="vc-tr-none">There is no translation for this word yet.</p>';
+  return `<dl class="vc-tr">${v.ru ? `<div><dt>Russian</dt><dd data-no-i18n lang="ru">${esc(v.ru)}</dd></div>` : ''}${v.uz ? `<div><dt>Uzbek</dt><dd data-no-i18n lang="uz">${esc(v.uz)}</dd></div>` : ''}</dl>`;
+}
 function vcCardsHtml(){
-  if(!vc.deck.length) return '<p class="vc-empty">There are no words for this choice.</p>';
-  if(vc.pos >= vc.deck.length) return `<div class="vc-card"><p class="vc-def">You have gone through all the cards in this set.</p><div class="vc-actions"><button class="btn btn-line" type="button" data-act="restart" data-focus="1">Start again</button><button class="btn btn-gold" type="button" data-act="mode" data-v="quiz">Take the quiz</button></div></div>`;
+  const review = vc.mode === 'review';
+  const banner = review ? '<p class="vc-banner">Review mode: only words with the status "Learning" in the chosen level and lesson.</p>' : '';
+  if(!vc.deck.length){
+    if(review) return banner + '<div class="vc-card"><p class="vc-def">There are no words to review yet.</p><p class="vc-src">Words appear here after you practise them. They keep the status "Learning" until you answer correctly 3 times in a row.</p><div class="vc-actions"><button class="btn btn-gold" type="button" data-act="mode" data-v="cards" data-focus="1">Go to all cards</button></div></div>';
+    return '<p class="vc-empty">There are no words for this choice.</p>';
+  }
+  if(vc.pos >= vc.deck.length) return banner + `<div class="vc-card"><p class="vc-def">You have gone through all the cards in this set.</p><div class="vc-actions"><button class="btn btn-line" type="button" data-act="restart" data-focus="1">Start again</button><button class="btn btn-gold" type="button" data-act="exmode" data-v="meaning">Go to the exercises</button></div></div>`;
   const v = vc.deck[vc.pos], st = vcStatus(v.id);
   const back = vc.flipped
-    ? `<div class="vc-def" data-no-i18n lang="en">${esc(v.d)}</div>${v.ex ? `<div class="vc-ex" data-no-i18n lang="en">&ldquo;${esc(v.ex)}&rdquo;</div>` : ''}<div class="vc-src"><span>From the lesson</span>: <i data-no-i18n>${esc(vcLessonTitle(vcRef(v)))}</i></div>
+    ? `<div class="vc-def" data-no-i18n lang="en">${esc(v.d)}</div>${v.ex ? `<div class="vc-ex" data-no-i18n lang="en">&ldquo;${esc(v.ex)}&rdquo;</div>` : ''}
+       <div class="vc-tr-box"><button class="vc-link" type="button" data-act="tr" aria-expanded="${vc.tr}">${vc.tr ? 'Hide translation' : 'Show translation'}</button>${vc.tr ? vcTrHtml(v) : ''}</div>
+       <div class="vc-src"><span>Correct in a row</span>: <b>${vcStreak(v.id)}/${VC_NEED}</b> &middot; <span>From the lesson</span>: <i data-no-i18n>${esc(vcLessonTitle(vcRef(v)))}</i></div>
        <div class="vc-actions"><button class="btn btn-line" type="button" data-act="no">Still learning</button><button class="btn btn-gold" type="button" data-act="yes" data-focus="1">I know it</button></div>`
     : `<div class="vc-actions"><button class="btn btn-gold" type="button" data-act="flip" data-focus="1">Show meaning</button></div>`;
-  return `<div class="vc-card">
+  return banner + `<div class="vc-card">
     <div class="vc-top"><span>Card</span> <b>${vc.pos + 1}</b> / <b>${vc.deck.length}</b> <span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div>
     <div class="vc-word" data-no-i18n lang="en">${esc(v.w)}</div>${vcSayBtn(v.w)}${back}</div>`;
 }
+/* ---- exercises: meaning (choose the meaning), gap (fill the gap), build (build a sentence), spell (write the word) ---- */
+function vcNorm(s){ return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[‘’`]/g, "'").replace(/\s+/g, ' ').trim().replace(/[.!?,;:]+$/, '').trim(); }
+function vcAccepted(v){
+  const set = new Set([vcNorm(v.w), vcNorm(v.g)]);
+  v.w.split('/').forEach(p=>{ set.add(vcNorm(p)); set.add(vcNorm(p.replace(/\(.*?\)/g, ' '))); const m = /\((.*?)\)/.exec(p); if(m && /\bcv\b/i.test(p)) set.add(vcNorm(m[1])); });
+  set.delete(''); return set;
+}
+function vcDistractors(v, pool, need){
+  const ok = x => x.id !== v.id && x.g && !vcTooClose(v, x) && !vcSyn(v, x);
+  let o = vcShuffle(pool.filter(ok)).slice(0, need);
+  if(o.length < need) o = o.concat(vcShuffle(VOCAB.filter(x=>x.refs.some(r=>r.L === vcRef(v).L) && ok(x) && !o.includes(x))).slice(0, need - o.length));
+  if(o.length < need) o = o.concat(vcShuffle(VOCAB.filter(x=>ok(x) && !o.includes(x))).slice(0, need - o.length));
+  return o.filter((x, n)=>!o.slice(0, n).some(y=>x.d.toLowerCase() === y.d.toLowerCase() || x.g.toLowerCase() === y.g.toLowerCase() || x.w.toLowerCase() === y.w.toLowerCase()));
+}
 function vcNewQuiz(){
-  const pool = vcPool();
-  if(pool.length < 4){ vc.quiz = {err:true}; return; }
-  const g = {learning:[], new:[], known:[]}; pool.forEach(v=>g[vcStatus(v.id)].push(v));
-  const pick = [...vcShuffle(g.learning), ...vcShuffle(g.new), ...vcShuffle(g.known)].slice(0, Math.min(10, pool.length));
-  const items = vcShuffle(pick).map((v, k)=>{
-    const okOther = x => x.id !== v.id && !vcTooClose(v, x);
-    let others = vcShuffle(pool.filter(okOther)).slice(0, 3);
-    if(others.length < 3) others = others.concat(vcShuffle(VOCAB.filter(x=>x.refs.some(r=>r.L === vcRef(v).L) && okOther(x) && !others.includes(x))).slice(0, 3 - others.length));
-    if(others.length < 3) others = others.concat(vcShuffle(VOCAB.filter(x=>okOther(x) && !others.includes(x))).slice(0, 3 - others.length));
-    // wrong answers must also differ clearly from each other
-    others = others.filter((x, n)=>!others.slice(0, n).some(y=>x.d.toLowerCase() === y.d.toLowerCase() || x.w.toLowerCase() === y.w.toLowerCase()));
-    return {v, rev: k % 2 === 1, opts: vcShuffle([v, ...others]), ans: null, ok: false};
+  const type = vc.ex;
+  let pool = vcPool();
+  if(type === 'gap' || type === 'spell') pool = pool.filter(v=>v.gap);
+  if(type === 'build') pool = pool.filter(v=>{ const n = v.ex.split(/\s+/).filter(Boolean).length; return n >= 4 && n <= 10; });
+  const min = (type === 'meaning' || type === 'gap') ? 4 : 1;
+  if(pool.length < min){ vc.quiz = {err:true, type}; return; }
+  const pick = vcShuffle(vcByStatus(pool).slice(0, Math.min(10, pool.length)));
+  const items = pick.map((v, k)=>{
+    const it = {v, ans:null, ok:false};
+    if(type === 'meaning'){ it.rev = k % 2 === 1; it.opts = vcShuffle([v, ...vcDistractors(v, pool, 3)]); }
+    else if(type === 'gap'){ it.opts = vcShuffle([v, ...vcDistractors(v, pool, 3)]); }
+    else if(type === 'build'){
+      it.toks = v.ex.split(/\s+/).filter(Boolean);
+      let ord = it.toks.map((_, n)=>n), tries = 0;
+      do{ ord = vcShuffle(ord); tries++; }while(tries < 20 && ord.every((x, n)=>x === n));
+      it.order = ord; it.placed = [];
+    }
+    else if(type === 'spell'){ it.typed = ''; }
+    return it;
   });
-  vc.quiz = {items, k:0, score:0, wrong:[]};
+  vc.quiz = {type, items, k:0, score:0, wrong:[]};
+}
+function vcFbHtml(it, extra){
+  const v = it.v;
+  return `<div class="q-explain show${it.ok ? '' : ' is-wrong'}"><b>${it.ok ? 'Correct.' : 'Incorrect.'}</b>${extra || ''}
+    <div class="vc-fb-line" data-no-i18n lang="en"><b>${esc(v.w)}</b> — ${esc(v.d)}</div>${v.ex ? `<div class="vc-fb-line vc-ex" data-no-i18n lang="en">&ldquo;${esc(v.ex)}&rdquo;</div>` : ''}</div>
+    <div class="vc-actions"><button class="btn btn-gold" type="button" data-act="next" data-focus="1">Next</button></div>`;
 }
 function vcQuizHtml(){
-  if(!vc.quiz) vcNewQuiz();
+  if(!vc.quiz || vc.quiz.type !== vc.ex) vcNewQuiz();
   const z = vc.quiz;
-  if(z.err) return '<p class="vc-empty">The quiz needs at least 4 words. Choose another level or lesson.</p>';
+  if(z.err) return z.type === 'build' ? '<p class="vc-empty">There are no suitable sentences for this choice. Choose another level or lesson.</p>' : '<p class="vc-empty">This exercise needs at least 4 words. Choose another level or lesson.</p>';
   if(z.k >= z.items.length){
-    return `<div class="vc-card"><p class="vc-def"><span>Quiz result</span>: <b>${z.score}/${z.items.length}</b></p>
+    return `<div class="vc-card"><p class="vc-def"><span>Result</span>: <b>${z.score}/${z.items.length}</b></p>
       ${z.wrong.length ? `<p class="vc-src"><span>Words to review</span>:</p><ul class="vc-wrong" data-no-i18n lang="en">${z.wrong.map(v=>`<li><b>${esc(v.w)}</b> — ${esc(v.d)}</li>`).join('')}</ul>` : ''}
-      <div class="vc-actions"><button class="btn btn-gold" type="button" data-act="newquiz" data-focus="1">New quiz</button>${z.wrong.length ? '<button class="btn btn-line" type="button" data-act="reviewwrong">Review these words with cards</button>' : ''}</div></div>`;
+      <div class="vc-actions"><button class="btn btn-gold" type="button" data-act="newquiz" data-focus="1">Try again with new words</button>${z.wrong.length ? '<button class="btn btn-line" type="button" data-act="reviewwrong">Review these words with cards</button>' : ''}</div></div>`;
   }
-  const it = z.items[z.k];
-  const prompt = it.rev
-    ? `<div class="vc-q-lbl">Which word has this meaning?</div><div class="vc-prompt" data-no-i18n lang="en">${esc(it.v.d)}</div>`
-    : `<div class="vc-q-lbl">Choose the meaning:</div><div class="vc-word" data-no-i18n lang="en">${esc(it.v.w)}</div>${vcSayBtn(it.v.w)}`;
-  const opts = it.opts.map((o, oi)=>{
-    let cls = 'q-opt';
-    if(it.ans !== null){ if(o.id === it.v.id) cls += ' correct'; else if(oi === it.ans) cls += ' wrong'; }
-    return `<button class="${cls}" type="button" data-act="ans" data-v="${oi}"${it.ans === null && oi === 0 ? ' data-focus="1"' : ''}${it.ans !== null ? ' aria-disabled="true"' : ''} lang="en">${esc(it.rev ? o.w : o.d)}</button>`;
-  }).join('');
-  const fb = it.ans === null ? '' : `<div class="q-explain show${it.ok ? '' : ' is-wrong'}"><b>${it.ok ? 'Correct.' : 'Incorrect.'}</b> <span data-no-i18n lang="en">${esc(it.v.w)} — ${esc(it.v.d)}</span></div><div class="vc-actions"><button class="btn btn-gold" type="button" data-act="next" data-focus="1">Next</button></div>`;
-  return `<div class="vc-card vc-quiz"><div class="vc-top"><span>Question</span> <b>${z.k + 1}</b> / <b>${z.items.length}</b> <span class="vc-lvl">${vcRef(it.v).L}</span></div>${prompt}<div class="vc-opts">${opts}</div>${fb}</div>`;
+  const it = z.items[z.k], v = it.v, done = it.ans !== null;
+  const top = `<div class="vc-top"><span>Question</span> <b>${z.k + 1}</b> / <b>${z.items.length}</b> <span class="vc-lvl">${vcRef(v).L}</span></div>`;
+  let body = '';
+  if(z.type === 'meaning' || z.type === 'gap'){
+    const prompt = z.type === 'gap'
+      ? `<div class="vc-q-lbl">Choose the word for the gap:</div><div class="vc-prompt" data-no-i18n lang="en">${esc(v.gap)}</div>`
+      : it.rev ? `<div class="vc-q-lbl">Which word has this meaning?</div><div class="vc-prompt" data-no-i18n lang="en">${esc(v.d)}</div>`
+               : `<div class="vc-q-lbl">Choose the meaning:</div><div class="vc-word" data-no-i18n lang="en">${esc(v.w)}</div>${vcSayBtn(v.w)}`;
+    const opts = it.opts.map((o, oi)=>{
+      let cls = 'q-opt';
+      if(done){ if(o.id === v.id) cls += ' correct'; else if(oi === it.ans) cls += ' wrong'; }
+      const txt = z.type === 'gap' ? o.g : (it.rev ? o.w : o.d);
+      return `<button class="${cls}" type="button" data-act="ans" data-v="${oi}"${!done && oi === 0 ? ' data-focus="1"' : ''}${done ? ' aria-disabled="true"' : ''} lang="en">${esc(txt)}</button>`;
+    }).join('');
+    const extra = (!it.ok && done && z.type === 'gap') ? ` <span>Correct answer</span>: <b data-no-i18n lang="en">${esc(v.g)}</b>` : '';
+    body = `${prompt}<div class="vc-opts">${opts}</div>${done ? vcFbHtml(it, extra) : ''}`;
+  }else if(z.type === 'build'){
+    const used = new Set(it.placed);
+    const ansHtml = it.placed.length ? it.placed.map((ti, pos)=>`<button class="vc-tok on" type="button" data-no-i18n data-act="untok" data-v="${pos}"${done ? ' disabled' : ''} lang="en">${esc(it.toks[ti])}</button>`).join('') : '<span class="vc-ph">Tap the words below.</span>';
+    const bank = it.order.map(ti=>`<button class="vc-tok" type="button" data-no-i18n data-act="tok" data-v="${ti}"${used.has(ti) || done ? ' disabled' : ''} lang="en">${esc(it.toks[ti])}</button>`).join('');
+    const full = it.placed.length === it.toks.length;
+    const extra = (!it.ok && done) ? ` <span>Correct answer</span>: <b data-no-i18n lang="en">${esc(v.ex)}</b>` : '';
+    body = `<div class="vc-q-lbl">Put the words in the correct order:</div>
+      <div class="vc-build${done ? (it.ok ? ' ok' : ' bad') : ''}">${ansHtml}</div>
+      <div class="vc-bank">${bank}</div>
+      ${done ? vcFbHtml(it, extra) : `<div class="vc-actions"><button class="btn btn-line" type="button" data-act="bclear"${it.placed.length ? '' : ' disabled'}>Clear</button><button class="btn btn-gold" type="button" data-act="bcheck"${full ? ' data-focus="1"' : ' disabled'}>Check</button></div>`}`;
+  }else{
+    const extra = (!it.ok && done) ? ` <span>Correct answer</span>: <b data-no-i18n lang="en">${esc(v.w)}</b>. <span>You wrote</span>: <i data-no-i18n>${esc(it.typed || '—')}</i>` : '';
+    body = `<div class="vc-q-lbl">Write the word that has this meaning:</div><div class="vc-prompt" data-no-i18n lang="en">${esc(v.d)}</div>
+      <div class="vc-ex" data-no-i18n lang="en">${esc(v.gap)}</div>
+      <div class="vc-src"><span>First letter</span>: <b data-no-i18n>${esc((v.g || v.w).charAt(0))}</b></div>
+      <div class="vc-spell"><input class="vc-search" id="vcSpell" type="text" lang="en" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="Your answer" aria-label="Your answer" value="${esc(it.typed || '')}"${done ? ' disabled' : ' data-focus="1"'}></div>
+      ${done ? vcFbHtml(it, extra) : '<p class="vc-src">Capital letters and extra spaces do not matter.</p><div class="vc-actions"><button class="btn btn-gold" type="button" data-act="scheck">Check</button></div>'}`;
+  }
+  return `<div class="vc-card vc-quiz">${top}${body}</div>`;
+}
+function vcAnswer(ok){
+  const z = vc.quiz, it = z.items[z.k];
+  it.ok = ok; if(ok) z.score++; else z.wrong.push(it.v);
+  vcMark(it.v.id, ok);
 }
 function vcRowsHtml(){
   const q = vc.q.trim().toLowerCase();
-  const rows = vcPool().filter(v=>!q || v.w.toLowerCase().includes(q) || v.d.toLowerCase().includes(q));
+  const rows = vcPool().filter(v=>!q || v.w.toLowerCase().includes(q) || v.d.toLowerCase().includes(q) || v.ru.toLowerCase().includes(q) || v.uz.toLowerCase().includes(q));
   if(!rows.length) return '<p class="vc-empty">Nothing found.</p>';
   const say = !ttsNoEnglishVoice();
-  return `<ul class="vc-rows">${rows.map(v=>{ const st = vcStatus(v.id); return `<li><div class="vc-r-w"><b data-no-i18n lang="en">${esc(v.w)}</b>${say ? `<button class="vc-say-sm" type="button" data-say="${esc(v.w)}" aria-label="Listen">&#128266;</button>` : ''}</div><div class="vc-r-d" data-no-i18n lang="en">${esc(v.d)}</div><div class="vc-r-m"><span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div></li>`; }).join('')}</ul>`;
+  return `<ul class="vc-rows">${rows.map(v=>{ const st = vcStatus(v.id); return `<li><div class="vc-r-w"><b data-no-i18n lang="en">${esc(v.w)}</b>${say ? `<button class="vc-say-sm" type="button" data-say="${esc(v.w)}" aria-label="Listen">&#128266;</button>` : ''}</div><div class="vc-r-d" data-no-i18n><span lang="en">${esc(v.d)}</span>${v.ex ? `<em lang="en">${esc(v.ex)}</em>` : ''}${vc.tr && (v.ru || v.uz) ? `<span class="vc-r-tr">${[v.ru, v.uz].filter(Boolean).map(esc).join(' &middot; ')}</span>` : ''}</div><div class="vc-r-m"><span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div></li>`; }).join('')}</ul>`;
 }
 function renderVocab(resetDeck, focus){
   const root = document.getElementById('vcRoot'); if(!root) return;
@@ -3995,40 +4401,58 @@ function renderVocab(resetDeck, focus){
   }).join('');
   const lessons = vc.level === 'all' ? [] : LESSONS[vc.level].map((l, i)=>[l, i]).filter(x=>x[0].vocab && x[0].vocab.length).sort((a, b)=>a[0].o - b[0].o);
   const sel = `<select class="vc-select" id="vcLesson" aria-label="Lesson"${vc.level === 'all' ? ' disabled' : ''}><option value="all">All lessons</option>${lessons.map(([l, i])=>`<option value="${vc.level}:${i}"${vc.lesson === vc.level + ':' + i ? ' selected' : ''} data-no-i18n>${l.o}. ${esc(String(l.t).replace(/<[^>]+>/g, ''))}</option>`).join('')}</select>`;
-  const modes = [['cards', 'Cards'], ['quiz', 'Quiz'], ['list', 'Word list']].map(([m, t])=>`<button class="btn ${vc.mode === m ? 'btn-gold' : 'btn-line'} vc-mode" type="button" data-act="mode" data-v="${m}" aria-pressed="${vc.mode === m}">${t}</button>`).join('');
   const pool = vcPool(), cnt = {known:0, learning:0, new:0}; pool.forEach(v=>cnt[vcStatus(v.id)]++);
+  const mb = (act, val, t, on, extra)=>`<button class="btn ${on ? 'btn-gold' : 'btn-line'} vc-mode" type="button" data-act="${act}" data-v="${val}" aria-pressed="${on}">${t}${extra || ''}</button>`;
+  const learn = [mb('mode', 'cards', 'Cards', vc.mode === 'cards'), mb('mode', 'review', 'Review words', vc.mode === 'review', ` <b class="vc-n">${cnt.learning}</b>`), mb('mode', 'list', 'Word list', vc.mode === 'list')].join('');
+  const exs = [['meaning', 'Choose the meaning'], ['gap', 'Fill the gap'], ['build', 'Build a sentence'], ['spell', 'Write the word']].map(([e, t])=>mb('exmode', e, t, vc.mode === 'ex' && vc.ex === e)).join('');
   const pct = pool.length ? Math.round(cnt.known / pool.length * 100) : 0;
-  const stats = `<div class="vc-stats"><div class="vc-stats-row"><span class="st st-done">Known</span> <b>${cnt.known}</b> <span class="st st-progress">Learning</span> <b>${cnt.learning}</b> <span class="st st-new">New</span> <b>${cnt.new}</b> <span class="vc-total"><span>Total</span> <b>${pool.length}</b></span></div><div class="vc-bar2" aria-hidden="true"><i style="width:${pct}%"></i></div></div>`;
-  const stage = vc.mode === 'quiz' ? vcQuizHtml() : vc.mode === 'list'
-    ? `<div class="vc-list"><input class="vc-search" id="vcSearch" type="search" placeholder="Search for a word" aria-label="Search for a word" value="${esc(vc.q)}"><div id="vcRows">${vcRowsHtml()}</div></div>`
+  const stats = `<div class="vc-stats"><div class="vc-stats-row"><span class="st st-new">New</span> <b>${cnt.new}</b> <span class="st st-progress">Learning</span> <b>${cnt.learning}</b> <span class="st st-done">Know well</span> <b>${cnt.known}</b> <span class="vc-total"><span>Total</span> <b>${pool.length}</b></span></div><div class="vc-bar2" aria-hidden="true"><i style="width:${pct}%"></i></div>
+    <details class="vc-legend"><summary>What do the statuses mean?</summary><ul>
+      <li><span class="st st-new">New</span> <span>You have not practised this word yet.</span></li>
+      <li><span class="st st-progress">Learning</span> <span>You have practised the word, but have not yet answered correctly 3 times in a row. A mistake returns the word to this status.</span></li>
+      <li><span class="st st-done">Know well</span> <span>You answered correctly 3 times in a row, on the cards or in the exercises.</span></li>
+    </ul></details></div>`;
+  const stage = vc.mode === 'ex' ? vcQuizHtml() : vc.mode === 'list'
+    ? `<div class="vc-list"><div class="vc-list-top"><input class="vc-search" id="vcSearch" type="search" placeholder="Search for a word" aria-label="Search for a word" value="${esc(vc.q)}"><button class="vc-link" type="button" data-act="tr" aria-expanded="${vc.tr}">${vc.tr ? 'Hide translation' : 'Show translation'}</button></div><div id="vcRows">${vcRowsHtml()}</div></div>`
     : vcCardsHtml();
   root.innerHTML = `<div class="vc-bar"><div class="vc-levels" role="group" aria-label="Level">${lvHtml}</div>${sel}</div>
-    <div class="vc-modes" role="group" aria-label="Mode">${modes}</div>${stats}
+    <div class="vc-modes-wrap"><div class="vc-mgroup"><span class="vc-mlabel">Learn</span><div class="vc-modes" role="group" aria-label="Learn">${learn}</div></div>
+    <div class="vc-mgroup"><span class="vc-mlabel">Exercises</span><div class="vc-modes" role="group" aria-label="Exercises">${exs}</div></div></div>${stats}
     <div id="vcStage" aria-live="polite">${stage}</div>
-    <p class="vc-note">The words and meanings come from the key words of the lessons. Your progress is saved only in this browser.</p>${ttsNoEnglishVoice() ? '<p class="vc-note">Audio is not available on this device: no English voice was found in the browser.</p>' : ''}`;
+    <p class="vc-note">The words and meanings come from the key words of the lessons. Your progress is saved only in this browser.</p>
+    <p class="vc-note">Translations are available only for some words. They were prepared for KADR and have not been checked by a teacher yet.</p>${ttsNoEnglishVoice() ? '<p class="vc-note">Audio is not available on this device: no English voice was found in the browser.</p>' : ''}`;
   if(focus){ const f = root.querySelector('#vcStage [data-focus]'); if(f){ try{ f.focus({preventScroll:true}); }catch(e){} } }
 }
 (function(){
   const root = document.getElementById('vcRoot'); if(!root) return;
+  function spellCheck(){
+    const it = vc.quiz && vc.quiz.items[vc.quiz.k]; if(!it || it.ans !== null) return;
+    const inp = document.getElementById('vcSpell'); it.typed = inp ? inp.value.trim() : '';
+    if(!it.typed){ if(inp) inp.focus(); return; }
+    it.ans = 1; vcAnswer(vcAccepted(it.v).has(vcNorm(it.typed))); renderVocab(false, true);
+  }
   root.addEventListener('click', e=>{
     const say = e.target.closest('[data-say]'); if(say){ ttsSpeak(say.dataset.say, 0.85); return; }
-    const b = e.target.closest('[data-act]'); if(!b) return;
-    const act = b.dataset.act, val = b.dataset.v;
+    const b = e.target.closest('[data-act]'); if(!b || b.disabled) return;
+    const act = b.dataset.act, val = b.dataset.v, z = vc.quiz, it = z && z.items && z.items[z.k];
     if(act === 'level'){ vc.level = val; vc.lesson = 'all'; vc.quiz = null; renderVocab(true); }
-    else if(act === 'mode'){ vc.mode = val; vc.quiz = null; renderVocab(val === 'cards', true); }
+    else if(act === 'mode'){ vc.mode = val; vc.quiz = null; renderVocab(val !== 'list', true); }
+    else if(act === 'exmode'){ vc.mode = 'ex'; vc.ex = val; vc.quiz = null; renderVocab(false, true); }
     else if(act === 'flip'){ vc.flipped = true; renderVocab(false, true); }
-    else if(act === 'yes' || act === 'no'){ const v = vc.deck[vc.pos]; if(v) vcMark(v.id, act === 'yes' ? 'known' : 'learning'); vc.pos++; vc.flipped = false; renderVocab(false, true); }
+    else if(act === 'tr'){ vc.tr = !vc.tr; renderVocab(false); const t = root.querySelector('[data-act="tr"]'); if(t){ try{ t.focus({preventScroll:true}); }catch(e){} } }
+    else if(act === 'yes' || act === 'no'){ const v = vc.deck[vc.pos]; if(v) vcMark(v.id, act === 'yes'); vc.pos++; vc.flipped = false; renderVocab(false, true); }
     else if(act === 'restart'){ renderVocab(true, true); }
-    else if(act === 'ans'){
-      const it = vc.quiz && vc.quiz.items[vc.quiz.k]; if(!it || it.ans !== null) return;
-      it.ans = +val; it.ok = it.opts[it.ans].id === it.v.id;
-      if(it.ok) vc.quiz.score++; else vc.quiz.wrong.push(it.v);
-      vcMark(it.v.id, it.ok ? 'known' : 'learning'); renderVocab(false, true);
-    }
-    else if(act === 'next'){ vc.quiz.k++; renderVocab(false, true); }
+    else if(act === 'ans'){ if(!it || it.ans !== null) return; it.ans = +val; vcAnswer(it.opts[it.ans].id === it.v.id); renderVocab(false, true); }
+    else if(act === 'tok'){ if(!it || it.ans !== null) return; it.placed.push(+val); renderVocab(false, it.placed.length === it.toks.length); }
+    else if(act === 'untok'){ if(!it || it.ans !== null) return; it.placed.splice(+val, 1); renderVocab(false); }
+    else if(act === 'bclear'){ if(!it || it.ans !== null) return; it.placed = []; renderVocab(false); }
+    else if(act === 'bcheck'){ if(!it || it.ans !== null || it.placed.length !== it.toks.length) return; it.ans = 1; vcAnswer(vcNorm(it.placed.map(n=>it.toks[n]).join(' ')) === vcNorm(it.toks.join(' '))); renderVocab(false, true); }
+    else if(act === 'scheck'){ spellCheck(); }
+    else if(act === 'next'){ z.k++; renderVocab(false, true); }
     else if(act === 'newquiz'){ vc.quiz = null; renderVocab(false, true); }
-    else if(act === 'reviewwrong'){ const w = vc.quiz.wrong.slice(); vc.mode = 'cards'; vc.quiz = null; vcNewDeck(w); renderVocab(false, true); }
+    else if(act === 'reviewwrong'){ const w = z.wrong.slice(); vc.mode = 'cards'; vc.quiz = null; vcNewDeck(w); renderVocab(false, true); }
   });
+  root.addEventListener('keydown', e=>{ if(e.key === 'Enter' && e.target.id === 'vcSpell'){ e.preventDefault(); spellCheck(); } });
   root.addEventListener('change', e=>{ if(e.target.id === 'vcLesson'){ vc.lesson = e.target.value; vc.quiz = null; renderVocab(true); } });
   root.addEventListener('input', e=>{ if(e.target.id === 'vcSearch'){ vc.q = e.target.value; const r = document.getElementById('vcRows'); if(r) r.innerHTML = vcRowsHtml(); } });
   window.__vcReady = true;
