@@ -1066,6 +1066,136 @@
   @media (max-width:760px){ .vc-card{padding:22px 16px} .vc-word{font-size:28px} .vc-rows li{grid-template-columns:1fr; gap:4px} .vc-r-m{justify-content:flex-start} .vc-select{width:100%} }
   @media (min-width:1101px){ nav.links{gap:14px} nav.links button{font-size:14.5px; white-space:nowrap} html[lang="uz"] nav.links{gap:10px} html[lang="uz"] nav.links button{font-size:14px} }
   @media (max-width:1100px){ nav.links.open{max-height:560px !important} }
+
+  /* ---------- accounts: header button ---------- */
+  .acct-btn{position:relative; display:inline-flex; align-items:center; gap:7px; min-height:40px; padding:0 12px; margin-left:12px; border:1px solid rgba(244,241,231,.35); border-radius:10px; background:transparent; color:var(--light); font:600 13.5px/1 inherit; font-family:inherit; cursor:pointer; white-space:nowrap; flex:none}
+  .acct-btn:hover{background:rgba(244,241,231,.1)}
+  .acct-btn[data-state="out"], .acct-btn[data-state="nolib"]{background:var(--gold); border-color:var(--gold); color:#1c2620}
+  .acct-btn[data-state="out"]:hover{background:var(--gold-deep); border-color:var(--gold-deep)}
+  .acct-btn .acct-label{max-width:130px; overflow:hidden; text-overflow:ellipsis}
+  .acct-dot{display:none; position:absolute; top:-3px; right:-3px; width:10px; height:10px; border-radius:50%; border:2px solid var(--night); background:#58b078}
+  .acct-btn[data-state="in"] .acct-dot{display:block}
+  .acct-btn[data-sync="saving"] .acct-dot{background:#f0c96b}
+  .acct-btn[data-sync="offline"] .acct-dot, .acct-btn[data-sync="error"] .acct-dot{background:#e5726c}
+  .acct-btn:focus-visible{outline:2px solid var(--gold); outline-offset:2px}
+  .acct-btn[hidden], .ac-sync[hidden], .ac-note-sync[hidden]{display:none !important}
+  /* desktop: the menu already fills the row, so the profile button is a round icon up to 1400px */
+  @media (min-width:1101px){ .acct-btn{order:10; margin-left:12px} }
+  /* (only when sign-in is switched on: otherwise the header stays exactly as before) */
+  @media (min-width:1101px) and (max-width:1399px){
+    .nav:has(> .acct-btn:not([hidden])){padding-left:18px; padding-right:18px}
+    .nav:has(> .acct-btn:not([hidden])) .lang-sw{margin-left:10px}
+    .nav:has(> .acct-btn:not([hidden])) .lang-sw button{min-width:34px}
+    .nav:has(> .acct-btn:not([hidden])) nav.links{gap:10px}
+    html[lang="uz"] .nav:has(> .acct-btn:not([hidden])) nav.links{gap:8px}
+    .acct-btn{width:40px; padding:0; justify-content:center}
+    .acct-btn .acct-label{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  }
+  @media (min-width:1400px){ .nav:has(> .acct-btn:not([hidden])){max-width:1240px} .acct-btn .acct-label{max-width:120px} }
+  @media (max-width:1100px){ .lang-sw{margin-right:8px !important} .acct-btn{margin:0 10px 0 0} }
+  @media (max-width:480px){ .acct-btn{padding:0; width:44px; min-height:44px; justify-content:center} .acct-btn .acct-label{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap} .lang-sw button{min-width:36px} }
+
+  /* ---------- accounts: window ---------- */
+  .ac-overlay{z-index:120}
+  .ac-box{max-width:460px; border:1px solid rgba(201,151,63,.45); border-radius:12px; color:var(--ink)}
+  .ac-box h3{font-size:24px; margin-bottom:10px}
+  .ac-box .field input, .ac-box .field select{font-size:16px; min-height:44px; border-radius:8px}
+  .ac-box .field input[aria-invalid="true"]{border-color:#e5726c}
+  .ac-tabs{display:flex; gap:4px; padding:3px; margin:-4px 0 16px; border:1px solid var(--line); border-radius:10px}
+  .ac-tabs button{flex:1; min-height:40px; border:0; border-radius:8px; background:transparent; color:var(--ink); font:600 14px/1 inherit; font-family:inherit; cursor:pointer}
+  .ac-tabs button[aria-selected="true"]{background:var(--gold); color:#1c2620}
+  .ac-lead{font-size:15px; margin:0 0 14px; color:var(--ink-soft)}
+  .ac-small{font-size:13.5px; margin:12px 0 0; color:var(--ink-soft); line-height:1.5}
+  .ac-hint{font-size:12.5px; margin:6px 0 0; color:var(--ink-soft); line-height:1.45}
+  .ac-pass{display:flex; gap:6px}
+  .ac-pass input{flex:1; min-width:0}
+  .ac-eye{flex:none; min-width:76px; border:1.5px solid var(--line); border-radius:8px; background:transparent; color:var(--ink); font:600 13px/1 inherit; font-family:inherit; cursor:pointer}
+  .ac-check{display:flex; gap:10px; align-items:center; font-size:14.5px; cursor:pointer; min-height:44px}
+  .ac-check input{width:20px; height:20px; accent-color:var(--gold)}
+  .ac-check + .ac-hint{margin-top:0}
+  .ac-err{min-height:1px; margin:10px 0 0; color:#f19a94; font-size:14px; font-weight:600; line-height:1.45}
+  .ac-err:empty{margin:0}
+  .ac-box .modal-actions .btn-line{background:transparent}
+  .ac-box button[disabled]{opacity:.55; cursor:default}
+  .ac-danger{background:#b5463f !important; color:#fff !important; box-shadow:none !important}
+  .ac-list{margin:6px 0 12px; padding-left:20px; line-height:1.6; color:var(--ink-soft)}
+  .ac-list b{color:var(--ink)}
+  .ac-link{background:none; border:0; padding:0; min-height:0; color:var(--gold-deep); font:inherit; text-decoration:underline; cursor:pointer}
+  .ac-danger-txt{color:#f19a94}
+
+  /* ---------- accounts: status bar ---------- */
+  .ac-sync{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); z-index:110; width:min(640px, calc(100% - 24px)); display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px; background:#2a1f1d; border:1px solid #e5726c; color:#f6e9e4; font-size:14px; line-height:1.45; box-shadow:0 12px 30px -12px rgba(0,0,0,.6)}
+  .ac-sync.ac-saved{background:#1d2a22; border-color:#58b078}
+  .ac-sync-txt{flex:1}
+  .ac-sync-acts{display:flex; gap:6px; flex:none}
+  .ac-sync-x{flex:none; width:40px; min-height:40px; border-radius:8px; border:1px solid transparent; background:transparent; color:inherit; font-size:22px; line-height:1; cursor:pointer}
+  .ac-sync-x:hover{border-color:currentColor}
+  .tr-table .st-chip{display:inline-block; padding:2px 9px; border-radius:20px; font-size:12.5px; white-space:nowrap}
+  .ac-sync-dot{flex:none; width:10px; height:10px; border-radius:50%; background:#e5726c}
+  .ac-saved .ac-sync-dot, .ac-note-sync.ac-saved .ac-sync-dot{background:#58b078}
+  .ac-saving .ac-sync-dot{background:#f0c96b}
+  .ac-sync-btn{flex:none; min-height:40px; padding:0 14px; border-radius:8px; border:1px solid currentColor; background:transparent; color:inherit; font:600 13.5px/1 inherit; font-family:inherit; cursor:pointer}
+  .ac-note-sync{display:flex; align-items:flex-start; gap:8px; font-size:14px; margin:10px 0 0; color:var(--ink-soft)}
+  .ac-note-sync .ac-sync-dot{margin-top:6px}
+  .ac-guest-note{margin:14px 0 0; padding-top:12px; border-top:1px solid rgba(244,241,231,.14); font-size:13.5px; color:#cdd3c9; line-height:1.5}
+
+  /* ---------- accounts: personal room and teacher's room ---------- */
+  .ac-wrap{display:grid; grid-template-columns:minmax(0, 1fr); gap:16px; padding-bottom:56px}
+  .ac-wrap > *{min-width:0}
+  .ac-card{background:var(--paper-warm); border:1px solid var(--line); border-radius:12px; padding:20px}
+  .ac-card h3{font-size:20px; margin:0 0 12px}
+  .ac-who{border-color:rgba(201,151,63,.5)}
+  .ac-who p{margin:0}
+  .ac-who .btn{margin-top:14px}
+  .ac-muted{color:var(--ink-soft); font-size:14px}
+  .ac-stats{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px}
+  .ac-stats > div{border:1px solid var(--line); border-radius:10px; padding:12px}
+  .ac-stats b{display:block; font:700 24px/1.1 'Big Shoulders Display', sans-serif; color:var(--gold-deep)}
+  .ac-stats span{font-size:13.5px; color:var(--ink-soft)}
+  .ac-levels{display:grid; gap:8px; margin:16px 0 4px}
+  .ac-lv{display:grid; grid-template-columns:34px 1fr 54px; gap:10px; align-items:center; font-size:14px}
+  .ac-lv .rc-bar{margin:0}
+  .ac-lv-n{font-weight:700}
+  .ac-lv-c{text-align:right; color:var(--ink-soft)}
+  .ac-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+  .ac-btn-line{border:1.5px solid var(--line); background:transparent; color:var(--ink)}
+  .ac-btn-line:hover{border-color:var(--gold)}
+  .ac-danger-line{border-color:rgba(229,114,108,.6); color:#f19a94}
+  .ac-details{margin-top:16px; border-top:1px solid var(--line); padding-top:12px}
+  .ac-details summary{cursor:pointer; font-weight:600; min-height:32px}
+  .tr-bar{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+  .tr-bar .tr-search{flex:1 1 240px}
+  .tr-bar input, .tr-bar select, .tr-actions select{width:100%; min-height:44px; padding:8px 12px; border:1.5px solid var(--line); border-radius:8px; background:var(--paper-warm); color:var(--ink); font:inherit; font-size:15px}
+  .tr-bar .tr-sel{flex:0 1 200px}
+  .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  .tr-count{margin:4px 0 0}
+  .tr-list{display:grid; gap:8px}
+  .tr-item{display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 1fr); gap:10px; align-items:center; width:100%; text-align:left; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--paper-warm); color:var(--ink); font:inherit; font-size:14.5px; cursor:pointer}
+  .tr-item:hover, .tr-item:focus-visible{border-color:var(--gold)}
+  .tr-name{overflow-wrap:anywhere}
+  .tr-nums{display:flex; flex-wrap:wrap; gap:4px 12px; color:var(--ink-soft)}
+  .tr-nums b{color:var(--ink)}
+  .tr-tag{display:inline-block; font-size:12px; padding:2px 8px; border-radius:20px; background:rgba(240,201,107,.15); color:#f0c96b}
+  .tr-actions{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:4px 0 10px}
+  .tr-actions .tr-sel{display:flex; gap:8px; align-items:center; flex:1 1 220px}
+  .tr-table-wrap{overflow-x:auto}
+  .tr-table{width:100%; border-collapse:collapse; font-size:14px}
+  .tr-table th, .tr-table td{padding:8px 6px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top}
+  .tr-table th{font-size:12.5px; color:var(--ink-soft); font-weight:600}
+  .tr-words{line-height:1.7}
+  .tr-creds{border:1px dashed var(--gold); border-radius:10px; padding:14px; margin:6px 0 4px}
+  .tr-creds p{margin:0 0 6px}
+  .tr-pass{font:700 20px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing:.04em; color:var(--gold-deep)}
+  .tr-groups{list-style:none; padding:0; margin:0 0 14px; display:grid; gap:8px}
+  .tr-groups li{padding:8px 0; border-bottom:1px solid var(--line)}
+  @media (max-width:760px){
+    .tr-item{grid-template-columns:1fr; gap:4px}
+    .ac-card{padding:16px}
+    .ac-row .btn, .tr-bar .btn{flex:1 1 auto}
+    .ac-sync{flex-wrap:wrap; font-size:13.5px; bottom:10px; padding:10px 12px}
+    .ac-sync-txt{flex:1 1 calc(100% - 24px)}
+    .ac-sync-acts{margin-left:20px}
+  }
 </style>
 </head>
 <body>
@@ -1075,6 +1205,7 @@
   <div class="nav">
     <div class="logo"><span class="dot"></span>KADR</div>
     <div class="lang-sw" id="langSw" role="group" aria-label="Language"><button type="button" data-lang="en" lang="en" title="English" aria-pressed="true">EN</button><button type="button" data-lang="ru" lang="ru" title="Русский" aria-pressed="false">RU</button><button type="button" data-lang="uz" lang="uz" title="Oʻzbekcha" aria-pressed="false">UZ</button></div>
+    <button class="acct-btn" id="acctBtn" type="button" hidden data-state="out"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="acct-label">Sign in</span><i class="acct-dot" aria-hidden="true"></i></button>
     <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">Menu</button>
     <nav class="links" id="siteNav" aria-label="Main">
       <button data-target="home" class="active">Home</button>
@@ -1346,7 +1477,26 @@
   </div>
 </section>
 
+<section id="account">
+  <div class="wrap sec-head">
+    <div class="kicker">My profile</div>
+    <h2 id="acHello">My profile</h2>
+    <p>Your learning results are kept here and on every device where you sign in.</p>
+  </div>
+  <div class="wrap ac-wrap" id="acRoot"></div>
+</section>
+
+<section id="teacher">
+  <div class="wrap sec-head">
+    <div class="kicker">Teacher's room</div>
+    <h2>Students and groups</h2>
+    <p>Students, groups and their results. Only teachers can open this page.</p>
+  </div>
+  <div class="wrap ac-wrap" id="trRoot"></div>
+</section>
 </main>
+<div class="modal-overlay ac-overlay" id="acOverlay"><div class="modal-box ac-box" id="acBox" role="dialog" aria-modal="true"></div></div>
+<div class="ac-sync" id="acSync" role="status" aria-live="polite" hidden></div>
 <footer>
   <div class="wrap support-band" id="support">
     <div class="support-text">
@@ -1596,14 +1746,20 @@ document.querySelectorAll('[data-target]').forEach(el=>{
 
 /* ---------------- PROGRESS (saved in this browser only) ---------------- */
 const PG = (function(){
-  const K = 'kadr_progress_v1';
-  let d = {};
-  try{ d = JSON.parse(localStorage.getItem(K) || '{}') || {}; }catch(e){ d = {}; }
-  ['quiz','units','club','pos','opened','vocab'].forEach(k=>{ if(!d[k] || typeof d[k] !== 'object') d[k] = {}; });
+  const GK = 'kadr_progress_v1';
+  const KEYS = ['quiz','units','club','pos','opened','vocab'];
+  function norm(d){
+    if(!d || typeof d !== 'object' || Array.isArray(d)) d = {};
+    KEYS.forEach(k=>{ if(!d[k] || typeof d[k] !== 'object' || Array.isArray(d[k])) d[k] = {}; });
+    return d;
+  }
+  function readGuest(){ try{ return norm(JSON.parse(localStorage.getItem(GK) || '{}')); }catch(e){ return norm({}); } }
   return {
-    d,
-    save(){ try{ localStorage.setItem(K, JSON.stringify(d)); }catch(e){} },
-    reset(){ ['quiz','units','club','pos','opened','vocab'].forEach(k=>d[k]={}); delete d.last; delete d.level; delete d.speaking; delete d.writing; this.save(); }
+    d: readGuest(), mode: 'guest', onSave: null, GK, norm, readGuest,
+    // guest: saved in this browser only; signed in: saved on this device and sent to the profile
+    save(){ this.d.mt = Date.now(); if(this.mode === 'guest'){ try{ localStorage.setItem(GK, JSON.stringify(this.d)); }catch(e){} } else if(this.onSave) this.onSave(); },
+    use(d, mode){ this.d = norm(d); this.mode = mode; },
+    reset(){ KEYS.forEach(k=>this.d[k]={}); ['last','level','speaking','writing','hist','mt'].forEach(k=>delete this.d[k]); this.save(); }
   };
 })();
 function fmtDate(t){ try{ return new Date(t).toLocaleDateString(LANG==='ru'?'ru-RU':LANG==='uz'?'uz-UZ':'en-GB',{day:'numeric',month:'short',year:'numeric'}); }catch(e){ return ''; } }
@@ -3916,7 +4072,7 @@ function openLessonDetail(level, i){
     stEl.className = 'lx-status ' + cls; stEl.textContent = msg;
     document.getElementById('quizHist').innerHTML = attemptsHtml(rec);
     PG.d.last = {type:'lesson', level, i};
-    PG.save(); renderLevels(); renderLessons(); renderContinue();
+    PG.save(); renderLevels(); renderLessons(); renderContinue(); acAfterResult();
   }
   lessonOverlay.classList.add('open');
   lessonOverlay.scrollTop = 0;
@@ -4719,7 +4875,7 @@ function renderTest(){
     ttsStop();
     const pct = Math.round((score/maxScore)*100);
     const lvl = levelFromScore(pct);
-    PG.d.level = {code:lvl.code, name:lvl.name, t:Date.now(), approx:true}; PG.save(); renderContinue();
+    PG.d.level = {code:lvl.code, name:lvl.name, t:Date.now(), approx:true}; pgHist('level', PG.d.level); PG.save(); renderContinue();
     const by = {};
     shuffledQuestions.forEach(q=>{ by[q.sk] = by[q.sk] || [0,0]; by[q.sk][1]++; if(q.ok) by[q.sk][0]++; });
     const rows = Object.keys(TEST_SK_LABEL).filter(k=>by[k]).map(k=>`<li>${TEST_SK_LABEL[k]}: <b>${by[k][0]} / ${by[k][1]}</b></li>`).join('');
@@ -5284,6 +5440,7 @@ function renderSpeakingResult(){
   if(o.scored >= 3 && o.totalWords >= 20){
     if(voice) PG.d.speaking = {code:lvl.code, name:lvl.name, t:Date.now(), mode:'voice'};
     else PG.d.writing = {code:lvl.code, name:lvl.name, t:Date.now()};
+    pgHist(voice ? 'speaking' : 'writing', voice ? PG.d.speaking : PG.d.writing);
     PG.save(); renderContinue();
   }
   let warn = '';
@@ -5488,6 +5645,7 @@ function renderContinue(){
         <div class="rc-stat"><b>${nClub}</b><span>club materials read</span></div>
       </div>
       ${tests ? `<div class="rc-tests">${tests}</div>` : ''}
+      ${acGuestNoteHtml()}
     </div>`;
   box.classList.add('show');
   const b = document.getElementById('continueBtn');
@@ -5567,6 +5725,1015 @@ const rp = document.getElementById('resetProgress');
 if(rp) rp.addEventListener('click', ()=>{
   if(confirm(T('Reset all saved progress on this device?'))){ PG.reset(); renderContinue(); renderLessons(); renderTest(); if(booksIndex && currentBook) renderBooksView(); renderClubManual(); }
 });
+/* translations for the accounts part (EN source -> RU, UZ); existing site translations are not changed */
+[
+['Sign in','Войти','Kirish'],
+['My profile','Мой профиль','Mening profilim'],
+["Teacher's room",'Кабинет преподавателя','O‘qituvchi xonasi'],
+['Saving to your profile…','Сохраняем в профиль…','Profilga saqlanmoqda…'],
+['Saved to your profile','Сохранено в профиле','Profilda saqlandi'],
+['No connection. Your latest results are saved only on this device for now. They will be sent to your profile automatically when the connection is back.','Нет связи. Последние результаты пока сохранены только на этом устройстве. Они автоматически отправятся в профиль, когда связь появится.','Aloqa yo‘q. Oxirgi natijalar hozircha faqat shu qurilmada saqlangan. Aloqa tiklanganda ular profilga avtomatik yuboriladi.'],
+['Could not save to your profile. Your latest results are kept on this device; we will try again.','Не удалось сохранить в профиль. Последние результаты сохранены на этом устройстве, мы попробуем ещё раз.','Profilga saqlab bo‘lmadi. Oxirgi natijalar shu qurilmada saqlanib turibdi, yana urinib ko‘ramiz.'],
+['Try again','Повторить','Qayta urinish'],
+['Guest mode: your progress is saved only in this browser.','Гостевой режим: прогресс сохраняется только в этом браузере.','Mehmon rejimi: progress faqat shu brauzerda saqlanadi.'],
+['to keep it in your profile and continue on another device.','— тогда он сохранится в профиле и вы сможете продолжить на другом устройстве.','— shunda u profilda saqlanadi va boshqa qurilmada davom etishingiz mumkin.'],
+['Your profile could not be opened. Ask your teacher for help.','Не удалось открыть профиль. Обратитесь к преподавателю.','Profilni ochib bo‘lmadi. O‘qituvchingizga murojaat qiling.'],
+['You were signed out. Please sign in again.','Вы вышли из профиля. Войдите снова.','Profildan chiqdingiz. Iltimos, qayta kiring.'],
+['Some of your latest results are not saved to your profile yet (no connection). If you sign out now, they will be lost. Sign out anyway?','Часть последних результатов ещё не сохранена в профиле (нет связи). Если выйти сейчас, они пропадут. Всё равно выйти?','Oxirgi natijalarning bir qismi hali profilga saqlanmagan (aloqa yo‘q). Hozir chiqsangiz, ular yo‘qoladi. Baribir chiqasizmi?'],
+['Show','Показать','Ko‘rsatish'],['Hide','Скрыть','Yashirish'],
+['Show password','Показать пароль','Parolni ko‘rsatish'],['Hide password','Скрыть пароль','Parolni yashirish'],
+['Remember me on this device','Запомнить меня на этом устройстве','Meni shu qurilmada eslab qol'],
+['Do not tick this on a shared computer at the learning centre. Then you are signed out when the browser tab is closed.','Не отмечайте на общем компьютере учебного центра. Тогда выход произойдёт, когда вкладка браузера будет закрыта.','O‘quv markazidagi umumiy kompyuterda belgilamang. Shunda brauzer oynasi yopilganda profildan chiqiladi.'],
+['Create profile','Создать профиль','Profil yaratish'],
+['Sign in to KADR','Вход в KADR','KADR ga kirish'],
+['Your results are saved in your profile, so you can continue at the learning centre, at home or on your phone.','Результаты сохраняются в профиле, поэтому продолжить можно в учебном центре, дома или с телефона.','Natijalar profilda saqlanadi, shuning uchun o‘quv markazida, uyda yoki telefonda davom etishingiz mumkin.'],
+['Login','Логин','Login'],['Password','Пароль','Parol'],['Cancel','Отмена','Bekor qilish'],
+['Forgot your password? Ask your teacher: they will give you a new temporary password.','Забыли пароль? Обратитесь к преподавателю: он выдаст новый временный пароль.','Parolni unutdingizmi? O‘qituvchingizga murojaat qiling: u yangi vaqtinchalik parol beradi.'],
+['Without signing in you can still use the whole site. Then your progress is saved only in this browser.','Без входа сайтом тоже можно пользоваться полностью. Тогда прогресс сохраняется только в этом браузере.','Kirmasdan ham saytdan to‘liq foydalanish mumkin. Bunda progress faqat shu brauzerda saqlanadi.'],
+['Create a profile','Создание профиля','Profil yaratish'],
+['Your name (shown on the site)','Ваше имя (будет видно на сайте)','Ismingiz (saytda ko‘rinadi)'],
+['3–30 characters: Latin letters, digits, dot, dash or underscore. Not an e-mail address.','3–30 символов: латинские буквы, цифры, точка, дефис или подчёркивание. Не адрес электронной почты.','3–30 belgi: lotin harflari, raqamlar, nuqta, chiziqcha yoki pastki chiziq. Elektron pochta manzili emas.'],
+['At least 8 characters. Do not use the same password as on other sites.','Не менее 8 символов. Не используйте пароль от других сайтов.','Kamida 8 belgi. Boshqa saytlardagi parolni ishlatmang.'],
+['Repeat the password','Повторите пароль','Parolni takrorlang'],
+['We keep only your name, login and learning results. No e-mail or phone number is needed. Write your login and password down somewhere safe.','Мы храним только имя, логин и учебные результаты. Почта и номер телефона не нужны. Запишите логин и пароль в надёжном месте.','Biz faqat ismingiz, login va o‘quv natijalaringizni saqlaymiz. Elektron pochta yoki telefon raqami kerak emas. Login va parolni ishonchli joyga yozib qo‘ying.'],
+['Set your own password','Придумайте свой пароль','O‘z parolingizni o‘rnating'],
+['You signed in with a temporary password from your teacher. Choose a new password that only you know.','Вы вошли с временным паролем от преподавателя. Придумайте новый пароль, который знаете только вы.','Siz o‘qituvchi bergan vaqtinchalik parol bilan kirdingiz. Faqat o‘zingiz biladigan yangi parol o‘ylab toping.'],
+['New password','Новый пароль','Yangi parol'],['At least 8 characters.','Не менее 8 символов.','Kamida 8 belgi.'],
+['Repeat the new password','Повторите новый пароль','Yangi parolni takrorlang'],
+['Sign out','Выйти','Chiqish'],['Save password','Сохранить пароль','Parolni saqlash'],
+['Change password','Сменить пароль','Parolni o‘zgartirish'],['Current password','Текущий пароль','Joriy parol'],
+['At least 8 characters. You will be signed out on your other devices.','Не менее 8 символов. На других устройствах произойдёт выход из профиля.','Kamida 8 belgi. Boshqa qurilmalarda profildan chiqiladi.'],
+['Add progress from this browser?','Добавить прогресс из этого браузера?','Shu brauzerdagi progress qo‘shilsinmi?'],
+['This browser has progress saved without signing in:','В этом браузере есть прогресс, сохранённый без входа:','Bu brauzerda kirmasdan saqlangan progress bor:'],
+['If these are your own results, you can add them to your profile. If someone else studied on this computer, do not add them.','Если это ваши результаты, их можно добавить в профиль. Если за этим компьютером занимался кто-то другой, не добавляйте их.','Agar bu sizning natijalaringiz bo‘lsa, ularni profilga qo‘shishingiz mumkin. Agar bu kompyuterda boshqa kishi o‘qigan bo‘lsa, qo‘shmang.'],
+['Your best results are kept: a weaker result never replaces a better one. The copy in this browser is not deleted.','Лучшие результаты сохраняются: более слабый результат не заменит лучший. Копия в этом браузере не удаляется.','Eng yaxshi natijalar saqlanadi: past natija yaxshiroq natija o‘rnini egallamaydi. Bu brauzerdagi nusxa o‘chirilmaydi.'],
+['No, do not add','Нет, не добавлять','Yo‘q, qo‘shmaslik'],['Add to my profile','Добавить в мой профиль','Profilimga qo‘shish'],
+['Progress added','Прогресс добавлен','Progress qo‘shildi'],
+['The results from this browser are now saved in your profile.','Результаты из этого браузера теперь сохранены в вашем профиле.','Bu brauzerdagi natijalar endi profilingizda saqlandi.'],
+['You can remove the guest copy from this browser, so that the next person on this computer does not see it.','Можно удалить гостевую копию из этого браузера, чтобы следующий человек за этим компьютером её не видел.','Keyingi foydalanuvchi ko‘rmasligi uchun mehmon nusxasini shu brauzerdan o‘chirishingiz mumkin.'],
+['Keep it','Оставить','Qoldirish'],['Remove from this browser','Удалить из браузера','Brauzerdan o‘chirish'],
+['Delete my profile','Удалить мой профиль','Profilimni o‘chirish'],
+['Your profile and all results saved in it will be deleted for good. This cannot be undone.','Профиль и все сохранённые в нём результаты будут удалены навсегда. Отменить это нельзя.','Profil va undagi barcha natijalar butunlay o‘chiriladi. Buni ortga qaytarib bo‘lmaydi.'],
+['Type your login to confirm','Введите свой логин для подтверждения','Tasdiqlash uchun loginingizni yozing'],
+['Delete profile','Удалить профиль','Profilni o‘chirish'],['OK','Хорошо','OK'],
+['lessons completed','уроков пройдено','dars yakunlangan'],['lessons started','уроков начато','dars boshlangan'],
+['words you know well','слов вы знаете хорошо','so‘zni yaxshi bilasiz'],['words you are learning','слов изучаете','so‘zni o‘rganyapsiz'],
+['textbook units opened','разделов учебника открыто','darslik bo‘limi ochilgan'],['club materials read','материалов клуба прочитано','klub materiali o‘qilgan'],
+['test results','результатов тестов','test natijasi'],
+['Wrong login or password. Check the keyboard language (EN) and Caps Lock.','Неверный логин или пароль. Проверьте раскладку клавиатуры (EN) и Caps Lock.','Login yoki parol noto‘g‘ri. Klaviatura tilini (EN) va Caps Lock ni tekshiring.'],
+['This login is already taken. Choose another one.','Этот логин уже занят. Выберите другой.','Bu login band. Boshqasini tanlang.'],
+['The password is too short: use at least 8 characters.','Пароль слишком короткий: нужно не менее 8 символов.','Parol juda qisqa: kamida 8 belgi bo‘lsin.'],
+['The new password must be different from the old one.','Новый пароль должен отличаться от старого.','Yangi parol eskisidan farq qilishi kerak.'],
+['Creating a profile on the site is turned off. Ask your teacher to create one for you.','Создание профиля на сайте отключено. Попросите преподавателя создать профиль для вас.','Saytda profil yaratish o‘chirilgan. O‘qituvchingizdan siz uchun profil yaratishini so‘rang.'],
+['Too many attempts. Wait a few minutes and try again.','Слишком много попыток. Подождите несколько минут и попробуйте снова.','Urinishlar juda ko‘p. Bir necha daqiqa kutib, qayta urinib ko‘ring.'],
+['No connection to the server. Check the internet and try again.','Нет связи с сервером. Проверьте интернет и попробуйте снова.','Server bilan aloqa yo‘q. Internetni tekshirib, qayta urinib ko‘ring.'],
+['Something went wrong. Please try again later.','Что-то пошло не так. Попробуйте позже.','Nimadir xato ketdi. Keyinroq qayta urinib ko‘ring.'],
+['Enter your name.','Введите имя.','Ismingizni kiriting.'],['Enter your login.','Введите логин.','Loginni kiriting.'],
+['Enter your login, not an e-mail address.','Введите логин, а не адрес почты.','Elektron pochta emas, loginni kiriting.'],
+['The login can have 3–30 characters: Latin letters, digits, dot, dash or underscore. It must start with a letter or digit.','Логин: 3–30 символов — латинские буквы, цифры, точка, дефис или подчёркивание. Начинаться должен с буквы или цифры.','Login 3–30 belgidan iborat bo‘ladi: lotin harflari, raqamlar, nuqta, chiziqcha yoki pastki chiziq. U harf yoki raqam bilan boshlanishi kerak.'],
+['Enter your password.','Введите пароль.','Parolni kiriting.'],['The passwords do not match.','Пароли не совпадают.','Parollar mos kelmadi.'],
+['Enter your current password.','Введите текущий пароль.','Joriy parolni kiriting.'],['The current password is wrong.','Текущий пароль неверный.','Joriy parol noto‘g‘ri.'],
+['Password saved','Пароль сохранён','Parol saqlandi'],['Use your new password next time you sign in.','При следующем входе используйте новый пароль.','Keyingi safar kirishda yangi parolni ishlating.'],
+['The login does not match.','Логин не совпадает.','Login mos kelmadi.'],
+['The profile could not be deleted. Ask your teacher for help.','Не удалось удалить профиль. Обратитесь к преподавателю.','Profilni o‘chirib bo‘lmadi. O‘qituvchingizga murojaat qiling.'],
+['Profile deleted','Профиль удалён','Profil o‘chirildi'],
+['Your profile and your results were deleted from the server.','Ваш профиль и результаты удалены с сервера.','Profilingiz va natijalaringiz serverdan o‘chirildi.'],
+['There is no connection now, so the results were added only on this device. They will be sent to your profile automatically when the connection is back. The guest copy stays in this browser.','Сейчас нет связи, поэтому результаты добавлены только на этом устройстве. Они автоматически отправятся в профиль, когда связь появится. Гостевая копия остаётся в браузере.','Hozir aloqa yo‘q, shuning uchun natijalar faqat shu qurilmada qo‘shildi. Aloqa tiklanganda ular profilga avtomatik yuboriladi. Mehmon nusxasi brauzerda qoladi.'],
+['Hello,','Здравствуйте,','Salom,'],['Group','Группа','Guruh'],
+["Open the teacher's room",'Открыть кабинет преподавателя','O‘qituvchi xonasini ochish'],
+['My progress','Мой прогресс','Mening progressim'],['lessons in progress','уроков в процессе','dars jarayonda'],
+['words to review','слов на повторение','takrorlanadigan so‘z'],['Continue lessons','Продолжить уроки','Darslarni davom ettirish'],
+['Test results','Результаты тестов','Test natijalari'],['Profile','Профиль','Profil'],
+['This browser also has guest progress (saved without signing in).','В этом браузере есть и гостевой прогресс (сохранённый без входа).','Bu brauzerda mehmon progressi ham bor (kirmasdan saqlangan).'],
+['Add guest progress to my profile','Добавить гостевой прогресс в профиль','Mehmon progressini profilimga qo‘shish'],
+['What is saved and who can see it','Что сохраняется и кто это видит','Nima saqlanadi va uni kim ko‘radi'],
+['Saved: your name, login, group and learning results (lessons, words, tests, opened textbook units and club materials).','Сохраняются: имя, логин, группа и учебные результаты (уроки, слова, тесты, открытые разделы учебника и материалы клубов).','Saqlanadi: ismingiz, login, guruh va o‘quv natijalari (darslar, so‘zlar, testlar, ochilgan darslik bo‘limlari va klub materiallari).'],
+['Not saved: e-mail, phone number, voice recordings or the text of your answers in the speaking test.','Не сохраняются: почта, номер телефона, записи голоса и текст ответов в тесте по говорению.','Saqlanmaydi: elektron pochta, telefon raqami, ovoz yozuvlari va gapirish testidagi javoblaringiz matni.'],
+['Who can see it: you and the teachers of the learning centre. Other learners cannot see your results.','Кто видит: вы и преподаватели учебного центра. Другие ученики ваши результаты не видят.','Kim ko‘radi: siz va o‘quv markazi o‘qituvchilari. Boshqa o‘quvchilar natijalaringizni ko‘rmaydi.'],
+['Your password is stored encrypted. Teachers cannot see it; they can only give you a new temporary password.','Пароль хранится в зашифрованном виде. Преподаватели его не видят — они могут только выдать новый временный пароль.','Parol shifrlangan holda saqlanadi. O‘qituvchilar uni ko‘rmaydi — ular faqat yangi vaqtinchalik parol bera oladi.'],
+['Level test (approx.)','Тест уровня (примерно)','Daraja testi (taxminiy)'],['Speaking estimate (voice)','Оценка речи (голос)','Nutq bahosi (ovoz)'],
+['Written-answer estimate','Оценка письменных ответов','Yozma javoblar bahosi'],['earlier','раньше','oldin'],['No tests yet.','Тестов пока нет.','Hozircha testlar yo‘q.'],
+['Your learning results are kept here and on every device where you sign in.','Здесь хранятся ваши учебные результаты — на любом устройстве, где вы войдёте в профиль.','O‘quv natijalaringiz shu yerda — profilga kirgan har qanday qurilmada saqlanadi.'],
+['Students, groups and their results. Only teachers can open this page.','Ученики, группы и их результаты. Эта страница доступна только преподавателям.','O‘quvchilar, guruhlar va ularning natijalari. Bu sahifani faqat o‘qituvchilar ocha oladi.'],
+["This page is only for teachers. Sign in with a teacher's profile.",'Эта страница только для преподавателей. Войдите с профилем преподавателя.','Bu sahifa faqat o‘qituvchilar uchun. O‘qituvchi profili bilan kiring.'],
+['Search by name or login','Поиск по имени или логину','Ism yoki login bo‘yicha qidirish'],
+['New student','Новый ученик','Yangi o‘quvchi'],['Groups','Группы','Guruhlar'],['Refresh','Обновить','Yangilash'],
+['Loading…','Загрузка…','Yuklanmoqda…'],['Students','Учеников','O‘quvchilar'],
+['temporary password','временный пароль','vaqtinchalik parol'],['lessons','уроков','dars'],['words','слов','so‘z'],['test','тест','test'],['active','активность','faollik'],
+['No students found.','Ученики не найдены.','O‘quvchilar topilmadi.'],
+['All groups','Все группы','Barcha guruhlar'],['Without a group','Без группы','Guruhsiz'],
+['The list could not be loaded.','Не удалось загрузить список.','Ro‘yxatni yuklab bo‘lmadi.'],
+['This student could not be opened.','Не удалось открыть ученика.','O‘quvchini ochib bo‘lmadi.'],
+['← Back to the list','← Назад к списку','← Ro‘yxatga qaytish'],['Change name','Изменить имя','Ismni o‘zgartirish'],
+['New temporary password','Новый временный пароль','Yangi vaqtinchalik parol'],
+['Profile created','Профиль создан','Profil yaratildi'],['last saved results','последнее сохранение результатов','natijalar oxirgi marta saqlangan'],
+['Summary','Сводка','Umumiy ma’lumot'],['Tests','Тесты','Testlar'],['Lessons','Уроки','Darslar'],
+['Level','Уровень','Daraja'],['Lesson','Урок','Dars'],['Status','Статус','Holat'],['Best','Лучший','Eng yaxshi'],['Last','Последний','Oxirgi'],['Attempts','Попыток','Urinishlar'],['Date','Дата','Sana'],
+['Completed','Пройден','Yakunlangan'],['In progress','В процессе','Jarayonda'],
+['* incomplete attempt (not all questions answered)','* неполная попытка (ответы не на все вопросы)','* to‘liq bo‘lmagan urinish (barcha savollarga javob berilmagan)'],
+['No lessons started yet.','Уроки ещё не начаты.','Hali birorta dars boshlanmagan.'],
+['Words to review','Слова для повторения','Takrorlash uchun so‘zlar'],['No words to review.','Слов для повторения нет.','Takrorlash uchun so‘zlar yo‘q.'],
+['Could not change the group.','Не удалось изменить группу.','Guruhni o‘zgartirib bo‘lmadi.'],
+['Temporary password','Временный пароль','Vaqtinchalik parol'],['Copy','Копировать','Nusxalash'],
+['Give these details to the student in person (on paper or face to face), not in a group chat. The temporary password is shown only now. At the first sign-in the student will be asked to choose a new password.','Передайте эти данные ученику лично (на бумаге или устно), а не в общем чате. Временный пароль показывается только сейчас. При первом входе ученик должен будет придумать новый пароль.','Bu ma’lumotlarni o‘quvchiga shaxsan bering (qog‘ozda yoki og‘zaki), umumiy chatda emas. Vaqtinchalik parol faqat hozir ko‘rsatiladi. Birinchi kirishda o‘quvchi yangi parol o‘ylab topishi kerak bo‘ladi.'],
+['Name (shown on the site)','Имя (будет видно на сайте)','Ism (saytda ko‘rinadi)'],
+['3–30 characters: Latin letters, digits, dot, dash or underscore. Logins must be different even if names are the same.','3–30 символов: латинские буквы, цифры, точка, дефис или подчёркивание. Даже при одинаковых именах логины должны различаться.','3–30 belgi: lotin harflari, raqamlar, nuqta, chiziqcha yoki pastki chiziq. Ismlar bir xil bo‘lsa ham, loginlar har xil bo‘lishi kerak.'],
+['Enter a name.','Введите имя.','Ismni kiriting.'],['This login is not allowed.','Такой логин использовать нельзя.','Bunday loginni ishlatib bo‘lmaydi.'],
+['The profile could not be created.','Не удалось создать профиль.','Profilni yaratib bo‘lmadi.'],
+['Create another','Создать ещё','Yana yaratish'],['Done','Готово','Tayyor'],['Rename','Переименовать','Nomini o‘zgartirish'],['Delete','Удалить','O‘chirish'],
+['No groups yet.','Групп пока нет.','Hozircha guruhlar yo‘q.'],['New group name','Название новой группы','Yangi guruh nomi'],['Close','Закрыть','Yopish'],['Add group','Добавить группу','Guruh qo‘shish'],
+['Deleting a group does not delete its students; they stay without a group.','При удалении группы ученики не удаляются, они остаются без группы.','Guruh o‘chirilganda o‘quvchilar o‘chirilmaydi, ular guruhsiz qoladi.'],
+['Enter a group name.','Введите название группы.','Guruh nomini kiriting.'],['The group could not be saved.','Не удалось сохранить группу.','Guruhni saqlab bo‘lmadi.'],
+['The group could not be deleted.','Не удалось удалить группу.','Guruhni o‘chirib bo‘lmadi.'],
+['Delete this group? Its students stay without a group.','Удалить группу? Её ученики останутся без группы.','Guruh o‘chirilsinmi? Uning o‘quvchilari guruhsiz qoladi.'],
+['Copied','Скопировано','Nusxa olindi'],['Select and copy by hand','Выделите и скопируйте вручную','Belgilab, qo‘lda nusxa oling'],
+['New name','Новое имя','Yangi ism'],['Could not change the name.','Не удалось изменить имя.','Ismni o‘zgartirib bo‘lmadi.'],
+['The student','Ученик','O‘quvchi'],
+['will get a new temporary password. The old password stops working and the student is signed out on all devices. The results are kept.','получит новый временный пароль. Старый пароль перестанет работать, и ученик выйдет из профиля на всех устройствах. Результаты сохранятся.','yangi vaqtinchalik parol oladi. Eski parol ishlamay qoladi va o‘quvchi barcha qurilmalarda profildan chiqadi. Natijalar saqlanib qoladi.'],
+['Create a new password','Создать новый пароль','Yangi parol yaratish'],['The password could not be changed.','Не удалось сменить пароль.','Parolni o‘zgartirib bo‘lmadi.'],
+['The profile','Профиль','Profil'],['and all its results will be deleted for good.','и все его результаты будут удалены навсегда.','va uning barcha natijalari butunlay o‘chiriladi.'],
+['Type the login to confirm','Введите логин для подтверждения','Tasdiqlash uchun loginni yozing'],
+['Sign in is not available','Вход недоступен','Kirish mavjud emas'],
+['The sign-in service could not be loaded. Check the internet connection and reload the page. You can keep studying without signing in.','Не удалось загрузить сервис входа. Проверьте интернет и обновите страницу. Заниматься можно и без входа.','Kirish xizmatini yuklab bo‘lmadi. Internetni tekshirib, sahifani yangilang. Kirmasdan ham o‘qishni davom ettirishingiz mumkin.'],
+['Review words','Повторить слова','So‘zlarni takrorlash'],
+['Students and groups','Ученики и группы','O‘quvchilar va guruhlar']
+].forEach(r=>{ const k = nrm(r[0]); if(DICT.ru[k] === undefined) DICT.ru[k] = r[1]; if(DICT.uz[k] === undefined) DICT.uz[k] = r[2]; });
+
+/* =====================================================================
+   ACCOUNTS: sign in, personal room, progress sync, teacher's room
+   Works only when KADR_CLOUD.url and KADR_CLOUD.key are filled in.
+   Without them the site stays exactly as before (guest mode only).
+   ===================================================================== */
+var KADR_CLOUD = {
+  url: 'https://mtjvfpewhjgjbdcumbup.supabase.co',          // Supabase -> Project Settings -> API -> Project URL
+  key: 'sb_publishable_E4MqEYiMmgfcwstReip50g_JjRzxTrB',          // Supabase -> publishable (anon) key. It is public by design; never put the secret key here.
+  selfSignup: true,             // false = only teachers create student profiles
+  lib: 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js',
+  libSri: 'sha384-TcHRA3zBbn+Lexh5n+Oil4guNPOS3rjNDpGRAN46u/s/mB2IZ50ceC6TYDU2yvgK'
+};
+var AC_DOMAIN = '@students.kadr.invalid';
+var AC_LOGIN_RE = /^[a-z0-9][a-z0-9._-]{2,29}$/;
+var AC_ON = /^https:\/\/|^http:\/\/(localhost|127\.0\.0\.1)/.test(KADR_CLOUD.url) && KADR_CLOUD.key.length > 20;
+
+/* ---------- merging two copies of progress without losing results ---------- */
+function acRatio(r){ return r && typeof r.best === 'number' && r.total > 0 ? r.best / r.total : -1; }
+function acPassed(r){ return !!r && (r.passed !== undefined ? !!r.passed : acRatio(r) >= PASS_RATE); }
+function acMergeQuiz(a, b){
+  const ao = a && typeof a === 'object', bo = b && typeof b === 'object';
+  if(!ao) return bo ? b : a; if(!bo) return a;
+  const r = Object.assign({}, b, a);
+  const best = acRatio(a) >= acRatio(b) ? a : b;               // a better result is never replaced by a weaker one
+  if(acRatio(best) >= 0){ r.best = best.best; r.total = best.total; if(best.bestT) r.bestT = best.bestT; else delete r.bestT; }
+  r.passed = acPassed(a) || acPassed(b);
+  const la = a.last && a.last.t || 0, lb = b.last && b.last.t || 0;
+  if(a.last || b.last) r.last = la >= lb ? a.last : b.last;
+  const n = x => typeof x.attempts === 'number' ? x.attempts : (typeof x.best === 'number' ? 1 : 0);
+  r.attempts = Math.max(n(a), n(b));
+  r.t = Math.max(a.t || 0, b.t || 0);
+  return r;
+}
+function pgMerge(A, B){
+  A = PG.norm(JSON.parse(JSON.stringify(A || {}))); B = PG.norm(JSON.parse(JSON.stringify(B || {})));
+  const out = Object.assign({}, B, A);
+  const keys = (x, y) => [...new Set(Object.keys(x).concat(Object.keys(y)))];
+  out.quiz = {}; keys(A.quiz, B.quiz).forEach(k=>{ out.quiz[k] = acMergeQuiz(A.quiz[k], B.quiz[k]); });
+  ['opened', 'units', 'club'].forEach(f=>{ out[f] = {}; keys(A[f], B[f]).forEach(k=>{
+    const x = A[f][k], y = B[f][k];
+    out[f][k] = (typeof x === 'number' && typeof y === 'number') ? Math.min(x, y) : (x !== undefined ? x : y); }); });
+  out.pos = Object.assign({}, B.pos, A.pos);
+  out.vocab = {}; keys(A.vocab, B.vocab).forEach(k=>{
+    const x = A.vocab[k], y = B.vocab[k];
+    if(!x || !y){ out.vocab[k] = x || y; return; }
+    const w = (x.t || 0) >= (y.t || 0) ? x : y;                 // the most recent practice decides the status
+    out.vocab[k] = Object.assign({}, w, {n: Math.max(x.n || 0, y.n || 0)}); });
+  ['level', 'speaking', 'writing'].forEach(f=>{
+    const x = A[f], y = B[f];
+    if(x || y) out[f] = !y ? x : !x ? y : ((x.t || 0) >= (y.t || 0) ? x : y); });
+  const ha = A.hist || {}, hb = B.hist || {};
+  if(A.hist || B.hist){ out.hist = {}; keys(ha, hb).forEach(k=>{
+    const seen = {}, all = [].concat(ha[k] || [], hb[k] || []).filter(e=>e && !seen[e.t + e.code] && (seen[e.t + e.code] = 1));
+    out.hist[k] = all.sort((p, q)=>p.t - q.t).slice(-10); }); }
+  const ma = A.mt || 0, mb = B.mt || 0;
+  if(A.last || B.last) out.last = ma >= mb ? (A.last || B.last) : (B.last || A.last);
+  out.mt = Math.max(ma, mb) || undefined; if(!out.mt) delete out.mt;
+  return out;
+}
+function pgHist(k, rec){
+  if(!PG.d.hist || typeof PG.d.hist !== 'object') PG.d.hist = {};
+  const a = Array.isArray(PG.d.hist[k]) ? PG.d.hist[k] : [];
+  a.push({code: rec.code, t: rec.t}); PG.d.hist[k] = a.slice(-10);
+}
+/* how much is stored in a copy of progress (used for the transfer question and the rooms) */
+function acSummary(d){
+  d = PG.norm(JSON.parse(JSON.stringify(d || {})));
+  let passed = 0, tried = 0;
+  Object.keys(d.quiz).forEach(k=>{ const r = d.quiz[k]; if(r && typeof r === 'object'){ tried++; if(acPassed(r)) passed++; } });
+  const vocab = Object.values(d.vocab).filter(Boolean);
+  return {passed, tried, opened: Object.keys(d.opened).length,
+    known: vocab.filter(v=>v.s === 'known').length, learning: vocab.filter(v=>v.s === 'learning').length,
+    units: Object.keys(d.units).length, club: Object.keys(d.club).length,
+    tests: ['level', 'speaking', 'writing'].filter(k=>d[k]).length};
+}
+function acHasData(s){ return s.tried + s.opened + s.known + s.learning + s.units + s.club + s.tests > 0; }
+function acStable(o){ if(Array.isArray(o)) return '[' + o.map(acStable).join(',') + ']'; if(o && typeof o === 'object') return '{' + Object.keys(o).filter(k=>o[k] !== undefined).sort().map(k=>JSON.stringify(k) + ':' + acStable(o[k])).join(',') + '}'; return JSON.stringify(o === undefined ? null : o); }
+function acHash(o){ const s = acStable(o || {}); let h = 0; for(let i = 0; i < s.length; i++){ h = (h * 31 + s.charCodeAt(i)) | 0; } return s.length + ':' + h; }
+
+/* ---------- storage: "remember me" keeps the sign-in after the browser closes; otherwise only for this tab ---------- */
+function acRemember(){ try{ return localStorage.getItem('kadr_remember') === '1'; }catch(e){ return false; } }
+function acStoreFor(){ return acRemember() ? localStorage : sessionStorage; }
+const acAuthStore = {
+  getItem(k){ try{ const v = sessionStorage.getItem(k); return v !== null ? v : localStorage.getItem(k); }catch(e){ return null; } },
+  setItem(k, v){ try{ const s = acStoreFor(), o = s === localStorage ? sessionStorage : localStorage; s.setItem(k, v); o.removeItem(k); }catch(e){} },
+  removeItem(k){ try{ sessionStorage.removeItem(k); localStorage.removeItem(k); }catch(e){} }
+};
+
+/* ---------- state ---------- */
+var KC = {sb: null, user: null, me: null, version: 0, dirty: false, status: 'off', pushing: false, again: false,
+  retryT: null, retryN: 0, changeN: 0, pushT: null, savedAt: 0, leaving: false, problem: false};
+function acCacheKey(){ return 'kadr_cache_' + (KC.user ? KC.user.id : ''); }
+function acWriteCache(){
+  if(!KC.user) return;
+  try{ acStoreFor().setItem(acCacheKey(), JSON.stringify({data: PG.d, version: KC.version, dirty: KC.dirty})); }catch(e){}
+}
+function acReadCache(uid){
+  const k = 'kadr_cache_' + uid;
+  try{ const raw = sessionStorage.getItem(k) || localStorage.getItem(k); return raw ? JSON.parse(raw) : null; }catch(e){ return null; }
+}
+function acDropCache(uid){ try{ sessionStorage.removeItem('kadr_cache_' + uid); localStorage.removeItem('kadr_cache_' + uid); }catch(e){} }
+
+function acRerender(){
+  [()=>renderContinue(), ()=>renderLevels(), ()=>renderLessons(),
+   ()=>{ if(typeof qIndex === 'undefined' || qIndex === -1) renderTest(); },
+   ()=>{ if(!(typeof spk !== 'undefined' && spk && spk.items && spk.i < spk.items.length)) renderSpeaking(); },
+   ()=>{ if(typeof booksIndex !== 'undefined' && booksIndex && currentBook) renderBooksView(); },
+   ()=>renderClubManual(),
+   ()=>{ if(window.__vcReady && document.getElementById('vocab').classList.contains('active')) renderVocab(true); }
+  ].forEach(f=>{ try{ f(); }catch(e){} });
+  acRenderAccount();
+}
+
+/* ---------- sync status shown to the learner ---------- */
+var AC_STATUS = {
+  saving: 'Saving to your profile…',
+  saved: 'Saved to your profile',
+  offline: 'No connection. Your latest results are saved only on this device for now. They will be sent to your profile automatically when the connection is back.',
+  error: 'Could not save to your profile. Your latest results are kept on this device; we will try again.'
+};
+function acSetStatus(st){
+  KC.status = st;
+  const bar = document.getElementById('acSync');
+  if(st === 'offline' || st === 'error') KC.problem = true;
+  if(bar){
+    if(st === 'offline' || st === 'error'){
+      if(KC.barHidden === st) return acPaintButton();      // the learner hid this message; the red mark on the profile button stays
+      bar.hidden = false; bar.className = 'ac-sync ac-' + st;
+      bar.innerHTML = `<span class="ac-sync-dot" aria-hidden="true"></span><span class="ac-sync-txt">${AC_STATUS[st]}</span><span class="ac-sync-acts"><button type="button" class="ac-sync-btn" data-ac="retry">Try again</button><button type="button" class="ac-sync-x" data-ac="hidebar" aria-label="Hide">×</button></span>`;
+    }else if(st === 'saved' && KC.problem){
+      KC.barHidden = '';
+      KC.problem = false; bar.hidden = false; bar.className = 'ac-sync ac-saved';
+      bar.innerHTML = `<span class="ac-sync-dot" aria-hidden="true"></span><span class="ac-sync-txt">${AC_STATUS.saved}</span>`;
+      clearTimeout(bar.__t); bar.__t = setTimeout(()=>{ if(KC.status === 'saved') bar.hidden = true; }, 3500);
+    }else if(st === 'off'){ bar.hidden = true; }
+  }
+  acPaintButton();
+  document.querySelectorAll('[data-ac-sync]').forEach(acPaintSyncNote);
+}
+/* hooks used by the older parts of the page (safe to call before this module has run) */
+function acAfterResult(){
+  if(!KC || !KC.user) return;
+  const h = document.getElementById('quizHist'); if(!h) return;
+  const p = document.createElement('p'); p.setAttribute('data-ac-sync', ''); h.appendChild(p); acPaintSyncNote(p);
+}
+function acGuestNoteHtml(){
+  if(!AC_ON || !KC || KC.user) return '';
+  return '<p class="ac-guest-note"><span>Guest mode: your progress is saved only in this browser.</span> <button type="button" class="ac-link" data-ac="opensignin">Sign in</button> <span>to keep it in your profile and continue on another device.</span></p>';
+}
+function acPaintSyncNote(el){
+  if(!KC.user){ el.hidden = true; return; }
+  el.hidden = false; el.className = 'ac-note-sync ac-' + KC.status;
+  const t = KC.savedAt && KC.status === 'saved' ? ` <span data-no-i18n>${new Date(KC.savedAt).toLocaleTimeString(LANG === 'ru' ? 'ru-RU' : LANG === 'uz' ? 'uz-UZ' : 'en-GB', {hour:'2-digit', minute:'2-digit'})}</span>` : '';
+  el.innerHTML = `<span class="ac-sync-dot" aria-hidden="true"></span><span>${AC_STATUS[KC.status] || ''}</span>${t}`;
+}
+function acIsNetwork(e){
+  if(!navigator.onLine) return true;
+  if(!e) return false;
+  const m = String(e.message || e);
+  if(e.name === 'AuthRetryableFetchError' || /Failed to fetch|NetworkError|Load failed|Failed to send a request|network/i.test(m)) return true;
+  if(e.status && e.status >= 500) return true;
+  if(e.code) return false;            // the server answered with a reason (e.g. no permission)
+  return !e.status;
+}
+function acScheduleRetry(){
+  clearTimeout(KC.retryT);
+  const steps = [5, 15, 30, 60, 120];
+  const s = steps[Math.min(KC.retryN, steps.length - 1)]; KC.retryN++;
+  KC.retryT = setTimeout(()=>acPush(), s * 1000);
+}
+function acSchedulePush(ms){ clearTimeout(KC.pushT); KC.pushT = setTimeout(()=>acPush(), ms); }
+function acOnLocalSave(){            // PG.save() while signed in
+  KC.dirty = true; KC.changeN++; acWriteCache();
+  if(KC.status !== 'offline' && KC.status !== 'error') acSetStatus('saving');
+  acSchedulePush(1200);
+}
+async function acPush(){
+  if(!KC.user || !KC.sb) return;
+  if(KC.pushing){ KC.again = true; return; }
+  if(!KC.dirty){ if(KC.status !== 'saved') acSetStatus('saved'); return; }
+  KC.pushing = true; clearTimeout(KC.retryT);
+  if(KC.status !== 'offline' && KC.status !== 'error') acSetStatus('saving');
+  const n0 = KC.changeN, uid = KC.user.id;
+  try{
+    let done = false;
+    for(let i = 0; i < 4 && !done; i++){
+      const {data, error} = await KC.sb.rpc('kadr_save_progress', {p_data: PG.d, p_version: KC.version});
+      if(!KC.user || KC.user.id !== uid) return;
+      if(error) throw error;
+      if(data && data.ok){ KC.version = data.version; done = true; break; }
+      // another device saved first: combine both copies, keep the best of each, then save again
+      PG.use(pgMerge(PG.d, data && data.data), 'user'); KC.version = data ? data.version : KC.version;
+      acRerender();
+    }
+    if(!done) throw new Error('conflict');
+    if(KC.changeN === n0) KC.dirty = false;
+    KC.retryN = 0; KC.savedAt = Date.now(); acWriteCache();
+    acSetStatus(KC.dirty ? 'saving' : 'saved');
+  }catch(e){
+    acWriteCache();
+    acSetStatus(acIsNetwork(e) ? 'offline' : 'error');
+    acScheduleRetry();
+  }finally{
+    KC.pushing = false;
+    if(KC.user && KC.dirty && (KC.again || KC.changeN !== n0) && KC.status === 'saving'){ KC.again = false; acSchedulePush(300); }
+    KC.again = false;
+  }
+}
+async function acPull(){
+  // get the copy from the profile and combine it with what this device has
+  const {data, error} = await KC.sb.rpc('kadr_get_progress');
+  if(error) throw error;
+  const local = PG.d, remote = PG.norm((data && data.data) || {});
+  const merged = pgMerge(local, remote);
+  KC.version = (data && data.version) || 0;
+  PG.use(merged, 'user');
+  if(acHash(merged) !== acHash(pgMerge(remote, remote))){ KC.dirty = true; KC.changeN++; }
+  acWriteCache(); acRerender();
+  if(KC.dirty) await acPush(); else { KC.savedAt = Date.now(); acSetStatus('saved'); }
+}
+
+/* ---------- library + session ---------- */
+function acLoadLib(){
+  return new Promise((res, rej)=>{
+    if(window.supabase && window.supabase.createClient) return res();
+    const s = document.createElement('script');
+    s.src = KADR_CLOUD.lib; s.async = true; s.crossOrigin = 'anonymous';
+    if(KADR_CLOUD.libSri) s.integrity = KADR_CLOUD.libSri;
+    s.onload = ()=>res(); s.onerror = ()=>rej(new Error('lib'));
+    document.head.appendChild(s);
+  });
+}
+async function acClient(){
+  if(KC.sb) return KC.sb;
+  await acLoadLib();
+  KC.sb = window.supabase.createClient(KADR_CLOUD.url, KADR_CLOUD.key, {
+    auth: {storage: acAuthStore, persistSession: true, autoRefreshToken: true, detectSessionInUrl: false}
+  });
+  KC.sb.auth.onAuthStateChange((ev)=>{
+    if(ev === 'SIGNED_OUT' && KC.user && !KC.leaving) setTimeout(()=>acForcedOut(), 0);
+  });
+  return KC.sb;
+}
+async function acStart(user, fresh){
+  KC.user = user; KC.version = 0; KC.dirty = false; KC.retryN = 0;
+  const cache = acReadCache(user.id);
+  PG.use(cache ? cache.data : {}, 'user');
+  if(cache){ KC.version = cache.version || 0; KC.dirty = !!cache.dirty; }
+  PG.onSave = acOnLocalSave;
+  acRerender();
+  try{
+    const {data, error} = await KC.sb.rpc('kadr_me');
+    if(error) throw error;
+    if(!data) throw new Error('no_profile');
+    KC.me = data;
+    // is this sign-in still valid on the server? (a teacher may have reset the password, or the profile was deleted)
+    const gu = await KC.sb.auth.getUser();
+    if(gu.error && !acIsNetwork(gu.error)){ await acForcedOut(); return; }
+  }catch(e){
+    if(!acIsNetwork(e)){ await acSignOut(true); acOpenModal('signin', {err: 'Your profile could not be opened. Ask your teacher for help.'}); return; }
+    KC.me = KC.me || {display_name: (user.user_metadata && user.user_metadata.display_name) || user.email.split('@')[0], login: user.email.split('@')[0], role: 'student'};
+  }
+  acPaintButton(); acRenderAccount(); acRenderTeacher();
+  try{ await acPull(); }catch(e){ acSetStatus(acIsNetwork(e) ? 'offline' : 'error'); acScheduleRetry(); }
+  if(KC.me && KC.me.must_change_password){ acOpenModal('newpass'); return; }
+  if(fresh) acOfferTransfer();
+}
+async function acInit(){
+  if(!AC_ON) return;
+  document.getElementById('acctBtn').hidden = false;
+  const rp = document.getElementById('resetProgress');
+  window.addEventListener('online', ()=>{ if(KC.user && KC.dirty) acPush(); });
+  document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState === 'visible' && KC.user && KC.dirty && !KC.pushing) acPush(); });
+  window.addEventListener('beforeunload', e=>{ if(KC.user && KC.dirty){ e.preventDefault(); e.returnValue = ''; } });
+  try{
+    await acClient();
+    const {data} = await KC.sb.auth.getSession();
+    if(data && data.session && data.session.user) await acStart(data.session.user, false);
+  }catch(e){
+    const b = document.getElementById('acctBtn'); if(b) b.dataset.state = 'nolib';
+  }
+  acPaintButton();
+}
+async function acSignOut(silent){
+  const uid = KC.user && KC.user.id;
+  KC.leaving = true;
+  try{ if(KC.sb) await KC.sb.auth.signOut({scope: 'local'}); }catch(e){}
+  if(uid) acDropCache(uid);
+  try{ localStorage.removeItem('kadr_remember'); }catch(e){}
+  clearTimeout(KC.pushT); clearTimeout(KC.retryT);
+  KC.user = null; KC.me = null; KC.dirty = false; KC.version = 0; KC.problem = false; KC.leaving = false;
+  PG.onSave = null; PG.use(PG.readGuest(), 'guest');
+  acSetStatus('off'); acRerender(); acRenderTeacher();
+  if(!silent && ['account', 'teacher'].some(id=>document.getElementById(id).classList.contains('active'))) showSection('home');
+}
+async function acForcedOut(){
+  // the session ended elsewhere (password reset by the teacher, profile deleted, sign-in expired)
+  const keep = KC.dirty;          // unsent results stay on this device for the same learner's next sign-in
+  KC.leaving = true; try{ if(KC.sb) await KC.sb.auth.signOut({scope: 'local'}); }catch(e){} KC.leaving = false;
+  KC.user = null; KC.me = null; KC.dirty = false; PG.onSave = null; PG.use(PG.readGuest(), 'guest');
+  if(!keep){ /* nothing unsent */ }
+  acSetStatus('off'); acRerender(); acRenderTeacher();
+  if(['account', 'teacher'].some(id=>document.getElementById(id).classList.contains('active'))) showSection('home');
+  acOpenModal('signin', {err: 'You were signed out. Please sign in again.'});
+}
+async function acTrySignOut(){
+  if(KC.dirty){ await acPush(); }
+  if(KC.dirty && !confirm(T('Some of your latest results are not saved to your profile yet (no connection). If you sign out now, they will be lost. Sign out anyway?'))) return;
+  await acSignOut(false);
+}
+
+/* ---------- header button ---------- */
+function acPaintButton(){
+  const b = document.getElementById('acctBtn'); if(!b) return;
+  const lab = b.querySelector('.acct-label');
+  if(KC.user && KC.me){
+    b.dataset.state = 'in'; b.dataset.sync = KC.status;
+    lab.innerHTML = `<span data-no-i18n>${esc(KC.me.display_name)}</span>`;
+    b.setAttribute('aria-label', KC.me.role === 'teacher' ? "Teacher's room" : 'My profile');
+    b.title = AC_STATUS[KC.status] || '';
+  }else{
+    if(b.dataset.state !== 'nolib') b.dataset.state = 'out';
+    delete b.dataset.sync; lab.textContent = 'Sign in';
+    b.setAttribute('aria-label', 'Sign in'); b.title = 'Sign in';
+  }
+  const rp = document.getElementById('resetProgress'); if(rp) rp.hidden = !!KC.user;
+}
+
+/* ---------- modal windows ---------- */
+let acLastFocus = null, acModalKind = '';
+function acCloseModal(){
+  if(acModalKind === 'newpass') return;      // the temporary password has to be replaced first
+  document.getElementById('acOverlay').classList.remove('open');
+  acModalKind = '';
+  if(acLastFocus && acLastFocus.focus) acLastFocus.focus();
+}
+function acField(id, label, type, extra, hint){
+  return `<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" ${extra || ''}>${hint ? `<p class="ac-hint" id="${id}H">${hint}</p>` : ''}</div>`;
+}
+function acPassField(id, label, ac, hint){
+  return `<div class="field"><label for="${id}">${label}</label><div class="ac-pass"><input id="${id}" type="password" autocomplete="${ac}" ${hint ? `aria-describedby="${id}H"` : ''}><button type="button" class="ac-eye" data-ac="eye" data-for="${id}" aria-label="Show password" aria-pressed="false">Show</button></div>${hint ? `<p class="ac-hint" id="${id}H">${hint}</p>` : ''}</div>`;
+}
+const AC_REMEMBER = `<label class="ac-check"><input type="checkbox" id="acRemember"> <span>Remember me on this device</span></label><p class="ac-hint">Do not tick this on a shared computer at the learning centre. Then you are signed out when the browser tab is closed.</p>`;
+function acOpenModal(kind, opt){
+  opt = opt || {};
+  const ov = document.getElementById('acOverlay'), box = document.getElementById('acBox');
+  if(!ov.classList.contains('open')) acLastFocus = document.activeElement;
+  acModalKind = kind;
+  let h = '';
+  const tabs = KADR_CLOUD.selfSignup ? `<div class="ac-tabs" role="tablist"><button type="button" role="tab" data-ac="tab" data-kind="signin" aria-selected="${kind === 'signin'}">Sign in</button><button type="button" role="tab" data-ac="tab" data-kind="signup" aria-selected="${kind === 'signup'}">Create profile</button></div>` : '';
+  if(kind === 'signin'){
+    h = `${tabs}<h3 id="acTitle">Sign in to KADR</h3>
+      <p class="ac-lead">Your results are saved in your profile, so you can continue at the learning centre, at home or on your phone.</p>
+      <form id="acForm" novalidate>
+        ${acField('acLogin', 'Login', 'text', 'autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="30"')}
+        ${acPassField('acPass', 'Password', 'current-password')}
+        ${AC_REMEMBER}
+        <p class="ac-err" id="acErr" role="alert"></p>
+        <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold">Sign in</button></div>
+      </form>
+      <p class="ac-small">Forgot your password? Ask your teacher: they will give you a new temporary password.</p>
+      <p class="ac-small">Without signing in you can still use the whole site. Then your progress is saved only in this browser.</p>`;
+  }else if(kind === 'signup'){
+    h = `${tabs}<h3 id="acTitle">Create a profile</h3>
+      <form id="acForm" novalidate>
+        ${acField('acName', 'Your name (shown on the site)', 'text', 'autocomplete="nickname" maxlength="40"')}
+        ${acField('acLogin', 'Login', 'text', 'autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="30" aria-describedby="acLoginH"', '3–30 characters: Latin letters, digits, dot, dash or underscore. Not an e-mail address.')}
+        ${acPassField('acPass', 'Password', 'new-password', 'At least 8 characters. Do not use the same password as on other sites.')}
+        ${acPassField('acPass2', 'Repeat the password', 'new-password')}
+        ${AC_REMEMBER}
+        <p class="ac-err" id="acErr" role="alert"></p>
+        <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold">Create profile</button></div>
+      </form>
+      <p class="ac-small">We keep only your name, login and learning results. No e-mail or phone number is needed. Write your login and password down somewhere safe.</p>`;
+  }else if(kind === 'newpass'){
+    h = `<h3 id="acTitle">Set your own password</h3>
+      <p class="ac-lead">You signed in with a temporary password from your teacher. Choose a new password that only you know.</p>
+      <form id="acForm" novalidate>
+        ${acPassField('acPass', 'New password', 'new-password', 'At least 8 characters.')}
+        ${acPassField('acPass2', 'Repeat the new password', 'new-password')}
+        <p class="ac-err" id="acErr" role="alert"></p>
+        <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="signout">Sign out</button><button type="submit" class="btn btn-gold">Save password</button></div>
+      </form>`;
+  }else if(kind === 'changepass'){
+    h = `<h3 id="acTitle">Change password</h3>
+      <form id="acForm" novalidate>
+        ${acPassField('acOld', 'Current password', 'current-password')}
+        ${acPassField('acPass', 'New password', 'new-password', 'At least 8 characters. You will be signed out on your other devices.')}
+        ${acPassField('acPass2', 'Repeat the new password', 'new-password')}
+        <p class="ac-err" id="acErr" role="alert"></p>
+        <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold">Save password</button></div>
+      </form>`;
+  }else if(kind === 'transfer'){
+    const s = opt.s;
+    h = `<h3 id="acTitle">Add progress from this browser?</h3>
+      <p class="ac-lead">This browser has progress saved without signing in:</p>
+      <ul class="ac-list">${acSumLines(s)}</ul>
+      <p class="ac-lead">If these are your own results, you can add them to your profile. If someone else studied on this computer, do not add them.</p>
+      <p class="ac-small">Your best results are kept: a weaker result never replaces a better one. The copy in this browser is not deleted.</p>
+      <p class="ac-err" id="acErr" role="alert"></p>
+      <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="notransfer">No, do not add</button><button type="button" class="btn btn-gold" data-ac="transfer">Add to my profile</button></div>`;
+  }else if(kind === 'transferred'){
+    h = `<h3 id="acTitle">Progress added</h3>
+      <p class="ac-lead">The results from this browser are now saved in your profile.</p>
+      <p class="ac-lead">You can remove the guest copy from this browser, so that the next person on this computer does not see it.</p>
+      <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Keep it</button><button type="button" class="btn btn-gold" data-ac="dropguest">Remove from this browser</button></div>`;
+  }else if(kind === 'deleteme'){
+    h = `<h3 id="acTitle">Delete my profile</h3>
+      <p class="ac-lead">Your profile and all results saved in it will be deleted for good. This cannot be undone.</p>
+      <form id="acForm" novalidate>
+        ${acField('acConfirm', 'Type your login to confirm', 'text', 'autocapitalize="none" spellcheck="false" autocomplete="off"')}
+        <p class="ac-err" id="acErr" role="alert"></p>
+        <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold ac-danger">Delete profile</button></div>
+      </form>`;
+  }else if(kind === 'info'){
+    h = `<h3 id="acTitle">${opt.title}</h3>${opt.body}<div class="modal-actions"><button type="button" class="btn btn-gold" data-ac="close">OK</button></div>`;
+  }else if(kind === 'custom'){
+    h = opt.html;
+  }
+  box.innerHTML = h;
+  box.setAttribute('aria-labelledby', 'acTitle');
+  ov.classList.add('open');
+  const err = document.getElementById('acErr'); if(err && opt.err) err.textContent = opt.err;
+  const first = box.querySelector('input, button.btn-gold, button');
+  setTimeout(()=>{ if(first) first.focus(); }, 30);
+  const f = document.getElementById('acForm');
+  if(f) f.addEventListener('submit', e=>{ e.preventDefault(); acSubmit(kind, f, opt); });
+  if(opt.onOpen) opt.onOpen(box);
+}
+function acSumLines(s){
+  const li = (n, t)=> n ? `<li><b data-no-i18n>${n}</b> <span>${t}</span></li>` : '';
+  return li(s.passed, 'lessons completed') + li(s.tried - s.passed, 'lessons started') + li(s.known, 'words you know well') + li(s.learning, 'words you are learning') + li(s.units, 'textbook units opened') + li(s.club, 'club materials read') + li(s.tests, 'test results');
+}
+function acErrText(e){
+  const c = e && (e.code || ''), st = e && e.status;
+  if(c === 'invalid_credentials') return 'Wrong login or password. Check the keyboard language (EN) and Caps Lock.';
+  if(c === 'user_already_exists' || c === 'email_exists' || c === 'login_taken') return 'This login is already taken. Choose another one.';
+  if(c === 'weak_password') return 'The password is too short: use at least 8 characters.';
+  if(c === 'same_password') return 'The new password must be different from the old one.';
+  if(c === 'signup_disabled') return 'Creating a profile on the site is turned off. Ask your teacher to create one for you.';
+  if(c === 'over_request_rate_limit' || st === 429) return 'Too many attempts. Wait a few minutes and try again.';
+  if(acIsNetwork(e)) return 'No connection to the server. Check the internet and try again.';
+  return 'Something went wrong. Please try again later.';
+}
+function acBusy(form, on){ form.querySelectorAll('button, input').forEach(el=>{ el.disabled = on; }); form.setAttribute('aria-busy', on ? 'true' : 'false'); }
+async function acSubmit(kind, form, opt){
+  const err = document.getElementById('acErr'); err.textContent = '';
+  const val = id => { const el = document.getElementById(id); return el ? el.value : ''; };
+  const fail = (msg, id)=>{ err.textContent = msg; const el = id && document.getElementById(id); if(el){ el.setAttribute('aria-invalid', 'true'); el.focus(); } };
+  form.querySelectorAll('[aria-invalid]').forEach(el=>el.removeAttribute('aria-invalid'));
+  try{
+    if(kind === 'signin' || kind === 'signup'){
+      const login = val('acLogin').trim().toLowerCase(), pass = val('acPass');
+      const name = kind === 'signup' ? val('acName').replace(/[\u0000-\u001f<>]/g, '').trim() : '';
+      if(kind === 'signup' && !name) return fail('Enter your name.', 'acName');
+      if(!login) return fail('Enter your login.', 'acLogin');
+      if(login.includes('@')) return fail('Enter your login, not an e-mail address.', 'acLogin');
+      if(kind === 'signup' && !AC_LOGIN_RE.test(login)) return fail('The login can have 3–30 characters: Latin letters, digits, dot, dash or underscore. It must start with a letter or digit.', 'acLogin');
+      if(!pass) return fail('Enter your password.', 'acPass');
+      if(kind === 'signup' && pass.length < 8) return fail('The password is too short: use at least 8 characters.', 'acPass');
+      if(kind === 'signup' && pass !== val('acPass2')) return fail('The passwords do not match.', 'acPass2');
+      try{ if(document.getElementById('acRemember').checked) localStorage.setItem('kadr_remember', '1'); else localStorage.removeItem('kadr_remember'); }catch(e){}
+      acBusy(form, true);
+      const sb = await acClient().catch(()=>null);
+      if(!sb){ acBusy(form, false); return fail('No connection to the server. Check the internet and try again.'); }
+      const email = login + AC_DOMAIN;
+      const r = kind === 'signin'
+        ? await sb.auth.signInWithPassword({email, password: pass})
+        : await sb.auth.signUp({email, password: pass, options: {data: {display_name: name}}});
+      acBusy(form, false);
+      if(r.error) return fail(acErrText(r.error));
+      if(!r.data || !r.data.session) return fail('Something went wrong. Please try again later.');
+      acModalKind = ''; document.getElementById('acOverlay').classList.remove('open');
+      await acStart(r.data.session.user, true);
+      return;
+    }
+    if(kind === 'newpass' || kind === 'changepass'){
+      const p1 = val('acPass'), p2 = val('acPass2');
+      if(kind === 'changepass' && !val('acOld')) return fail('Enter your current password.', 'acOld');
+      if(p1.length < 8) return fail('The password is too short: use at least 8 characters.', 'acPass');
+      if(p1 !== p2) return fail('The passwords do not match.', 'acPass2');
+      acBusy(form, true);
+      if(kind === 'changepass'){
+        const chk = await KC.sb.auth.signInWithPassword({email: KC.user.email, password: val('acOld')});
+        if(chk.error){ acBusy(form, false); return fail(chk.error.code === 'invalid_credentials' ? 'The current password is wrong.' : acErrText(chk.error), 'acOld'); }
+      }
+      const u = await KC.sb.auth.updateUser({password: p1});
+      if(u.error){ acBusy(form, false); return fail(acErrText(u.error)); }
+      await KC.sb.rpc('kadr_password_changed');
+      if(KC.me) KC.me.must_change_password = false;
+      acModalKind = ''; acOpenModal('info', {title: 'Password saved', body: '<p class="ac-lead">Use your new password next time you sign in.</p>'});
+      if(kind === 'newpass' && acGuestInfo().has) setTimeout(()=>acOfferTransfer(), 0);
+      return;
+    }
+    if(kind === 'deleteme'){
+      if(val('acConfirm').trim().toLowerCase() !== (KC.me && KC.me.login)) return fail('The login does not match.', 'acConfirm');
+      acBusy(form, true);
+      const {data, error} = await KC.sb.functions.invoke('kadr-admin', {body: {action: 'delete_me'}});
+      acBusy(form, false);
+      if(error || !data || !data.ok) return fail(acIsNetwork(error) ? 'No connection to the server. Check the internet and try again.' : 'The profile could not be deleted. Ask your teacher for help.');
+      KC.dirty = false; await acSignOut(false);
+      acOpenModal('info', {title: 'Profile deleted', body: '<p class="ac-lead">Your profile and your results were deleted from the server.</p>'});
+      return;
+    }
+  }catch(e){ acBusy(form, false); fail(acErrText(e)); }
+}
+
+/* ---------- moving guest progress into the profile (only after the learner agrees) ---------- */
+function acGuestInfo(){
+  const g = PG.readGuest(), s = acSummary(g);
+  return {g, s, has: acHasData(s), hash: acHash(g)};
+}
+function acOfferTransfer(force){
+  if(!KC.user) return;
+  const gi = acGuestInfo();
+  if(!gi.has) return;
+  let seen = null; try{ seen = localStorage.getItem('kadr_mig_' + KC.user.id); }catch(e){}
+  if(!force && seen === gi.hash) return;
+  acOpenModal('transfer', {s: gi.s, gi});
+}
+async function acDoTransfer(){
+  const gi = acGuestInfo();
+  const err = document.getElementById('acErr');
+  PG.use(pgMerge(PG.d, gi.g), 'user');
+  KC.dirty = true; KC.changeN++; acWriteCache(); acRerender();
+  try{ localStorage.setItem('kadr_mig_' + KC.user.id, gi.hash); }catch(e){}
+  await acPush();
+  if(!KC.dirty){ acModalKind = ''; acOpenModal('transferred'); acRenderAccount(); }
+  else if(err){
+    err.textContent = 'There is no connection now, so the results were added only on this device. They will be sent to your profile automatically when the connection is back. The guest copy stays in this browser.';
+    const box = document.getElementById('acBox');
+    box.querySelector('.modal-actions').innerHTML = '<button type="button" class="btn btn-gold" data-ac="close">OK</button>';
+  }
+}
+
+/* ---------- personal room ---------- */
+function acLevelRows(d){
+  return Object.keys(LESSONS).map(L=>{
+    let done = 0, prog = 0;
+    LESSONS[L].forEach((_, i)=>{ const st = acLessonState(d, L, i).st; if(st === 'done') done++; else if(st === 'progress') prog++; });
+    return {L, done, prog, total: LESSONS[L].length};
+  });
+}
+function acLessonState(d, L, i){
+  const k = L + ':' + i, r = d.quiz && d.quiz[k];
+  if(!r || typeof r !== 'object') return {st: d.opened && d.opened[k] ? 'progress' : 'new', r: null};
+  return {st: acPassed(r) ? 'done' : 'progress', r};
+}
+function acTestsHtml(d){
+  const row = (k, label)=>{
+    if(!d[k]) return '';
+    const hist = d.hist && Array.isArray(d.hist[k]) && d.hist[k].length > 1 ? `<span class="ac-muted"> · <span>earlier</span>: <span data-no-i18n>${d.hist[k].slice(0, -1).reverse().slice(0, 4).map(h=>esc(h.code)).join(', ')}</span></span>` : '';
+    return `<li><span>${label}</span>: <b data-no-i18n>${esc(d[k].code)}</b> <span class="ac-muted" data-no-i18n>· ${fmtDate(d[k].t)}</span>${hist}</li>`;
+  };
+  const h = row('level', 'Level test (approx.)') + row('speaking', 'Speaking estimate (voice)') + row('writing', 'Written-answer estimate');
+  return h ? `<ul class="ac-list">${h}</ul>` : '<p class="ac-muted">No tests yet.</p>';
+}
+function acRenderAccount(){
+  const root = document.getElementById('acRoot'); if(!root) return;
+  if(!KC.user || !KC.me){ root.innerHTML = ''; return; }
+  const d = PG.d, s = acSummary(d), me = KC.me;
+  const total = Object.keys(LESSONS).reduce((a, k)=>a + LESSONS[k].length, 0);
+  const gi = acGuestInfo();
+  document.getElementById('acHello').innerHTML = `<span>Hello,</span> <span data-no-i18n>${esc(me.display_name)}</span>!`;
+  root.innerHTML = `
+    <div class="ac-card ac-who">
+      <p><span>Login</span>: <b data-no-i18n>${esc(me.login)}</b>${me.group ? ` · <span>Group</span>: <b data-no-i18n>${esc(me.group)}</b>` : ''}</p>
+      <p class="ac-note-sync" data-ac-sync></p>
+      ${me.role === 'teacher' ? `<button type="button" class="btn btn-gold" data-target="teacher">Open the teacher's room</button>` : ''}
+    </div>
+    <div class="ac-card">
+      <h3>My progress</h3>
+      <div class="ac-stats">
+        <div><b data-no-i18n>${s.passed}/${total}</b><span>lessons completed</span></div>
+        <div><b data-no-i18n>${s.tried - s.passed}</b><span>lessons in progress</span></div>
+        <div><b data-no-i18n>${s.known}</b><span>words you know well</span></div>
+        <div><b data-no-i18n>${s.learning}</b><span>words to review</span></div>
+        <div><b data-no-i18n>${s.units}</b><span>textbook units opened</span></div>
+        <div><b data-no-i18n>${s.club}</b><span>club materials read</span></div>
+      </div>
+      <div class="ac-levels">${acLevelRows(d).map(r=>`<div class="ac-lv"><span class="ac-lv-n" data-no-i18n>${r.L}</span><div class="rc-bar" role="progressbar" aria-valuemin="0" aria-valuemax="${r.total}" aria-valuenow="${r.done}" aria-label="${r.L}"><i style="width:${r.total ? Math.round(r.done / r.total * 100) : 0}%"></i></div><span class="ac-lv-c" data-no-i18n>${r.done}/${r.total}</span></div>`).join('')}</div>
+      <div class="ac-row">
+        <button type="button" class="btn btn-gold" data-target="lessons">Continue lessons</button>
+        ${s.learning ? `<button type="button" class="btn ac-btn-line" data-ac="review">Review words</button>` : ''}
+      </div>
+    </div>
+    <div class="ac-card">
+      <h3>Test results</h3>
+      ${acTestsHtml(d)}
+    </div>
+    <div class="ac-card">
+      <h3>Profile</h3>
+      ${gi.has ? `<p class="ac-muted">This browser also has guest progress (saved without signing in).</p><button type="button" class="btn ac-btn-line" data-ac="offer">Add guest progress to my profile</button>` : ''}
+      <div class="ac-row">
+        <button type="button" class="btn ac-btn-line" data-ac="changepass">Change password</button>
+        <button type="button" class="btn btn-gold" data-ac="signout">Sign out</button>
+      </div>
+      <details class="ac-details"><summary>What is saved and who can see it</summary>
+        <ul class="ac-list">
+          <li>Saved: your name, login, group and learning results (lessons, words, tests, opened textbook units and club materials).</li>
+          <li>Not saved: e-mail, phone number, voice recordings or the text of your answers in the speaking test.</li>
+          <li>Who can see it: you and the teachers of the learning centre. Other learners cannot see your results.</li>
+          <li>Your password is stored encrypted. Teachers cannot see it; they can only give you a new temporary password.</li>
+        </ul>
+        <button type="button" class="btn ac-btn-line ac-danger-line" data-ac="deleteme">Delete my profile</button>
+      </details>
+    </div>`;
+  root.querySelectorAll('[data-target]').forEach(el=>el.addEventListener('click', e=>{ e.preventDefault(); showSection(el.dataset.target); }));
+  root.querySelectorAll('[data-ac-sync]').forEach(acPaintSyncNote);
+}
+
+/* ---------- teacher's room ---------- */
+var TR = {list: [], groups: [], q: '', g: 'all', open: null, loading: false, err: ''};
+async function acTeacherCall(fn, args){
+  const {data, error} = await KC.sb.rpc(fn, args || {});
+  if(error) throw error;
+  return data;
+}
+async function acAdmin(body){
+  const {data, error} = await KC.sb.functions.invoke('kadr-admin', {body});
+  if(error){
+    let code = '';
+    try{ const j = error.context && await error.context.json(); code = j && j.error; }catch(e){}
+    const e2 = new Error(code || error.message); e2.code = code || (acIsNetwork(error) ? '' : 'failed'); e2.status = error.context && error.context.status; throw e2;
+  }
+  return data;
+}
+async function acLoadTeacher(){
+  if(!KC.me || KC.me.role !== 'teacher') return;
+  TR.loading = true; TR.err = ''; acRenderTeacher();
+  try{
+    const [list, groups] = await Promise.all([acTeacherCall('kadr_t_students'), acTeacherCall('kadr_t_groups')]);
+    TR.list = list || []; TR.groups = groups || [];
+  }catch(e){ TR.err = acIsNetwork(e) ? 'No connection to the server. Check the internet and try again.' : 'The list could not be loaded.'; }
+  TR.loading = false; acRenderTeacher();
+}
+function acAgo(t){ return t ? fmtDate(new Date(t).getTime()) : '—'; }
+function acGroupOptions(sel, withAll){
+  return (withAll ? `<option value="all"${sel === 'all' ? ' selected' : ''}>All groups</option><option value="none"${sel === 'none' ? ' selected' : ''}>Without a group</option>` : `<option value=""${!sel ? ' selected' : ''}>Without a group</option>`) +
+    TR.groups.map(g=>`<option value="${esc(g.id)}"${sel === g.id ? ' selected' : ''} data-no-i18n>${esc(g.name)}</option>`).join('');
+}
+function acRenderTeacher(){
+  const root = document.getElementById('trRoot'); if(!root) return;
+  if(!KC.user || !KC.me || KC.me.role !== 'teacher'){
+    root.innerHTML = `<div class="ac-card"><p>This page is only for teachers. Sign in with a teacher's profile.</p></div>`; return;
+  }
+  if(TR.open) return acRenderStudent();
+  const q = TR.q.trim().toLowerCase();
+  const rows = TR.list.filter(s=>(TR.g === 'all' || (TR.g === 'none' ? !s.group_id : s.group_id === TR.g)) &&
+    (!q || s.display_name.toLowerCase().includes(q) || s.login.includes(q)));
+  root.innerHTML = `
+    <div class="tr-bar">
+      <label class="tr-search"><span class="sr-only">Search by name or login</span><input type="search" id="trQ" placeholder="Search by name or login" value="${esc(TR.q)}" autocomplete="off"></label>
+      <label class="tr-sel"><span class="sr-only">Group</span><select id="trG">${acGroupOptions(TR.g, true)}</select></label>
+      <button type="button" class="btn btn-gold" data-ac="newstudent">New student</button>
+      <button type="button" class="btn ac-btn-line" data-ac="groups">Groups</button>
+      <button type="button" class="btn ac-btn-line" data-ac="reload">Refresh</button>
+    </div>
+    ${TR.err ? `<p class="ac-err" role="alert">${TR.err}</p>` : ''}
+    ${TR.loading ? '<p class="ac-muted">Loading…</p>' : ''}
+    <p class="ac-muted tr-count"><span>Students</span>: <b data-no-i18n>${rows.length}</b></p>
+    <div class="tr-list" role="list">
+      ${rows.map(s=>`<button type="button" class="tr-item" role="listitem" data-ac="open" data-id="${esc(s.id)}">
+        <span class="tr-name"><b data-no-i18n>${esc(s.display_name)}</b> <span class="ac-muted" data-no-i18n>${esc(s.login)}</span>${s.must_change_password ? ' <span class="tr-tag">temporary password</span>' : ''}</span>
+        <span class="tr-meta"><span data-no-i18n>${esc(s.group_name || '')}</span></span>
+        <span class="tr-nums"><span><b data-no-i18n>${s.summary.lessons_passed}</b> <span>lessons</span></span><span><b data-no-i18n>${s.summary.words_known}</b> <span>words</span></span>${s.summary.level ? `<span><span>test</span> <b data-no-i18n>${esc(s.summary.level)}</b></span>` : ''}</span>
+        <span class="tr-when ac-muted"><span>active</span> <span data-no-i18n>${acAgo(s.updated_at)}</span></span>
+      </button>`).join('') || (TR.loading ? '' : '<p class="ac-muted">No students found.</p>')}
+    </div>`;
+  const qi = document.getElementById('trQ');
+  qi.addEventListener('input', ()=>{ TR.q = qi.value; const pos = qi.selectionStart; acRenderTeacher(); const n = document.getElementById('trQ'); n.focus(); try{ n.setSelectionRange(pos, pos); }catch(e){} });
+  document.getElementById('trG').addEventListener('change', e=>{ TR.g = e.target.value; acRenderTeacher(); });
+}
+async function acOpenStudent(id){
+  TR.open = {id, loading: true}; acRenderTeacher();
+  try{ TR.open = await acTeacherCall('kadr_t_student', {p_id: id}); }
+  catch(e){ TR.open = null; TR.err = acIsNetwork(e) ? 'No connection to the server. Check the internet and try again.' : 'This student could not be opened.'; }
+  acRenderTeacher();
+  const h = document.getElementById('trStudentH'); if(h) h.focus();
+}
+function acRenderStudent(){
+  const root = document.getElementById('trRoot'), s = TR.open;
+  if(s.loading){ root.innerHTML = '<p class="ac-muted">Loading…</p>'; return; }
+  const d = PG.norm(JSON.parse(JSON.stringify(s.data || {}))), sum = acSummary(d);
+  const lessons = [];
+  Object.keys(LESSONS).forEach(L=>LESSONS[L].forEach((l, i)=>{
+    const st = acLessonState(d, L, i); if(st.st === 'new') return;
+    const r = st.r;
+    lessons.push(`<tr><td data-no-i18n>${L}</td><td data-no-i18n>${esc(String(l.t).replace(/<[^>]+>/g, ''))}</td>
+      <td><span class="st-chip ${st.st === 'done' ? 'st-done' : 'st-progress'}">${st.st === 'done' ? 'Completed' : 'In progress'}</span></td>
+      <td data-no-i18n>${r && acRatio(r) >= 0 ? Math.round(acRatio(r) * 100) + '%' : '—'}</td>
+      <td data-no-i18n>${r && r.last ? Math.round(r.last.c / Math.max(1, r.last.n) * 100) + '%' + (r.last.complete === false ? ' *' : '') : '—'}</td>
+      <td data-no-i18n>${r ? (r.attempts || 1) : 0}</td><td data-no-i18n>${r && r.t ? fmtDate(r.t) : (d.opened[L + ':' + i] ? fmtDate(d.opened[L + ':' + i]) : '—')}</td></tr>`);
+  }));
+  const learning = Object.keys(d.vocab).filter(k=>d.vocab[k] && d.vocab[k].s === 'learning');
+  root.innerHTML = `
+    <button type="button" class="btn ac-btn-line" data-ac="back">← Back to the list</button>
+    <div class="ac-card">
+      <h3 id="trStudentH" tabindex="-1"><span data-no-i18n>${esc(s.display_name)}</span> <span class="ac-muted" data-no-i18n>${esc(s.login)}</span></h3>
+      <div class="tr-actions">
+        <label class="tr-sel"><span>Group</span> <select id="trSG">${acGroupOptions(s.group_id || '', false)}</select></label>
+        <button type="button" class="btn ac-btn-line" data-ac="rename">Change name</button>
+        <button type="button" class="btn ac-btn-line" data-ac="resetpw">New temporary password</button>
+        <button type="button" class="btn ac-btn-line ac-danger-line" data-ac="delstudent">Delete profile</button>
+      </div>
+      <p class="ac-muted"><span>Profile created</span>: <span data-no-i18n>${acAgo(s.created_at)}</span> · <span>last saved results</span>: <span data-no-i18n>${acAgo(s.updated_at)}</span>${s.must_change_password ? ' · <span class="tr-tag">temporary password</span>' : ''}</p>
+      <p class="ac-err" id="trErr" role="alert"></p>
+    </div>
+    <div class="ac-card">
+      <h3>Summary</h3>
+      <div class="ac-stats">
+        <div><b data-no-i18n>${sum.passed}</b><span>lessons completed</span></div>
+        <div><b data-no-i18n>${sum.tried - sum.passed}</b><span>lessons in progress</span></div>
+        <div><b data-no-i18n>${sum.known}</b><span>words you know well</span></div>
+        <div><b data-no-i18n>${sum.learning}</b><span>words to review</span></div>
+        <div><b data-no-i18n>${sum.units}</b><span>textbook units opened</span></div>
+        <div><b data-no-i18n>${sum.club}</b><span>club materials read</span></div>
+      </div>
+      <div class="ac-levels">${acLevelRows(d).map(r=>`<div class="ac-lv"><span class="ac-lv-n" data-no-i18n>${r.L}</span><div class="rc-bar"><i style="width:${r.total ? Math.round(r.done / r.total * 100) : 0}%"></i></div><span class="ac-lv-c" data-no-i18n>${r.done}/${r.total}</span></div>`).join('')}</div>
+    </div>
+    <div class="ac-card"><h3>Tests</h3>${acTestsHtml(d)}</div>
+    <div class="ac-card"><h3>Lessons</h3>
+      ${lessons.length ? `<div class="tr-table-wrap"><table class="tr-table"><thead><tr><th>Level</th><th>Lesson</th><th>Status</th><th>Best</th><th>Last</th><th>Attempts</th><th>Date</th></tr></thead><tbody>${lessons.join('')}</tbody></table></div><p class="ac-muted">* incomplete attempt (not all questions answered)</p>` : '<p class="ac-muted">No lessons started yet.</p>'}
+    </div>
+    <div class="ac-card"><h3>Words to review</h3>
+      ${learning.length ? `<p class="tr-words" data-no-i18n>${learning.map(esc).join(', ')}</p>` : '<p class="ac-muted">No words to review.</p>'}
+    </div>`;
+  document.getElementById('trSG').addEventListener('change', async e=>{
+    const err = document.getElementById('trErr'); err.textContent = '';
+    try{ await acTeacherCall('kadr_t_set_group', {p_student: s.id, p_group: e.target.value || null}); s.group_id = e.target.value || null; acLoadTeacherQuiet(); }
+    catch(x){ err.textContent = acIsNetwork(x) ? 'No connection to the server. Check the internet and try again.' : 'Could not change the group.'; }
+  });
+}
+async function acLoadTeacherQuiet(){ try{ TR.list = await acTeacherCall('kadr_t_students') || TR.list; TR.groups = await acTeacherCall('kadr_t_groups') || TR.groups; }catch(e){} }
+function acCredsHtml(login, pass){
+  return `<div class="tr-creds"><p><span>Login</span>: <b data-no-i18n>${esc(login)}</b></p><p><span>Temporary password</span>: <b data-no-i18n class="tr-pass">${esc(pass)}</b></p>
+    <button type="button" class="btn ac-btn-line" data-ac="copy" data-copy="${esc(login + ' / ' + pass)}">Copy</button></div>
+    <p class="ac-small">Give these details to the student in person (on paper or face to face), not in a group chat. The temporary password is shown only now. At the first sign-in the student will be asked to choose a new password.</p>`;
+}
+function acTranslit(s){
+  const m = {'а':'a','б':'b','в':'v','г':'g','д':'d','е':'e','ё':'yo','ж':'j','з':'z','и':'i','й':'y','к':'k','л':'l','м':'m','н':'n','о':'o','п':'p','р':'r','с':'s','т':'t','у':'u','ф':'f','х':'x','ц':'ts','ч':'ch','ш':'sh','щ':'sh','ъ':'','ы':'i','ь':'','э':'e','ю':'yu','я':'ya','ў':'o','қ':'q','ғ':'g','ҳ':'h'};
+  return s.toLowerCase().split('').map(c=>m[c] !== undefined ? m[c] : c).join('').replace(/[ʻʼ'`‘’]/g, '').replace(/\s+/g, '.').replace(/[^a-z0-9._-]/g, '').replace(/^[._-]+/, '').slice(0, 30);
+}
+function acNewStudentModal(){
+  acOpenModal('custom', {html: `<h3 id="acTitle">New student</h3>
+    <form id="trForm" novalidate>
+      ${acField('trName', 'Name (shown on the site)', 'text', 'maxlength="40" autocomplete="off"')}
+      ${acField('trLogin', 'Login', 'text', 'maxlength="30" autocapitalize="none" spellcheck="false" autocomplete="off" aria-describedby="trLoginH"', '3–30 characters: Latin letters, digits, dot, dash or underscore. Logins must be different even if names are the same.')}
+      <div class="field"><label for="trGroup">Group</label><select id="trGroup">${acGroupOptions(TR.g !== 'all' && TR.g !== 'none' ? TR.g : '', false)}</select></div>
+      <p class="ac-err" id="acErr" role="alert"></p>
+      <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold">Create profile</button></div>
+    </form>`, onOpen(box){
+      const n = box.querySelector('#trName'), l = box.querySelector('#trLogin'); let touched = false;
+      l.addEventListener('input', ()=>{ touched = true; });
+      n.addEventListener('input', ()=>{ if(!touched) l.value = acTranslit(n.value); });
+      box.querySelector('#trForm').addEventListener('submit', async e=>{
+        e.preventDefault();
+        const err = box.querySelector('#acErr'); err.textContent = '';
+        const name = n.value.replace(/[\u0000-\u001f<>]/g, '').trim(), login = l.value.trim().toLowerCase();
+        if(!name){ err.textContent = 'Enter a name.'; n.focus(); return; }
+        if(!AC_LOGIN_RE.test(login)){ err.textContent = 'The login can have 3–30 characters: Latin letters, digits, dot, dash or underscore. It must start with a letter or digit.'; l.focus(); return; }
+        const f = e.target; acBusy(f, true);
+        try{
+          const r = await acAdmin({action: 'create_student', login, display_name: name, group_id: box.querySelector('#trGroup').value || null});
+          acOpenModal('custom', {html: `<h3 id="acTitle">Profile created</h3><p class="ac-lead"><span data-no-i18n>${esc(name)}</span></p>${acCredsHtml(r.login, r.password)}<div class="modal-actions"><button type="button" class="btn btn-line" data-ac="newstudent">Create another</button><button type="button" class="btn btn-gold" data-ac="close">Done</button></div>`});
+          acLoadTeacher();
+        }catch(x){ acBusy(f, false); err.textContent = x.code === 'login_taken' ? 'This login is already taken. Choose another one.' : x.code === 'bad_login' ? 'This login is not allowed.' : acIsNetwork(x) ? 'No connection to the server. Check the internet and try again.' : 'The profile could not be created.'; }
+      });
+    }});
+}
+function acGroupsModal(){
+  const draw = ()=>acOpenModal('custom', {html: `<h3 id="acTitle">Groups</h3>
+    <ul class="tr-groups">${TR.groups.map(g=>`<li><span data-no-i18n>${esc(g.name)}</span> <span class="ac-muted">(<span data-no-i18n>${g.students}</span>)</span>
+      <button type="button" class="ac-link" data-ac="grename" data-id="${esc(g.id)}">Rename</button> <button type="button" class="ac-link ac-danger-txt" data-ac="gdelete" data-id="${esc(g.id)}">Delete</button></li>`).join('') || '<li class="ac-muted">No groups yet.</li>'}</ul>
+    <form id="trGForm" novalidate>${acField('trGName', 'New group name', 'text', 'maxlength="60" autocomplete="off"')}
+      <p class="ac-err" id="acErr" role="alert"></p>
+      <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Close</button><button type="submit" class="btn btn-gold">Add group</button></div></form>
+    <p class="ac-small">Deleting a group does not delete its students; they stay without a group.</p>`, onOpen(box){
+      box.querySelector('#trGForm').addEventListener('submit', async e=>{
+        e.preventDefault();
+        const v = box.querySelector('#trGName').value.trim(), err = box.querySelector('#acErr');
+        if(!v){ err.textContent = 'Enter a group name.'; return; }
+        try{ await acTeacherCall('kadr_t_group_save', {p_id: null, p_name: v}); TR.groups = await acTeacherCall('kadr_t_groups'); draw(); acRenderTeacher(); }
+        catch(x){ err.textContent = acIsNetwork(x) ? 'No connection to the server. Check the internet and try again.' : 'The group could not be saved.'; }
+      });
+      box.querySelectorAll('[data-ac="grename"]').forEach(b=>b.addEventListener('click', async ()=>{
+        const g = TR.groups.find(x=>x.id === b.dataset.id); const v = prompt(T('New group name'), g ? g.name : '');
+        if(!v || !v.trim()) return;
+        try{ await acTeacherCall('kadr_t_group_save', {p_id: b.dataset.id, p_name: v.trim()}); TR.groups = await acTeacherCall('kadr_t_groups'); await acLoadTeacherQuiet(); draw(); acRenderTeacher(); }catch(x){ box.querySelector('#acErr').textContent = 'The group could not be saved.'; }
+      }));
+      box.querySelectorAll('[data-ac="gdelete"]').forEach(b=>b.addEventListener('click', async ()=>{
+        if(!confirm(T('Delete this group? Its students stay without a group.'))) return;
+        try{ await acTeacherCall('kadr_t_group_delete', {p_id: b.dataset.id}); if(TR.g === b.dataset.id) TR.g = 'all'; await acLoadTeacherQuiet(); draw(); acRenderTeacher(); }catch(x){ box.querySelector('#acErr').textContent = 'The group could not be deleted.'; }
+      }));
+    }});
+  draw();
+}
+
+/* ---------- clicks ---------- */
+document.addEventListener('click', async e=>{
+  const el = e.target.closest('[data-ac]'); if(!el) return;
+  const a = el.dataset.ac;
+  if(a === 'close'){ acCloseModal(); return; }
+  if(a === 'tab'){ acOpenModal(el.dataset.kind); return; }
+  if(a === 'opensignin'){ document.getElementById('acctBtn').click(); return; }
+  if(a === 'eye'){ const i = document.getElementById(el.dataset.for); const show = i.type === 'password'; i.type = show ? 'text' : 'password'; el.setAttribute('aria-pressed', String(show)); el.textContent = show ? 'Hide' : 'Show'; el.setAttribute('aria-label', show ? 'Hide password' : 'Show password'); return; }
+  if(a === 'retry'){ KC.retryN = 0; acPush(); return; }
+  if(a === 'hidebar'){ KC.barHidden = KC.status; document.getElementById('acSync').hidden = true; return; }
+  if(a === 'signout'){ acModalKind = ''; document.getElementById('acOverlay').classList.remove('open'); await acTrySignOut(); return; }
+  if(a === 'changepass'){ acOpenModal('changepass'); return; }
+  if(a === 'deleteme'){ acOpenModal('deleteme'); return; }
+  if(a === 'offer'){ acOfferTransfer(true); return; }
+  if(a === 'transfer'){ el.disabled = true; await acDoTransfer(); return; }
+  if(a === 'notransfer'){ try{ localStorage.setItem('kadr_mig_' + KC.user.id, acGuestInfo().hash); }catch(x){} acCloseModal(); return; }
+  if(a === 'dropguest'){ try{ localStorage.removeItem(PG.GK); }catch(x){} acCloseModal(); acRenderAccount(); return; }
+  if(a === 'review'){ if(typeof vc !== 'undefined'){ vc.mode = 'review'; vc.level = 'all'; vc.lesson = 'all'; } showSection('vocab'); return; }
+  if(a === 'reload'){ acLoadTeacher(); return; }
+  if(a === 'newstudent'){ acNewStudentModal(); return; }
+  if(a === 'groups'){ acGroupsModal(); return; }
+  if(a === 'open'){ acOpenStudent(el.dataset.id); return; }
+  if(a === 'back'){ TR.open = null; acRenderTeacher(); acLoadTeacher(); return; }
+  if(a === 'copy'){ try{ await navigator.clipboard.writeText(el.dataset.copy); el.textContent = T('Copied'); }catch(x){ el.textContent = T('Select and copy by hand'); } return; }
+  if(a === 'rename' && TR.open){
+    const v = prompt(T('New name'), TR.open.display_name); if(!v || !v.trim()) return;
+    try{ await acTeacherCall('kadr_t_set_name', {p_student: TR.open.id, p_name: v.trim()}); TR.open.display_name = v.trim().slice(0, 40); acRenderTeacher(); acLoadTeacherQuiet(); }
+    catch(x){ document.getElementById('trErr').textContent = 'Could not change the name.'; }
+    return;
+  }
+  if(a === 'resetpw' && TR.open){
+    const s = TR.open;
+    acOpenModal('custom', {html: `<h3 id="acTitle">New temporary password</h3><p class="ac-lead"><span>The student</span> <b data-no-i18n>${esc(s.display_name)}</b> (<span data-no-i18n>${esc(s.login)}</span>) <span>will get a new temporary password. The old password stops working and the student is signed out on all devices. The results are kept.</span></p><p class="ac-err" id="acErr" role="alert"></p><div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="button" class="btn btn-gold" data-ac="doreset">Create a new password</button></div>`});
+    return;
+  }
+  if(a === 'doreset' && TR.open){
+    el.disabled = true;
+    try{ const r = await acAdmin({action: 'reset_password', user_id: TR.open.id}); TR.open.must_change_password = true;
+      acOpenModal('custom', {html: `<h3 id="acTitle">New temporary password</h3>${acCredsHtml(r.login, r.password)}<div class="modal-actions"><button type="button" class="btn btn-gold" data-ac="close">Done</button></div>`}); acRenderTeacher(); }
+    catch(x){ el.disabled = false; document.getElementById('acErr').textContent = acIsNetwork(x) ? 'No connection to the server. Check the internet and try again.' : 'The password could not be changed.'; }
+    return;
+  }
+  if(a === 'delstudent' && TR.open){
+    const s = TR.open;
+    acOpenModal('custom', {html: `<h3 id="acTitle">Delete profile</h3><p class="ac-lead"><span>The profile</span> <b data-no-i18n>${esc(s.display_name)}</b> (<span data-no-i18n>${esc(s.login)}</span>) <span>and all its results will be deleted for good.</span></p>
+      <form id="trDel" novalidate>${acField('trDelC', 'Type the login to confirm', 'text', 'autocapitalize="none" spellcheck="false" autocomplete="off"')}<p class="ac-err" id="acErr" role="alert"></p>
+      <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold ac-danger">Delete profile</button></div></form>`, onOpen(box){
+        box.querySelector('#trDel').addEventListener('submit', async ev=>{
+          ev.preventDefault(); const err = box.querySelector('#acErr');
+          if(box.querySelector('#trDelC').value.trim().toLowerCase() !== s.login){ err.textContent = 'The login does not match.'; return; }
+          try{ await acAdmin({action: 'delete_student', user_id: s.id}); TR.open = null; acCloseModal(); acLoadTeacher(); }
+          catch(x){ err.textContent = acIsNetwork(x) ? 'No connection to the server. Check the internet and try again.' : 'The profile could not be deleted.'; }
+        });
+      }});
+    return;
+  }
+});
+document.getElementById('acctBtn').addEventListener('click', ()=>{
+  if(KC.user && KC.me){ if(KC.me.role === 'teacher'){ showSection('teacher'); } else showSection('account'); return; }
+  if(document.getElementById('acctBtn').dataset.state === 'nolib'){ acOpenModal('info', {title: 'Sign in is not available', body: '<p class="ac-lead">The sign-in service could not be loaded. Check the internet connection and reload the page. You can keep studying without signing in.</p>'}); return; }
+  acOpenModal('signin');
+});
+document.getElementById('acOverlay').addEventListener('click', e=>{ if(e.target.id === 'acOverlay') acCloseModal(); });
+document.addEventListener('keydown', e=>{
+  const ov = document.getElementById('acOverlay');
+  if(!ov.classList.contains('open')) return;
+  if(e.key === 'Escape'){ acCloseModal(); return; }
+  if(e.key !== 'Tab') return;
+  const f = [...ov.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled])')].filter(x=>x.getClientRects().length);
+  if(!f.length) return;
+  if(e.shiftKey && document.activeElement === f[0]){ e.preventDefault(); f[f.length - 1].focus(); }
+  else if(!e.shiftKey && document.activeElement === f[f.length - 1]){ e.preventDefault(); f[0].focus(); }
+}, true);
+const acShowSection0 = showSection;
+showSection = function(id){ acShowSection0(id); if(id === 'teacher'){ TR.open = null; acLoadTeacher(); } if(id === 'account') acRenderAccount(); };
+acInit();
+
 renderContinue();
 setLang(LANG, true);
 </script>
