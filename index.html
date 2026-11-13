@@ -1049,6 +1049,7 @@
   .vc-tr dt{flex:0 0 96px; font-size:12.5px; color:#9aa39a}
   .vc-tr dd{margin:0; color:#f3efe2; font-size:16px}
   .vc-tr-none{font-size:13.5px; color:#9aa39a; margin:4px 0}
+  .vc-tr-miss{font-size:13.5px !important; color:#9aa39a !important; font-style:italic}
   .vc-fb-line{margin-top:6px; font-weight:400}
   .vc-fb-line.vc-ex{margin-bottom:0}
   .vc-build{min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px; margin:12px 0; border:1.5px dashed #5c6a61; border-radius:10px; text-align:left}
@@ -1145,7 +1146,8 @@
   .ac-card{background:var(--paper-warm); border:1px solid var(--line); border-radius:12px; padding:20px}
   .ac-card h3{font-size:20px; margin:0 0 12px}
   .ac-who{border-color:rgba(201,151,63,.5)}
-  .ac-who p{margin:0}
+  .ac-who p{margin:0 0 4px}
+  .ac-help{margin:10px 0 0; line-height:1.5}
   .ac-who .btn{margin-top:14px}
   .ac-muted{color:var(--ink-soft); font-size:14px}
   .ac-stats{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px}
@@ -1457,7 +1459,7 @@
       </div>
       <div class="about-card wide">
         <h3>How the level lessons are prepared</h3>
-        <p>The lessons for levels A1–C2 were prepared with the help of artificial intelligence and have not yet been checked by a teacher, so they may contain inaccuracies. If you notice a mistake, please write to support.</p>
+        <p>The lessons for levels A1–C2 were prepared with the help of artificial intelligence and checked by the author of the project, a teacher. If you notice a mistake, please write to support.</p>
         <div class="about-actions"><a class="btn btn-line" href="https://t.me/alivvsx7" target="_blank" rel="noopener">Write to support</a></div>
       </div>
       <div class="about-card">
@@ -4428,7 +4430,7 @@ function vcNewDeck(list){
 function vcSayBtn(w){ return ttsNoEnglishVoice() ? '' : `<button class="btn btn-line vc-say" type="button" data-say="${esc(w)}">&#128266; <span>Listen</span></button>`; }
 function vcTrHtml(v){
   if(!v.ru && !v.uz) return '<p class="vc-tr-none">There is no translation for this word yet.</p>';
-  return `<dl class="vc-tr">${v.ru ? `<div><dt>Russian</dt><dd data-no-i18n lang="ru">${esc(v.ru)}</dd></div>` : ''}${v.uz ? `<div><dt>Uzbek</dt><dd data-no-i18n lang="uz">${esc(v.uz)}</dd></div>` : ''}</dl>`;
+  return `<dl class="vc-tr">${v.ru ? `<div><dt>Russian</dt><dd data-no-i18n lang="ru">${esc(v.ru)}</dd></div>` : ''}<div><dt>Uzbek</dt>${v.uz ? `<dd data-no-i18n lang="uz">${esc(v.uz)}</dd>` : `<dd class="vc-tr-miss">No Uzbek translation yet</dd>`}</div></dl>`;
 }
 function vcCardsHtml(){
   const review = vc.mode === 'review';
@@ -4547,7 +4549,7 @@ function vcRowsHtml(){
   const rows = vcPool().filter(v=>!q || v.w.toLowerCase().includes(q) || v.d.toLowerCase().includes(q) || v.ru.toLowerCase().includes(q) || v.uz.toLowerCase().includes(q));
   if(!rows.length) return '<p class="vc-empty">Nothing found.</p>';
   const say = !ttsNoEnglishVoice();
-  return `<ul class="vc-rows">${rows.map(v=>{ const st = vcStatus(v.id); return `<li><div class="vc-r-w"><b data-no-i18n lang="en">${esc(v.w)}</b>${say ? `<button class="vc-say-sm" type="button" data-say="${esc(v.w)}" aria-label="Listen">&#128266;</button>` : ''}</div><div class="vc-r-d" data-no-i18n><span lang="en">${esc(v.d)}</span>${v.ex ? `<em lang="en">${esc(v.ex)}</em>` : ''}${vc.tr && (v.ru || v.uz) ? `<span class="vc-r-tr">${[v.ru, v.uz].filter(Boolean).map(esc).join(' &middot; ')}</span>` : ''}</div><div class="vc-r-m"><span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div></li>`; }).join('')}</ul>`;
+  return `<ul class="vc-rows">${rows.map(v=>{ const st = vcStatus(v.id); return `<li><div class="vc-r-w"><b data-no-i18n lang="en">${esc(v.w)}</b>${say ? `<button class="vc-say-sm" type="button" data-say="${esc(v.w)}" aria-label="Listen">&#128266;</button>` : ''}</div><div class="vc-r-d"><span lang="en" data-no-i18n>${esc(v.d)}</span>${v.ex ? `<em lang="en" data-no-i18n>${esc(v.ex)}</em>` : ''}${vc.tr ? `<span class="vc-r-tr">${v.ru ? `<span data-no-i18n lang="ru">${esc(v.ru)}</span>` : ''}${v.ru ? ' &middot; ' : ''}${v.uz ? `<span data-no-i18n lang="uz">${esc(v.uz)}</span>` : `<span class="vc-tr-miss">No Uzbek translation yet</span>`}</span>` : ''}</div><div class="vc-r-m"><span class="vc-lvl">${vcRef(v).L}</span> <span class="st ${VC_CLS[st]}">${VC_ST[st]}</span></div></li>`; }).join('')}</ul>`;
 }
 function renderVocab(resetDeck, focus){
   const root = document.getElementById('vcRoot'); if(!root) return;
@@ -5736,12 +5738,21 @@ if(rp) rp.addEventListener('click', ()=>{
 ['Your progress is saved only in this browser.','Прогресс сохраняется только в этом браузере.','Natijangiz faqat shu brauzerda saqlanadi.'],
 ['Your progress is saved in your profile.','Прогресс сохраняется в вашем профиле.','Natijangiz profilingizda saqlanadi.'],
 ['Russian translations are available for all words, Uzbek translations only for some. They were prepared for KADR and have not been checked by a teacher yet.','Русский перевод есть у всех слов, узбекский — только у части. Переводы подготовлены для KADR и пока не проверены преподавателем.','Ruscha tarjima barcha so‘zlarda bor, o‘zbekcha esa faqat ayrimlarida. Tarjimalar KADR uchun tayyorlangan va hali o‘qituvchi tomonidan tekshirilmagan.'],
+['Name','Имя','Ism'],
+['(use it to sign in)','(по нему вы входите)','(u bilan kirasiz)'],
+['On a shared computer, always press "Sign out" at the end of the lesson.','На общем компьютере в конце занятия всегда нажимайте «Выйти».','Umumiy kompyuterda dars oxirida har doim «Chiqish» tugmasini bosing.'],
+['Forgot your password? Ask your teacher: they will give you a new temporary password, and your results are kept. At the next sign-in you will choose your own password.','Забыли пароль? Обратитесь к преподавателю: он выдаст новый временный пароль, результаты сохранятся. При следующем входе вы придумаете свой пароль.','Parolni unutdingizmi? O‘qituvchingizga murojaat qiling: u yangi vaqtinchalik parol beradi, natijalaringiz saqlanib qoladi. Keyingi kirishda o‘zingizning parolingizni o‘ylab topasiz.'],
+['Deleted: your name, login and group.','Удаляются: имя, логин и группа.','O‘chiriladi: ismingiz, login va guruh.'],
+['Deleted: all results saved in the profile (lessons, words, tests, opened textbook units and club materials) and their safety copies.','Удаляются: все результаты в профиле (уроки, слова, тесты, открытые разделы учебника и материалы клубов) и их резервные копии.','O‘chiriladi: profildagi barcha natijalar (darslar, so‘zlar, testlar, ochilgan darslik bo‘limlari va klub materiallari) va ularning zaxira nusxalari.'],
+['Not affected: guest progress saved in this browser without signing in.','Не затрагивается: гостевой прогресс, сохранённый в этом браузере без входа.','Ta’sir qilmaydi: shu brauzerda kirmasdan saqlangan mehmon progressi.'],
+['No Uzbek translation yet','Узбекского перевода пока нет','O‘zbekcha tarjima hali qo‘shilmagan'],
+['The lessons for levels A1–C2 were prepared with the help of artificial intelligence and checked by the author of the project, a teacher. If you notice a mistake, please write to support.','Уроки уровней A1–C2 подготовлены с помощью искусственного интеллекта и проверены автором проекта — преподавателем. Если заметите ошибку, напишите в поддержку.','A1–C2 darajalari darslari sun’iy intellekt yordamida tayyorlangan va loyiha muallifi — o‘qituvchi tomonidan tekshirilgan. Xatoni sezsangiz, qo‘llab-quvvatlash xizmatiga yozing.'],
 ['Sign in','Войти','Kirish'],
 ['My profile','Мой профиль','Mening profilim'],
 ["Teacher's room",'Кабинет преподавателя','O‘qituvchi xonasi'],
-['Saving to your profile…','Сохраняем в профиль…','Profilga saqlanmoqda…'],
+['Saving to your profile…','Сохраняется в профиль…','Profilga saqlanmoqda…'],
 ['Saved to your profile','Сохранено в профиле','Profilda saqlandi'],
-['No connection. Your latest results are saved only on this device for now. They will be sent to your profile automatically when the connection is back.','Нет связи. Последние результаты пока сохранены только на этом устройстве. Они автоматически отправятся в профиль, когда связь появится.','Aloqa yo‘q. Oxirgi natijalar hozircha faqat shu qurilmada saqlangan. Aloqa tiklanganda ular profilga avtomatik yuboriladi.'],
+['Could not save: no connection. Your latest results are kept on this device for now and will be sent to your profile automatically when the connection is back.','Не удалось сохранить: нет связи. Последние результаты пока хранятся на этом устройстве и автоматически отправятся в профиль, когда связь появится.','Saqlab bo‘lmadi: aloqa yo‘q. Oxirgi natijalar hozircha shu qurilmada turibdi va aloqa tiklanganda profilga avtomatik yuboriladi.'],
 ['Could not save to your profile. Your latest results are kept on this device; we will try again.','Не удалось сохранить в профиль. Последние результаты сохранены на этом устройстве, мы попробуем ещё раз.','Profilga saqlab bo‘lmadi. Oxirgi natijalar shu qurilmada saqlanib turibdi, yana urinib ko‘ramiz.'],
 ['Try again','Повторить','Qayta urinish'],
 ['Guest mode: your progress is saved only in this browser.','Гостевой режим: прогресс сохраняется только в этом браузере.','Mehmon rejimi: progress faqat shu brauzerda saqlanadi.'],
@@ -5985,7 +5996,7 @@ function acRerender(){
 var AC_STATUS = {
   saving: 'Saving to your profile…',
   saved: 'Saved to your profile',
-  offline: 'No connection. Your latest results are saved only on this device for now. They will be sent to your profile automatically when the connection is back.',
+  offline: 'Could not save: no connection. Your latest results are kept on this device for now and will be sent to your profile automatically when the connection is back.',
   error: 'Could not save to your profile. Your latest results are kept on this device; we will try again.'
 };
 function acSetStatus(st){
@@ -6277,6 +6288,7 @@ function acOpenModal(kind, opt){
   }else if(kind === 'deleteme'){
     h = `<h3 id="acTitle">Delete my profile</h3>
       <p class="ac-lead">Your profile and all results saved in it will be deleted for good. This cannot be undone.</p>
+      <ul class="ac-list"><li>Deleted: your name, login and group.</li><li>Deleted: all results saved in the profile (lessons, words, tests, opened textbook units and club materials) and their safety copies.</li><li>Not affected: guest progress saved in this browser without signing in.</li></ul>
       <form id="acForm" novalidate>
         ${acField('acConfirm', 'Type your login to confirm', 'text', 'autocapitalize="none" spellcheck="false" autocomplete="off"')}
         <p class="ac-err" id="acErr" role="alert"></p>
@@ -6434,7 +6446,9 @@ function acRenderAccount(){
   document.getElementById('acHello').innerHTML = `<span>Hello,</span> <span data-no-i18n>${esc(me.display_name)}</span>!`;
   root.innerHTML = `
     <div class="ac-card ac-who">
-      <p><span>Login</span>: <b data-no-i18n>${esc(me.login)}</b>${me.group ? ` · <span>Group</span>: <b data-no-i18n>${esc(me.group)}</b>` : ''}</p>
+      <p><span>Name</span>: <b data-no-i18n>${esc(me.display_name)}</b></p>
+      <p><span>Login</span>: <b data-no-i18n>${esc(me.login)}</b> <span class="ac-muted">(use it to sign in)</span></p>
+      ${me.group ? `<p><span>Group</span>: <b data-no-i18n>${esc(me.group)}</b></p>` : ''}
       <p class="ac-note-sync" data-ac-sync></p>
       ${me.role === 'teacher' ? `<button type="button" class="btn btn-gold" data-target="teacher">Open the teacher's room</button>` : ''}
     </div>
@@ -6465,6 +6479,8 @@ function acRenderAccount(){
         <button type="button" class="btn ac-btn-line" data-ac="changepass">Change password</button>
         <button type="button" class="btn btn-gold" data-ac="signout">Sign out</button>
       </div>
+      <p class="ac-muted ac-help">On a shared computer, always press "Sign out" at the end of the lesson.</p>
+      <p class="ac-muted ac-help">Forgot your password? Ask your teacher: they will give you a new temporary password, and your results are kept. At the next sign-in you will choose your own password.</p>
       <details class="ac-details"><summary>What is saved and who can see it</summary>
         <ul class="ac-list">
           <li>Saved: your name, login, group and learning results (lessons, words, tests, opened textbook units and club materials).</li>
