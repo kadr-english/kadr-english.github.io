@@ -1198,6 +1198,100 @@
     .ac-sync-txt{flex:1 1 calc(100% - 24px)}
     .ac-sync-acts{margin-left:20px}
   }
+
+  /* ---------- Final Exam ---------- */
+  .ex-card{border-color:rgba(201,151,63,.55)}
+  .ex-card p{margin:6px 0}
+  .ex-ok{color:#8fd3a5}
+  .ex-wait, .ex-muted{color:var(--ink-soft)}
+  .ex-todo{margin:4px 0 8px; padding-left:20px; line-height:1.7}
+  .st.ex-st-none{background:rgba(255,255,255,.08); color:var(--ink-soft)}
+  .st.ex-st-in_progress, .st.ex-st-awaiting_review{background:rgba(240,201,107,.16); color:#f0c96b}
+  .st.ex-st-passed{background:rgba(88,176,120,.18); color:#8fd3a5}
+  .st.ex-st-retry, .st.ex-st-cancelled{background:rgba(229,114,108,.16); color:#f19a94}
+  .ex-rules .ac-list li{margin-bottom:6px}
+  .ex-w td, .ex-w th{white-space:normal}
+  .ex-bar{position:sticky; top:76px; z-index:30; display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; padding:12px 14px; margin-bottom:12px; border:1px solid rgba(201,151,63,.5); border-radius:12px; background:#121a15; box-shadow:0 10px 24px -14px rgba(0,0,0,.7)}
+  .ex-time{font-size:14px; color:var(--ink-soft)}
+  .ex-time b{font:700 26px/1 'Big Shoulders Display', ui-monospace, monospace; color:var(--gold); margin-left:6px; letter-spacing:.03em}
+  .ex-time b.ex-low{color:#f19a94}
+  .ex-save{flex:1 1 220px; font-size:13.5px; line-height:1.4}
+  .ex-save.ex-good{color:#8fd3a5} .ex-save.ex-wait{color:#f0c96b} .ex-save.ex-bad{color:#f19a94}
+  .ex-banner{display:flex; align-items:center; gap:10px; padding:10px 14px; margin-bottom:12px; border-radius:10px; background:#2a1f1d; border:1px solid #e5726c; color:#f6e9e4; font-weight:600}
+  .ex-banner[hidden]{display:none}
+  .ex-banner .ac-sync-x{margin-left:auto}
+  .ex-nav{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px}
+  .ex-nav a{padding:6px 10px; border:1px solid var(--line); border-radius:20px; font-size:13px; color:var(--ink); text-decoration:none}
+  .ex-part{scroll-margin-top:150px}
+  .ex-q{border:0; border-top:1px solid var(--line); margin:0; padding:12px 0}
+  .ex-q legend{float:left; width:100%; padding:0 0 8px; font-size:16px}
+  .ex-n{color:var(--gold-deep); font-weight:700}
+  .ex-opts{clear:both; display:flex; flex-wrap:wrap; gap:8px}
+  .ex-opt{display:flex; align-items:center; gap:8px; min-height:44px; padding:8px 14px; border:1.5px solid var(--line); border-radius:10px; cursor:pointer; font-size:15px}
+  .ex-opt input{width:18px; height:18px; accent-color:var(--gold)}
+  .ex-opt.on{border-color:var(--gold); background:rgba(201,151,63,.1)}
+  .ex-mark{display:inline-block; margin-top:6px; font-size:12px}
+  .ex-mark-ok{color:#8fd3a5} .ex-mark-wait{color:#f0c96b}
+  .ex-text{padding:14px 16px; margin:8px 0 6px; border-radius:10px; background:rgba(255,255,255,.04); line-height:1.65}
+  .ex-text h4{margin:0 0 8px; font-size:17px}
+  .ex-task{font-weight:600; line-height:1.55}
+  .ex-writing{width:100%; min-height:180px; padding:12px; border:1.5px solid var(--line); border-radius:10px; background:var(--paper-warm); color:var(--ink); font:inherit; font-size:16px; line-height:1.55}
+  .ex-end{justify-content:flex-end}
+  .ex-bad{border-color:#e5726c}
+  .ex-total{font-size:20px} .ex-total b{color:var(--gold)}
+  .ex-result.passed{border-color:rgba(88,176,120,.6)} .ex-result.retry{border-color:rgba(229,114,108,.6)}
+  .ex-review{padding-left:20px; line-height:1.9}
+  .ex-expl{padding:10px 0; border-top:1px solid var(--line)}
+  .ex-expl p{margin:2px 0}
+  .ex-expl.good b{color:#8fd3a5} .ex-expl.bad b{color:#f19a94}
+  .ex-mywriting, .ex-comment{white-space:pre-wrap; padding:10px 12px; border-left:3px solid var(--gold); background:rgba(255,255,255,.03); border-radius:0 8px 8px 0}
+  .ex-certs{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+  .ex-rub{display:grid; gap:8px; margin:8px 0}
+  .ex-rub-row{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; font-size:14.5px}
+  .ex-rub-row span{flex:1 1 260px}
+  .ex-rub-row select, .ex-num, .ex-rub-row textarea{min-height:40px; padding:6px 10px; border:1.5px solid var(--line); border-radius:8px; background:var(--paper-warm); color:var(--ink); font:inherit}
+  .ex-rub-row textarea{flex:1 1 100%}
+  .ex-num{width:90px}
+  .ex-tline{margin:3px 0; font-size:14px} .ex-tline.good{color:#8fd3a5} .ex-tline.bad{color:#f19a94}
+  .tr-tabs{margin:0 0 14px; max-width:560px}
+  .ex-ok-card{border-color:rgba(88,176,120,.6)}
+  /* certificate (fixed A4 landscape at 96 dpi, scaled to the screen) */
+  #exCertView{position:fixed; inset:0; z-index:130; background:rgba(8,12,10,.86); overflow:auto; padding:16px}
+  #exCertView[hidden]{display:none}
+  .ex-cert-wrap{max-width:1140px; margin:0 auto}
+  .ex-cert-tools{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px}
+  .ex-cert-scale{position:relative; width:100%; overflow:hidden}
+  .ex-cert{position:absolute; left:0; top:0; width:1123px; height:794px; transform-origin:0 0; background:#fbf8ef; color:#1c2620; font-family:Georgia, 'Times New Roman', serif}
+  .exc-frame{position:absolute; inset:22px; border:3px solid #b8892f; padding:10px}
+  .exc-inner{position:relative; height:100%; border:1px solid #d9bd7c; padding:40px 70px; box-sizing:border-box; text-align:center; background:radial-gradient(circle at 50% 0%, rgba(201,151,63,.10), transparent 60%)}
+  .exc-top{display:flex; justify-content:space-between; align-items:center; font-family:system-ui, sans-serif; font-size:15px; color:#3d4a42}
+  .exc-logo{display:inline-flex; align-items:center; gap:8px; font-weight:800; letter-spacing:.12em; font-size:22px; color:#1f3a2c}
+  .exc-logo i{width:12px; height:12px; border-radius:50%; background:#c9973f; display:inline-block}
+  .exc-kicker{margin:34px 0 4px; font-family:system-ui, sans-serif; letter-spacing:.32em; text-transform:uppercase; font-size:14px; color:#9a7128}
+  .exc-title{margin:0; font-size:44px; color:#1f3a2c; font-weight:700}
+  .exc-band{margin:10px auto 0; display:inline-block; padding:6px 22px; border:1.5px solid #b8892f; border-radius:30px; font-family:system-ui, sans-serif; font-weight:700; letter-spacing:.14em; text-transform:uppercase; font-size:15px; color:#7a5a1c}
+  .exc-small{margin:26px 0 4px; font-size:17px; color:#3d4a42; font-style:italic}
+  .exc-name{margin:0; font-size:46px; color:#14231b; border-bottom:1px solid #d9bd7c; display:inline-block; padding:0 30px 6px}
+  .exc-text{margin:16px auto 0; max-width:760px; font-size:18px; line-height:1.5; color:#2c3a32}
+  .exc-grid{display:flex; justify-content:center; gap:46px; margin-top:28px; font-family:system-ui, sans-serif}
+  .exc-grid div{display:flex; flex-direction:column; gap:4px}
+  .exc-grid span{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8a8f86}
+  .exc-grid b{font-size:18px; color:#1f3a2c}
+  .exc-note{position:absolute; left:60px; right:60px; bottom:26px; margin:0; font-family:system-ui, sans-serif; font-size:11.5px; color:#6b7268}
+  @media (max-width:760px){
+    .ex-bar{top:64px; padding:10px}
+    .ex-time b{font-size:22px}
+    .ex-bar .btn{flex:1 1 100%}
+    .ex-opt{flex:1 1 100%}
+  }
+  @media print{
+    body.ex-printing > *:not(#exCertView){display:none !important}
+    body.ex-printing #exCertView{position:static; background:#fff; padding:0}
+    body.ex-printing .ex-cert-tools{display:none}
+    body.ex-printing .ex-cert-scale{height:auto !important; overflow:visible}
+    body.ex-printing .ex-cert{position:relative; transform:none !important}
+    @page{size:A4 landscape; margin:0}
+  }
 </style>
 </head>
 <body>
@@ -1498,7 +1592,25 @@
   </div>
   <div class="wrap ac-wrap" id="trRoot"></div>
 </section>
+<section id="exam">
+  <div class="wrap sec-head">
+    <div class="kicker">Final Exam</div>
+    <h2><span data-no-i18n>Final Exam A1</span></h2>
+    <p>The final exam of the A1 course: four parts online in 45 minutes and a speaking part with your teacher.</p>
+  </div>
+  <div class="wrap ac-wrap" id="exRoot"></div>
+</section>
+
+<section id="verify">
+  <div class="wrap sec-head">
+    <div class="kicker">Certificates</div>
+    <h2>Check a certificate</h2>
+    <p>Enter the number printed on a KADR certificate to see whether it was issued by the learning centre.</p>
+  </div>
+  <div class="wrap ac-wrap" id="vfRoot"></div>
+</section>
 </main>
+<div id="exCertView" hidden></div>
 <div class="modal-overlay ac-overlay" id="acOverlay"><div class="modal-box ac-box" id="acBox" role="dialog" aria-modal="true"></div></div>
 <div class="ac-sync" id="acSync" role="status" aria-live="polite" hidden></div>
 <footer>
@@ -1515,6 +1627,7 @@
       <button class="reset-progress" id="resetProgress" type="button">Reset my progress</button>
       <a href="https://t.me/alkhwarizmisuccessorsmaterials" target="_blank" rel="noopener">All materials on Telegram</a>
       <a href="https://t.me/english_forit_audio_materials" target="_blank" rel="noopener">English for IT, Grade 10 (audio)</a>
+      <a href="?cert=" data-ex-verify="1">Check a certificate</a>
     </div>
   </div>
 </footer>
@@ -2427,7 +2540,7 @@ function renderLessons(){
     </article>
   `).join('');
 
-  lessonGrid.innerHTML = builtIn + custom;
+  lessonGrid.innerHTML = builtIn + custom + exLessonCard();
 
   lessonGrid.querySelectorAll('[data-built-i]').forEach(card=>{
     card.addEventListener('click', ()=>{
@@ -5879,6 +5992,937 @@ if(rp) rp.addEventListener('click', ()=>{
 ['Students and groups','Ученики и группы','O‘quvchilar va guruhlar']
 ].forEach(r=>{ const k = nrm(r[0]); if(DICT.ru[k] === undefined) DICT.ru[k] = r[1]; if(DICT.uz[k] === undefined) DICT.uz[k] = r[2]; });
 
+/* translations for the Final Exam (EN source -> RU, UZ); the exam tasks and the certificate stay in English */
+[
+['Final Exam','Итоговый экзамен','Yakuniy imtihon'],
+['The final exam of the A1 course: four parts online in 45 minutes and a speaking part with your teacher.','Итоговый экзамен курса A1: четыре части онлайн за 45 минут и устная часть с преподавателем.','A1 kursining yakuniy imtihoni: 45 daqiqada onlayn to‘rt qism va o‘qituvchi bilan og‘zaki qism.'],
+['Certificates','Сертификаты','Sertifikatlar'],
+['Check a certificate','Проверить сертификат','Sertifikatni tekshirish'],
+['Enter the number printed on a KADR certificate to see whether it was issued by the learning centre.','Введите номер с сертификата KADR, чтобы проверить, выдан ли он учебным центром.','KADR sertifikatidagi raqamni kiriting va u o‘quv markazi tomonidan berilganini tekshiring.'],
+['Grammar & Vocabulary','Грамматика и лексика','Grammatika va lug‘at'],
+['Reading','Чтение','O‘qish'],['Listening','Аудирование','Tinglab tushunish'],['Writing','Письмо','Yozish'],['Speaking','Говорение','Gapirish'],
+['Not started','Не начат','Boshlanmagan'],['In progress','В процессе','Jarayonda'],
+['Waiting for teacher review and the speaking part','Ожидает проверки преподавателем и прохождения говорения','O‘qituvchi tekshiruvi va og‘zaki qismni kutmoqda'],
+['Passed','Пройден','Topshirildi'],['New attempt needed','Нужна повторная попытка','Qayta urinish kerak'],['Cancelled by the teacher','Отменён преподавателем','O‘qituvchi tomonidan bekor qilingan'],
+['A1 Course Completion','A1 Course Completion (курс завершён)','A1 Course Completion (kurs yakunlandi)'],
+['A1 Course Completion — Merit','A1 Course Completion — Merit (с отличием)','A1 Course Completion — Merit (yaxshi natija bilan)'],
+['A1 Course Completion — Distinction','A1 Course Completion — Distinction (с высшим отличием)','A1 Course Completion — Distinction (a’lo natija bilan)'],
+['Completed','Пройдено','Yakunlangan'],
+['lessons. The exam opens when all lessons are completed.','уроков. Экзамен откроется после прохождения всех уроков.','dars. Barcha darslar yakunlangach imtihon ochiladi.'],
+['lessons completed. The Final Exam is available.','уроков пройдено. Итоговый экзамен доступен.','dars yakunlandi. Yakuniy imtihon ochiq.'],
+['Exam status','Статус экзамена','Imtihon holati'],
+['Sign in to take the exam: the result and your certificate are saved in your profile.','Войдите, чтобы сдать экзамен: результат и сертификат сохраняются в профиле.','Imtihon topshirish uchun kiring: natija va sertifikat profilingizda saqlanadi.'],
+['Grammar &amp; vocabulary, reading, listening and writing in 45 minutes, plus a speaking part with your teacher. After the teacher\'s review you can get a KADR course certificate.','Грамматика и лексика, чтение, аудирование и письмо за 45 минут, а также устная часть с преподавателем. После проверки преподавателем можно получить сертификат курса KADR.','45 daqiqada grammatika va lug‘at, o‘qish, tinglab tushunish va yozish, shuningdek o‘qituvchi bilan og‘zaki qism. O‘qituvchi tekshirgach, KADR kurs sertifikatini olishingiz mumkin.'],
+['Grammar & vocabulary, reading, listening and writing in 45 minutes, plus a speaking part with your teacher. After the teacher\'s review you can get a KADR course certificate.','Грамматика и лексика, чтение, аудирование и письмо за 45 минут, а также устная часть с преподавателем. После проверки преподавателем можно получить сертификат курса KADR.','45 daqiqada grammatika va lug‘at, o‘qish, tinglab tushunish va yozish, shuningdek o‘qituvchi bilan og‘zaki qism. O‘qituvchi tekshirgach, KADR kurs sertifikatini olishingiz mumkin.'],
+['Open the exam','Открыть экзамен','Imtihonni ochish'],
+['Best confirmed result','Лучший подтверждённый результат','Eng yaxshi tasdiqlangan natija'],
+['The exam status could not be loaded.','Не удалось загрузить статус экзамена.','Imtihon holatini yuklab bo‘lmadi.'],
+['The Final Exam needs student profiles, which are not switched on for this site.','Для экзамена нужны профили учеников, а на этом сайте они не включены.','Imtihon uchun o‘quvchi profillari kerak, bu saytda ular yoqilmagan.'],
+['Sign in to take the exam','Войдите, чтобы сдать экзамен','Imtihon topshirish uchun kiring'],
+['The Final Exam is saved in your profile, and your teacher checks the writing and speaking parts. Without signing in you can keep studying the lessons, but you cannot take the exam or get a certificate.','Итоговый экзамен сохраняется в профиле, а письмо и говорение проверяет преподаватель. Без входа можно продолжать уроки, но нельзя сдать экзамен и получить сертификат.','Yakuniy imtihon profilingizda saqlanadi, yozish va gapirishni o‘qituvchi tekshiradi. Kirmasdan darslarni davom ettirish mumkin, lekin imtihon topshirib, sertifikat olib bo‘lmaydi.'],
+['How the exam works','Как проходит экзамен','Imtihon qanday o‘tadi'],
+['Written part,','Письменная часть,','Yozma qism,'],['minutes','минут','daqiqa'],
+['Grammar &amp; Vocabulary, Reading, Listening and Writing. The timer starts when you press "Start the exam" and keeps running if you reload the page.','Грамматика и лексика, чтение, аудирование и письмо. Таймер запускается после нажатия «Начать экзамен» и продолжает идти, даже если обновить страницу.','Grammatika va lug‘at, o‘qish, tinglab tushunish va yozish. Taymer «Imtihonni boshlash» bosilganda ishga tushadi va sahifa yangilansa ham davom etadi.'],
+['Grammar & Vocabulary, Reading, Listening and Writing. The timer starts when you press "Start the exam" and keeps running if you reload the page.','Грамматика и лексика, чтение, аудирование и письмо. Таймер запускается после нажатия «Начать экзамен» и продолжает идти, даже если обновить страницу.','Grammatika va lug‘at, o‘qish, tinglab tushunish va yozish. Taymer «Imtihonni boshlash» bosilganda ishga tushadi va sahifa yangilansa ham davom etadi.'],
+['Your teacher gave you extra time','Преподаватель дал вам дополнительное время','O‘qituvchi sizga qo‘shimcha vaqt berdi'],
+['a short conversation with your teacher at the learning centre or online. It is not part of the written time.','короткий разговор с преподавателем в учебном центре или онлайн. Он не входит в время письменной части.','o‘quv markazida yoki onlayn o‘qituvchi bilan qisqa suhbat. U yozma qism vaqtiga kirmaydi.'],
+['Penalties','Штрафы','Jarimalar'],
+['leaving the exam page (another tab, another app, another site or closing the tab) takes','уход со страницы экзамена (другая вкладка, другое приложение, другой сайт или закрытие вкладки) отнимает','imtihon sahifasidan chiqish (boshqa oyna, boshqa ilova, boshqa sayt yoki oynani yopish) qolgan vaqtingizdan'],
+['minutes from your remaining time. One continuous leave counts once. If no time is left, the written part ends and your saved answers are sent.','минут от оставшегося времени. Один непрерывный уход считается один раз. Если время закончилось, письменная часть завершается и сохранённые ответы отправляются.','daqiqani oladi. Bitta uzluksiz chiqish bir marta hisoblanadi. Vaqt qolmasa, yozma qism tugaydi va saqlangan javoblar yuboriladi.'],
+['The site cannot always tell why the page was left (for example, a screen lock or a lost connection can look like leaving). The site does not record which sites or apps you open. Your teacher sees the history and can give time back.','Сайт не всегда может понять причину ухода со страницы (например, блокировка экрана или обрыв связи могут выглядеть как уход). Сайт не записывает, какие сайты или приложения вы открываете. Преподаватель видит историю и может вернуть время.','Sayt sahifadan nima sababdan chiqilganini har doim ham aniqlay olmaydi (masalan, ekran qulflanishi yoki aloqa uzilishi chiqishga o‘xshab ko‘rinishi mumkin). Sayt qaysi sayt yoki ilovalarni ochganingizni yozib olmaydi. O‘qituvchi tarixni ko‘radi va vaqtni qaytarishi mumkin.'],
+['Connection','Связь','Aloqa'],
+['answers are saved as you go. If the internet is lost, the page shows which answers are not sent yet and sends them when the connection is back. Your teacher can review the situation.','ответы сохраняются по ходу работы. Если пропадёт интернет, страница покажет, какие ответы ещё не отправлены, и отправит их, когда связь появится. Преподаватель может рассмотреть ситуацию.','javoblar ish davomida saqlanadi. Internet uzilsa, sahifa qaysi javoblar hali yuborilmaganini ko‘rsatadi va aloqa tiklanganda yuboradi. O‘qituvchi vaziyatni ko‘rib chiqishi mumkin.'],
+['needs an English voice in your browser. If there is none, this part is not counted as passed: you do it later with your teacher.','нужен английский голос в браузере. Если его нет, эта часть не засчитывается: вы пройдёте её позже с преподавателем.','brauzerda inglizcha ovoz kerak. U bo‘lmasa, bu qism hisoblanmaydi: uni keyinroq o‘qituvchi bilan topshirasiz.'],
+['Marks and passing','Баллы и условия прохождения','Ballar va o‘tish shartlari'],
+['Section','Раздел','Bo‘lim'],['Share of the total','Доля в итоге','Umumiy natijadagi ulushi'],['Checked by','Кто проверяет','Kim tekshiradi'],
+['the site, automatically','сайт, автоматически','sayt, avtomatik'],['the teacher','преподаватель','o‘qituvchi'],
+['To pass you need at least','Для прохождения нужно не менее','O‘tish uchun kamida'],['in total and at least','в сумме и не менее','umumiy va har bir bo‘limda kamida'],['in every section.','в каждом разделе.','to‘plash kerak.'],
+['Course Completion','Course Completion','Course Completion'],['Merit','Merit','Merit'],['Distinction','Distinction','Distinction'],
+['The teacher checks writing (and speaking) for: task completed, clear answer, words and structures from the lessons, A1 level. The result and the certificate appear only after the teacher has checked all parts.','Преподаватель оценивает письмо (и говорение) по критериям: задача выполнена, ответ понятен, использованы слова и конструкции из уроков, уровень A1. Результат и сертификат появляются только после проверки всех частей.','O‘qituvchi yozish (va gapirish)ni quyidagilar bo‘yicha baholaydi: vazifa bajarilgan, javob tushunarli, darslardagi so‘z va tuzilmalar ishlatilgan, A1 darajasi. Natija va sertifikat barcha qismlar tekshirilgandan keyingina chiqadi.'],
+['The exam tasks were prepared with the help of artificial intelligence and have not yet been checked by a teacher.','Задания экзамена подготовлены с помощью искусственного интеллекта и пока не проверены преподавателем.','Imtihon topshiriqlari sun’iy intellekt yordamida tayyorlangan va hali o‘qituvchi tomonidan tekshirilmagan.'],
+['Start the exam','Начать экзамен','Imtihonni boshlash'],['Start a new attempt','Начать новую попытку','Yangi urinishni boshlash'],
+['Go to the A1 lessons','Перейти к урокам A1','A1 darslariga o‘tish'],
+['Your written part was sent. Your teacher will check it and hold the speaking part with you.','Письменная часть отправлена. Преподаватель проверит её и проведёт с вами устную часть.','Yozma qism yuborildi. O‘qituvchi uni tekshiradi va siz bilan og‘zaki qismni o‘tkazadi.'],
+['You have passed this exam. A new attempt is possible only if your teacher allows it.','Вы сдали этот экзамен. Новая попытка возможна только с разрешения преподавателя.','Siz bu imtihonni topshirdingiz. Yangi urinish faqat o‘qituvchi ruxsati bilan mumkin.'],
+['My attempts','Мои попытки','Mening urinishlarim'],['My certificates','Мои сертификаты','Mening sertifikatlarim'],
+['Attempt','Попытка','Urinish'],['Result','Результат','Natija'],['Continue','Продолжить','Davom ettirish'],['View results','Посмотреть результаты','Natijalarni ko‘rish'],
+['No attempts yet.','Попыток пока нет.','Hozircha urinishlar yo‘q.'],['No certificates yet.','Сертификатов пока нет.','Hozircha sertifikatlar yo‘q.'],
+['View and download','Посмотреть и скачать','Ko‘rish va yuklab olish'],
+['Start the exam?','Начать экзамен?','Imtihonni boshlaysizmi?'],
+['The timer starts now:','Таймер запустится сейчас:','Taymer hozir ishga tushadi:'],
+['minutes. Leaving the exam page takes','минут. Уход со страницы экзамена отнимает','daqiqa. Imtihon sahifasidan chiqish'],['minutes.','минут.','daqiqani oladi.'],
+['Close other tabs and apps, keep the screen on and stay on this page until you finish.','Закройте другие вкладки и приложения, не выключайте экран и оставайтесь на этой странице до конца.','Boshqa oyna va ilovalarni yoping, ekranni o‘chirmang va oxirigacha shu sahifada qoling.'],
+['There is no English voice in this browser, so the listening part will be done later with your teacher. It is not counted as passed until then.','В этом браузере нет английского голоса, поэтому аудирование вы пройдёте позже с преподавателем. До этого оно не засчитывается.','Bu brauzerda inglizcha ovoz yo‘q, shuning uchun tinglab tushunishni keyinroq o‘qituvchi bilan topshirasiz. Ungacha u hisoblanmaydi.'],
+['Not now','Не сейчас','Hozir emas'],
+['The exam cannot be started now. Check that all lessons are completed.','Сейчас экзамен начать нельзя. Проверьте, что все уроки пройдены.','Hozir imtihonni boshlab bo‘lmaydi. Barcha darslar yakunlanganini tekshiring.'],
+['Time left','Осталось времени','Qolgan vaqt'],
+['Finish and send','Завершить и отправить','Yakunlash va yuborish'],
+['All answers are saved on the server.','Все ответы сохранены на сервере.','Barcha javoblar serverda saqlandi.'],
+['Saving…','Сохраняется…','Saqlanmoqda…'],
+['No connection. Not sent yet:','Нет связи. Не отправлено:','Aloqa yo‘q. Yuborilmagan:'],
+['They are kept on this device and will be sent when the connection is back.','Они хранятся на этом устройстве и будут отправлены, когда появится связь.','Ular shu qurilmada saqlanadi va aloqa tiklanganda yuboriladi.'],
+['not sent yet','ещё не отправлено','hali yuborilmagan'],['saved','сохранено','saqlandi'],
+['For switching away,','За переключение вычтено','Boshqa oynaga o‘tganingiz uchun'],
+['For leaving the site,','За уход с сайта вычтено','Saytdan chiqqaningiz uchun'],
+['minutes were taken off.','минут.','daqiqa ayirildi.'],
+['5 minutes left. Check your answers.','Осталось 5 минут. Проверьте ответы.','5 daqiqa qoldi. Javoblaringizni tekshiring.'],
+['Choose the correct answer.','Выберите правильный ответ.','To‘g‘ri javobni tanlang.'],
+['Read the text and answer the questions.','Прочитайте текст и ответьте на вопросы.','Matnni o‘qing va savollarga javob bering.'],
+['Listen to the conversation and answer the questions. You can play it','Прослушайте разговор и ответьте на вопросы. Прослушать можно','Suhbatni tinglang va savollarga javob bering. Uni'],
+['times.','раза.','marta eshitish mumkin.'],
+['Play the recording','Включить запись','Yozuvni eshitish'],
+['There is no English voice in this browser, so the listening part cannot be done here. It is not counted as passed: you will do it later with your teacher, who will enter the mark.','В этом браузере нет английского голоса, поэтому аудирование здесь пройти нельзя. Оно не засчитывается: вы пройдёте его позже с преподавателем, который внесёт оценку.','Bu brauzerda inglizcha ovoz yo‘q, shuning uchun tinglab tushunishni bu yerda topshirib bo‘lmaydi. U hisoblanmaydi: uni keyinroq o‘qituvchi bilan topshirasiz, u bahoni kiritadi.'],
+['Your answer','Ваш ответ','Javobingiz'],['Words','Слов','So‘zlar'],
+['Your teacher checks the writing: task completed, clear answer, words and structures from the lessons, A1 level.','Письмо проверяет преподаватель: задача выполнена, ответ понятен, использованы слова и конструкции из уроков, уровень A1.','Yozishni o‘qituvchi tekshiradi: vazifa bajarilgan, javob tushunarli, darslardagi so‘z va tuzilmalar ishlatilgan, A1 darajasi.'],
+['The speaking part is a separate conversation with your teacher (at the learning centre or online). It is not part of the written time and the site does not mark speech. Prepare to talk about:','Говорение — это отдельный разговор с преподавателем (в учебном центре или онлайн). Оно не входит во время письменной части, и сайт не оценивает речь. Подготовьтесь рассказать:','Gapirish — o‘qituvchi bilan alohida suhbat (o‘quv markazida yoki onlayn). U yozma qism vaqtiga kirmaydi va sayt nutqni baholamaydi. Quyidagilar haqida gapirishga tayyorlaning:'],
+['Finish the written part?','Завершить письменную часть?','Yozma qismni yakunlaysizmi?'],
+['Answered questions','Отвечено вопросов','Javob berilgan savollar'],['words.','слов.','so‘z.'],
+['Not sent yet','Не отправлено','Yuborilmagan'],
+['We will try to send them first. If there is no connection, wait and try again.','Сначала попробуем их отправить. Если связи нет, подождите и попробуйте снова.','Avval ularni yuborishga harakat qilamiz. Aloqa bo‘lmasa, kuting va qayta urinib ko‘ring.'],
+['After sending you cannot change your answers.','После отправки изменить ответы нельзя.','Yuborilgandan keyin javoblarni o‘zgartirib bo‘lmaydi.'],
+['Back to the exam','Вернуться к экзамену','Imtihonga qaytish'],['Send','Отправить','Yuborish'],
+['Some answers are still not sent because there is no connection. Nothing was submitted yet. Try again when the connection is back.','Часть ответов не отправлена, потому что нет связи. Экзамен ещё не отправлен. Попробуйте снова, когда появится связь.','Aloqa yo‘qligi sababli ba’zi javoblar yuborilmadi. Imtihon hali yuborilmadi. Aloqa tiklanganda qayta urinib ko‘ring.'],
+['Nothing was submitted yet.','Экзамен ещё не отправлен.','Imtihon hali yuborilmadi.'],
+['You sent the written part.','Вы отправили письменную часть.','Siz yozma qismni yubordingiz.'],
+['The time ran out after a penalty. The written part is finished.','Время закончилось после штрафа. Письменная часть завершена.','Jarimadan keyin vaqt tugadi. Yozma qism yakunlandi.'],
+['The time is over. The written part is finished.','Время вышло. Письменная часть завершена.','Vaqt tugadi. Yozma qism yakunlandi.'],
+['The time is over, but the server could not be reached, so we cannot confirm what was received. Your unsent answers are kept on this device. When the connection is back, open the exam again; your teacher can review the situation.','Время вышло, но сервер недоступен, поэтому мы не можем подтвердить, что он получил. Неотправленные ответы сохранены на этом устройстве. Когда появится связь, снова откройте экзамен; преподаватель может рассмотреть ситуацию.','Vaqt tugadi, lekin serverga ulanib bo‘lmadi, shuning uchun nima qabul qilinganini tasdiqlay olmaymiz. Yuborilmagan javoblar shu qurilmada saqlangan. Aloqa tiklanganda imtihonni qayta oching; o‘qituvchi vaziyatni ko‘rib chiqishi mumkin.'],
+['Written part finished','Письменная часть завершена','Yozma qism yakunlandi'],
+['This attempt was cancelled by the teacher','Эта попытка отменена преподавателем','Bu urinish o‘qituvchi tomonidan bekor qilindi'],
+['The server received your answers. Status: Waiting for teacher review and the speaking part.','Сервер получил ваши ответы. Статус: ожидает проверки преподавателем и прохождения говорения.','Server javoblaringizni qabul qildi. Holat: o‘qituvchi tekshiruvi va og‘zaki qismni kutmoqda.'],
+['Saved answers','Сохранено ответов','Saqlangan javoblar'],['Unanswered questions count as not done.','Вопросы без ответа считаются невыполненными.','Javobsiz savollar bajarilmagan hisoblanadi.'],
+['These answers did not reach the server before the end','Эти ответы не дошли до сервера до окончания','Bu javoblar tugashdan oldin serverga yetib bormadi'],
+['Your teacher can see the situation and decide what to do.','Преподаватель видит ситуацию и решит, что делать.','O‘qituvchi vaziyatni ko‘radi va nima qilishni hal qiladi.'],
+['Some answers arrived after the time was over. They are not counted, but your teacher can see them.','Часть ответов пришла после окончания времени. Они не засчитываются, но преподаватель их видит.','Ba’zi javoblar vaqt tugagandan keyin keldi. Ular hisoblanmaydi, lekin o‘qituvchi ularni ko‘radi.'],
+['Your teacher will check your writing and hold the speaking part with you. The result and the certificate will appear here after that.','Преподаватель проверит письмо и проведёт с вами устную часть. После этого здесь появятся результат и сертификат.','O‘qituvchi yozganingizni tekshiradi va siz bilan og‘zaki qismni o‘tkazadi. Shundan keyin bu yerda natija va sertifikat paydo bo‘ladi.'],
+['Back','Назад','Orqaga'],['Total','Итого','Jami'],
+['Review the topics below and try again when you are ready. Your completed lessons are kept.','Повторите темы ниже и попробуйте снова, когда будете готовы. Пройденные уроки сохраняются.','Quyidagi mavzularni takrorlang va tayyor bo‘lganingizda qayta urinib ko‘ring. Yakunlangan darslar saqlanadi.'],
+['Strong sides','Сильные стороны','Kuchli tomonlar'],['Worth more practice','Стоит потренировать','Ko‘proq mashq qilish kerak'],
+['Teacher\'s comment','Комментарий преподавателя','O‘qituvchi izohi'],
+['Topics to review','Темы для повторения','Takrorlash uchun mavzular'],['Open the lesson','Открыть урок','Darsni ochish'],['Practise the words','Повторить слова','So‘zlarni mashq qilish'],
+['No answer.','Нет ответа.','Javob yo‘q.'],['Listening was done with the teacher','Аудирование пройдено с преподавателем','Tinglab tushunish o‘qituvchi bilan topshirildi'],
+['Answers and explanations','Ответы и объяснения','Javoblar va izohlar'],['Correct','Правильно','To‘g‘ri javob'],
+['Certificate','Сертификат','Sertifikat'],['Number','Номер','Raqam'],
+['The certificate will be available when your teacher has entered the name of the learning centre.','Сертификат станет доступен, когда преподаватель укажет название учебного центра.','O‘qituvchi o‘quv markazi nomini kiritgach, sertifikat ochiladi.'],
+['You can now get your KADR course certificate.','Теперь вы можете получить сертификат курса KADR.','Endi KADR kurs sertifikatini olishingiz mumkin.'],
+['Get the certificate','Получить сертификат','Sertifikatni olish'],
+['Name on the certificate','Имя на сертификате','Sertifikatdagi ism'],
+['Write your first name and last name exactly as they should appear on the certificate. Your profile name may not include your last name. You cannot change it later.','Укажите имя и фамилию точно так, как они должны быть в сертификате. Имя в профиле может быть без фамилии. Изменить это потом нельзя.','Ism va familiyangizni sertifikatda qanday bo‘lishi kerak bo‘lsa, aynan shunday yozing. Profildagi ismda familiya bo‘lmasligi mumkin. Keyin uni o‘zgartirib bo‘lmaydi.'],
+['First name and last name','Имя и фамилия','Ism va familiya'],
+['Confirm and get the certificate','Подтвердить и получить сертификат','Tasdiqlash va sertifikatni olish'],
+['Write both your first name and your last name.','Укажите и имя, и фамилию.','Ismingizni ham, familiyangizni ham yozing.'],
+['Your teacher has not entered the name of the learning centre yet.','Преподаватель ещё не указал название учебного центра.','O‘qituvchi hali o‘quv markazi nomini kiritmagan.'],
+['Download PDF','Скачать PDF','PDF yuklab olish'],['Print','Печать','Chop etish'],
+['Preparing the PDF…','Готовим PDF…','PDF tayyorlanmoqda…'],['The PDF was downloaded.','PDF скачан.','PDF yuklab olindi.'],
+['The PDF could not be created. Use "Print" and choose "Save as PDF".','Не удалось создать PDF. Нажмите «Печать» и выберите «Сохранить как PDF».','PDF yaratib bo‘lmadi. «Chop etish»ni bosing va «PDF sifatida saqlash»ni tanlang.'],
+['Enter the certificate number.','Введите номер сертификата.','Sertifikat raqamini kiriting.'],['Checking…','Проверяем…','Tekshirilmoqda…'],
+['Valid certificate','Сертификат действителен','Sertifikat haqiqiy'],['Course','Курс','Kurs'],['Type','Тип','Turi'],['Date of issue','Дата выдачи','Berilgan sana'],
+['Learning centre','Учебный центр','O‘quv markazi'],['Holder (initials)','Владелец (инициалы)','Egasi (bosh harflari)'],
+['Only initials are shown to protect personal data.','Для защиты личных данных показаны только инициалы.','Shaxsiy ma’lumotlarni himoya qilish uchun faqat bosh harflar ko‘rsatiladi.'],
+['No certificate with this number was found.','Сертификат с таким номером не найден.','Bunday raqamli sertifikat topilmadi.'],
+['Certificate checks are not switched on for this site.','Проверка сертификатов на этом сайте не включена.','Bu saytda sertifikatni tekshirish yoqilmagan.'],
+['Certificate number','Номер сертификата','Sertifikat raqami'],['Check','Проверить','Tekshirish'],
+['Exams','Экзамены','Imtihonlar'],['Certificate settings','Настройки сертификатов','Sertifikat sozlamalari'],['Students','Ученики','O‘quvchilar'],
+['Waiting for review','Ожидают проверки','Tekshiruvni kutmoqda'],['All attempts','Все попытки','Barcha urinishlar'],
+['penalties','штрафов','jarimalar'],['listening with the teacher','аудирование с преподавателем','tinglab tushunish o‘qituvchi bilan'],['No attempts here.','Здесь нет попыток.','Bu yerda urinishlar yo‘q.'],
+['Started','Начат','Boshlangan'],['Switched away (penalty)','Переключение (штраф)','Boshqa oynaga o‘tish (jarima)'],['Left the site (penalty)','Уход с сайта (штраф)','Saytdan chiqish (jarima)'],
+['Time over','Время вышло','Vaqt tugadi'],['Time over after a penalty','Время вышло после штрафа','Jarimadan keyin vaqt tugadi'],['Connection note','Отметка о связи','Aloqa haqida qayd'],
+['Page reopened','Страница открыта снова','Sahifa qayta ochildi'],['Answers after the end','Ответы после окончания','Tugagandan keyingi javoblar'],
+['Time restored by the teacher','Время восстановлено преподавателем','Vaqt o‘qituvchi tomonidan tiklandi'],['Reviewed','Проверено','Tekshirildi'],['Cancelled, new attempt allowed','Отменено, разрешена новая попытка','Bekor qilindi, yangi urinishga ruxsat berildi'],
+['time','время','vaqt'],['finished','завершён','yakunlangan'],['time left','осталось','qolgan vaqt'],
+['No English voice on the student\'s device: hold the listening part with the student and enter the mark below.','На устройстве ученика нет английского голоса: проведите аудирование с учеником и внесите оценку ниже.','O‘quvchi qurilmasida inglizcha ovoz yo‘q: tinglab tushunishni o‘quvchi bilan o‘tkazing va bahoni quyida kiriting.'],
+['Answers that arrived after the end (not counted)','Ответы, пришедшие после окончания (не засчитываются)','Tugagandan keyin kelgan javoblar (hisoblanmaydi)'],
+['Minutes','Минуты','Daqiqa'],['Add time','Добавить время','Vaqt qo‘shish'],['Reopen with this time','Открыть снова с этим временем','Shu vaqt bilan qayta ochish'],
+['Cancel this attempt and allow a new one','Отменить попытку и разрешить новую','Bu urinishni bekor qilib, yangisiga ruxsat berish'],
+['Events','События','Hodisalar'],['Event','Событие','Hodisa'],['Time','Время','Vaqt'],['Time left after','Осталось после','Keyin qolgan vaqt'],['Note','Примечание','Izoh'],
+['A penalty is recorded when the page reports leaving. A screen lock or a lost connection can look the same; the site does not know which sites or apps were opened.','Штраф записывается, когда страница сообщает об уходе. Блокировка экрана или обрыв связи могут выглядеть так же; сайт не знает, какие сайты или приложения открывались.','Sahifa chiqish haqida xabar berganda jarima yoziladi. Ekran qulflanishi yoki aloqa uzilishi ham shunday ko‘rinishi mumkin; sayt qaysi sayt yoki ilovalar ochilganini bilmaydi.'],
+['Automatic part','Автоматическая часть','Avtomatik qism'],['Answers','Ответы','Javoblar'],
+['Speaking (with the teacher)','Говорение (с преподавателем)','Gapirish (o‘qituvchi bilan)'],
+['Listening done with the teacher, %','Аудирование с преподавателем, %','O‘qituvchi bilan tinglab tushunish, %'],
+['Comment for the student','Комментарий для ученика','O‘quvchi uchun izoh'],['Confirm the result','Подтвердить результат','Natijani tasdiqlash'],
+['The total is calculated by the server from all sections. Each criterion: 0 = not done, 1 = partly, 2 = mostly, 3 = fully.','Итог считает сервер по всем разделам. Каждый критерий: 0 — не выполнено, 1 — частично, 2 — в основном, 3 — полностью.','Jami natijani server barcha bo‘limlar bo‘yicha hisoblaydi. Har bir mezon: 0 — bajarilmagan, 1 — qisman, 2 — asosan, 3 — to‘liq.'],
+['The attempt is still in progress. You can mark it after the written part is finished.','Попытка ещё идёт. Оценить её можно после завершения письменной части.','Urinish hali davom etmoqda. Uni yozma qism tugagach baholash mumkin.'],
+['Learning centre name (printed on certificates)','Название учебного центра (печатается на сертификатах)','O‘quv markazi nomi (sertifikatlarda chop etiladi)'],
+["Teacher's name on certificates (optional)",'Имя преподавателя на сертификатах (необязательно)','Sertifikatlardagi o‘qituvchi ismi (ixtiyoriy)'],
+['Exam rules','Правила экзамена','Imtihon qoidalari'],['Written part','Письменная часть','Yozma qism'],['penalty','штраф','jarima'],['Pass','Прохождение','O‘tish'],
+['every section at least','каждый раздел не менее','har bir bo‘lim kamida'],
+['These values are changed by the site owner in the Supabase SQL editor (see the setup guide).','Эти значения меняет владелец сайта в SQL-редакторе Supabase (см. инструкцию по настройке).','Bu qiymatlarni sayt egasi Supabase SQL muharririda o‘zgartiradi (sozlash yo‘riqnomasiga qarang).'],
+['Lessons completed','Пройдено уроков','Yakunlangan darslar'],
+['Extra time for the next attempt, min','Доп. время на следующую попытку, мин','Keyingi urinish uchun qo‘shimcha vaqt, daq'],
+['Allow a new attempt','Разрешить новую попытку','Yangi urinishga ruxsat berish'],['New attempt allowed','Новая попытка разрешена','Yangi urinishga ruxsat berilgan'],['Open','Открыть','Ochish'],
+['Mark every criterion for writing and speaking (0–3).','Оцените каждый критерий письма и говорения (0–3).','Yozish va gapirishning har bir mezonini baholang (0–3).'],
+['Enter the listening mark (0–100 %).','Введите оценку за аудирование (0–100 %).','Tinglab tushunish bahosini kiriting (0–100 %).'],
+['Time can be restored only for an attempt that is in progress or ended by time and not yet reviewed.','Время можно восстановить только для идущей попытки или завершённой по времени и ещё не проверенной.','Vaqtni faqat davom etayotgan yoki vaqt tugashi bilan yakunlangan va hali tekshirilmagan urinish uchun tiklash mumkin.'],
+['Enter 1–120 minutes (0–120 for extra time).','Введите от 1 до 120 минут (для доп. времени — от 0 до 120).','1–120 daqiqa kiriting (qo‘shimcha vaqt uchun 0–120).'],
+['Save','Сохранить','Saqlash'],['Show','Показать','Ko‘rsatish'],['Hide','Скрыть','Yashirish']
+].forEach(r=>{ const k = nrm(r[0]); if(DICT.ru[k] === undefined) DICT.ru[k] = r[1]; if(DICT.uz[k] === undefined) DICT.uz[k] = r[2]; });
+
+/* =====================================================================
+   FINAL EXAMS (A1 first) and certificates.
+   Answers, timer, penalties and marks are kept and checked in the database
+   (supabase/kadr_exam.sql). This page only shows questions and sends answers.
+   ===================================================================== */
+if(typeof ICON_SVG !== 'undefined') ICON_SVG.exam = '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>';
+var EX_LEVELS = ['A1'];                       // levels whose exam is ready; others are not shown
+var EX_SEC = {gv: 'Grammar & Vocabulary', reading: 'Reading', listening: 'Listening', writing: 'Writing', speaking: 'Speaking'};
+var EX_STATUS = {none: 'Not started', in_progress: 'In progress', awaiting_review: 'Waiting for teacher review and the speaking part', passed: 'Passed', retry: 'New attempt needed', cancelled: 'Cancelled by the teacher'};
+var EX_BAND = {completion: 'A1 Course Completion', merit: 'A1 Course Completion — Merit', distinction: 'A1 Course Completion — Distinction'};
+var EX = {level: 'A1', st: null, att: null, pending: {}, saving: false, saveT: null, retryT: null, retryN: 0, offline: false,
+  timerT: null, remBase: 0, tBase: 0, warned: false, away: null, awayQueue: [], banner: '', loading: false, finishing: false, view: 'home', wake: null};
+var EX_LIBS = {
+  pdf: ['https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js', 'sha384-qovJwSBbRDPP5cEjCp8S0UP66wrvnjaa60XMOGzTNanrThcrGfXfnZkvgY8N1KT3'],
+  h2c: ['https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js', 'sha384-ZZ1pncU3bQe8y31yfZdMFdSpttDoPmOZg2wguVK9almUodir1PghgT0eY7Mrty8H']
+};
+
+function exBandLabel(b, level){ return (EX_BAND[b] || '').replace('A1', level || 'A1'); }
+function exFmtTime(s){ s = Math.max(0, Math.floor(s)); const m = Math.floor(s / 60), x = s % 60; return (m < 10 ? '0' : '') + m + ':' + (x < 10 ? '0' : '') + x; }
+function exDate(t){ try{ return new Date(t).toLocaleDateString(LANG === 'ru' ? 'ru-RU' : LANG === 'uz' ? 'uz-UZ' : 'en-GB', {day: 'numeric', month: 'long', year: 'numeric'}); }catch(e){ return String(t).slice(0, 10); } }
+function exDateTime(t){ try{ return new Date(t).toLocaleString(LANG === 'ru' ? 'ru-RU' : LANG === 'uz' ? 'uz-UZ' : 'en-GB', {day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}); }catch(e){ return String(t); } }
+function exRand(seed){ let s = seed >>> 0 || 1; return ()=>{ s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; }
+function exShuffled(opts, seed, id){
+  let h = seed; for(let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  const r = exRand(h), a = opts.slice();
+  for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+function exLocalKey(k){ return 'kadr_exam_' + k + '_' + (EX.att ? EX.att.id : ''); }
+function exLS(k, v){ try{ if(v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); if(v === null) localStorage.removeItem(k); else localStorage.setItem(k, JSON.stringify(v)); }catch(e){ return null; } }
+function exClearLocal(){ try{ Object.keys(localStorage).filter(k=>k.startsWith('kadr_exam_')).forEach(k=>localStorage.removeItem(k)); }catch(e){} }
+function exErr(e){ return acIsNetwork(e) ? 'No connection to the server. Check the internet and try again.' : 'Something went wrong. Please try again later.'; }
+async function exRpc(fn, args){ const {data, error} = await KC.sb.rpc(fn, args || {}); if(error) throw error; return data; }
+function exLoadScript(src, sri){
+  return new Promise((res, rej)=>{ if([...document.scripts].some(s=>s.src === src)) return res();
+    const s = document.createElement('script'); s.src = src; s.crossOrigin = 'anonymous'; if(sri && sri.indexOf('__') !== 0) s.integrity = sri;
+    s.onload = res; s.onerror = ()=>rej(new Error('lib')); document.head.appendChild(s); });
+}
+
+/* ---------- status shown on the A1 lesson page and in the profile ---------- */
+function exReset(){
+  exWatch(false); clearTimeout(EX.saveT); clearTimeout(EX.retryT);
+  EX.att = null; EX.st = null; EX.pending = {}; EX.awayQueue = []; EX.away = null; EX.banner = ''; EX.finishedNote = '';
+  exClearLocal();
+  if(typeof TX !== 'undefined'){ TX.open = null; TX.list = []; }
+  const ov = document.getElementById('exCertView'); if(ov){ ov.hidden = true; ov.innerHTML = ''; }
+  const r = document.getElementById('exRoot'); if(r) r.innerHTML = '';
+}
+async function exLoadStatus(){
+  if(!KC || !KC.user){ EX.st = null; return null; }
+  try{ EX.st = await exRpc('kadr_exam_status', {p_level: EX.level}); }catch(e){ EX.st = {error: true}; }
+  try{ const certs = await exRpc('kadr_my_certificates'); const cb = document.getElementById('exCerts'); if(cb) cb.innerHTML = certs.length ? '<h3>My certificates</h3>' + exCertListHtml(certs) : ''; }catch(e){}
+  try{ if(typeof currentLevel !== 'undefined' && currentLevel === 'A1' && document.getElementById('lessons').classList.contains('active')) renderLessons(); }catch(e){}
+  const rc = document.getElementById('exRoomCard'); if(rc) rc.innerHTML = exRoomCardInner();
+  return EX.st;
+}
+function exStatusKey(st){
+  if(!st || !st.ready) return 'none';
+  if(st.last){ if(st.last.status === 'cancelled') return 'none'; return st.last.status; }
+  return 'none';
+}
+function exLessonsLine(done, total){
+  return done >= total
+    ? `<p class="ex-ok"><b data-no-i18n>${done}/${total}</b> <span>lessons completed. The Final Exam is available.</span></p>`
+    : `<p class="ex-wait"><span>Completed</span> <b data-no-i18n>${done}/${total}</b> <span>lessons. The exam opens when all lessons are completed.</span></p>`;
+}
+function exLessonCard(){
+  if(typeof EX === 'undefined' || !EX || !EX_LEVELS || typeof AC_ON === 'undefined' || !AC_ON) return '';   // called before this module has run
+  if(typeof currentLevel === 'undefined' || EX_LEVELS.indexOf(currentLevel) < 0) return '';
+  const total = LESSONS[currentLevel].length, done = countDone(currentLevel);
+  let status = '', line = exLessonsLine(done, total);
+  if(!KC || !KC.user) status = `<p class="ex-muted">Sign in to take the exam: the result and your certificate are saved in your profile.</p>`;
+  else if(EX.st && EX.st.ready){
+    const k = exStatusKey(EX.st);
+    line = exLessonsLine(EX.st.lessons_done, EX.st.lessons_total);
+    status = `<p><span>Exam status</span>: <span class="st ex-st-${k}">${EX_STATUS[k]}</span></p>`;
+  }
+  return `<article class="lesson-card ex-card" data-ex-open="1">
+    <div class="lc-head"><div class="lc-icon t-grammar">${svgIcon('exam', 26)}</div>
+      <div class="lc-titles"><h3><span data-no-i18n>Final Exam ${currentLevel}</span></h3><span class="lc-level">${currentLevel}</span></div></div>
+    <p>Grammar &amp; vocabulary, reading, listening and writing in 45 minutes, plus a speaking part with your teacher. After the teacher's review you can get a KADR course certificate.</p>
+    ${line}${status}
+    <button class="lc-cta" type="button" data-ex-open="1">Open the exam</button>
+  </article>`;
+}
+function exRoomCardInner(){
+  const st = EX.st;
+  if(!st) return '<p class="ac-muted">Loading…</p>';
+  if(st.error) return '<p class="ac-muted">The exam status could not be loaded.</p>';
+  if(!st.ready) return '';
+  const k = exStatusKey(st);
+  return `${exLessonsLine(st.lessons_done, st.lessons_total)}
+    <p><span>Exam status</span>: <span class="st ex-st-${k}">${EX_STATUS[k]}</span></p>
+    ${st.best ? `<p><span>Best confirmed result</span>: <b data-no-i18n>${st.best.total_pct}%</b> · <span>${exBandLabel(st.best.band)}</span></p>` : ''}
+    <div class="ac-row"><button type="button" class="btn btn-gold" data-ex-open="1">Open the exam</button></div>`;
+}
+function exRoomCard(){
+  if(!KC || !KC.user) return '';
+  setTimeout(exLoadStatus, 0);
+  return `<div class="ac-card"><h3><span data-no-i18n>Final Exam A1</span></h3><div id="exRoomCard">${exRoomCardInner()}</div><div id="exCerts"></div></div>`;
+}
+
+/* ---------- exam page ---------- */
+async function exOpen(){
+  EX.view = 'home';
+  const root = document.getElementById('exRoot'); if(!root) return;
+  if(!AC_ON){ root.innerHTML = '<div class="ac-card"><p>The Final Exam needs student profiles, which are not switched on for this site.</p></div>'; return; }
+  if(!KC || !KC.user){
+    root.innerHTML = `<div class="ac-card"><h3>Sign in to take the exam</h3><p>The Final Exam is saved in your profile, and your teacher checks the writing and speaking parts. Without signing in you can keep studying the lessons, but you cannot take the exam or get a certificate.</p><div class="ac-row"><button type="button" class="btn btn-gold" data-ac="opensignin">Sign in</button></div></div>`;
+    return;
+  }
+  root.innerHTML = '<p class="ac-muted">Loading…</p>';
+  await exLoadStatus();
+  const st = EX.st;
+  if(!st || st.error){ root.innerHTML = `<div class="ac-card"><p class="ac-err">${exErr(null)}</p><button type="button" class="btn ac-btn-line" data-ex="reload">Try again</button></div>`; return; }
+  if(st.last && st.last.status === 'in_progress'){ await exLoadAttempt(st.last.id); return; }
+  exRenderHome();
+}
+function exRulesHtml(st){
+  const w = st.weights || {};
+  return `<div class="ac-card ex-rules">
+    <h3>How the exam works</h3>
+    <ul class="ac-list">
+      <li><b>Written part, <span data-no-i18n>${st.minutes}</span> <span>minutes</span>:</b> <span>Grammar &amp; Vocabulary, Reading, Listening and Writing. The timer starts when you press "Start the exam" and keeps running if you reload the page.</span>${st.extra_minutes ? ` <span>Your teacher gave you extra time</span>: <b data-no-i18n>+${st.extra_minutes}</b>.` : ''}</li>
+      <li><b>Speaking</b>: <span>a short conversation with your teacher at the learning centre or online. It is not part of the written time.</span></li>
+      <li><b>Penalties</b>: <span>leaving the exam page (another tab, another app, another site or closing the tab) takes</span> <b data-no-i18n>${st.penalty_minutes}</b> <span>minutes from your remaining time. One continuous leave counts once. If no time is left, the written part ends and your saved answers are sent.</span></li>
+      <li><span>The site cannot always tell why the page was left (for example, a screen lock or a lost connection can look like leaving). The site does not record which sites or apps you open. Your teacher sees the history and can give time back.</span></li>
+      <li><b>Connection</b>: <span>answers are saved as you go. If the internet is lost, the page shows which answers are not sent yet and sends them when the connection is back. Your teacher can review the situation.</span></li>
+      <li><b>Listening</b>: <span>needs an English voice in your browser. If there is none, this part is not counted as passed: you do it later with your teacher.</span></li>
+    </ul>
+    <h3>Marks and passing</h3>
+    <table class="tr-table ex-w"><thead><tr><th>Section</th><th>Share of the total</th><th>Checked by</th></tr></thead><tbody>
+      <tr><td>Grammar &amp; Vocabulary</td><td data-no-i18n>${w.gv}%</td><td>the site, automatically</td></tr>
+      <tr><td>Reading</td><td data-no-i18n>${w.reading}%</td><td>the site, automatically</td></tr>
+      <tr><td>Listening</td><td data-no-i18n>${w.listening}%</td><td>the site, automatically</td></tr>
+      <tr><td>Writing</td><td data-no-i18n>${w.writing}%</td><td>the teacher</td></tr>
+      <tr><td>Speaking</td><td data-no-i18n>${w.speaking}%</td><td>the teacher</td></tr>
+    </tbody></table>
+    <p><span>To pass you need at least</span> <b data-no-i18n>${st.pass_pct}%</b> <span>in total and at least</span> <b data-no-i18n>${st.section_min_pct}%</b> <span>in every section.</span> <span data-no-i18n>${st.pass_pct}–${st.merit_pct - 1}%</span>: <span>Course Completion</span>; <span data-no-i18n>${st.merit_pct}–${st.distinction_pct - 1}%</span>: <span>Merit</span>; <span data-no-i18n>${st.distinction_pct}–100%</span>: <span>Distinction</span>.</p>
+    <p class="ac-muted">The teacher checks writing (and speaking) for: task completed, clear answer, words and structures from the lessons, A1 level. The result and the certificate appear only after the teacher has checked all parts.</p>
+    <p class="ac-muted">The exam tasks were prepared with the help of artificial intelligence and have not yet been checked by a teacher.</p>
+  </div>`;
+}
+function exRenderHome(){
+  const root = document.getElementById('exRoot'), st = EX.st;
+  const k = exStatusKey(st);
+  let action = '';
+  if(st.can_start) action = `<button type="button" class="btn btn-gold" data-ex="start">${st.attempts ? 'Start a new attempt' : 'Start the exam'}</button>`;
+  else if(st.reason === 'lessons') action = `<button type="button" class="btn ac-btn-line" data-target-lessons="1">Go to the A1 lessons</button>`;
+  else if(st.reason === 'review') action = `<p class="ex-muted">Your written part was sent. Your teacher will check it and hold the speaking part with you.</p>`;
+  else if(st.reason === 'passed') action = `<p class="ex-muted">You have passed this exam. A new attempt is possible only if your teacher allows it.</p>`;
+  const todo = st.lessons_done < st.lessons_total ? `<ul class="ex-todo">${LESSONS.A1.map((l, i)=>({l, i})).filter(x=>!(typeof lessonState === 'function' && lessonState('A1', x.i).st === 'done')).map(x=>`<li><button type="button" class="ac-link" data-ex-lesson="${x.i}" data-no-i18n>${esc(String(x.l.t).replace(/<[^>]+>/g, ''))}</button></li>`).join('')}</ul>` : '';
+  root.innerHTML = `
+    <div class="ac-card ex-head">
+      ${exLessonsLine(st.lessons_done, st.lessons_total)}${todo}
+      <p><span>Exam status</span>: <span class="st ex-st-${k}">${EX_STATUS[k]}</span></p>
+      ${st.best ? `<p><span>Best confirmed result</span>: <b data-no-i18n>${st.best.total_pct}%</b> · <span>${exBandLabel(st.best.band)}</span></p>` : ''}
+      <div class="ac-row">${action}</div>
+      <p class="ac-err" id="exErr" role="alert"></p>
+    </div>
+    ${exRulesHtml(st)}
+    <div class="ac-card"><h3>My attempts</h3><div id="exAttempts"><p class="ac-muted">Loading…</p></div></div>
+    <div class="ac-card"><h3>My certificates</h3><div id="exCertList"><p class="ac-muted">Loading…</p></div></div>`;
+  exLoadHistory();
+}
+async function exLoadHistory(){
+  try{
+    const [list, certs] = await Promise.all([exRpc('kadr_exam_attempts', {p_level: EX.level}), exRpc('kadr_my_certificates')]);
+    const a = document.getElementById('exAttempts'), c = document.getElementById('exCertList');
+    if(a) a.innerHTML = list.length ? `<div class="tr-table-wrap"><table class="tr-table"><thead><tr><th>Attempt</th><th>Status</th><th>Date</th><th>Result</th><th></th></tr></thead><tbody>${list.map(x=>`<tr>
+      <td data-no-i18n>${x.attempt_no}</td><td><span class="st ex-st-${x.status}">${EX_STATUS[x.status] || x.status}</span></td><td data-no-i18n>${exDate(x.started_at)}</td>
+      <td>${x.total_pct != null ? `<b data-no-i18n>${x.total_pct}%</b>${x.band ? ` · <span>${exBandLabel(x.band)}</span>` : ''}` : '—'}</td>
+      <td>${x.status === 'in_progress' ? `<button type="button" class="ac-link" data-ex-att="${esc(x.id)}">Continue</button>` : (x.status === 'passed' || x.status === 'retry') ? `<button type="button" class="ac-link" data-ex-att="${esc(x.id)}">View results</button>` : ''}</td></tr>`).join('')}</tbody></table></div>` : '<p class="ac-muted">No attempts yet.</p>';
+    if(c) c.innerHTML = exCertListHtml(certs);
+  }catch(e){}
+}
+function exCertListHtml(certs){
+  if(!certs || !certs.length) return '<p class="ac-muted">No certificates yet.</p>';
+  return `<ul class="ex-certs">${certs.map(c=>`<li><b data-no-i18n>${esc(c.number)}</b> · <span>${exBandLabel(c.band, c.level)}</span> · <span data-no-i18n>${c.total_pct}% · ${exDate(c.issued_at)}</span>
+    <button type="button" class="ac-link" data-ex-cert="${esc(c.attempt_id)}">View and download</button></li>`).join('')}</ul>`;
+}
+
+/* ---------- start ---------- */
+function exConfirmStart(){
+  const st = EX.st;
+  acOpenModal('custom', {html: `<h3 id="acTitle">Start the exam?</h3>
+    <p class="ac-lead"><span>The timer starts now:</span> <b data-no-i18n>${st.minutes}</b> <span>minutes. Leaving the exam page takes</span> <b data-no-i18n>${st.penalty_minutes}</b> <span>minutes.</span></p>
+    <p class="ac-lead">Close other tabs and apps, keep the screen on and stay on this page until you finish.</p>
+    ${ttsNoEnglishVoice() ? '<p class="ac-err">There is no English voice in this browser, so the listening part will be done later with your teacher. It is not counted as passed until then.</p>' : ''}
+    <p class="ac-err" id="acErr" role="alert"></p>
+    <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Not now</button><button type="button" class="btn btn-gold" data-ex="dostart">Start the exam</button></div>`});
+}
+async function exStart(btn){
+  if(btn) btn.disabled = true;
+  try{
+    const v = await exRpc('kadr_exam_start', {p_level: EX.level, p_listening_ok: !ttsNoEnglishVoice()});
+    acModalKind = ''; document.getElementById('acOverlay').classList.remove('open');
+    exSetAttempt(v, true);
+  }catch(e){
+    if(btn) btn.disabled = false;
+    const el = document.getElementById('acErr');
+    if(el) el.textContent = /exam_locked/.test(e && e.message || '') ? 'The exam cannot be started now. Check that all lessons are completed.' : exErr(e);
+  }
+}
+async function exLoadAttempt(id){
+  const root = document.getElementById('exRoot'); if(root) root.innerHTML = '<p class="ac-muted">Loading…</p>';
+  try{ exSetAttempt(await exRpc('kadr_exam_get', {p_attempt: id}), false); }
+  catch(e){ if(root) root.innerHTML = `<div class="ac-card"><p class="ac-err">${exErr(e)}</p><button type="button" class="btn ac-btn-line" data-ex="reload">Try again</button></div>`; }
+}
+function exSetAttempt(v, fresh){
+  const firstLoad = !EX.att || EX.att.id !== v.id || EX.att.status !== 'in_progress';   // also when the teacher reopened a finished attempt
+  if(firstLoad) EX.finishing = false;
+  EX.att = v; EX.remBase = v.remaining_seconds; EX.tBase = performance.now();
+  if(v.status === 'in_progress'){
+    if(firstLoad){
+      EX.warned = v.remaining_seconds <= 300; EX.away = null;
+      const loc = exLS(exLocalKey('ans'));                     // answers not confirmed by the server yet
+      EX.pending = loc && loc.pending ? loc.pending : {};
+      EX.awayQueue = exLS(exLocalKey('awayq')) || [];
+      if(!fresh) exCheckReturn();
+      exWatch(true);
+    }
+    exRenderExam();
+    if(Object.keys(EX.pending).length) exScheduleSave(300);
+    exFlushAway();
+  }else{
+    exWatch(false);
+    exRenderResult();
+  }
+}
+
+/* ---------- leaving the page: one continuous leave = one away id ---------- */
+function exIsAway(){ return document.hidden || EX.blurred; }   // based on real blur / hide events, not on hasFocus() polling
+function exOnFocusChange(){
+  if(!EX.att || EX.att.status !== 'in_progress' || EX.finishing || EX.unloading) return;   // events fired while the page unloads are not a separate leave
+  if(exIsAway()){
+    if(!EX.away){ EX.away = {id: 'a' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8), kind: 'tab', t: performance.now()}; exLS(exLocalKey('away'), {id: EX.away.id, kind: 'tab'}); }
+  }else if(EX.away){
+    const a = EX.away; EX.away = null; exLS(exLocalKey('away'), null);
+    if(performance.now() - a.t >= 1500) exQueueAway(a.id, a.kind);   // a very short blur (a click outside the page) is ignored
+  }
+}
+function exOnPageHide(){
+  if(!EX.att || EX.att.status !== 'in_progress') return;
+  EX.unloading = true;
+  const m = exLS(exLocalKey('away'));
+  // the browser hides the tab right before unloading it; a "leave" that started less than a second ago is the unload itself
+  const justNow = EX.away && performance.now() - EX.away.t < 1000;
+  exLS(exLocalKey('away'), {id: m ? m.id : (EX.away ? EX.away.id : 's' + Date.now().toString(36)), kind: (m && !justNow) ? m.kind : 'site', hide: true});
+  exSaveLocal();
+}
+function exOnPageShow(e){ EX.unloading = false; if(e.persisted && EX.att && EX.att.status === 'in_progress') exCheckReturn(true); }
+function exCheckReturn(fromCache){
+  // after reopening the page: a reload is not a leave; going to another site and back, or reopening the tab, is
+  const m = exLS(exLocalKey('away')); if(!m) return;
+  exLS(exLocalKey('away'), null);
+  let nav = 'navigate'; try{ const n = performance.getEntriesByType('navigation')[0]; if(n) nav = n.type; }catch(e){}
+  if(!fromCache && m.kind === 'site' && m.hide && nav === 'reload') return;
+  exQueueAway(m.id, m.kind === 'tab' ? 'tab' : 'site');
+  try{ KC.sb.rpc('kadr_exam_note', {p_attempt: EX.att.id, p_type: 'reopened', p_detail: nav}); }catch(e){}
+}
+function exQueueAway(id, kind){
+  if(!EX.awayQueue.some(x=>x.id === id)) EX.awayQueue.push({id, kind});
+  exLS(exLocalKey('awayq'), EX.awayQueue); exFlushAway();
+}
+async function exFlushAway(){
+  if(!EX.att || !EX.awayQueue.length || EX.flushing) return;
+  EX.flushing = true;
+  try{
+    while(EX.awayQueue.length){
+      const x = EX.awayQueue[0];
+      const r = await exRpc('kadr_exam_away', {p_attempt: EX.att.id, p_away_id: x.id, p_kind: x.kind});
+      EX.awayQueue.shift(); exLS(exLocalKey('awayq'), EX.awayQueue);
+      if(r.applied){ EX.banner = x.kind === 'site' ? 'For leaving the site, %m minutes were taken off.' : 'For switching away, %m minutes were taken off.'; EX.bannerMin = r.minutes; }
+      if(typeof r.remaining_seconds === 'number'){ EX.remBase = r.remaining_seconds; EX.tBase = performance.now(); }
+      if(r.finished){ await exAfterEnd(); break; }
+      exPaintBanner(); exTick();
+    }
+  }catch(e){ exSetOffline(true); setTimeout(()=>{ EX.flushing = false; exFlushAway(); }, 10000); return; }
+  EX.flushing = false;
+}
+async function exKeepScreenOn(on){
+  try{ if(on && 'wakeLock' in navigator && !EX.wake && document.visibilityState === 'visible') EX.wake = await navigator.wakeLock.request('screen');
+       if(!on && EX.wake){ EX.wake.release(); EX.wake = null; } }catch(e){}
+}
+var exHandlers = null;
+function exWatch(on){
+  if(on && !exHandlers){
+    EX.blurred = false;
+    exHandlers = {vis: ()=>{ exOnFocusChange(); if(!document.hidden){ EX.wake = null; exKeepScreenOn(true); } }, focus: ()=>{ EX.blurred = false; exOnFocusChange(); }, blur: ()=>{ if(EX.blurDetect === false) return; EX.blurred = true; exOnFocusChange(); }, hide: exOnPageHide, show: exOnPageShow,
+      online: ()=>{ exSetOffline(false); exScheduleSave(100); exFlushAway(); }};
+    document.addEventListener('visibilitychange', exHandlers.vis); window.addEventListener('focus', exHandlers.focus); window.addEventListener('blur', exHandlers.blur);
+    window.addEventListener('pagehide', exHandlers.hide); window.addEventListener('pageshow', exHandlers.show); window.addEventListener('online', exHandlers.online);
+    clearInterval(EX.timerT); EX.timerT = setInterval(exTick, 1000);
+    exKeepScreenOn(true);
+  }else if(!on && exHandlers){
+    document.removeEventListener('visibilitychange', exHandlers.vis); window.removeEventListener('focus', exHandlers.focus); window.removeEventListener('blur', exHandlers.blur);
+    window.removeEventListener('pagehide', exHandlers.hide); window.removeEventListener('pageshow', exHandlers.show); window.removeEventListener('online', exHandlers.online);
+    exHandlers = null; clearInterval(EX.timerT); EX.timerT = null; exKeepScreenOn(false);
+  }
+}
+
+/* ---------- timer: based on the server's remaining time, not on the device clock ---------- */
+function exRemaining(){ return EX.remBase - (performance.now() - EX.tBase) / 1000; }
+function exTick(){
+  if(!EX.att || EX.att.status !== 'in_progress') return;
+  const r = exRemaining(), t = document.getElementById('exTimer');
+  if(t){ t.textContent = exFmtTime(r); t.classList.toggle('ex-low', r <= 300); }
+  if(r <= 300 && !EX.warned){ EX.warned = true; EX.banner = '5 minutes left. Check your answers.'; EX.bannerMin = null; exPaintBanner(); }
+  if(r <= 0 && !EX.finishing) exAfterEnd();
+}
+function exPaintBanner(){
+  const b = document.getElementById('exBanner'); if(!b) return;
+  if(!EX.banner){ b.hidden = true; return; }
+  b.hidden = false;
+  const parts = EX.banner.split('%m');
+  b.innerHTML = `<span>${parts[0]}</span>${parts.length > 1 ? `<b data-no-i18n>${EX.bannerMin}</b><span>${parts[1]}</span>` : ''} <button type="button" class="ac-sync-x" data-ex="hidebanner" aria-label="Hide">×</button>`;
+}
+
+/* ---------- answers: saved as you go; unsent ones are kept on this device ---------- */
+function exSaveLocal(){ if(EX.att) exLS(exLocalKey('ans'), {pending: EX.pending}); }
+function exAnswer(id, val){
+  if(!EX.att || EX.att.status !== 'in_progress' || exRemaining() <= 0) return;
+  EX.att.answers[id] = val; EX.pending[id] = val; exSaveLocal(); exPaintSave();
+  exScheduleSave(id === 'writing' ? 1500 : 400);
+}
+function exScheduleSave(ms){ clearTimeout(EX.saveT); EX.saveT = setTimeout(exSave, ms); }
+async function exSave(){
+  if(!EX.att || EX.saving) return;
+  const batch = Object.assign({}, EX.pending); if(!Object.keys(batch).length){ exPaintSave(); return; }
+  EX.saving = true; exPaintSave();
+  try{
+    const r = await exRpc('kadr_exam_save', {p_attempt: EX.att.id, p_answers: batch});
+    Object.keys(batch).forEach(k=>{ if(EX.pending[k] === batch[k]) delete EX.pending[k]; });
+    exSaveLocal(); EX.retryN = 0;
+    if(EX.offline){ exSetOffline(false); try{ KC.sb.rpc('kadr_exam_note', {p_attempt: EX.att.id, p_type: 'offline', p_detail: 'connection restored'}); }catch(e){} }
+    if(r.finished){ EX.saving = false; await exAfterEnd(); return; }
+    EX.remBase = r.remaining_seconds; EX.tBase = performance.now();
+  }catch(e){
+    exSetOffline(true);
+    clearTimeout(EX.retryT); EX.retryT = setTimeout(exSave, [3, 8, 15, 30][Math.min(EX.retryN++, 3)] * 1000);
+  }
+  EX.saving = false; exPaintSave();
+  if(Object.keys(EX.pending).some(k=>EX.pending[k] !== batch[k])) exScheduleSave(300);
+}
+function exSetOffline(v){ EX.offline = v; exPaintSave(); }
+function exPaintSave(){
+  const el = document.getElementById('exSave'); if(!el) return;
+  const n = Object.keys(EX.pending).length;
+  el.className = 'ex-save ' + (n ? (EX.offline ? 'ex-bad' : 'ex-wait') : 'ex-good');
+  el.innerHTML = n ? (EX.offline ? `<span>No connection. Not sent yet:</span> <b data-no-i18n>${n}</b>. <span>They are kept on this device and will be sent when the connection is back.</span>` : `<span>Saving…</span>`)
+    : `<span>All answers are saved on the server.</span>`;
+  document.querySelectorAll('[data-ex-mark]').forEach(m=>{
+    const id = m.dataset.exMark, has = EX.att && EX.att.answers[id] != null && EX.att.answers[id] !== '';
+    m.className = 'ex-mark ' + (!has ? '' : (EX.pending[id] !== undefined ? 'ex-mark-wait' : 'ex-mark-ok'));
+    m.textContent = !has ? '' : (EX.pending[id] !== undefined ? T('not sent yet') : T('saved'));
+  });
+}
+
+/* ---------- the exam itself ---------- */
+function exItemHtml(it, n){
+  const a = EX.att, opts = exShuffled(it.prompt.opts, a.seed, it.id), cur = a.answers[it.id];
+  return `<fieldset class="ex-q" id="exq-${it.id}"><legend><span class="ex-n" data-no-i18n>${n}.</span> <span data-no-i18n lang="en">${esc(it.prompt.q)}</span></legend>
+    <div class="ex-opts">${opts.map(o=>`<label class="ex-opt${cur === o.id ? ' on' : ''}"><input type="radio" name="ex-${it.id}" value="${esc(o.id)}" ${cur === o.id ? 'checked' : ''} data-ex-q="${it.id}"><span data-no-i18n lang="en">${esc(o.t)}</span></label>`).join('')}</div>
+    <span data-ex-mark="${it.id}"></span></fieldset>`;
+}
+function exWords(s){ return (String(s || '').trim().match(/\S+/g) || []).length; }
+function exRenderExam(){
+  const root = document.getElementById('exRoot'), a = EX.att, m = a.meta;
+  const items = s=>a.items.filter(i=>i.section === s);
+  let n = 0;
+  const q = s=>items(s).map(it=>exItemHtml(it, ++n)).join('');
+  const plays = exLS(exLocalKey('plays')) || 0, maxPlays = m.listening.plays || 2;
+  root.innerHTML = `
+    <div class="ex-bar" role="region" aria-label="Exam timer">
+      <div class="ex-time"><span>Time left</span> <b id="exTimer" data-no-i18n role="timer" aria-live="off">${exFmtTime(exRemaining())}</b></div>
+      <div id="exSave" class="ex-save" role="status" aria-live="polite"></div>
+      <button type="button" class="btn btn-gold" data-ex="submit">Finish and send</button>
+    </div>
+    <div id="exBanner" class="ex-banner" role="alert" hidden></div>
+    <nav class="ex-nav" aria-label="Exam parts">${['gv', 'reading', 'listening', 'writing', 'speaking'].map((s, i)=>`<a href="#ex-${s}" data-ex-jump="${s}"><span data-no-i18n>${i + 1}.</span> <span>${EX_SEC[s]}</span></a>`).join('')}</nav>
+    <div role="region" class="ac-card ex-part" id="ex-gv"><h3><span data-no-i18n>1.</span> <span>Grammar &amp; Vocabulary</span></h3><p class="ac-muted">Choose the correct answer.</p>${q('gv')}</div>
+    <div role="region" class="ac-card ex-part" id="ex-reading"><h3><span data-no-i18n>2.</span> <span>Reading</span></h3><p class="ac-muted">Read the text and answer the questions.</p>
+      <article class="ex-text" lang="en" data-no-i18n><h4>${esc(m.reading.title)}</h4>${m.reading.text.split('\n\n').map(p=>`<p>${esc(p)}</p>`).join('')}</article>${q('reading')}</div>
+    <div role="region" class="ac-card ex-part" id="ex-listening"><h3><span data-no-i18n>3.</span> <span>Listening</span></h3>
+      ${a.listening_ok && !ttsNoEnglishVoice()
+        ? `<p class="ac-muted"><span>Listen to the conversation and answer the questions. You can play it</span> <b data-no-i18n>${maxPlays}</b> <span>times.</span></p>
+           <button type="button" class="btn ac-btn-line" data-ex="play" ${plays >= maxPlays ? 'disabled' : ''}><span>Play the recording</span> (<span data-no-i18n>${Math.max(0, maxPlays - plays)}</span>)</button>${q('listening')}`
+        : `<p class="ac-err">There is no English voice in this browser, so the listening part cannot be done here. It is not counted as passed: you will do it later with your teacher, who will enter the mark.</p>`}
+    </div>
+    <div role="region" class="ac-card ex-part" id="ex-writing"><h3><span data-no-i18n>4.</span> <span>Writing</span></h3>
+      <p data-no-i18n lang="en" class="ex-task">${esc(m.writing.task)}</p>
+      <label class="sr-only" for="exWriting">Your answer</label>
+      <textarea id="exWriting" class="ex-writing" rows="8" lang="en" spellcheck="false" maxlength="4000">${esc(a.answers.writing || '')}</textarea>
+      <p class="ac-muted"><span>Words</span>: <b id="exWc" data-no-i18n>${exWords(a.answers.writing)}</b> <span data-no-i18n>(${m.writing.min_words}–${m.writing.max_words - 20})</span> <span data-ex-mark="writing"></span></p>
+      <p class="ac-muted">Your teacher checks the writing: task completed, clear answer, words and structures from the lessons, A1 level.</p>
+    </div>
+    <div role="region" class="ac-card ex-part" id="ex-speaking"><h3><span data-no-i18n>5.</span> <span>Speaking</span></h3>
+      <p>The speaking part is a separate conversation with your teacher (at the learning centre or online). It is not part of the written time and the site does not mark speech. Prepare to talk about:</p>
+      <ol class="ac-list" lang="en" data-no-i18n>${m.speaking.tasks.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>
+    </div>
+    <div class="ac-row ex-end"><button type="button" class="btn btn-gold" data-ex="submit">Finish and send</button></div>`;
+  const w = document.getElementById('exWriting');
+  w.addEventListener('input', ()=>{ document.getElementById('exWc').textContent = exWords(w.value); exAnswer('writing', w.value); });
+  root.querySelectorAll('[data-ex-q]').forEach(r=>r.addEventListener('change', ()=>{
+    exAnswer(r.dataset.exQ, r.value);
+    r.closest('.ex-opts').querySelectorAll('.ex-opt').forEach(l=>l.classList.toggle('on', l.querySelector('input').checked));
+  }));
+  exPaintSave(); exPaintBanner(); exTick();
+}
+function exPlay(btn){
+  const maxPlays = EX.att.meta.listening.plays || 2; let plays = exLS(exLocalKey('plays')) || 0;
+  if(plays >= maxPlays) return;
+  plays++; exLS(exLocalKey('plays'), plays);
+  const text = EX.att.meta.listening.script.split('\n').map(l=>l.replace(/^[A-Za-z ]+:\s*/, '')).join(' ');
+  btn.disabled = true;
+  try{ const ok = ttsSpeak(text, 0.9, ()=>{ if(plays < maxPlays) btn.disabled = false; }); if(ok === false) btn.disabled = false; }
+  catch(e){ btn.disabled = false; }
+  btn.querySelector('[data-no-i18n]').textContent = Math.max(0, maxPlays - plays);
+}
+function exConfirmSubmit(){
+  const a = EX.att, total = a.items.filter(i=>a.listening_ok || i.section !== 'listening').length;
+  const answered = a.items.filter(i=>a.answers[i.id] != null).length, n = Object.keys(EX.pending).length;
+  acOpenModal('custom', {html: `<h3 id="acTitle">Finish the written part?</h3>
+    <p class="ac-lead"><span>Answered questions</span>: <b data-no-i18n>${answered}/${total}</b>. <span>Writing</span>: <b data-no-i18n>${exWords(a.answers.writing)}</b> <span>words.</span></p>
+    ${n ? `<p class="ac-err"><span>Not sent yet</span>: <b data-no-i18n>${n}</b>. <span>We will try to send them first. If there is no connection, wait and try again.</span></p>` : ''}
+    <p class="ac-lead">After sending you cannot change your answers.</p>
+    <p class="ac-err" id="acErr" role="alert"></p>
+    <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Back to the exam</button><button type="button" class="btn btn-gold" data-ex="dosubmit">Send</button></div>`});
+}
+async function exSubmit(btn){
+  btn.disabled = true;
+  const err = document.getElementById('acErr');
+  if(Object.keys(EX.pending).length){ await exSave(); }
+  if(Object.keys(EX.pending).length){ btn.disabled = false; if(err) err.textContent = 'Some answers are still not sent because there is no connection. Nothing was submitted yet. Try again when the connection is back.'; return; }
+  try{
+    const v = await exRpc('kadr_exam_submit', {p_attempt: EX.att.id});
+    acModalKind = ''; document.getElementById('acOverlay').classList.remove('open');
+    EX.finishedNote = 'You sent the written part.';
+    exSetAttempt(v, false);
+  }catch(e){ btn.disabled = false; if(err) err.textContent = exErr(e) + ' ' + T('Nothing was submitted yet.'); }
+}
+async function exAfterEnd(){
+  if(EX.finishing) return; EX.finishing = true;
+  document.querySelectorAll('#exRoot input, #exRoot textarea').forEach(el=>{ el.disabled = true; });
+  try{
+    if(Object.keys(EX.pending).length) await exSave();
+    const v = await exRpc('kadr_exam_get', {p_attempt: EX.att.id});
+    EX.finishedNote = v.finish_reason === 'penalty_time_up' ? 'The time ran out after a penalty. The written part is finished.' : v.finish_reason === 'submitted' ? 'You sent the written part.' : 'The time is over. The written part is finished.';
+    EX.finishing = false; exSetAttempt(v, false);
+  }catch(e){
+    EX.finishing = false;
+    const root = document.getElementById('exRoot');
+    root.insertAdjacentHTML('afterbegin', `<div class="ac-card ex-bad"><p>The time is over, but the server could not be reached, so we cannot confirm what was received. Your unsent answers are kept on this device. When the connection is back, open the exam again; your teacher can review the situation.</p><button type="button" class="btn ac-btn-line" data-ex="reload">Try again</button></div>`);
+  }
+}
+
+/* ---------- results ---------- */
+function exRenderResult(){
+  const root = document.getElementById('exRoot'), a = EX.att;
+  const notSent = Object.keys(EX.pending).length;
+  if(a.status === 'awaiting_review' || a.status === 'cancelled'){
+    exClearAttemptLocal(notSent);
+    root.innerHTML = `<div class="ac-card">
+      <h3>${a.status === 'cancelled' ? 'This attempt was cancelled by the teacher' : 'Written part finished'}</h3>
+      ${EX.finishedNote && a.status !== 'cancelled' ? `<p>${EX.finishedNote}</p>` : ''}
+      ${a.status === 'awaiting_review' ? `<p class="ex-ok">The server received your answers. Status: Waiting for teacher review and the speaking part.</p>
+        <p class="ac-muted"><span>Saved answers</span>: <b data-no-i18n>${Object.keys(a.answers).filter(k=>k !== 'writing').length}/${a.items.length}</b>. <span>Unanswered questions count as not done.</span></p>` : ''}
+      ${notSent ? `<p class="ac-err"><span>These answers did not reach the server before the end</span>: <b data-no-i18n>${notSent}</b>. <span>Your teacher can see the situation and decide what to do.</span></p>` : ''}
+      ${a.late_answers ? '<p class="ac-muted">Some answers arrived after the time was over. They are not counted, but your teacher can see them.</p>' : ''}
+      <p>Your teacher will check your writing and hold the speaking part with you. The result and the certificate will appear here after that.</p>
+      <div class="ac-row"><button type="button" class="btn ac-btn-line" data-ex="home">Back</button></div></div>`;
+    return;
+  }
+  const sp = a.section_pct || {}, w = a.meta.weights;
+  const wrong = a.items.filter(i=>(a.listening_ok || i.section !== 'listening') && a.answers[i.id] !== i.answer);
+  const lessonsToReview = [...new Set(wrong.map(i=>i.lesson))].sort((x, y)=>x - y);
+  const strong = Object.keys(sp).filter(k=>sp[k] >= 80), weak = Object.keys(sp).filter(k=>sp[k] < 70);
+  const rub = (r)=>r ? `<ul class="ac-list">${['task', 'clarity', 'language', 'level'].map(k=>`<li><span data-no-i18n lang="en">${esc(a.meta.rubric[k])}</span>: <b data-no-i18n>${r[k]}/3</b></li>`).join('')}</ul>${r.comment ? `<p class="ex-comment" data-no-i18n>${esc(r.comment)}</p>` : ''}` : '';
+  exClearAttemptLocal(0);
+  root.innerHTML = `
+    <div class="ac-card ex-result ${a.status}">
+      <h3>${a.status === 'passed' ? exBandLabel(a.band, a.level) : 'New attempt needed'}</h3>
+      <p class="ex-total"><span>Total</span>: <b data-no-i18n>${a.total_pct}%</b></p>
+      <div class="tr-table-wrap"><table class="tr-table"><thead><tr><th>Section</th><th>Result</th><th>Share of the total</th></tr></thead><tbody>
+        ${['gv', 'reading', 'listening', 'writing', 'speaking'].map(k=>`<tr><td>${EX_SEC[k]}</td><td data-no-i18n><b>${sp[k]}%</b></td><td data-no-i18n>${w[k]}%</td></tr>`).join('')}
+      </tbody></table></div>
+      ${a.status === 'retry' ? `<p><span>To pass you need at least</span> <b data-no-i18n>${EX.st ? EX.st.pass_pct : 70}%</b> <span>in total and at least</span> <b data-no-i18n>${EX.st ? EX.st.section_min_pct : 50}%</b> <span>in every section.</span> <span>Review the topics below and try again when you are ready. Your completed lessons are kept.</span></p>` : ''}
+      ${strong.length ? `<p><b>Strong sides</b>: ${strong.map(k=>`<span>${EX_SEC[k]}</span>`).join(', ')}</p>` : ''}
+      ${weak.length ? `<p><b>Worth more practice</b>: ${weak.map(k=>`<span>${EX_SEC[k]}</span>`).join(', ')}</p>` : ''}
+      ${a.teacher_comment ? `<p class="ex-comment"><b>Teacher's comment</b>: <span data-no-i18n>${esc(a.teacher_comment)}</span></p>` : ''}
+    </div>
+    ${a.status === 'passed' ? `<div class="ac-card" id="exCertBox">${exCertBoxHtml()}</div>` : ''}
+    ${lessonsToReview.length ? `<div class="ac-card"><h3>Topics to review</h3><ul class="ex-review">${lessonsToReview.map(i=>`<li><span data-no-i18n>${esc(a.meta.lessons_titles[i] || '')}</span>
+      <button type="button" class="ac-link" data-ex-lesson="${i}">Open the lesson</button> <button type="button" class="ac-link" data-ex-words="${i}">Practise the words</button></li>`).join('')}</ul></div>` : ''}
+    <div class="ac-card"><h3>Writing</h3>${a.answers.writing ? `<p class="ex-mywriting" lang="en" data-no-i18n>${esc(a.answers.writing)}</p>` : '<p class="ac-muted">No answer.</p>'}${rub(a.writing)}
+      <h3>Speaking</h3>${rub(a.speaking)}${!a.listening_ok ? `<p class="ac-muted"><span>Listening was done with the teacher</span>: <b data-no-i18n>${a.listening_manual}%</b></p>` : ''}</div>
+    <div class="ac-card"><h3>Answers and explanations</h3>${a.items.filter(i=>a.listening_ok || i.section !== 'listening').map((it, n)=>{
+      const mine = it.prompt.opts.find(o=>o.id === a.answers[it.id]), right = it.prompt.opts.find(o=>o.id === it.answer), good = a.answers[it.id] === it.answer;
+      return `<div class="ex-expl ${good ? 'good' : 'bad'}"><p><span data-no-i18n>${n + 1}.</span> <span lang="en" data-no-i18n>${esc(it.prompt.q)}</span></p>
+        <p><span>Your answer</span>: <b data-no-i18n>${mine ? esc(mine.t) : '—'}</b>${good ? ' ✓' : ` · <span>Correct</span>: <b data-no-i18n>${esc(right.t)}</b>`}</p>
+        <p class="ac-muted" lang="en" data-no-i18n>${esc(it.explanation)}</p></div>`; }).join('')}</div>
+    <div class="ac-row"><button type="button" class="btn ac-btn-line" data-ex="home">Back</button></div>`;
+}
+function exClearAttemptLocal(keepPending){
+  if(!EX.att) return;
+  ['away', 'awayq', 'plays'].forEach(k=>exLS(exLocalKey(k), null));
+  if(!keepPending) exLS(exLocalKey('ans'), null);
+}
+
+/* ---------- certificate ---------- */
+function exCertBoxHtml(){
+  const a = EX.att;
+  if(a.certificate) return `<h3>Certificate</h3><p><span>Number</span>: <b data-no-i18n>${esc(a.certificate.number)}</b></p><div class="ac-row"><button type="button" class="btn btn-gold" data-ex-cert="${esc(a.id)}">View and download</button></div>`;
+  if(EX.st && EX.st.centre_set === false) return `<h3>Certificate</h3><p class="ac-muted">The certificate will be available when your teacher has entered the name of the learning centre.</p>`;
+  return `<h3>Certificate</h3><p>You can now get your KADR course certificate.</p><div class="ac-row"><button type="button" class="btn btn-gold" data-ex="certname">Get the certificate</button></div>`;
+}
+function exCertNameModal(){
+  const name = KC.me ? KC.me.display_name : '';
+  acOpenModal('custom', {html: `<h3 id="acTitle">Name on the certificate</h3>
+    <p class="ac-lead">Write your first name and last name exactly as they should appear on the certificate. Your profile name may not include your last name. You cannot change it later.</p>
+    <form id="exNameForm" novalidate>
+      <div class="field"><label for="exFullName">First name and last name</label><input id="exFullName" type="text" maxlength="80" autocomplete="name" value="${esc(name)}"></div>
+      <p class="ac-err" id="acErr" role="alert"></p>
+      <div class="modal-actions"><button type="button" class="btn btn-line" data-ac="close">Cancel</button><button type="submit" class="btn btn-gold">Confirm and get the certificate</button></div>
+    </form>`, onOpen(box){
+      box.querySelector('#exNameForm').addEventListener('submit', async e=>{
+        e.preventDefault();
+        const v = box.querySelector('#exFullName').value.replace(/\s+/g, ' ').trim(), err = box.querySelector('#acErr');
+        if(v.length < 3 || !/\s/.test(v)){ err.textContent = 'Write both your first name and your last name.'; return; }
+        const b = e.target.querySelector('[type=submit]'); b.disabled = true;
+        try{
+          const c = await exRpc('kadr_cert_issue', {p_attempt: EX.att.id, p_full_name: v});
+          EX.att.certificate = {number: c.number, full_name: c.full_name, issued_at: c.issued_at};
+          acModalKind = ''; document.getElementById('acOverlay').classList.remove('open');
+          const box2 = document.getElementById('exCertBox'); if(box2) box2.innerHTML = exCertBoxHtml();
+          exShowCert(EX.att.id);
+        }catch(x){ b.disabled = false; err.textContent = /centre_not_set/.test(x.message || '') ? 'Your teacher has not entered the name of the learning centre yet.' : /bad_name/.test(x.message || '') ? 'Write both your first name and your last name.' : exErr(x); }
+      });
+    }});
+}
+async function exShowCert(attemptId){
+  let certs = [];
+  try{ certs = await exRpc('kadr_my_certificates'); }catch(e){ return acOpenModal('info', {title: 'Certificate', body: `<p class="ac-err">${exErr(e)}</p>`}); }
+  const c = certs.find(x=>x.attempt_id === attemptId); if(!c) return;
+  const ov = document.getElementById('exCertView');
+  ov.innerHTML = `<div class="ex-cert-wrap" role="dialog" aria-modal="true" aria-label="Certificate">
+    <div class="ex-cert-tools"><button type="button" class="btn btn-gold" data-ex="pdf">Download PDF</button><button type="button" class="btn ac-btn-line" data-ex="print">Print</button><button type="button" class="btn ac-btn-line" data-ex="closecert">Close</button><span class="ac-muted" id="exPdfMsg" role="status"></span></div>
+    <div class="ex-cert-scale"><div class="ex-cert" id="exCert" data-no-i18n>${exCertHtml(c)}</div></div></div>`;
+  ov.hidden = false; exFitCert();
+  ov.querySelector('[data-ex="pdf"]').focus();
+}
+function exCertHtml(c){
+  const band = c.band === 'merit' ? 'Merit' : c.band === 'distinction' ? 'Distinction' : '';
+  const verify = 'kadr-english.github.io/?cert=' + c.number;
+  return `<div class="exc-frame"><div class="exc-inner">
+    <div class="exc-top"><span class="exc-logo"><i></i>KADR</span><span class="exc-centre">${esc(c.centre_name)}</span></div>
+    <p class="exc-kicker">Certificate of Course Completion</p>
+    <h1 class="exc-title">KADR English — ${esc(c.level)}</h1>
+    ${band ? `<p class="exc-band">${band}</p>` : '<p class="exc-band exc-band-plain">Course Completion</p>'}
+    <p class="exc-small">This is to certify that</p>
+    <p class="exc-name">${esc(c.full_name)}</p>
+    <p class="exc-text">has successfully completed the KADR English ${esc(c.level)} course and its final exam at ${esc(c.centre_name)}.</p>
+    <div class="exc-grid">
+      <div><span>Result</span><b>${c.total_pct}%</b></div>
+      <div><span>Date of issue</span><b>${new Date(c.issued_at).toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'})}</b></div>
+      <div><span>Certificate No.</span><b>${esc(c.number)}</b></div>
+      ${c.teacher_name ? `<div><span>Teacher</span><b>${esc(c.teacher_name)}</b></div>` : ''}
+    </div>
+    <p class="exc-note">A course completion certificate issued by the learning centre. It is not an international certificate and not an official CEFR result. Check this certificate: ${esc(verify)}</p>
+  </div></div>`;
+}
+function exFitCert(){
+  const s = document.querySelector('.ex-cert-scale'), c = document.getElementById('exCert'); if(!s || !c) return;
+  const k = Math.min(1, (s.clientWidth - 4) / 1123);
+  c.style.transform = 'scale(' + k + ')'; s.style.height = Math.ceil(794 * k) + 'px';
+}
+async function exPdf(btn){
+  const msg = document.getElementById('exPdfMsg'); btn.disabled = true; msg.textContent = T('Preparing the PDF…');
+  try{
+    await exLoadScript(EX_LIBS.h2c[0], EX_LIBS.h2c[1]); await exLoadScript(EX_LIBS.pdf[0], EX_LIBS.pdf[1]);
+    const src = document.getElementById('exCert'), clone = src.cloneNode(true);
+    clone.style.transform = 'none'; clone.style.position = 'fixed'; clone.style.left = '-2000px'; clone.style.top = '0'; clone.removeAttribute('id');
+    document.body.appendChild(clone);
+    const canvas = await html2canvas(clone, {scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false});
+    clone.remove();
+    const pdf = new window.jspdf.jsPDF({orientation: 'landscape', unit: 'mm', format: 'a4'});
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, 297, 210);
+    const num = (src.querySelector('.exc-grid div:nth-child(3) b') || {}).textContent || 'certificate';
+    pdf.save('KADR-' + num + '.pdf');
+    msg.textContent = T('The PDF was downloaded.');
+  }catch(e){ msg.textContent = T('The PDF could not be created. Use "Print" and choose "Save as PDF".'); }
+  btn.disabled = false;
+}
+
+/* ---------- public check of a certificate number ---------- */
+async function exVerify(num){
+  const out = document.getElementById('vfOut'); if(!out) return;
+  num = String(num || '').trim();
+  if(!num){ out.innerHTML = '<p class="ac-err">Enter the certificate number.</p>'; return; }
+  out.innerHTML = '<p class="ac-muted">Checking…</p>';
+  try{
+    await acClient();
+    const r = await exRpc('kadr_verify_certificate', {p_number: num});
+    out.innerHTML = r.valid
+      ? `<div class="ac-card ex-ok-card"><p class="ex-ok"><b>Valid certificate</b></p><ul class="ac-list">
+          <li><span>Number</span>: <b data-no-i18n>${esc(r.number)}</b></li><li><span>Course</span>: <b data-no-i18n>KADR English — ${esc(r.level)}</b></li>
+          <li><span>Type</span>: <b>${exBandLabel(r.band, r.level)}</b></li><li><span>Date of issue</span>: <b data-no-i18n>${esc(r.issued_on)}</b></li>
+          <li><span>Learning centre</span>: <b data-no-i18n>${esc(r.centre_name)}</b></li><li><span>Holder (initials)</span>: <b data-no-i18n>${esc(r.holder_initials)}</b></li></ul>
+          <p class="ac-muted">Only initials are shown to protect personal data.</p></div>`
+      : `<p class="ac-err">No certificate with this number was found.</p>`;
+  }catch(e){ out.innerHTML = `<p class="ac-err">${exErr(e)}</p>`; }
+}
+function exRenderVerify(prefill){
+  const root = document.getElementById('vfRoot'); if(!root) return;
+  if(!AC_ON){ root.innerHTML = '<div class="ac-card"><p>Certificate checks are not switched on for this site.</p></div>'; return; }
+  root.innerHTML = `<div class="ac-card"><form id="vfForm" novalidate><div class="field"><label for="vfNum">Certificate number</label>
+    <input id="vfNum" type="text" placeholder="KADR-A1-XXXX-XXXX" autocapitalize="characters" spellcheck="false" value="${esc(prefill || '')}"></div>
+    <div class="ac-row"><button type="submit" class="btn btn-gold">Check</button></div></form><div id="vfOut" aria-live="polite"></div></div>`;
+  document.getElementById('vfForm').addEventListener('submit', e=>{ e.preventDefault(); exVerify(document.getElementById('vfNum').value); });
+  if(prefill) exVerify(prefill);
+}
+
+/* ---------- teacher: exams and settings ---------- */
+var TX = {filter: 'awaiting_review', list: [], open: null, settings: null};
+async function exTeacherExams(root){
+  root.innerHTML = '<p class="ac-muted">Loading…</p>';
+  if(TX.open) return exTeacherExam(root);
+  try{ TX.list = await exRpc('kadr_t_exams', {p_status: TX.filter}); }catch(e){ root.innerHTML = `<p class="ac-err">${exErr(e)}</p>`; return; }
+  root.innerHTML = `<div class="tr-bar"><label class="tr-sel"><span class="sr-only">Show</span><select id="txF">
+      <option value="awaiting_review"${TX.filter === 'awaiting_review' ? ' selected' : ''}>Waiting for review</option>
+      <option value="in_progress"${TX.filter === 'in_progress' ? ' selected' : ''}>In progress</option>
+      <option value="all"${TX.filter === 'all' ? ' selected' : ''}>All attempts</option></select></label>
+      <button type="button" class="btn ac-btn-line" data-tx="reload">Refresh</button></div>
+    <div class="tr-list">${TX.list.map(x=>`<button type="button" class="tr-item" data-tx-open="${esc(x.id)}">
+      <span class="tr-name"><b data-no-i18n>${esc(x.display_name)}</b> <span class="ac-muted" data-no-i18n>${esc(x.login)}</span></span>
+      <span><span data-no-i18n>${esc(x.level)} · #${x.attempt_no}</span> <span class="st ex-st-${x.status}">${EX_STATUS[x.status] || x.status}</span></span>
+      <span class="tr-nums">${x.penalties ? `<span><span>penalties</span> <b data-no-i18n>${x.penalties}</b></span>` : ''}${!x.listening_ok ? '<span class="tr-tag">listening with the teacher</span>' : ''}${x.total_pct != null ? `<span><b data-no-i18n>${x.total_pct}%</b></span>` : ''}</span>
+      <span class="tr-when ac-muted" data-no-i18n>${exDateTime(x.started_at)}</span></button>`).join('') || '<p class="ac-muted">No attempts here.</p>'}</div>`;
+  document.getElementById('txF').addEventListener('change', e=>{ TX.filter = e.target.value; exTeacherExams(root); });
+}
+var EX_EVT = {started: 'Started', switched_away: 'Switched away (penalty)', left_site: 'Left the site (penalty)', time_up: 'Time over', penalty_time_up: 'Time over after a penalty', offline: 'Connection note', reopened: 'Page reopened', late_answers: 'Answers after the end', time_restored: 'Time restored by the teacher', reviewed: 'Reviewed', cancelled: 'Cancelled, new attempt allowed'};
+async function exTeacherExam(root){
+  let x;
+  try{ x = await exRpc('kadr_t_exam', {p_attempt: TX.open}); }catch(e){ root.innerHTML = `<p class="ac-err">${exErr(e)}</p>`; return; }
+  const sel = (name, cur)=>`<select data-rub="${name}"><option value=""${cur == null ? ' selected' : ''}>—</option>${[0, 1, 2, 3].map(v=>`<option value="${v}"${cur === v ? ' selected' : ''}>${v}</option>`).join('')}</select>`;
+  const rubForm = (pre, r)=>`<div class="ex-rub">${['task', 'clarity', 'language', 'level'].map(k=>`<label class="ex-rub-row"><span data-no-i18n lang="en">${esc(x.meta.rubric[k])}</span> ${sel(pre + '.' + k, r ? r[k] : null)}</label>`).join('')}
+    <label class="ex-rub-row"><span>Comment</span><textarea data-rub="${pre}.comment" rows="2" maxlength="1000">${esc(r && r.comment || '')}</textarea></label></div>`;
+  const auto = x.auto_all || {};
+  const canReview = ['awaiting_review', 'passed', 'retry'].indexOf(x.status) >= 0;
+  root.innerHTML = `<button type="button" class="btn ac-btn-line" data-tx="back">← Back to the list</button>
+    <div class="ac-card"><h3><span data-no-i18n>${esc(x.student.display_name)}</span> <span class="ac-muted" data-no-i18n>${esc(x.student.login)} · ${esc(x.level)} · #${x.attempt_no}</span></h3>
+      <p><span>Status</span>: <span class="st ex-st-${x.status}">${EX_STATUS[x.status] || x.status}</span>${x.total_pct != null ? ` · <b data-no-i18n>${x.total_pct}%</b> ${x.band ? `<span>${exBandLabel(x.band, x.level)}</span>` : ''}` : ''}</p>
+      <p class="ac-muted"><span>Started</span>: <span data-no-i18n>${exDateTime(x.started_at)}</span> · <span>time</span>: <span data-no-i18n>${x.limit_minutes} min</span> · <span>penalties</span>: <span data-no-i18n>${x.penalty_minutes} min</span>${x.finished_at ? ` · <span>finished</span>: <span data-no-i18n>${exDateTime(x.finished_at)}</span>` : ''}${x.status === 'in_progress' ? ` · <span>time left</span>: <b data-no-i18n>${exFmtTime(x.remaining_seconds)}</b>` : ''}</p>
+      ${!x.listening_ok ? '<p class="ac-err">No English voice on the student\'s device: hold the listening part with the student and enter the mark below.</p>' : ''}
+      ${x.late_answers ? `<p class="ac-err"><span>Answers that arrived after the end (not counted)</span>: <span data-no-i18n>${esc(Object.keys(x.late_answers).join(', '))}</span></p>` : ''}
+      <div class="tr-actions">
+        <label class="tr-sel"><span>Minutes</span> <input type="number" id="txMin" min="1" max="120" value="10" class="ex-num"></label>
+        <button type="button" class="btn ac-btn-line" data-tx="restore">${x.status === 'in_progress' ? 'Add time' : 'Reopen with this time'}</button>
+        <button type="button" class="btn ac-btn-line" data-tx="newattempt">Cancel this attempt and allow a new one</button>
+      </div>
+      <p class="ac-err" id="txErr" role="alert"></p></div>
+    <div class="ac-card"><h3>Events</h3><div class="tr-table-wrap"><table class="tr-table"><thead><tr><th>Time</th><th>Event</th><th>Minutes</th><th>Time left after</th><th>Note</th></tr></thead><tbody>
+      ${x.events.map(e=>`<tr><td data-no-i18n>${exDateTime(e.at)}</td><td>${EX_EVT[e.type] || e.type}</td><td data-no-i18n>${e.minutes != null ? e.minutes : ''}</td><td data-no-i18n>${e.remaining_seconds != null ? exFmtTime(e.remaining_seconds) : ''}</td><td data-no-i18n>${esc(e.detail || '')}</td></tr>`).join('')}</tbody></table></div>
+      <p class="ac-muted">A penalty is recorded when the page reports leaving. A screen lock or a lost connection can look the same; the site does not know which sites or apps were opened.</p></div>
+    <div class="ac-card"><h3>Automatic part</h3>
+      ${['gv', 'reading', 'listening'].map(s=>`<p><b>${EX_SEC[s]}</b>: <span data-no-i18n>${auto[s] ? auto[s].score + '/' + auto[s].max : '—'}</span></p>`).join('')}
+      <details><summary>Answers</summary>${x.items.map((it, n)=>{ const mine = it.prompt.opts.find(o=>o.id === x.answers[it.id]); const good = x.answers[it.id] === it.answer;
+        return `<p class="ex-tline ${good ? 'good' : 'bad'}" data-no-i18n>${n + 1}. ${esc(it.prompt.q)} — ${mine ? esc(mine.t) : '—'} ${good ? '✓' : '✗ (' + esc(it.prompt.opts.find(o=>o.id === it.answer).t) + ')'}</p>`; }).join('')}</details></div>
+    <div class="ac-card"><h3>Writing</h3><p class="ex-task" data-no-i18n lang="en">${esc(x.meta.writing.task)}</p>
+      ${x.answers.writing ? `<p class="ex-mywriting" data-no-i18n lang="en">${esc(x.answers.writing)}</p><p class="ac-muted"><span>Words</span>: <b data-no-i18n>${exWords(x.answers.writing)}</b></p>` : '<p class="ac-muted">No answer.</p>'}
+      ${canReview ? rubForm('w', x.writing) : ''}</div>
+    ${canReview ? `<div class="ac-card"><h3>Speaking (with the teacher)</h3><ol class="ac-list" data-no-i18n lang="en">${x.meta.speaking.tasks.map(t=>`<li>${esc(t)}</li>`).join('')}</ol>${rubForm('s', x.speaking)}
+      ${!x.listening_ok ? `<label class="ex-rub-row"><span>Listening done with the teacher, %</span> <input type="number" id="txListen" min="0" max="100" class="ex-num" value="${x.listening_manual != null ? x.listening_manual : ''}"></label>` : ''}
+      <label class="ex-rub-row"><span>Comment for the student</span><textarea id="txComment" rows="3" maxlength="2000">${esc(x.teacher_comment || '')}</textarea></label>
+      <div class="ac-row"><button type="button" class="btn btn-gold" data-tx="review">Confirm the result</button></div>
+      <p class="ac-muted">The total is calculated by the server from all sections. Each criterion: 0 = not done, 1 = partly, 2 = mostly, 3 = fully.</p></div>` : '<div class="ac-card"><p class="ac-muted">The attempt is still in progress. You can mark it after the written part is finished.</p></div>'}`;
+}
+function exRubVals(pre){
+  const o = {}; document.querySelectorAll(`[data-rub^="${pre}."]`).forEach(el=>{ const k = el.dataset.rub.split('.')[1]; o[k] = k === 'comment' ? el.value : (el.value === '' ? null : parseInt(el.value, 10)); }); return o;
+}
+async function exTeacherSettings(root){
+  root.innerHTML = '<p class="ac-muted">Loading…</p>';
+  try{ TX.settings = await exRpc('kadr_t_settings'); }catch(e){ root.innerHTML = `<p class="ac-err">${exErr(e)}</p>`; return; }
+  const s = TX.settings;
+  root.innerHTML = `<div class="ac-card"><h3>Certificates</h3><form id="txSet" novalidate>
+    <div class="field"><label for="txCentre">Learning centre name (printed on certificates)</label><input id="txCentre" type="text" maxlength="100" value="${esc(s.centre_name || '')}"></div>
+    <div class="field"><label for="txTeacher">Teacher's name on certificates (optional)</label><input id="txTeacher" type="text" maxlength="100" value="${esc(s.cert_teacher_name || '')}"></div>
+    <p class="ac-err" id="txSetErr" role="alert"></p><div class="ac-row"><button type="submit" class="btn btn-gold">Save</button></div></form></div>
+    <div class="ac-card"><h3>Exam rules</h3><ul class="ac-list">
+      <li><span>Written part</span>: <b data-no-i18n>${esc(s.exam_minutes)}</b> <span>minutes</span>; <span>penalty</span>: <b data-no-i18n>${esc(s.penalty_minutes)}</b> <span>minutes</span></li>
+      <li><span>Pass</span>: <b data-no-i18n>${esc(s.pass_pct)}%</b>, Merit: <b data-no-i18n>${esc(s.merit_pct)}%</b>, Distinction: <b data-no-i18n>${esc(s.distinction_pct)}%</b>; <span>every section at least</span> <b data-no-i18n>${esc(s.section_min_pct)}%</b></li></ul>
+      <p class="ac-muted">These values are changed by the site owner in the Supabase SQL editor (see the setup guide).</p></div>`;
+  document.getElementById('txSet').addEventListener('submit', async e=>{
+    e.preventDefault(); const err = document.getElementById('txSetErr');
+    try{ TX.settings = await exRpc('kadr_t_settings_save', {p_values: {centre_name: document.getElementById('txCentre').value, cert_teacher_name: document.getElementById('txTeacher').value}}); err.textContent = ''; err.className = 'ex-ok'; err.textContent = T('Saved'); }
+    catch(x){ err.className = 'ac-err'; err.textContent = exErr(x); }
+  });
+}
+async function exStudentExamsHtml(id){
+  try{
+    const r = await exRpc('kadr_t_student_exams', {p_user: id}), p = (r.permissions || []).find(x=>x.level === 'A1') || {};
+    return `<h3><span data-no-i18n>Final Exam A1</span></h3>
+      <p><span>Lessons completed</span>: <b data-no-i18n>${Math.min(8, r.lessons_a1)}/8</b></p>
+      <div class="tr-actions"><label class="tr-sel"><span>Extra time for the next attempt, min</span> <input type="number" id="txExtra" min="0" max="120" class="ex-num" value="${p.extra_minutes || 0}"></label>
+        <button type="button" class="btn ac-btn-line" data-tx="extra" data-uid="${esc(id)}">Save</button>
+        <button type="button" class="btn ac-btn-line" data-tx="allow" data-uid="${esc(id)}">${p.retry_allowed ? 'New attempt allowed' : 'Allow a new attempt'}</button></div>
+      <p class="ac-err" id="txSErr" role="alert"></p>
+      ${r.attempts.length ? `<ul class="ex-certs">${r.attempts.map(a=>`<li><span data-no-i18n>${esc(a.level)} #${a.attempt_no} · ${exDate(a.started_at)}</span> <span class="st ex-st-${a.status}">${EX_STATUS[a.status] || a.status}</span>${a.total_pct != null ? ` <b data-no-i18n>${a.total_pct}%</b>` : ''} <button type="button" class="ac-link" data-tx-open="${esc(a.id)}">Open</button></li>`).join('')}</ul>` : '<p class="ac-muted">No attempts yet.</p>'}
+      ${r.certificates.length ? `<p><span>Certificates</span>: <span data-no-i18n>${r.certificates.map(c=>esc(c.number)).join(', ')}</span></p>` : ''}`;
+  }catch(e){ return `<p class="ac-err">${exErr(e)}</p>`; }
+}
+
+/* ---------- clicks ---------- */
+document.addEventListener('click', async e=>{
+  const o = e.target.closest('[data-ex-open]'); if(o){ e.preventDefault(); e.stopPropagation(); showSection('exam'); return; }
+  const l = e.target.closest('[data-ex-lesson]'); if(l){ const i = +l.dataset.exLesson; showSection('lessons'); try{ currentLevel = 'A1'; renderLevels(); renderLessons(); openLessonDetail('A1', i); }catch(x){} return; }
+  const wd = e.target.closest('[data-ex-words]'); if(wd){ try{ vc.level = 'A1'; vc.lesson = 'A1:' + wd.dataset.exWords; vc.mode = 'cards'; }catch(x){} showSection('vocab'); return; }
+  if(e.target.closest('[data-target-lessons]')){ showSection('lessons'); try{ currentLevel = 'A1'; renderLevels(); renderLessons(); }catch(x){} return; }
+  const at = e.target.closest('[data-ex-att]'); if(at){ EX.finishedNote = ''; exLoadAttempt(at.dataset.exAtt); return; }
+  const ce = e.target.closest('[data-ex-cert]'); if(ce){ exShowCert(ce.dataset.exCert); return; }
+  const jump = e.target.closest('[data-ex-jump]'); if(jump){ e.preventDefault(); const t = document.getElementById('ex-' + jump.dataset.exJump); if(t) t.scrollIntoView({behavior: 'smooth', block: 'start'}); return; }
+  const b = e.target.closest('[data-ex]');
+  if(b){
+    const a = b.dataset.ex;
+    if(a === 'start') exConfirmStart();
+    else if(a === 'dostart') exStart(b);
+    else if(a === 'submit') exConfirmSubmit();
+    else if(a === 'dosubmit') exSubmit(b);
+    else if(a === 'play') exPlay(b);
+    else if(a === 'hidebanner'){ EX.banner = ''; exPaintBanner(); }
+    else if(a === 'home' || a === 'reload'){ EX.att = null; exWatch(false); exOpen(); }
+    else if(a === 'certname') exCertNameModal();
+    else if(a === 'pdf') exPdf(b);
+    else if(a === 'print'){ document.body.classList.add('ex-printing'); const off = ()=>{ document.body.classList.remove('ex-printing'); window.removeEventListener('afterprint', off); }; window.addEventListener('afterprint', off); window.print(); setTimeout(off, 1000); }
+    else if(a === 'closecert'){ const ov = document.getElementById('exCertView'); ov.hidden = true; ov.innerHTML = ''; }
+    return;
+  }
+  const t = e.target.closest('[data-tx]'), to = e.target.closest('[data-tx-open]');
+  if(to){ TX.open = to.dataset.txOpen; TR.view = 'exams'; TR.open = null; acRenderTeacher(); return; }
+  if(!t) return;
+  const root = document.getElementById('trRoot'), act = t.dataset.tx, err = document.getElementById('txErr');
+  try{
+    if(act === 'reload') exTeacherExams(document.getElementById('txRoot'));
+    else if(act === 'back'){ TX.open = null; exTeacherExams(document.getElementById('txRoot')); }
+    else if(act === 'restore'){ const m = parseInt(document.getElementById('txMin').value, 10); await exRpc('kadr_t_exam_restore', {p_attempt: TX.open, p_minutes: m, p_reason: 'restored by teacher'}); exTeacherExams(document.getElementById('txRoot')); }
+    else if(act === 'newattempt'){ const x = await exRpc('kadr_t_exam', {p_attempt: TX.open}); await exRpc('kadr_t_exam_permit', {p_user: x.student.id, p_level: x.level, p_extra: null, p_retry: true, p_cancel: TX.open}); exTeacherExams(document.getElementById('txRoot')); }
+    else if(act === 'review'){
+      const li = document.getElementById('txListen');
+      await exRpc('kadr_t_exam_review', {p_attempt: TX.open, p_writing: exRubVals('w'), p_speaking: exRubVals('s'), p_listening: li && li.value !== '' ? Number(li.value) : null, p_comment: document.getElementById('txComment').value});
+      exTeacherExams(document.getElementById('txRoot'));
+    }
+    else if(act === 'extra' || act === 'allow'){
+      const se = document.getElementById('txSErr');
+      await exRpc('kadr_t_exam_permit', {p_user: t.dataset.uid, p_level: 'A1', p_extra: act === 'extra' ? parseInt(document.getElementById('txExtra').value || '0', 10) : null, p_retry: act === 'allow' ? true : null, p_cancel: null});
+      const box = document.getElementById('trExams'); if(box) box.innerHTML = await exStudentExamsHtml(t.dataset.uid);
+      if(se) se.textContent = '';
+    }
+  }catch(x){
+    const m = String(x && x.message || '');
+    const msg = /rubric_incomplete/.test(m) ? 'Mark every criterion for writing and speaking (0–3).' : /listening_required/.test(m) ? 'Enter the listening mark (0–100 %).' : /cannot_restore/.test(m) ? 'Time can be restored only for an attempt that is in progress or ended by time and not yet reviewed.' : /bad_minutes/.test(m) ? 'Enter 1–120 minutes (0–120 for extra time).' : exErr(x);
+    const el = err || document.getElementById('txSErr'); if(el) el.textContent = msg;
+  }
+});
+window.addEventListener('resize', exFitCert);
+
 /* =====================================================================
    ACCOUNTS: sign in, personal room, progress sync, teacher's room
    Works only when KADR_CLOUD.url and KADR_CLOUD.key are filled in.
@@ -6141,7 +7185,7 @@ async function acStart(user, fresh){
     if(!acIsNetwork(e)){ await acSignOut(true); acOpenModal('signin', {err: 'Your profile could not be opened. Ask your teacher for help.'}); return; }
     KC.me = KC.me || {display_name: (user.user_metadata && user.user_metadata.display_name) || user.email.split('@')[0], login: user.email.split('@')[0], role: 'student'};
   }
-  acPaintButton(); acRenderAccount(); acRenderTeacher();
+  acPaintButton(); acRenderAccount(); acRenderTeacher(); exLoadStatus();
   try{ await acPull(); }catch(e){ acSetStatus(acIsNetwork(e) ? 'offline' : 'error'); acScheduleRetry(); }
   if(KC.me && KC.me.must_change_password){ acOpenModal('newpass'); return; }
   if(fresh) acOfferTransfer();
@@ -6171,17 +7215,18 @@ async function acSignOut(silent){
   clearTimeout(KC.pushT); clearTimeout(KC.retryT);
   KC.user = null; KC.me = null; KC.dirty = false; KC.version = 0; KC.problem = false; KC.leaving = false;
   PG.onSave = null; PG.use(PG.readGuest(), 'guest');
+  exReset();
   acSetStatus('off'); acRerender(); acRenderTeacher();
-  if(!silent && ['account', 'teacher'].some(id=>document.getElementById(id).classList.contains('active'))) showSection('home');
+  if(!silent && ['account', 'teacher', 'exam'].some(id=>document.getElementById(id).classList.contains('active'))) showSection('home');
 }
 async function acForcedOut(){
   // the session ended elsewhere (password reset by the teacher, profile deleted, sign-in expired)
   const keep = KC.dirty;          // unsent results stay on this device for the same learner's next sign-in
   KC.leaving = true; try{ if(KC.sb) await KC.sb.auth.signOut({scope: 'local'}); }catch(e){} KC.leaving = false;
-  KC.user = null; KC.me = null; KC.dirty = false; PG.onSave = null; PG.use(PG.readGuest(), 'guest');
+  KC.user = null; KC.me = null; KC.dirty = false; PG.onSave = null; PG.use(PG.readGuest(), 'guest'); exReset();
   if(!keep){ /* nothing unsent */ }
   acSetStatus('off'); acRerender(); acRenderTeacher();
-  if(['account', 'teacher'].some(id=>document.getElementById(id).classList.contains('active'))) showSection('home');
+  if(['account', 'teacher', 'exam'].some(id=>document.getElementById(id).classList.contains('active'))) showSection('home');
   acOpenModal('signin', {err: 'You were signed out. Please sign in again.'});
 }
 async function acTrySignOut(){
@@ -6468,6 +7513,7 @@ function acRenderAccount(){
         ${s.learning ? `<button type="button" class="btn ac-btn-line" data-ac="review">Review words</button>` : ''}
       </div>
     </div>
+    ${exRoomCard()}
     <div class="ac-card">
       <h3>Test results</h3>
       ${acTestsHtml(d)}
@@ -6530,11 +7576,17 @@ function acRenderTeacher(){
   if(!KC.user || !KC.me || KC.me.role !== 'teacher'){
     root.innerHTML = `<div class="ac-card"><p>This page is only for teachers. Sign in with a teacher's profile.</p></div>`; return;
   }
-  if(TR.open) return acRenderStudent();
+  const tabs = `<div class="ac-tabs tr-tabs" role="tablist">${[['students', 'Students'], ['exams', 'Exams'], ['settings', 'Certificate settings']].map(([k, t])=>`<button type="button" role="tab" data-trview="${k}" aria-selected="${(TR.view || 'students') === k}">${t}</button>`).join('')}</div>`;
+  if(TR.view === 'exams' || TR.view === 'settings'){
+    root.innerHTML = tabs + '<div id="txRoot"></div>';
+    if(TR.view === 'exams') exTeacherExams(document.getElementById('txRoot')); else exTeacherSettings(document.getElementById('txRoot'));
+    return;
+  }
+  if(TR.open) return acRenderStudent(tabs);
   const q = TR.q.trim().toLowerCase();
   const rows = TR.list.filter(s=>(TR.g === 'all' || (TR.g === 'none' ? !s.group_id : s.group_id === TR.g)) &&
     (!q || s.display_name.toLowerCase().includes(q) || s.login.includes(q)));
-  root.innerHTML = `
+  root.innerHTML = tabs + `
     <div class="tr-bar">
       <label class="tr-search"><span class="sr-only">Search by name or login</span><input type="search" id="trQ" placeholder="Search by name or login" value="${esc(TR.q)}" autocomplete="off"></label>
       <label class="tr-sel"><span class="sr-only">Group</span><select id="trG">${acGroupOptions(TR.g, true)}</select></label>
@@ -6564,7 +7616,7 @@ async function acOpenStudent(id){
   acRenderTeacher();
   const h = document.getElementById('trStudentH'); if(h) h.focus();
 }
-function acRenderStudent(){
+function acRenderStudent(tabs){
   const root = document.getElementById('trRoot'), s = TR.open;
   if(s.loading){ root.innerHTML = '<p class="ac-muted">Loading…</p>'; return; }
   const d = PG.norm(JSON.parse(JSON.stringify(s.data || {}))), sum = acSummary(d);
@@ -6579,7 +7631,7 @@ function acRenderStudent(){
       <td data-no-i18n>${r ? (r.attempts || 1) : 0}</td><td data-no-i18n>${r && r.t ? fmtDate(r.t) : (d.opened[L + ':' + i] ? fmtDate(d.opened[L + ':' + i]) : '—')}</td></tr>`);
   }));
   const learning = Object.keys(d.vocab).filter(k=>d.vocab[k] && d.vocab[k].s === 'learning');
-  root.innerHTML = `
+  root.innerHTML = (tabs || '') + `
     <button type="button" class="btn ac-btn-line" data-ac="back">← Back to the list</button>
     <div class="ac-card">
       <h3 id="trStudentH" tabindex="-1"><span data-no-i18n>${esc(s.display_name)}</span> <span class="ac-muted" data-no-i18n>${esc(s.login)}</span></h3>
@@ -6610,7 +7662,9 @@ function acRenderStudent(){
     </div>
     <div class="ac-card"><h3>Words to review</h3>
       ${learning.length ? `<p class="tr-words" data-no-i18n>${learning.map(esc).join(', ')}</p>` : '<p class="ac-muted">No words to review.</p>'}
-    </div>`;
+    </div>
+    <div class="ac-card" id="trExams"><p class="ac-muted">Loading…</p></div>`;
+  exStudentExamsHtml(s.id).then(h=>{ const b = document.getElementById('trExams'); if(b && TR.open && TR.open.id === s.id) b.innerHTML = h; });
   document.getElementById('trSG').addEventListener('change', async e=>{
     const err = document.getElementById('trErr'); err.textContent = '';
     try{ await acTeacherCall('kadr_t_set_group', {p_student: s.id, p_group: e.target.value || null}); s.group_id = e.target.value || null; acLoadTeacherQuiet(); }
@@ -6756,7 +7810,16 @@ document.addEventListener('keydown', e=>{
   else if(!e.shiftKey && document.activeElement === f[f.length - 1]){ e.preventDefault(); f[0].focus(); }
 }, true);
 const acShowSection0 = showSection;
-showSection = function(id){ acShowSection0(id); if(id === 'teacher'){ TR.open = null; acLoadTeacher(); } if(id === 'account') acRenderAccount(); };
+showSection = function(id){
+  if(id !== 'exam' && EX.att && EX.att.status === 'in_progress'){ /* the exam keeps running; leaving the exam page inside the site is allowed */ }
+  acShowSection0(id);
+  if(id === 'teacher'){ TR.open = null; TX.open = null; acLoadTeacher(); }
+  if(id === 'account') acRenderAccount();
+  if(id === 'exam') exOpen();
+  if(id === 'verify') exRenderVerify(EX.verifyNum || '');
+};
+document.addEventListener('click', e=>{ const v = e.target.closest('[data-trview]'); if(v){ TR.view = v.dataset.trview; TR.open = null; TX.open = null; acRenderTeacher(); if(TR.view === 'students') acLoadTeacher(); } const f = e.target.closest('[data-ex-verify]'); if(f){ e.preventDefault(); showSection('verify'); } });
+(function(){ try{ const m = /[?&]cert=([A-Za-z0-9-]{6,30})/.exec(location.search); if(m){ EX.verifyNum = m[1]; setTimeout(()=>showSection('verify'), 0); } }catch(e){} })();
 acInit();
 
 renderContinue();
